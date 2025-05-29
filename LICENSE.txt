@@ -1,0 +1,11 @@
+Copyright (c) 2025 Breng Smith
+
+All rights reserved.
+
+This software and its components are the confidential and proprietary property of Breng Smith. Unauthorized copying, modification, distribution, publication, or use of this software or any part of it, via any medium, is strictly prohibited.
+
+No license or right is granted to any person or entity under any patent, copyright, trade secret, or other proprietary right of Breng Smith by disclosure of this code.
+
+This repository is intended solely for private deployment and internal use within the Neuro Core™ AI Trading Command System.
+
+For licensing inquiries, contact: brengsmith5@gmail.com

@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuantumTraderAI Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+    <div class="p-10 text-center">
+        <h1 class="text-4xl font-bold">QuantumTraderAI</h1>
+        <p class="mt-2 text-lg">Autonomous Trading Dashboard</p>
+        <button onclick="runStrategies()" class="mt-4 bg-blue-500 px-4 py-2 rounded">Run Strategies</button>
+        <pre id="result" class="mt-4 text-left"></pre>
+    </div>
+    <script>
+        async function runStrategies() {
+            const res = await fetch('http://localhost:8000/run');
+            const data = await res.json();
+            document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>

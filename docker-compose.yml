@@ -1,0 +1,24 @@
+
+version: '3.9'
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+    depends_on:
+      - redis
+    environment:
+      - CELERY_BROKER=redis://redis:6379/0
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+  celery_worker:
+    build: .
+    command: celery -A backend.tasks.strategy_runner worker --loglevel=info
+    volumes:
+      - ./backend:/app/backend
+    depends_on:
+      - redis
