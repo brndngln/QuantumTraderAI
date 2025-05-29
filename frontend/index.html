@@ -1,24 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>QuantumTraderAI Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-black text-white">
-    <div class="p-10 text-center">
-        <h1 class="text-4xl font-bold">QuantumTraderAI</h1>
-        <p class="mt-2 text-lg">Autonomous Trading Dashboard</p>
-        <button onclick="runStrategies()" class="mt-4 bg-blue-500 px-4 py-2 rounded">Run Strategies</button>
-        <pre id="result" class="mt-4 text-left"></pre>
-    </div>
-    <script>
-        async function runStrategies() {
-            const res = await fetch('http://localhost:8000/run');
-            const data = await res.json();
-            document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+  <meta charset="UTF-8">
+  <title>QuantumTraderAI | Elite Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            fracta: ['FractaMinimal', 'sans-serif'],
+            orbitron: ['Orbitron', 'sans-serif'],
+            azonix: ['Azonix', 'sans-serif'],
+          },
+          colors: {
+            dark: { 900: '#0a0a0a', 800: '#1a1a1a' },
+            primary: '#ff416c',
+            secondary: '#3b82f6'
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'flicker': 'flicker 1.5s infinite'
+          }
         }
-    </script>
+      }
+    }
+  </script>
+  <style>
+    @font-face {
+      font-family: 'FractaMinimal';
+      src: url('./fonts/FractaMinimal.woff2') format('woff2');
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-white font-fracta p-10">
+  <h1 class="text-4xl font-orbitron mb-8">QuantumTraderAI</h1>
+  <button class="bg-primary hover:bg-secondary px-6 py-3 rounded-lg text-white font-bold transition transform hover:scale-105 shadow-lg">
+    Run Strategies
+  </button>
 </body>
 </html>
