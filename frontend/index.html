@@ -1,69 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QuantumTraderAI | Elite Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            fracta: ['FractaMinimal', 'sans-serif'],
-            orbitron: ['Orbitron', 'sans-serif'],
-            azonix: ['Azonix', 'sans-serif']
-          },
-          colors: {
-            dark: {
-              900: '#0a0a0a',
-              800: '#1a1a1a'
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuantumTraderAI | Elite Dashboard</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Custom Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              fracta: ['FractaMinimal', 'sans-serif'],
+              orbitron: ['Orbitron', 'sans-serif'],
+              azonix: ['Azonix', 'sans-serif'],
             },
-            primary: '#ff416c',
-            secondary: '#3b82f6'
+            colors: {
+              dark: {
+                900: '#0a0a0a',
+                800: '#1a1a1a',
+              },
+              primary: '#ff416c',
+              secondary: '#3b82f6',
+              success: '#10b981',
+              danger: '#ef4444',
+            },
+            animation: {
+              float: 'float 6s ease-in-out infinite',
+              flicker: 'flicker 1.5s infinite',
+            },
           },
-          animation: {
-            float: 'float 6s ease-in-out infinite',
-            flicker: 'flicker 1.5s infinite'
-          }
-        }
+        },
+      };
+    </script>
+
+    <!-- Font (optional custom font setup) -->
+    <style>
+      @font-face {
+        font-family: 'FractaMinimal';
+        src: url('./fonts/FractaMinimal.woff2') format('woff2');
       }
-    }
-  </script>
-  <style>
-    @font-face {
-      font-family: 'FractaMinimal';
-      src: url('./fonts/FractaMinimal.woff2') format('woff2');
-    }
-  </style>
-</head>
+    </style>
+  </head>
 
-<body class="bg-dark-900 text-white font-fracta p-10">
-  <h1 class="text-4xl font-orbitron mb-8">QuantumTraderAI</h1>
+  <body class="bg-dark-900 text-white font-fracta min-h-screen flex flex-col justify-center items-center space-y-6 px-4">
+    <h1 class="text-5xl font-orbitron font-bold text-white tracking-wide">QuantumTraderAI</h1>
+    <p class="text-lg text-gray-400 font-orbitron">Autonomous Trading Dashboard</p>
 
-  <button
-    class="bg-primary hover:bg-secondary px-6 py-3 rounded-lg text-white font-bold transition transform hover:scale-105"
-    onclick="runStrategies()"
-  >
-    ▶️ Run Strategies
-  </button>
+    <button
+      id="runBtn"
+      class="bg-primary hover:bg-secondary px-6 py-3 rounded-lg text-white font-bold transition transform hover:scale-105"
+    >
+      Run Strategies
+    </button>
 
-  <script>
-    async function runStrategies() {
-      try {
-        const response = await fetch("https://quantumtraderai-production.up.railway.app/run-strategy", {
-          method: "POST"
-        });
-        if (response.ok) {
-          alert("✅ Strategy started successfully!");
-        } else {
-          alert("⚠️ Failed to start strategy.");
+    <!-- JavaScript -->
+    <script>
+      document.getElementById("runBtn").addEventListener("click", async () => {
+        try {
+          const response = await fetch("https://quantumtraderai-production.up.railway.app/run-strategy", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ strategy: "default" }),
+          });
+
+          const data = await response.json();
+          alert("✅ Success: " + data.message || "Strategies triggered!");
+        } catch (error) {
+          alert("❌ Error running strategy.");
+          console.error("Run failed:", error);
         }
-      } catch (error) {
-        alert("❌ Error connecting to backend.");
-        console.error(error);
-      }
-    }
-  </script>
-</body>
+      });
+    </script>
+  </body>
 </html>
