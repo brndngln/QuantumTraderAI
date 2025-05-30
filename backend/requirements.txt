@@ -11,5 +11,6 @@ pandas==1.5.3
 numpy==1.23.5
 matplotlib==3.7.1
 tensorflow==2.13.0
+typing-extensions==4.5.0
 websockets==11.0.3
 pydantic-settings==2.2.1
