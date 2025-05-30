@@ -1,5 +1,5 @@
 
-from pydantic_settings import BaseSettings
+from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     trading_enabled: bool = True

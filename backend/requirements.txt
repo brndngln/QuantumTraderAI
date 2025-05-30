@@ -1,7 +1,7 @@
 
 fastapi
 uvicorn
-pydantic
+pydantic==1.10.13
 httpx
 python-dotenv
 redis
@@ -13,4 +13,3 @@ numpy
 matplotlib
 tensorflow
 websockets
-pydantic-settings
