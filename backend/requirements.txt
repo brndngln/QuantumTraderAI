@@ -13,3 +13,4 @@ numpy
 matplotlib
 tensorflow
 websockets
+pydantic-settings

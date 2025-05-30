@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QuantumTraderAI | Elite Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
   <script>
     tailwind.config = {
       theme: {
@@ -12,16 +12,19 @@
           fontFamily: {
             fracta: ['FractaMinimal', 'sans-serif'],
             orbitron: ['Orbitron', 'sans-serif'],
-            azonix: ['Azonix', 'sans-serif'],
+            azonix: ['Azonix', 'sans-serif']
           },
           colors: {
-            dark: { 900: '#0a0a0a', 800: '#1a1a1a' },
+            dark: {
+              900: '#0a0a0a',
+              800: '#1a1a1a'
+            },
             primary: '#ff416c',
             secondary: '#3b82f6'
           },
           animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'flicker': 'flicker 1.5s infinite'
+            float: 'float 6s ease-in-out infinite',
+            flicker: 'flicker 1.5s infinite'
           }
         }
       }
@@ -34,10 +37,33 @@
     }
   </style>
 </head>
+
 <body class="bg-dark-900 text-white font-fracta p-10">
   <h1 class="text-4xl font-orbitron mb-8">QuantumTraderAI</h1>
-  <button class="bg-primary hover:bg-secondary px-6 py-3 rounded-lg text-white font-bold transition transform hover:scale-105 shadow-lg">
-    Run Strategies
+
+  <button
+    class="bg-primary hover:bg-secondary px-6 py-3 rounded-lg text-white font-bold transition transform hover:scale-105"
+    onclick="runStrategies()"
+  >
+    ▶️ Run Strategies
   </button>
+
+  <script>
+    async function runStrategies() {
+      try {
+        const response = await fetch("https://quantumtraderai-production.up.railway.app/run-strategy", {
+          method: "POST"
+        });
+        if (response.ok) {
+          alert("✅ Strategy started successfully!");
+        } else {
+          alert("⚠️ Failed to start strategy.");
+        }
+      } catch (error) {
+        alert("❌ Error connecting to backend.");
+        console.error(error);
+      }
+    }
+  </script>
 </body>
 </html>
