@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>QuantumTraderAI | Autonomous Trading Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-white flex flex-col items-center justify-center min-h-screen space-y-8">
-  <h1 class="text-5xl font-bold">QuantumTraderAI</h1>
-  <p class="text-lg opacity-75">Autonomous Trading Dashboard</p>
+<body class="bg-black text-white flex flex-col items-center justify-center min-h-screen">
+  <h1 class="text-5xl font-bold mb-4">QuantumTraderAI</h1>
+  <p class="text-xl mb-6">Autonomous Trading Dashboard</p>
   <button 
-    onclick="runStrategies()" 
-    class="bg-blue-600 hover:bg-blue-800 px-6 py-3 rounded-lg text-white font-bold transition"
-  >
+    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+    onclick="runStrategies()">
     Run Strategies
   </button>
 
   <script>
     async function runStrategies() {
       try {
-        const response = await fetch('https://quantumtraderai-production.up.railway.app/run', {
-          method: 'GET'
-        });
-        const data = await response.json();
-        console.log('✅ Success:', data);
-        alert('Strategies executed successfully!');
-      } catch (error) {
-        console.error('❌ Error running strategies:', error);
-        alert('Failed to run strategies.');
+        const res = await fetch("https://quantumtraderai-production.up.railway.app/run");
+        const data = await res.json();
+        alert("✅ Strategies executed: " + JSON.stringify(data));
+      } catch (err) {
+        console.error("Failed to fetch:", err);
+        alert("❌ Error running strategies");
       }
     }
   </script>
