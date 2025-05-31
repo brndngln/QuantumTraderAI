@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QuantumTraderAI | Autonomous Trading Dashboard</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,6 +32,8 @@
       },
     };
   </script>
+
+  <!-- Custom Fonts -->
   <style>
     @font-face {
       font-family: 'FractaMinimal';
@@ -37,13 +41,16 @@
       font-weight: normal;
       font-style: normal;
     }
+
     body {
-      background-color: #000;
+      background-color: #0a0a0a;
       color: #fff;
       font-family: 'Orbitron', sans-serif;
       text-align: center;
       padding-top: 100px;
+      margin: 0;
     }
+
     button {
       padding: 10px 20px;
       background-color: #3b82f6;
@@ -53,16 +60,18 @@
       color: white;
       font-size: 16px;
       cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background-color 0.2s ease;
     }
+
     button:hover {
       transform: scale(1.05);
+      background-color: #2563eb;
     }
   </style>
 </head>
 
 <body>
-  <h1 class="text-4xl font-bold">QuantumTraderAI</h1>
+  <h1 class="text-4xl font-bold mb-4">QuantumTraderAI</h1>
   <p class="text-lg mb-8">Autonomous Trading Dashboard</p>
   <button onclick="runStrategies()">Run Strategies</button>
 
@@ -75,9 +84,9 @@
         alert(JSON.stringify(data, null, 2));
       } catch (error) {
         console.error("Error calling backend:", error);
-        alert("Failed to reach backend. Please check console for details.");
+        alert("❌ Failed to reach backend. Check console.");
       }
     }
   </script>
 </body>
-</html><!-- Force redeploy: Sat May 31 15:16:28 MDT 2025 -->
+</html>
