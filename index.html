@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QuantumTraderAI | Autonomous Trading Dashboard</title>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,10 +30,10 @@
           },
         },
       },
-    };
+    }
   </script>
 
-  <!-- Custom Fonts -->
+  <!-- Font Styling -->
   <style>
     @font-face {
       font-family: 'FractaMinimal';
@@ -41,39 +41,25 @@
       font-weight: normal;
       font-style: normal;
     }
-
     body {
-      background-color: #0a0a0a;
-      color: #fff;
       font-family: 'Orbitron', sans-serif;
-      text-align: center;
-      padding-top: 100px;
-      margin: 0;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #3b82f6;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
+      background-color: #000;
       color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: transform 0.2s ease, background-color 0.2s ease;
     }
-
     button:hover {
       transform: scale(1.05);
-      background-color: #2563eb;
     }
   </style>
 </head>
-
-<body>
-  <h1 class="text-4xl font-bold mb-4">QuantumTraderAI</h1>
-  <p class="text-lg mb-8">Autonomous Trading Dashboard</p>
-  <button onclick="runStrategies()">Run Strategies</button>
+<body class="bg-dark-900 min-h-screen flex items-center justify-center p-8">
+  <div class="text-center max-w-xl">
+    <h1 class="text-4xl font-bold mb-2">QuantumTraderAI</h1>
+    <p class="mb-6 text-lg text-gray-300">Autonomous Trading Dashboard</p>
+    <button onclick="runStrategies()"
+      class="bg-primary hover:bg-blue-700 px-6 py-3 rounded-lg text-white font-bold transition transform">
+      Run Strategies
+    </button>
+  </div>
 
   <script>
     async function runStrategies() {
@@ -90,4 +76,3 @@
   </script>
 </body>
 </html>
-<!-- FORCE_REDEPLOY: Sat May 31, 2025 @ 4:05PM -->
