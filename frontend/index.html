@@ -1,3 +1,4 @@
+nano index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +9,13 @@
   <style>
     @font-face {
       font-family: 'FractaMinimal';
-      src: url('./fonts/FractaMinimal.woff2') format('woff2');
-    }
+<script>
+  async function runStrategies() {
+    const response = await fetch('https://quantumtraderai-production.up.railway.app/run');
+    const data = await response.json();
+    console.log(data);
+  }
+</script>¨    }
   </style>
   <script>
     tailwind.config = {
