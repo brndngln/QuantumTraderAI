@@ -100,13 +100,25 @@ from sqlalchemy import event
 
 # AI Safety Configuration
 AI_CONFIG = {
-    'max_strategy_weight': 0.5,  # Maximum weight any single strategy can have
-    'min_strategy_weight': 0.1,  # Minimum weight any strategy can have
-    'max_position_size': 0.1,    # Maximum position size as % of portfolio
-    'require_user_confirmation': True,  # Require user confirmation for AI decisions
-    'log_level': 'DEBUG',        # Detailed logging of AI activities
-    'max_consecutive_losses': 3, # Maximum consecutive losses before AI pause
-    'max_drawdown': 0.05        # Maximum allowed drawdown before AI pause
+    'max_strategy_weight': 0.3,  # Maximum weight any single strategy can have
+    'min_strategy_weight': 0.05,  # Minimum weight any strategy can have
+    'max_position_size': 0.05,    # Maximum position size as % of portfolio
+    'require_user_confirmation': False,  # AI makes decisions autonomously
+    'log_level': 'INFO',        # Detailed logging of AI activities
+    'max_consecutive_losses': 5, # Maximum consecutive losses before AI pause
+    'max_drawdown': 0.10,        # Maximum allowed drawdown before AI pause
+    'risk_tolerance': 0.02,      # Maximum daily risk per trade
+    'profit_target': 1.5,        # Target profit multiple
+    'stop_loss': 0.5,           # Stop loss multiple
+    'max_leverage': 10,         # Maximum leverage allowed
+    'max_trades': 50,           # Maximum number of concurrent trades
+    'portfolio_rebalance_freq': '1H',  # Portfolio rebalancing frequency
+    'market_data_window': '24H', # Historical data window for analysis
+    'risk_management': {
+        'volatility_adjustment': True,
+        'position_sizing': 'KellyCriterion',
+        'diversification_factor': 0.8
+    }
 }
 
 # Initialize AI safety monitoring
