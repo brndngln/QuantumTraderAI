@@ -1,22 +1,32 @@
-# Use official Python runtime as a parent image
-FROM python:3.11-slim
+# Use an official Python runtime (non-Alpine to avoid TensorFlow issues)
+FROM python:3.10-slim
 
-# Set working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy backend code and requirements
-COPY ./backend ./backend
-COPY ./backend/requirements.txt ./backend/requirements.txt
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    libjpeg-dev \
+    zlib1g-dev \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
+# Copy and install dependencies
+COPY ./backend/requirements.txt ./requirements.txt
 RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r ./backend/requirements.txt
+    pip install --no-cache-dir -r requirements.txt
 
-# Expose the app port (default FastAPI/uvicorn port)
+# Copy backend code
+COPY ./backend /app
+
+# Expose FastAPI port
 EXPOSE 8000
 
-# Set environment variables (optional)
-ENV PYTHONUNBUFFERED=1
-
-# Start the FastAPI app using Uvicorn
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the FastAPI app
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
