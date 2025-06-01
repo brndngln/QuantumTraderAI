@@ -1,0 +1,912 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}🚀 Quantum\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Trader\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}AI\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}: Autonomous AI Trading Empire }{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}🌐 Deployments}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}📦 Backend (Railway)}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}🖥️ Frontend (Vercel)}{1}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}🔧 Features}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}📲 Mobile App (Optional)}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}📂 Folder Structure}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}💡 Meta-\/\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Learning Example}{2}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Namespace Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Namespace List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Hierarchical Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class Hierarchy}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Class List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}File Index}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}File List}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Namespace Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}allocator Namespace Reference}{11}{section.6.1}%
+\contentsline {section}{\numberline {6.2}backtester Namespace Reference}{11}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Function Documentation}{11}{subsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.1.1}run\_backtest()}{11}{subsubsection.6.2.1.1}%
+\contentsline {section}{\numberline {6.3}backtesting Namespace Reference}{11}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Variable Documentation}{11}{subsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.1}backtester}{11}{subsubsection.6.3.1.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.2}logger}{11}{subsubsection.6.3.1.2}%
+\contentsline {section}{\numberline {6.4}celery\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}config Namespace Reference}{12}{section.6.4}%
+\contentsline {section}{\numberline {6.5}celery\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}worker Namespace Reference}{12}{section.6.5}%
+\contentsline {section}{\numberline {6.6}cost\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}analysis Namespace Reference}{12}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Function Documentation}{12}{subsection.6.6.1}%
+\contentsline {subsubsection}{\numberline {6.6.1.1}\_fast\_commission\_cost()}{12}{subsubsection.6.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.6.1.2}\_fast\_market\_impact()}{12}{subsubsection.6.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.6.1.3}\_fast\_slippage()}{12}{subsubsection.6.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.6.1.4}\_fast\_total\_transaction\_cost()}{13}{subsubsection.6.6.1.4}%
+\contentsline {subsection}{\numberline {6.6.2}Variable Documentation}{13}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}CACHE\_TTL}{13}{subsubsection.6.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.6.2.2}cost\_analyzer}{13}{subsubsection.6.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.3}cost\_cache}{13}{subsubsection.6.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.6.2.4}last\_cache\_update}{13}{subsubsection.6.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.6.2.5}logger}{13}{subsubsection.6.6.2.5}%
+\contentsline {section}{\numberline {6.7}data\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}loader Namespace Reference}{13}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Function Documentation}{13}{subsection.6.7.1}%
+\contentsline {subsubsection}{\numberline {6.7.1.1}load\_realtime\_data()}{13}{subsubsection.6.7.1.1}%
+\contentsline {section}{\numberline {6.8}feature\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}engineering Namespace Reference}{13}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Variable Documentation}{14}{subsection.6.8.1}%
+\contentsline {subsubsection}{\numberline {6.8.1.1}feature\_engineer}{14}{subsubsection.6.8.1.1}%
+\contentsline {subsubsection}{\numberline {6.8.1.2}logger}{14}{subsubsection.6.8.1.2}%
+\contentsline {section}{\numberline {6.9}latency\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}optimizer Namespace Reference}{14}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Function Documentation}{14}{subsection.6.9.1}%
+\contentsline {subsubsection}{\numberline {6.9.1.1}measure\_latency()}{14}{subsubsection.6.9.1.1}%
+\contentsline {subsection}{\numberline {6.9.2}Variable Documentation}{14}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}API\_ENDPOINTS}{14}{subsubsection.6.9.2.1}%
+\contentsline {section}{\numberline {6.10}legal Namespace Reference}{14}{section.6.10}%
+\contentsline {section}{\numberline {6.11}lstm\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}model Namespace Reference}{14}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Variable Documentation}{14}{subsection.6.11.1}%
+\contentsline {subsubsection}{\numberline {6.11.1.1}logger}{14}{subsubsection.6.11.1.1}%
+\contentsline {subsubsection}{\numberline {6.11.1.2}lstm}{15}{subsubsection.6.11.1.2}%
+\contentsline {section}{\numberline {6.12}main Namespace Reference}{15}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Function Documentation}{17}{subsection.6.12.1}%
+\contentsline {subsubsection}{\numberline {6.12.1.1}add\_process\_time\_header()}{17}{subsubsection.6.12.1.1}%
+\contentsline {subsubsection}{\numberline {6.12.1.2}add\_security\_headers()}{17}{subsubsection.6.12.1.2}%
+\contentsline {subsubsection}{\numberline {6.12.1.3}check\_ai\_safety()}{17}{subsubsection.6.12.1.3}%
+\contentsline {subsubsection}{\numberline {6.12.1.4}circuit\_breaker()}{17}{subsubsection.6.12.1.4}%
+\contentsline {subsubsection}{\numberline {6.12.1.5}custom\_exception\_handler()}{17}{subsubsection.6.12.1.5}%
+\contentsline {subsubsection}{\numberline {6.12.1.6}get\_cache()}{18}{subsubsection.6.12.1.6}%
+\contentsline {subsubsection}{\numberline {6.12.1.7}get\_db()}{18}{subsubsection.6.12.1.7}%
+\contentsline {subsubsection}{\numberline {6.12.1.8}get\_memcached\_client()}{18}{subsubsection.6.12.1.8}%
+\contentsline {subsubsection}{\numberline {6.12.1.9}get\_metrics()}{18}{subsubsection.6.12.1.9}%
+\contentsline {subsubsection}{\numberline {6.12.1.10}get\_redis\_pool()}{18}{subsubsection.6.12.1.10}%
+\contentsline {subsubsection}{\numberline {6.12.1.11}health\_check()}{18}{subsubsection.6.12.1.11}%
+\contentsline {subsubsection}{\numberline {6.12.1.12}log\_ai\_decision()}{18}{subsubsection.6.12.1.12}%
+\contentsline {subsubsection}{\numberline {6.12.1.13}monitor\_performance()}{18}{subsubsection.6.12.1.13}%
+\contentsline {subsubsection}{\numberline {6.12.1.14}ping\_connection()}{18}{subsubsection.6.12.1.14}%
+\contentsline {subsubsection}{\numberline {6.12.1.15}read\_root()}{18}{subsubsection.6.12.1.15}%
+\contentsline {subsubsection}{\numberline {6.12.1.16}require\_user\_confirmation()}{18}{subsubsection.6.12.1.16}%
+\contentsline {subsubsection}{\numberline {6.12.1.17}run\_all\_strategies()}{18}{subsubsection.6.12.1.17}%
+\contentsline {subsubsection}{\numberline {6.12.1.18}run\_background\_task()}{19}{subsubsection.6.12.1.18}%
+\contentsline {subsubsection}{\numberline {6.12.1.19}update\_metrics()}{19}{subsubsection.6.12.1.19}%
+\contentsline {subsubsection}{\numberline {6.12.1.20}validate\_request()}{19}{subsubsection.6.12.1.20}%
+\contentsline {subsection}{\numberline {6.12.2}Variable Documentation}{19}{subsection.6.12.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.1}ACCESS\_TOKEN\_EXPIRE\_MINUTES}{19}{subsubsection.6.12.2.1}%
+\contentsline {subsubsection}{\numberline {6.12.2.2}AI\_CONFIG}{19}{subsubsection.6.12.2.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.3}ai\_safety\_monitor}{19}{subsubsection.6.12.2.3}%
+\contentsline {subsubsection}{\numberline {6.12.2.4}ALGORITHM}{19}{subsubsection.6.12.2.4}%
+\contentsline {subsubsection}{\numberline {6.12.2.5}allow\_credentials}{19}{subsubsection.6.12.2.5}%
+\contentsline {subsubsection}{\numberline {6.12.2.6}allow\_headers}{20}{subsubsection.6.12.2.6}%
+\contentsline {subsubsection}{\numberline {6.12.2.7}allow\_methods}{20}{subsubsection.6.12.2.7}%
+\contentsline {subsubsection}{\numberline {6.12.2.8}allow\_origin\_regex}{20}{subsubsection.6.12.2.8}%
+\contentsline {subsubsection}{\numberline {6.12.2.9}allow\_origins}{20}{subsubsection.6.12.2.9}%
+\contentsline {subsubsection}{\numberline {6.12.2.10}allowed\_hosts}{20}{subsubsection.6.12.2.10}%
+\contentsline {subsubsection}{\numberline {6.12.2.11}app}{20}{subsubsection.6.12.2.11}%
+\contentsline {subsubsection}{\numberline {6.12.2.12}backend}{20}{subsubsection.6.12.2.12}%
+\contentsline {subsubsection}{\numberline {6.12.2.13}background\_tasks}{20}{subsubsection.6.12.2.13}%
+\contentsline {subsubsection}{\numberline {6.12.2.14}Base}{20}{subsubsection.6.12.2.14}%
+\contentsline {subsubsection}{\numberline {6.12.2.15}before\_send}{20}{subsubsection.6.12.2.15}%
+\contentsline {subsubsection}{\numberline {6.12.2.16}cache}{20}{subsubsection.6.12.2.16}%
+\contentsline {subsubsection}{\numberline {6.12.2.17}cache\_bypass\_func}{20}{subsubsection.6.12.2.17}%
+\contentsline {subsubsection}{\numberline {6.12.2.18}CACHE\_CONFIG}{21}{subsubsection.6.12.2.18}%
+\contentsline {subsubsection}{\numberline {6.12.2.19}cache\_key\_func}{21}{subsubsection.6.12.2.19}%
+\contentsline {subsubsection}{\numberline {6.12.2.20}cache\_manager}{21}{subsubsection.6.12.2.20}%
+\contentsline {subsubsection}{\numberline {6.12.2.21}CACHE\_TTL}{21}{subsubsection.6.12.2.21}%
+\contentsline {subsubsection}{\numberline {6.12.2.22}cache\_ttl}{21}{subsubsection.6.12.2.22}%
+\contentsline {subsubsection}{\numberline {6.12.2.23}circuit\_open}{21}{subsubsection.6.12.2.23}%
+\contentsline {subsubsection}{\numberline {6.12.2.24}CIRCUIT\_TIMEOUT}{21}{subsubsection.6.12.2.24}%
+\contentsline {subsubsection}{\numberline {6.12.2.25}client\_side}{21}{subsubsection.6.12.2.25}%
+\contentsline {subsubsection}{\numberline {6.12.2.26}compresslevel}{21}{subsubsection.6.12.2.26}%
+\contentsline {subsubsection}{\numberline {6.12.2.27}cookie\_domain}{21}{subsubsection.6.12.2.27}%
+\contentsline {subsubsection}{\numberline {6.12.2.28}DATABASE\_URL}{21}{subsubsection.6.12.2.28}%
+\contentsline {subsubsection}{\numberline {6.12.2.29}datefmt}{22}{subsubsection.6.12.2.29}%
+\contentsline {subsubsection}{\numberline {6.12.2.30}dsn}{22}{subsubsection.6.12.2.30}%
+\contentsline {subsubsection}{\numberline {6.12.2.31}engine}{22}{subsubsection.6.12.2.31}%
+\contentsline {subsubsection}{\numberline {6.12.2.32}environment}{22}{subsubsection.6.12.2.32}%
+\contentsline {subsubsection}{\numberline {6.12.2.33}except\_hosts}{22}{subsubsection.6.12.2.33}%
+\contentsline {subsubsection}{\numberline {6.12.2.34}expose\_headers}{22}{subsubsection.6.12.2.34}%
+\contentsline {subsubsection}{\numberline {6.12.2.35}failure\_threshold}{22}{subsubsection.6.12.2.35}%
+\contentsline {subsubsection}{\numberline {6.12.2.36}format}{22}{subsubsection.6.12.2.36}%
+\contentsline {subsubsection}{\numberline {6.12.2.37}handlers}{22}{subsubsection.6.12.2.37}%
+\contentsline {subsubsection}{\numberline {6.12.2.38}headers}{22}{subsubsection.6.12.2.38}%
+\contentsline {subsubsection}{\numberline {6.12.2.39}https\_only}{22}{subsubsection.6.12.2.39}%
+\contentsline {subsubsection}{\numberline {6.12.2.40}include\_body}{22}{subsubsection.6.12.2.40}%
+\contentsline {subsubsection}{\numberline {6.12.2.41}include\_headers}{22}{subsubsection.6.12.2.41}%
+\contentsline {subsubsection}{\numberline {6.12.2.42}integrations}{23}{subsubsection.6.12.2.42}%
+\contentsline {subsubsection}{\numberline {6.12.2.43}jaeger\_exporter}{23}{subsubsection.6.12.2.43}%
+\contentsline {subsubsection}{\numberline {6.12.2.44}key\_func}{23}{subsubsection.6.12.2.44}%
+\contentsline {subsubsection}{\numberline {6.12.2.45}last\_cache\_update}{23}{subsubsection.6.12.2.45}%
+\contentsline {subsubsection}{\numberline {6.12.2.46}last\_failure\_time}{23}{subsubsection.6.12.2.46}%
+\contentsline {subsubsection}{\numberline {6.12.2.47}level}{23}{subsubsection.6.12.2.47}%
+\contentsline {subsubsection}{\numberline {6.12.2.48}log\_format}{23}{subsubsection.6.12.2.48}%
+\contentsline {subsubsection}{\numberline {6.12.2.49}log\_level}{23}{subsubsection.6.12.2.49}%
+\contentsline {subsubsection}{\numberline {6.12.2.50}logger}{23}{subsubsection.6.12.2.50}%
+\contentsline {subsubsection}{\numberline {6.12.2.51}market\_data\_cache}{23}{subsubsection.6.12.2.51}%
+\contentsline {subsubsection}{\numberline {6.12.2.52}max\_age}{23}{subsubsection.6.12.2.52}%
+\contentsline {subsubsection}{\numberline {6.12.2.53}max\_requests}{23}{subsubsection.6.12.2.53}%
+\contentsline {subsubsection}{\numberline {6.12.2.54}memcached\_client}{23}{subsubsection.6.12.2.54}%
+\contentsline {subsubsection}{\numberline {6.12.2.55}metrics\_store}{23}{subsubsection.6.12.2.55}%
+\contentsline {subsubsection}{\numberline {6.12.2.56}minimum\_size}{24}{subsubsection.6.12.2.56}%
+\contentsline {subsubsection}{\numberline {6.12.2.57}on\_circuit\_open}{24}{subsubsection.6.12.2.57}%
+\contentsline {subsubsection}{\numberline {6.12.2.58}on\_error}{24}{subsubsection.6.12.2.58}%
+\contentsline {subsubsection}{\numberline {6.12.2.59}on\_limit\_exceeded}{24}{subsubsection.6.12.2.59}%
+\contentsline {subsubsection}{\numberline {6.12.2.60}on\_slow\_request}{24}{subsubsection.6.12.2.60}%
+\contentsline {subsubsection}{\numberline {6.12.2.61}pwd\_context}{24}{subsubsection.6.12.2.61}%
+\contentsline {subsubsection}{\numberline {6.12.2.62}rate\_limit\_cache}{24}{subsubsection.6.12.2.62}%
+\contentsline {subsubsection}{\numberline {6.12.2.63}RATE\_LIMIT\_REQUESTS}{24}{subsubsection.6.12.2.63}%
+\contentsline {subsubsection}{\numberline {6.12.2.64}RATE\_LIMIT\_WINDOW}{24}{subsubsection.6.12.2.64}%
+\contentsline {subsubsection}{\numberline {6.12.2.65}redis\_pool}{24}{subsubsection.6.12.2.65}%
+\contentsline {subsubsection}{\numberline {6.12.2.66}reset\_timeout}{24}{subsubsection.6.12.2.66}%
+\contentsline {subsubsection}{\numberline {6.12.2.67}same\_site}{24}{subsubsection.6.12.2.67}%
+\contentsline {subsubsection}{\numberline {6.12.2.68}SECRET\_KEY}{24}{subsubsection.6.12.2.68}%
+\contentsline {subsubsection}{\numberline {6.12.2.69}secret\_key}{24}{subsubsection.6.12.2.69}%
+\contentsline {subsubsection}{\numberline {6.12.2.70}server\_side}{24}{subsubsection.6.12.2.70}%
+\contentsline {subsubsection}{\numberline {6.12.2.71}session\_cookie}{25}{subsubsection.6.12.2.71}%
+\contentsline {subsubsection}{\numberline {6.12.2.72}SessionLocal}{25}{subsubsection.6.12.2.72}%
+\contentsline {subsubsection}{\numberline {6.12.2.73}span\_id\_header}{25}{subsubsection.6.12.2.73}%
+\contentsline {subsubsection}{\numberline {6.12.2.74}span\_name\_func}{25}{subsubsection.6.12.2.74}%
+\contentsline {subsubsection}{\numberline {6.12.2.75}span\_processor}{25}{subsubsection.6.12.2.75}%
+\contentsline {subsubsection}{\numberline {6.12.2.76}ssl\_host}{25}{subsubsection.6.12.2.76}%
+\contentsline {subsubsection}{\numberline {6.12.2.77}ssl\_port}{25}{subsubsection.6.12.2.77}%
+\contentsline {subsubsection}{\numberline {6.12.2.78}status\_code}{25}{subsubsection.6.12.2.78}%
+\contentsline {subsubsection}{\numberline {6.12.2.79}storage}{25}{subsubsection.6.12.2.79}%
+\contentsline {subsubsection}{\numberline {6.12.2.80}threshold}{25}{subsubsection.6.12.2.80}%
+\contentsline {subsubsection}{\numberline {6.12.2.81}trace\_id\_header}{25}{subsubsection.6.12.2.81}%
+\contentsline {subsubsection}{\numberline {6.12.2.82}tracer}{25}{subsubsection.6.12.2.82}%
+\contentsline {subsubsection}{\numberline {6.12.2.83}traces\_sample\_rate}{25}{subsubsection.6.12.2.83}%
+\contentsline {subsubsection}{\numberline {6.12.2.84}validators}{25}{subsubsection.6.12.2.84}%
+\contentsline {subsubsection}{\numberline {6.12.2.85}window}{26}{subsubsection.6.12.2.85}%
+\contentsline {section}{\numberline {6.13}manual\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}trade Namespace Reference}{26}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Function Documentation}{26}{subsection.6.13.1}%
+\contentsline {subsubsection}{\numberline {6.13.1.1}manual\_trade()}{26}{subsubsection.6.13.1.1}%
+\contentsline {subsection}{\numberline {6.13.2}Variable Documentation}{26}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}router}{26}{subsubsection.6.13.2.1}%
+\contentsline {section}{\numberline {6.14}market\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}predictor Namespace Reference}{26}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Variable Documentation}{26}{subsection.6.14.1}%
+\contentsline {subsubsection}{\numberline {6.14.1.1}logger}{26}{subsubsection.6.14.1.1}%
+\contentsline {subsubsection}{\numberline {6.14.1.2}market\_predictor}{26}{subsubsection.6.14.1.2}%
+\contentsline {section}{\numberline {6.15}market\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}simulation Namespace Reference}{26}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Variable Documentation}{27}{subsection.6.15.1}%
+\contentsline {subsubsection}{\numberline {6.15.1.1}logger}{27}{subsubsection.6.15.1.1}%
+\contentsline {subsubsection}{\numberline {6.15.1.2}market\_simulator}{27}{subsubsection.6.15.1.2}%
+\contentsline {section}{\numberline {6.16}mean\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}reversion Namespace Reference}{27}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Function Documentation}{27}{subsection.6.16.1}%
+\contentsline {subsubsection}{\numberline {6.16.1.1}mean\_reversion\_strategy()}{27}{subsubsection.6.16.1.1}%
+\contentsline {section}{\numberline {6.17}meta\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}learner Namespace Reference}{27}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Variable Documentation}{27}{subsection.6.17.1}%
+\contentsline {subsubsection}{\numberline {6.17.1.1}logger}{27}{subsubsection.6.17.1.1}%
+\contentsline {subsubsection}{\numberline {6.17.1.2}meta}{27}{subsubsection.6.17.1.2}%
+\contentsline {section}{\numberline {6.18}meta\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}reinforcement Namespace Reference}{27}{section.6.18}%
+\contentsline {section}{\numberline {6.19}metrics Namespace Reference}{28}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Function Documentation}{28}{subsection.6.19.1}%
+\contentsline {subsubsection}{\numberline {6.19.1.1}\_fast\_basic\_metrics()}{28}{subsubsection.6.19.1.1}%
+\contentsline {subsubsection}{\numberline {6.19.1.2}\_fast\_max\_drawdown()}{28}{subsubsection.6.19.1.2}%
+\contentsline {subsubsection}{\numberline {6.19.1.3}\_fast\_sharpe\_ratio()}{28}{subsubsection.6.19.1.3}%
+\contentsline {subsection}{\numberline {6.19.2}Variable Documentation}{28}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}CACHE\_TTL}{28}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}last\_cache\_update}{28}{subsubsection.6.19.2.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.3}logger}{28}{subsubsection.6.19.2.3}%
+\contentsline {subsubsection}{\numberline {6.19.2.4}metrics\_cache}{29}{subsubsection.6.19.2.4}%
+\contentsline {section}{\numberline {6.20}momentum Namespace Reference}{29}{section.6.20}%
+\contentsline {subsection}{\numberline {6.20.1}Function Documentation}{29}{subsection.6.20.1}%
+\contentsline {subsubsection}{\numberline {6.20.1.1}momentum\_strategy()}{29}{subsubsection.6.20.1.1}%
+\contentsline {section}{\numberline {6.21}nlp\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}sentiment Namespace Reference}{29}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Function Documentation}{29}{subsection.6.21.1}%
+\contentsline {subsubsection}{\numberline {6.21.1.1}analyze\_foreign\_news()}{29}{subsubsection.6.21.1.1}%
+\contentsline {subsection}{\numberline {6.21.2}Variable Documentation}{29}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}sentiment\_pipeline}{29}{subsubsection.6.21.2.1}%
+\contentsline {subsubsection}{\numberline {6.21.2.2}translator}{29}{subsubsection.6.21.2.2}%
+\contentsline {section}{\numberline {6.22}portfolio\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}optimizer Namespace Reference}{29}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Variable Documentation}{30}{subsection.6.22.1}%
+\contentsline {subsubsection}{\numberline {6.22.1.1}logger}{30}{subsubsection.6.22.1.1}%
+\contentsline {subsubsection}{\numberline {6.22.1.2}portfolio\_optimizer}{30}{subsubsection.6.22.1.2}%
+\contentsline {section}{\numberline {6.23}real\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}time\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}analysis Namespace Reference}{30}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Variable Documentation}{30}{subsection.6.23.1}%
+\contentsline {subsubsection}{\numberline {6.23.1.1}logger}{30}{subsubsection.6.23.1.1}%
+\contentsline {subsubsection}{\numberline {6.23.1.2}real\_time\_analyzer}{30}{subsubsection.6.23.1.2}%
+\contentsline {section}{\numberline {6.24}redis\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}client Namespace Reference}{30}{section.6.24}%
+\contentsline {section}{\numberline {6.25}reporting Namespace Reference}{30}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Variable Documentation}{30}{subsection.6.25.1}%
+\contentsline {subsubsection}{\numberline {6.25.1.1}logger}{30}{subsubsection.6.25.1.1}%
+\contentsline {section}{\numberline {6.26}risk\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}management Namespace Reference}{30}{section.6.26}%
+\contentsline {subsection}{\numberline {6.26.1}Variable Documentation}{31}{subsection.6.26.1}%
+\contentsline {subsubsection}{\numberline {6.26.1.1}logger}{31}{subsubsection.6.26.1.1}%
+\contentsline {subsubsection}{\numberline {6.26.1.2}risk\_manager}{31}{subsubsection.6.26.1.2}%
+\contentsline {section}{\numberline {6.27}risk\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}manager Namespace Reference}{31}{section.6.27}%
+\contentsline {subsection}{\numberline {6.27.1}Variable Documentation}{31}{subsection.6.27.1}%
+\contentsline {subsubsection}{\numberline {6.27.1.1}logger}{31}{subsubsection.6.27.1.1}%
+\contentsline {subsubsection}{\numberline {6.27.1.2}risk\_manager}{31}{subsubsection.6.27.1.2}%
+\contentsline {section}{\numberline {6.28}send\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}push Namespace Reference}{31}{section.6.28}%
+\contentsline {subsection}{\numberline {6.28.1}Function Documentation}{31}{subsection.6.28.1}%
+\contentsline {subsubsection}{\numberline {6.28.1.1}send\_mobile\_push()}{31}{subsubsection.6.28.1.1}%
+\contentsline {section}{\numberline {6.29}settings Namespace Reference}{31}{section.6.29}%
+\contentsline {subsection}{\numberline {6.29.1}Variable Documentation}{32}{subsection.6.29.1}%
+\contentsline {subsubsection}{\numberline {6.29.1.1}settings}{32}{subsubsection.6.29.1.1}%
+\contentsline {section}{\numberline {6.30}strategy\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}framework Namespace Reference}{32}{section.6.30}%
+\contentsline {subsection}{\numberline {6.30.1}Variable Documentation}{32}{subsection.6.30.1}%
+\contentsline {subsubsection}{\numberline {6.30.1.1}logger}{32}{subsubsection.6.30.1.1}%
+\contentsline {section}{\numberline {6.31}strategy\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}runner Namespace Reference}{32}{section.6.31}%
+\contentsline {section}{\numberline {6.32}telegram\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}alerts Namespace Reference}{32}{section.6.32}%
+\contentsline {subsection}{\numberline {6.32.1}Function Documentation}{32}{subsection.6.32.1}%
+\contentsline {subsubsection}{\numberline {6.32.1.1}send\_telegram\_message()}{32}{subsubsection.6.32.1.1}%
+\contentsline {section}{\numberline {6.33}test\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}real\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}time\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}analysis Namespace Reference}{32}{section.6.33}%
+\contentsline {section}{\numberline {6.34}test\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}reporting Namespace Reference}{32}{section.6.34}%
+\contentsline {section}{\numberline {6.35}trade\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}executor Namespace Reference}{32}{section.6.35}%
+\contentsline {subsection}{\numberline {6.35.1}Function Documentation}{33}{subsection.6.35.1}%
+\contentsline {subsubsection}{\numberline {6.35.1.1}execute\_trade()}{33}{subsubsection.6.35.1.1}%
+\contentsline {section}{\numberline {6.36}train\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}lstm Namespace Reference}{33}{section.6.36}%
+\contentsline {subsection}{\numberline {6.36.1}Function Documentation}{33}{subsection.6.36.1}%
+\contentsline {subsubsection}{\numberline {6.36.1.1}train\_lstm\_model()}{33}{subsubsection.6.36.1.1}%
+\contentsline {section}{\numberline {6.37}transformer\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}model Namespace Reference}{33}{section.6.37}%
+\contentsline {subsection}{\numberline {6.37.1}Variable Documentation}{33}{subsection.6.37.1}%
+\contentsline {subsubsection}{\numberline {6.37.1.1}logger}{33}{subsubsection.6.37.1.1}%
+\contentsline {subsubsection}{\numberline {6.37.1.2}transformer}{33}{subsubsection.6.37.1.2}%
+\contentsline {section}{\numberline {6.38}twelve\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}data Namespace Reference}{33}{section.6.38}%
+\contentsline {subsection}{\numberline {6.38.1}Function Documentation}{34}{subsection.6.38.1}%
+\contentsline {subsubsection}{\numberline {6.38.1.1}fetch\_realtime\_data()}{34}{subsubsection.6.38.1.1}%
+\contentsline {section}{\numberline {6.39}websocket\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}stream Namespace Reference}{34}{section.6.39}%
+\contentsline {chapter}{\numberline {7}Class Documentation}{35}{chapter.7}%
+\contentsline {section}{\numberline {7.1}backtesting.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Backtester Class Reference}{35}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Constructor \& Destructor Documentation}{35}{subsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.1.1}\_\_init\_\_()}{35}{subsubsection.7.1.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Member Function Documentation}{36}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}calculate\_metrics()}{36}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}calculate\_position\_size()}{36}{subsubsection.7.1.2.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.3}close\_trade()}{36}{subsubsection.7.1.2.3}%
+\contentsline {subsubsection}{\numberline {7.1.2.4}execute\_trade()}{36}{subsubsection.7.1.2.4}%
+\contentsline {subsubsection}{\numberline {7.1.2.5}initialize\_portfolio()}{36}{subsubsection.7.1.2.5}%
+\contentsline {subsubsection}{\numberline {7.1.2.6}plot\_results()}{36}{subsubsection.7.1.2.6}%
+\contentsline {subsubsection}{\numberline {7.1.2.7}run\_backtest()}{37}{subsubsection.7.1.2.7}%
+\contentsline {subsection}{\numberline {7.1.3}Member Data Documentation}{37}{subsection.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.1}commission}{37}{subsubsection.7.1.3.1}%
+\contentsline {subsubsection}{\numberline {7.1.3.2}current\_position}{37}{subsubsection.7.1.3.2}%
+\contentsline {subsubsection}{\numberline {7.1.3.3}data\_frequency}{37}{subsubsection.7.1.3.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.4}initial\_capital}{37}{subsubsection.7.1.3.4}%
+\contentsline {subsubsection}{\numberline {7.1.3.5}max\_positions}{37}{subsubsection.7.1.3.5}%
+\contentsline {subsubsection}{\numberline {7.1.3.6}metrics}{37}{subsubsection.7.1.3.6}%
+\contentsline {subsubsection}{\numberline {7.1.3.7}portfolio}{37}{subsubsection.7.1.3.7}%
+\contentsline {subsubsection}{\numberline {7.1.3.8}risk\_per\_trade}{37}{subsubsection.7.1.3.8}%
+\contentsline {subsubsection}{\numberline {7.1.3.9}slippage}{37}{subsubsection.7.1.3.9}%
+\contentsline {subsubsection}{\numberline {7.1.3.10}trades}{37}{subsubsection.7.1.3.10}%
+\contentsline {section}{\numberline {7.2}main.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Cache\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Manager Class Reference}{38}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Constructor \& Destructor Documentation}{38}{subsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.1.1}\_\_init\_\_()}{38}{subsubsection.7.2.1.1}%
+\contentsline {subsection}{\numberline {7.2.2}Member Function Documentation}{38}{subsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.1}get()}{38}{subsubsection.7.2.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2.2}invalidate()}{38}{subsubsection.7.2.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.3}set()}{38}{subsubsection.7.2.2.3}%
+\contentsline {subsection}{\numberline {7.2.3}Member Data Documentation}{38}{subsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.3.1}cache}{38}{subsubsection.7.2.3.1}%
+\contentsline {subsubsection}{\numberline {7.2.3.2}lock}{38}{subsubsection.7.2.3.2}%
+\contentsline {section}{\numberline {7.3}feature\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}engineering.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Feature\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Engineer Class Reference}{39}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Constructor \& Destructor Documentation}{40}{subsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.1.1}\_\_init\_\_()}{40}{subsubsection.7.3.1.1}%
+\contentsline {subsection}{\numberline {7.3.2}Member Function Documentation}{40}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}\_check\_computation\_time()}{40}{subsubsection.7.3.2.1}%
+\contentsline {subsubsection}{\numberline {7.3.2.2}\_check\_memory\_usage()}{40}{subsubsection.7.3.2.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.3}\_handle\_error()}{40}{subsubsection.7.3.2.3}%
+\contentsline {subsubsection}{\numberline {7.3.2.4}\_log\_feature\_calculation()}{40}{subsubsection.7.3.2.4}%
+\contentsline {subsubsection}{\numberline {7.3.2.5}\_validate\_configuration()}{41}{subsubsection.7.3.2.5}%
+\contentsline {subsubsection}{\numberline {7.3.2.6}calculate\_market\_regime\_features()}{41}{subsubsection.7.3.2.6}%
+\contentsline {subsubsection}{\numberline {7.3.2.7}calculate\_momentum\_features()}{41}{subsubsection.7.3.2.7}%
+\contentsline {subsubsection}{\numberline {7.3.2.8}calculate\_technical\_indicators()}{41}{subsubsection.7.3.2.8}%
+\contentsline {subsubsection}{\numberline {7.3.2.9}calculate\_time\_features()}{41}{subsubsection.7.3.2.9}%
+\contentsline {subsubsection}{\numberline {7.3.2.10}calculate\_volatility\_features()}{41}{subsubsection.7.3.2.10}%
+\contentsline {subsubsection}{\numberline {7.3.2.11}calculate\_volume\_features()}{41}{subsubsection.7.3.2.11}%
+\contentsline {subsubsection}{\numberline {7.3.2.12}create\_feature\_matrix()}{42}{subsubsection.7.3.2.12}%
+\contentsline {subsubsection}{\numberline {7.3.2.13}get\_feature\_columns()}{42}{subsubsection.7.3.2.13}%
+\contentsline {subsubsection}{\numberline {7.3.2.14}normalize\_features()}{42}{subsubsection.7.3.2.14}%
+\contentsline {subsection}{\numberline {7.3.3}Member Data Documentation}{42}{subsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.1}computation\_time\_limit}{42}{subsubsection.7.3.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.3.2}error\_count}{42}{subsubsection.7.3.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3.3}feature\_blacklist}{42}{subsubsection.7.3.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.4}feature\_cache}{42}{subsubsection.7.3.3.4}%
+\contentsline {subsubsection}{\numberline {7.3.3.5}feature\_calculation\_times}{42}{subsubsection.7.3.3.5}%
+\contentsline {subsubsection}{\numberline {7.3.3.6}feature\_columns}{42}{subsubsection.7.3.3.6}%
+\contentsline {subsubsection}{\numberline {7.3.3.7}feature\_importance}{42}{subsubsection.7.3.3.7}%
+\contentsline {subsubsection}{\numberline {7.3.3.8}feature\_importance\_threshold}{42}{subsubsection.7.3.3.8}%
+\contentsline {subsubsection}{\numberline {7.3.3.9}feature\_selector}{43}{subsubsection.7.3.3.9}%
+\contentsline {subsubsection}{\numberline {7.3.3.10}feature\_whitelist}{43}{subsubsection.7.3.3.10}%
+\contentsline {subsubsection}{\numberline {7.3.3.11}last\_feature\_selection}{43}{subsubsection.7.3.3.11}%
+\contentsline {subsubsection}{\numberline {7.3.3.12}last\_feature\_update}{43}{subsubsection.7.3.3.12}%
+\contentsline {subsubsection}{\numberline {7.3.3.13}last\_update}{43}{subsubsection.7.3.3.13}%
+\contentsline {subsubsection}{\numberline {7.3.3.14}logger}{43}{subsubsection.7.3.3.14}%
+\contentsline {subsubsection}{\numberline {7.3.3.15}max\_errors}{43}{subsubsection.7.3.3.15}%
+\contentsline {subsubsection}{\numberline {7.3.3.16}max\_features}{43}{subsubsection.7.3.3.16}%
+\contentsline {subsubsection}{\numberline {7.3.3.17}memory\_limit}{43}{subsubsection.7.3.3.17}%
+\contentsline {subsubsection}{\numberline {7.3.3.18}memory\_usage}{43}{subsubsection.7.3.3.18}%
+\contentsline {subsubsection}{\numberline {7.3.3.19}momentum\_features}{43}{subsubsection.7.3.3.19}%
+\contentsline {subsubsection}{\numberline {7.3.3.20}scaler}{43}{subsubsection.7.3.3.20}%
+\contentsline {subsubsection}{\numberline {7.3.3.21}technical\_indicators}{43}{subsubsection.7.3.3.21}%
+\contentsline {subsubsection}{\numberline {7.3.3.22}user\_config}{43}{subsubsection.7.3.3.22}%
+\contentsline {subsubsection}{\numberline {7.3.3.23}user\_override}{43}{subsubsection.7.3.3.23}%
+\contentsline {subsubsection}{\numberline {7.3.3.24}volatility\_features}{44}{subsubsection.7.3.3.24}%
+\contentsline {subsubsection}{\numberline {7.3.3.25}volume\_features}{44}{subsubsection.7.3.3.25}%
+\contentsline {subsubsection}{\numberline {7.3.3.26}window\_sizes}{44}{subsubsection.7.3.3.26}%
+\contentsline {section}{\numberline {7.4}legal.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Legal\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Protector Class Reference}{44}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{44}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Constructor \& Destructor Documentation}{44}{subsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.2.1}\_\_init\_\_()}{44}{subsubsection.7.4.2.1}%
+\contentsline {subsection}{\numberline {7.4.3}Member Function Documentation}{45}{subsection.7.4.3}%
+\contentsline {subsubsection}{\numberline {7.4.3.1}\_load\_legal\_document()}{45}{subsubsection.7.4.3.1}%
+\contentsline {subsubsection}{\numberline {7.4.3.2}\_save\_compliance\_record()}{45}{subsubsection.7.4.3.2}%
+\contentsline {subsubsection}{\numberline {7.4.3.3}check\_compliance()}{45}{subsubsection.7.4.3.3}%
+\contentsline {subsubsection}{\numberline {7.4.3.4}get\_disclaimer()}{45}{subsubsection.7.4.3.4}%
+\contentsline {subsubsection}{\numberline {7.4.3.5}get\_privacy\_policy()}{45}{subsubsection.7.4.3.5}%
+\contentsline {subsubsection}{\numberline {7.4.3.6}get\_user\_agreement()}{45}{subsubsection.7.4.3.6}%
+\contentsline {subsubsection}{\numberline {7.4.3.7}log\_action()}{45}{subsubsection.7.4.3.7}%
+\contentsline {subsubsection}{\numberline {7.4.3.8}require\_user\_agreement()}{46}{subsubsection.7.4.3.8}%
+\contentsline {subsubsection}{\numberline {7.4.3.9}show\_disclaimer()}{46}{subsubsection.7.4.3.9}%
+\contentsline {subsubsection}{\numberline {7.4.3.10}validate\_usage()}{46}{subsubsection.7.4.3.10}%
+\contentsline {subsection}{\numberline {7.4.4}Member Data Documentation}{46}{subsection.7.4.4}%
+\contentsline {subsubsection}{\numberline {7.4.4.1}compliance\_dir}{46}{subsubsection.7.4.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.4.2}disclaimer}{46}{subsubsection.7.4.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.4.3}disclaimer\_shown}{46}{subsubsection.7.4.4.3}%
+\contentsline {subsubsection}{\numberline {7.4.4.4}last\_agreement\_check}{46}{subsubsection.7.4.4.4}%
+\contentsline {subsubsection}{\numberline {7.4.4.5}last\_disclaimer\_check}{46}{subsubsection.7.4.4.5}%
+\contentsline {subsubsection}{\numberline {7.4.4.6}logger}{46}{subsubsection.7.4.4.6}%
+\contentsline {subsubsection}{\numberline {7.4.4.7}privacy\_policy}{46}{subsubsection.7.4.4.7}%
+\contentsline {subsubsection}{\numberline {7.4.4.8}user\_agreement}{46}{subsubsection.7.4.4.8}%
+\contentsline {subsubsection}{\numberline {7.4.4.9}user\_agreement\_accepted}{46}{subsubsection.7.4.4.9}%
+\contentsline {section}{\numberline {7.5}lstm\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}model.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}LSTMModel Class Reference}{47}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Constructor \& Destructor Documentation}{48}{subsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.1.1}\_\_init\_\_()}{48}{subsubsection.7.5.1.1}%
+\contentsline {subsection}{\numberline {7.5.2}Member Function Documentation}{48}{subsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.1}\_check\_cpu\_usage()}{48}{subsubsection.7.5.2.1}%
+\contentsline {subsubsection}{\numberline {7.5.2.2}\_check\_memory\_usage()}{48}{subsubsection.7.5.2.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.3}\_handle\_error()}{48}{subsubsection.7.5.2.3}%
+\contentsline {subsubsection}{\numberline {7.5.2.4}\_log\_model\_state()}{49}{subsubsection.7.5.2.4}%
+\contentsline {subsubsection}{\numberline {7.5.2.5}\_save\_metrics()}{49}{subsubsection.7.5.2.5}%
+\contentsline {subsubsection}{\numberline {7.5.2.6}\_validate\_configuration()}{49}{subsubsection.7.5.2.6}%
+\contentsline {subsubsection}{\numberline {7.5.2.7}\_validate\_data()}{49}{subsubsection.7.5.2.7}%
+\contentsline {subsubsection}{\numberline {7.5.2.8}build\_model()}{49}{subsubsection.7.5.2.8}%
+\contentsline {subsubsection}{\numberline {7.5.2.9}evaluate()}{49}{subsubsection.7.5.2.9}%
+\contentsline {subsubsection}{\numberline {7.5.2.10}get\_metrics()}{49}{subsubsection.7.5.2.10}%
+\contentsline {subsubsection}{\numberline {7.5.2.11}get\_model\_summary()}{49}{subsubsection.7.5.2.11}%
+\contentsline {subsubsection}{\numberline {7.5.2.12}load\_model()}{50}{subsubsection.7.5.2.12}%
+\contentsline {subsubsection}{\numberline {7.5.2.13}predict()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{50}{subsubsection.7.5.2.13}%
+\contentsline {subsubsection}{\numberline {7.5.2.14}predict()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{50}{subsubsection.7.5.2.14}%
+\contentsline {subsubsection}{\numberline {7.5.2.15}prepare\_data()}{50}{subsubsection.7.5.2.15}%
+\contentsline {subsubsection}{\numberline {7.5.2.16}save\_model()}{50}{subsubsection.7.5.2.16}%
+\contentsline {subsubsection}{\numberline {7.5.2.17}train()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{50}{subsubsection.7.5.2.17}%
+\contentsline {subsubsection}{\numberline {7.5.2.18}train()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{50}{subsubsection.7.5.2.18}%
+\contentsline {subsection}{\numberline {7.5.3}Member Data Documentation}{51}{subsection.7.5.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.1}batch\_size}{51}{subsubsection.7.5.3.1}%
+\contentsline {subsubsection}{\numberline {7.5.3.2}cpu\_usage}{51}{subsubsection.7.5.3.2}%
+\contentsline {subsubsection}{\numberline {7.5.3.3}dropout\_rate}{51}{subsubsection.7.5.3.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.4}epochs}{51}{subsubsection.7.5.3.4}%
+\contentsline {subsubsection}{\numberline {7.5.3.5}error\_count}{51}{subsubsection.7.5.3.5}%
+\contentsline {subsubsection}{\numberline {7.5.3.6}error\_threshold}{51}{subsubsection.7.5.3.6}%
+\contentsline {subsubsection}{\numberline {7.5.3.7}input\_shape}{51}{subsubsection.7.5.3.7}%
+\contentsline {subsubsection}{\numberline {7.5.3.8}is\_predicting}{51}{subsubsection.7.5.3.8}%
+\contentsline {subsubsection}{\numberline {7.5.3.9}is\_training}{51}{subsubsection.7.5.3.9}%
+\contentsline {subsubsection}{\numberline {7.5.3.10}last\_checkpoint}{51}{subsubsection.7.5.3.10}%
+\contentsline {subsubsection}{\numberline {7.5.3.11}last\_error}{51}{subsubsection.7.5.3.11}%
+\contentsline {subsubsection}{\numberline {7.5.3.12}last\_error\_timestamp}{51}{subsubsection.7.5.3.12}%
+\contentsline {subsubsection}{\numberline {7.5.3.13}last\_memory\_check}{51}{subsubsection.7.5.3.13}%
+\contentsline {subsubsection}{\numberline {7.5.3.14}last\_prediction\_start}{51}{subsubsection.7.5.3.14}%
+\contentsline {subsubsection}{\numberline {7.5.3.15}last\_training\_start}{51}{subsubsection.7.5.3.15}%
+\contentsline {subsubsection}{\numberline {7.5.3.16}last\_update}{52}{subsubsection.7.5.3.16}%
+\contentsline {subsubsection}{\numberline {7.5.3.17}learning\_rate}{52}{subsubsection.7.5.3.17}%
+\contentsline {subsubsection}{\numberline {7.5.3.18}logger}{52}{subsubsection.7.5.3.18}%
+\contentsline {subsubsection}{\numberline {7.5.3.19}max\_consecutive\_errors}{52}{subsubsection.7.5.3.19}%
+\contentsline {subsubsection}{\numberline {7.5.3.20}max\_memory\_usage}{52}{subsubsection.7.5.3.20}%
+\contentsline {subsubsection}{\numberline {7.5.3.21}max\_prediction\_time}{52}{subsubsection.7.5.3.21}%
+\contentsline {subsubsection}{\numberline {7.5.3.22}max\_training\_time}{52}{subsubsection.7.5.3.22}%
+\contentsline {subsubsection}{\numberline {7.5.3.23}memory\_usage}{52}{subsubsection.7.5.3.23}%
+\contentsline {subsubsection}{\numberline {7.5.3.24}metrics}{52}{subsubsection.7.5.3.24}%
+\contentsline {subsubsection}{\numberline {7.5.3.25}model}{52}{subsubsection.7.5.3.25}%
+\contentsline {subsubsection}{\numberline {7.5.3.26}model\_config}{52}{subsubsection.7.5.3.26}%
+\contentsline {subsubsection}{\numberline {7.5.3.27}patience}{52}{subsubsection.7.5.3.27}%
+\contentsline {subsubsection}{\numberline {7.5.3.28}prediction\_times}{52}{subsubsection.7.5.3.28}%
+\contentsline {subsubsection}{\numberline {7.5.3.29}scaler}{53}{subsubsection.7.5.3.29}%
+\contentsline {subsubsection}{\numberline {7.5.3.30}train\_metrics}{53}{subsubsection.7.5.3.30}%
+\contentsline {subsubsection}{\numberline {7.5.3.31}training\_times}{53}{subsubsection.7.5.3.31}%
+\contentsline {subsubsection}{\numberline {7.5.3.32}user\_config}{53}{subsubsection.7.5.3.32}%
+\contentsline {subsubsection}{\numberline {7.5.3.33}user\_configured}{53}{subsubsection.7.5.3.33}%
+\contentsline {subsubsection}{\numberline {7.5.3.34}user\_override}{53}{subsubsection.7.5.3.34}%
+\contentsline {subsubsection}{\numberline {7.5.3.35}user\_paused}{53}{subsubsection.7.5.3.35}%
+\contentsline {subsubsection}{\numberline {7.5.3.36}verbose}{53}{subsubsection.7.5.3.36}%
+\contentsline {section}{\numberline {7.6}market\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}predictor.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Market\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Predictor Class Reference}{53}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Constructor \& Destructor Documentation}{54}{subsection.7.6.1}%
+\contentsline {subsubsection}{\numberline {7.6.1.1}\_\_init\_\_()}{54}{subsubsection.7.6.1.1}%
+\contentsline {subsection}{\numberline {7.6.2}Member Function Documentation}{54}{subsection.7.6.2}%
+\contentsline {subsubsection}{\numberline {7.6.2.1}create\_prediction\_pipeline()}{54}{subsubsection.7.6.2.1}%
+\contentsline {subsubsection}{\numberline {7.6.2.2}evaluate()}{54}{subsubsection.7.6.2.2}%
+\contentsline {subsubsection}{\numberline {7.6.2.3}get\_feature\_importances()}{54}{subsubsection.7.6.2.3}%
+\contentsline {subsubsection}{\numberline {7.6.2.4}get\_model\_metrics()}{55}{subsubsection.7.6.2.4}%
+\contentsline {subsubsection}{\numberline {7.6.2.5}predict()}{55}{subsubsection.7.6.2.5}%
+\contentsline {subsubsection}{\numberline {7.6.2.6}prepare\_features()}{55}{subsubsection.7.6.2.6}%
+\contentsline {subsubsection}{\numberline {7.6.2.7}train\_model()}{55}{subsubsection.7.6.2.7}%
+\contentsline {subsection}{\numberline {7.6.3}Member Data Documentation}{55}{subsection.7.6.3}%
+\contentsline {subsubsection}{\numberline {7.6.3.1}feature\_importance\_threshold}{55}{subsubsection.7.6.3.1}%
+\contentsline {subsubsection}{\numberline {7.6.3.2}feature\_importances}{55}{subsubsection.7.6.3.2}%
+\contentsline {subsubsection}{\numberline {7.6.3.3}last\_update}{55}{subsubsection.7.6.3.3}%
+\contentsline {subsubsection}{\numberline {7.6.3.4}lookback\_window}{55}{subsubsection.7.6.3.4}%
+\contentsline {subsubsection}{\numberline {7.6.3.5}model}{55}{subsubsection.7.6.3.5}%
+\contentsline {subsubsection}{\numberline {7.6.3.6}model\_type}{55}{subsubsection.7.6.3.6}%
+\contentsline {subsubsection}{\numberline {7.6.3.7}prediction\_horizon}{56}{subsubsection.7.6.3.7}%
+\contentsline {subsubsection}{\numberline {7.6.3.8}scaler}{56}{subsubsection.7.6.3.8}%
+\contentsline {subsubsection}{\numberline {7.6.3.9}validation\_split}{56}{subsubsection.7.6.3.9}%
+\contentsline {section}{\numberline {7.7}market\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}simulation.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Market\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Simulator Class Reference}{56}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Constructor \& Destructor Documentation}{56}{subsection.7.7.1}%
+\contentsline {subsubsection}{\numberline {7.7.1.1}\_\_init\_\_()}{56}{subsubsection.7.7.1.1}%
+\contentsline {subsection}{\numberline {7.7.2}Member Function Documentation}{57}{subsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.1}calculate\_market\_impact()}{57}{subsubsection.7.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.7.2.2}get\_simulation\_metrics()}{57}{subsubsection.7.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.3}plot\_market\_simulation()}{57}{subsubsection.7.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.7.2.4}simulate\_liquidity()}{57}{subsubsection.7.7.2.4}%
+\contentsline {subsubsection}{\numberline {7.7.2.5}simulate\_market\_impact()}{57}{subsubsection.7.7.2.5}%
+\contentsline {subsubsection}{\numberline {7.7.2.6}simulate\_order\_book()}{57}{subsubsection.7.7.2.6}%
+\contentsline {subsubsection}{\numberline {7.7.2.7}simulate\_trade()}{58}{subsubsection.7.7.2.7}%
+\contentsline {subsubsection}{\numberline {7.7.2.8}simulate\_trading\_day()}{58}{subsubsection.7.7.2.8}%
+\contentsline {subsection}{\numberline {7.7.3}Member Data Documentation}{58}{subsection.7.7.3}%
+\contentsline {subsubsection}{\numberline {7.7.3.1}cost\_analyzer}{58}{subsubsection.7.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.7.3.2}liquidity\_threshold}{58}{subsubsection.7.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.7.3.3}market\_data}{58}{subsubsection.7.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.7.3.4}market\_impact\_exponent}{58}{subsubsection.7.7.3.4}%
+\contentsline {subsubsection}{\numberline {7.7.3.5}metrics}{58}{subsubsection.7.7.3.5}%
+\contentsline {subsubsection}{\numberline {7.7.3.6}order\_book\_depth}{58}{subsubsection.7.7.3.6}%
+\contentsline {subsubsection}{\numberline {7.7.3.7}slippage\_base}{58}{subsubsection.7.7.3.7}%
+\contentsline {section}{\numberline {7.8}meta\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}learner.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Meta\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Learner Class Reference}{58}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Constructor \& Destructor Documentation}{59}{subsection.7.8.1}%
+\contentsline {subsubsection}{\numberline {7.8.1.1}\_\_init\_\_()}{59}{subsubsection.7.8.1.1}%
+\contentsline {subsection}{\numberline {7.8.2}Member Function Documentation}{59}{subsection.7.8.2}%
+\contentsline {subsubsection}{\numberline {7.8.2.1}\_calculate\_features()}{59}{subsubsection.7.8.2.1}%
+\contentsline {subsubsection}{\numberline {7.8.2.2}\_get\_time\_of\_day\_feature()}{59}{subsubsection.7.8.2.2}%
+\contentsline {subsubsection}{\numberline {7.8.2.3}\_prepare\_features()}{60}{subsubsection.7.8.2.3}%
+\contentsline {subsubsection}{\numberline {7.8.2.4}confidence\_score()}{60}{subsubsection.7.8.2.4}%
+\contentsline {subsubsection}{\numberline {7.8.2.5}evaluate\_strategies()}{60}{subsubsection.7.8.2.5}%
+\contentsline {subsubsection}{\numberline {7.8.2.6}get\_strategy\_metrics()}{60}{subsubsection.7.8.2.6}%
+\contentsline {subsubsection}{\numberline {7.8.2.7}load\_history()}{60}{subsubsection.7.8.2.7}%
+\contentsline {subsubsection}{\numberline {7.8.2.8}recommend\_strategies()}{60}{subsubsection.7.8.2.8}%
+\contentsline {subsubsection}{\numberline {7.8.2.9}train\_model()}{60}{subsubsection.7.8.2.9}%
+\contentsline {subsection}{\numberline {7.8.3}Member Data Documentation}{60}{subsection.7.8.3}%
+\contentsline {subsubsection}{\numberline {7.8.3.1}confidence\_threshold}{60}{subsubsection.7.8.3.1}%
+\contentsline {subsubsection}{\numberline {7.8.3.2}feature\_columns}{61}{subsubsection.7.8.3.2}%
+\contentsline {subsubsection}{\numberline {7.8.3.3}history\_file}{61}{subsubsection.7.8.3.3}%
+\contentsline {subsubsection}{\numberline {7.8.3.4}last\_update}{61}{subsubsection.7.8.3.4}%
+\contentsline {subsubsection}{\numberline {7.8.3.5}lookback\_window}{61}{subsubsection.7.8.3.5}%
+\contentsline {subsubsection}{\numberline {7.8.3.6}min\_samples}{61}{subsubsection.7.8.3.6}%
+\contentsline {subsubsection}{\numberline {7.8.3.7}model}{61}{subsubsection.7.8.3.7}%
+\contentsline {subsubsection}{\numberline {7.8.3.8}scaler}{61}{subsubsection.7.8.3.8}%
+\contentsline {subsubsection}{\numberline {7.8.3.9}strategy\_scores}{61}{subsubsection.7.8.3.9}%
+\contentsline {section}{\numberline {7.9}meta\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}reinforcement.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Meta\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Reinforcement\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Learner Class Reference}{61}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Constructor \& Destructor Documentation}{61}{subsection.7.9.1}%
+\contentsline {subsubsection}{\numberline {7.9.1.1}\_\_init\_\_()}{61}{subsubsection.7.9.1.1}%
+\contentsline {subsection}{\numberline {7.9.2}Member Function Documentation}{62}{subsection.7.9.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.1}choose\_strategy()}{62}{subsubsection.7.9.2.1}%
+\contentsline {subsubsection}{\numberline {7.9.2.2}record\_trade\_result()}{62}{subsubsection.7.9.2.2}%
+\contentsline {subsection}{\numberline {7.9.3}Member Data Documentation}{62}{subsection.7.9.3}%
+\contentsline {subsubsection}{\numberline {7.9.3.1}q\_scores}{62}{subsubsection.7.9.3.1}%
+\contentsline {subsubsection}{\numberline {7.9.3.2}rewards}{62}{subsubsection.7.9.3.2}%
+\contentsline {section}{\numberline {7.10}metrics.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Metrics Class Reference}{62}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}Constructor \& Destructor Documentation}{62}{subsection.7.10.1}%
+\contentsline {subsubsection}{\numberline {7.10.1.1}\_\_init\_\_()}{62}{subsubsection.7.10.1.1}%
+\contentsline {subsection}{\numberline {7.10.2}Member Function Documentation}{63}{subsection.7.10.2}%
+\contentsline {subsubsection}{\numberline {7.10.2.1}\_cache\_result()}{63}{subsubsection.7.10.2.1}%
+\contentsline {subsubsection}{\numberline {7.10.2.2}\_get\_cache\_key()}{63}{subsubsection.7.10.2.2}%
+\contentsline {subsubsection}{\numberline {7.10.2.3}\_get\_cached\_result()}{63}{subsubsection.7.10.2.3}%
+\contentsline {subsubsection}{\numberline {7.10.2.4}calculate\_basic\_metrics()}{63}{subsubsection.7.10.2.4}%
+\contentsline {subsubsection}{\numberline {7.10.2.5}calculate\_max\_drawdown()}{63}{subsubsection.7.10.2.5}%
+\contentsline {subsubsection}{\numberline {7.10.2.6}calculate\_sharpe\_ratio()}{63}{subsubsection.7.10.2.6}%
+\contentsline {subsection}{\numberline {7.10.3}Member Data Documentation}{64}{subsection.7.10.3}%
+\contentsline {subsubsection}{\numberline {7.10.3.1}benchmark\_returns}{64}{subsubsection.7.10.3.1}%
+\contentsline {subsubsection}{\numberline {7.10.3.2}cache\_enabled}{64}{subsubsection.7.10.3.2}%
+\contentsline {subsubsection}{\numberline {7.10.3.3}metrics\_cache}{64}{subsubsection.7.10.3.3}%
+\contentsline {subsubsection}{\numberline {7.10.3.4}risk\_free\_rate}{64}{subsubsection.7.10.3.4}%
+\contentsline {subsubsection}{\numberline {7.10.3.5}window\_size}{64}{subsubsection.7.10.3.5}%
+\contentsline {section}{\numberline {7.11}transformer\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}model.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Multi\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Head\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Self\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Attention Class Reference}{64}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Constructor \& Destructor Documentation}{64}{subsection.7.11.1}%
+\contentsline {subsubsection}{\numberline {7.11.1.1}\_\_init\_\_()}{64}{subsubsection.7.11.1.1}%
+\contentsline {subsection}{\numberline {7.11.2}Member Function Documentation}{65}{subsection.7.11.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.1}attention()}{65}{subsubsection.7.11.2.1}%
+\contentsline {subsubsection}{\numberline {7.11.2.2}call()}{65}{subsubsection.7.11.2.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.3}separate\_heads()}{65}{subsubsection.7.11.2.3}%
+\contentsline {subsection}{\numberline {7.11.3}Member Data Documentation}{65}{subsection.7.11.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.1}combine\_heads}{65}{subsubsection.7.11.3.1}%
+\contentsline {subsubsection}{\numberline {7.11.3.2}embed\_dim}{65}{subsubsection.7.11.3.2}%
+\contentsline {subsubsection}{\numberline {7.11.3.3}key\_dense}{65}{subsubsection.7.11.3.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.4}num\_heads}{65}{subsubsection.7.11.3.4}%
+\contentsline {subsubsection}{\numberline {7.11.3.5}projection\_dim}{65}{subsubsection.7.11.3.5}%
+\contentsline {subsubsection}{\numberline {7.11.3.6}query\_dense}{65}{subsubsection.7.11.3.6}%
+\contentsline {subsubsection}{\numberline {7.11.3.7}value\_dense}{65}{subsubsection.7.11.3.7}%
+\contentsline {section}{\numberline {7.12}main.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Performance\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Metric Class Reference}{66}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Member Data Documentation}{66}{subsection.7.12.1}%
+\contentsline {subsubsection}{\numberline {7.12.1.1}id}{66}{subsubsection.7.12.1.1}%
+\contentsline {subsubsection}{\numberline {7.12.1.2}metric\_name}{66}{subsubsection.7.12.1.2}%
+\contentsline {subsubsection}{\numberline {7.12.1.3}strategy}{66}{subsubsection.7.12.1.3}%
+\contentsline {subsubsection}{\numberline {7.12.1.4}timestamp}{66}{subsubsection.7.12.1.4}%
+\contentsline {subsubsection}{\numberline {7.12.1.5}value}{66}{subsubsection.7.12.1.5}%
+\contentsline {section}{\numberline {7.13}main.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Performance\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Monitor Class Reference}{66}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Constructor \& Destructor Documentation}{67}{subsection.7.13.1}%
+\contentsline {subsubsection}{\numberline {7.13.1.1}\_\_init\_\_()}{67}{subsubsection.7.13.1.1}%
+\contentsline {subsection}{\numberline {7.13.2}Member Function Documentation}{67}{subsection.7.13.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.1}\_\_call\_\_()}{67}{subsubsection.7.13.2.1}%
+\contentsline {subsection}{\numberline {7.13.3}Member Data Documentation}{67}{subsection.7.13.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.1}requests}{67}{subsubsection.7.13.3.1}%
+\contentsline {section}{\numberline {7.14}portfolio\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}optimizer.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Portfolio\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Optimizer Class Reference}{67}{section.7.14}%
+\contentsline {subsection}{\numberline {7.14.1}Constructor \& Destructor Documentation}{68}{subsection.7.14.1}%
+\contentsline {subsubsection}{\numberline {7.14.1.1}\_\_init\_\_()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{68}{subsubsection.7.14.1.1}%
+\contentsline {subsubsection}{\numberline {7.14.1.2}\_\_init\_\_()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{68}{subsubsection.7.14.1.2}%
+\contentsline {subsection}{\numberline {7.14.2}Member Function Documentation}{69}{subsection.7.14.2}%
+\contentsline {subsubsection}{\numberline {7.14.2.1}calculate\_correlation\_matrix()}{69}{subsubsection.7.14.2.1}%
+\contentsline {subsubsection}{\numberline {7.14.2.2}calculate\_covariance\_matrix()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{69}{subsubsection.7.14.2.2}%
+\contentsline {subsubsection}{\numberline {7.14.2.3}calculate\_covariance\_matrix()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{69}{subsubsection.7.14.2.3}%
+\contentsline {subsubsection}{\numberline {7.14.2.4}calculate\_efficient\_frontier()}{69}{subsubsection.7.14.2.4}%
+\contentsline {subsubsection}{\numberline {7.14.2.5}calculate\_max\_diversification\_weights()}{69}{subsubsection.7.14.2.5}%
+\contentsline {subsubsection}{\numberline {7.14.2.6}calculate\_min\_variance\_weights()}{69}{subsubsection.7.14.2.6}%
+\contentsline {subsubsection}{\numberline {7.14.2.7}calculate\_portfolio\_metrics()}{69}{subsubsection.7.14.2.7}%
+\contentsline {subsubsection}{\numberline {7.14.2.8}calculate\_portfolio\_return()}{70}{subsubsection.7.14.2.8}%
+\contentsline {subsubsection}{\numberline {7.14.2.9}calculate\_portfolio\_volatility()}{70}{subsubsection.7.14.2.9}%
+\contentsline {subsubsection}{\numberline {7.14.2.10}calculate\_risk\_parity\_weights()}{70}{subsubsection.7.14.2.10}%
+\contentsline {subsubsection}{\numberline {7.14.2.11}calculate\_sharpe\_ratio()}{70}{subsubsection.7.14.2.11}%
+\contentsline {subsubsection}{\numberline {7.14.2.12}calculate\_volatility()}{70}{subsubsection.7.14.2.12}%
+\contentsline {subsubsection}{\numberline {7.14.2.13}get\_optimization\_metrics()}{70}{subsubsection.7.14.2.13}%
+\contentsline {subsubsection}{\numberline {7.14.2.14}optimize\_portfolio()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{70}{subsubsection.7.14.2.14}%
+\contentsline {subsubsection}{\numberline {7.14.2.15}optimize\_portfolio()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{71}{subsubsection.7.14.2.15}%
+\contentsline {subsubsection}{\numberline {7.14.2.16}plot\_allocation()}{71}{subsubsection.7.14.2.16}%
+\contentsline {subsubsection}{\numberline {7.14.2.17}rebalance\_portfolio()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{71}{subsubsection.7.14.2.17}%
+\contentsline {subsubsection}{\numberline {7.14.2.18}rebalance\_portfolio()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{71}{subsubsection.7.14.2.18}%
+\contentsline {subsection}{\numberline {7.14.3}Member Data Documentation}{71}{subsection.7.14.3}%
+\contentsline {subsubsection}{\numberline {7.14.3.1}constraints}{71}{subsubsection.7.14.3.1}%
+\contentsline {subsubsection}{\numberline {7.14.3.2}current\_weights}{71}{subsubsection.7.14.3.2}%
+\contentsline {subsubsection}{\numberline {7.14.3.3}last\_rebalance}{71}{subsubsection.7.14.3.3}%
+\contentsline {subsubsection}{\numberline {7.14.3.4}max\_allocation}{71}{subsubsection.7.14.3.4}%
+\contentsline {subsubsection}{\numberline {7.14.3.5}max\_assets}{72}{subsubsection.7.14.3.5}%
+\contentsline {subsubsection}{\numberline {7.14.3.6}max\_leverage}{72}{subsubsection.7.14.3.6}%
+\contentsline {subsubsection}{\numberline {7.14.3.7}metrics}{72}{subsubsection.7.14.3.7}%
+\contentsline {subsubsection}{\numberline {7.14.3.8}min\_allocation}{72}{subsubsection.7.14.3.8}%
+\contentsline {subsubsection}{\numberline {7.14.3.9}optimization\_method}{72}{subsubsection.7.14.3.9}%
+\contentsline {subsubsection}{\numberline {7.14.3.10}rebalance\_period}{72}{subsubsection.7.14.3.10}%
+\contentsline {subsubsection}{\numberline {7.14.3.11}risk\_free\_rate}{72}{subsubsection.7.14.3.11}%
+\contentsline {section}{\numberline {7.15}main.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Rate\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Limiter Class Reference}{72}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Constructor \& Destructor Documentation}{72}{subsection.7.15.1}%
+\contentsline {subsubsection}{\numberline {7.15.1.1}\_\_init\_\_()}{72}{subsubsection.7.15.1.1}%
+\contentsline {subsection}{\numberline {7.15.2}Member Function Documentation}{73}{subsection.7.15.2}%
+\contentsline {subsubsection}{\numberline {7.15.2.1}\_\_call\_\_()}{73}{subsubsection.7.15.2.1}%
+\contentsline {subsection}{\numberline {7.15.3}Member Data Documentation}{73}{subsection.7.15.3}%
+\contentsline {subsubsection}{\numberline {7.15.3.1}max\_requests}{73}{subsubsection.7.15.3.1}%
+\contentsline {subsubsection}{\numberline {7.15.3.2}requests}{73}{subsubsection.7.15.3.2}%
+\contentsline {subsubsection}{\numberline {7.15.3.3}window\_seconds}{73}{subsubsection.7.15.3.3}%
+\contentsline {section}{\numberline {7.16}real\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}time\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}analysis.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Real\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Time\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Analyzer Class Reference}{73}{section.7.16}%
+\contentsline {subsection}{\numberline {7.16.1}Constructor \& Destructor Documentation}{74}{subsection.7.16.1}%
+\contentsline {subsubsection}{\numberline {7.16.1.1}\_\_init\_\_()}{74}{subsubsection.7.16.1.1}%
+\contentsline {subsection}{\numberline {7.16.2}Member Function Documentation}{74}{subsection.7.16.2}%
+\contentsline {subsubsection}{\numberline {7.16.2.1}\_calculate\_risk\_metrics()}{74}{subsubsection.7.16.2.1}%
+\contentsline {subsubsection}{\numberline {7.16.2.2}calculate\_position\_sizing()}{74}{subsubsection.7.16.2.2}%
+\contentsline {subsubsection}{\numberline {7.16.2.3}check\_risk\_limits()}{74}{subsubsection.7.16.2.3}%
+\contentsline {subsubsection}{\numberline {7.16.2.4}get\_position\_adjustments()}{74}{subsubsection.7.16.2.4}%
+\contentsline {subsubsection}{\numberline {7.16.2.5}get\_real\_time\_metrics()}{74}{subsubsection.7.16.2.5}%
+\contentsline {subsubsection}{\numberline {7.16.2.6}optimize\_positions()}{75}{subsubsection.7.16.2.6}%
+\contentsline {subsubsection}{\numberline {7.16.2.7}plot\_real\_time\_analysis()}{75}{subsubsection.7.16.2.7}%
+\contentsline {subsubsection}{\numberline {7.16.2.8}update\_positions()}{75}{subsubsection.7.16.2.8}%
+\contentsline {subsection}{\numberline {7.16.3}Member Data Documentation}{75}{subsection.7.16.3}%
+\contentsline {subsubsection}{\numberline {7.16.3.1}current\_positions}{75}{subsubsection.7.16.3.1}%
+\contentsline {subsubsection}{\numberline {7.16.3.2}last\_update}{75}{subsubsection.7.16.3.2}%
+\contentsline {subsubsection}{\numberline {7.16.3.3}max\_position\_size}{75}{subsubsection.7.16.3.3}%
+\contentsline {subsubsection}{\numberline {7.16.3.4}metrics}{75}{subsubsection.7.16.3.4}%
+\contentsline {subsubsection}{\numberline {7.16.3.5}rebalance\_threshold}{75}{subsubsection.7.16.3.5}%
+\contentsline {subsubsection}{\numberline {7.16.3.6}risk\_metrics}{75}{subsubsection.7.16.3.6}%
+\contentsline {subsubsection}{\numberline {7.16.3.7}risk\_threshold}{75}{subsubsection.7.16.3.7}%
+\contentsline {subsubsection}{\numberline {7.16.3.8}update\_frequency}{75}{subsubsection.7.16.3.8}%
+\contentsline {subsubsection}{\numberline {7.16.3.9}window\_size}{76}{subsubsection.7.16.3.9}%
+\contentsline {section}{\numberline {7.17}main.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Request\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Validator Class Reference}{76}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Constructor \& Destructor Documentation}{76}{subsection.7.17.1}%
+\contentsline {subsubsection}{\numberline {7.17.1.1}\_\_init\_\_()}{76}{subsubsection.7.17.1.1}%
+\contentsline {subsection}{\numberline {7.17.2}Member Function Documentation}{76}{subsection.7.17.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.1}\_validate\_headers()}{76}{subsubsection.7.17.2.1}%
+\contentsline {subsubsection}{\numberline {7.17.2.2}\_validate\_ip()}{76}{subsubsection.7.17.2.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.3}\_validate\_rate\_limit()}{76}{subsubsection.7.17.2.3}%
+\contentsline {subsubsection}{\numberline {7.17.2.4}validate\_request()}{76}{subsubsection.7.17.2.4}%
+\contentsline {subsection}{\numberline {7.17.3}Member Data Documentation}{77}{subsection.7.17.3}%
+\contentsline {subsubsection}{\numberline {7.17.3.1}executor}{77}{subsubsection.7.17.3.1}%
+\contentsline {section}{\numberline {7.18}risk\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}management.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Risk\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Manager Class Reference}{77}{section.7.18}%
+\contentsline {subsection}{\numberline {7.18.1}Constructor \& Destructor Documentation}{77}{subsection.7.18.1}%
+\contentsline {subsubsection}{\numberline {7.18.1.1}\_\_init\_\_()}{77}{subsubsection.7.18.1.1}%
+\contentsline {subsection}{\numberline {7.18.2}Member Function Documentation}{78}{subsection.7.18.2}%
+\contentsline {subsubsection}{\numberline {7.18.2.1}calculate\_position\_size()}{78}{subsubsection.7.18.2.1}%
+\contentsline {subsubsection}{\numberline {7.18.2.2}calculate\_risk\_reward\_ratio()}{78}{subsubsection.7.18.2.2}%
+\contentsline {subsubsection}{\numberline {7.18.2.3}calculate\_stop\_loss()}{78}{subsubsection.7.18.2.3}%
+\contentsline {subsubsection}{\numberline {7.18.2.4}check\_position\_correlation()}{78}{subsubsection.7.18.2.4}%
+\contentsline {subsubsection}{\numberline {7.18.2.5}get\_position\_limits()}{78}{subsubsection.7.18.2.5}%
+\contentsline {subsubsection}{\numberline {7.18.2.6}get\_risk\_metrics()}{79}{subsubsection.7.18.2.6}%
+\contentsline {subsubsection}{\numberline {7.18.2.7}update\_correlation\_matrix()}{79}{subsubsection.7.18.2.7}%
+\contentsline {subsubsection}{\numberline {7.18.2.8}update\_metrics()}{79}{subsubsection.7.18.2.8}%
+\contentsline {subsection}{\numberline {7.18.3}Member Data Documentation}{79}{subsection.7.18.3}%
+\contentsline {subsubsection}{\numberline {7.18.3.1}correlation\_matrix}{79}{subsubsection.7.18.3.1}%
+\contentsline {subsubsection}{\numberline {7.18.3.2}correlation\_threshold}{79}{subsubsection.7.18.3.2}%
+\contentsline {subsubsection}{\numberline {7.18.3.3}current\_drawdown}{79}{subsubsection.7.18.3.3}%
+\contentsline {subsubsection}{\numberline {7.18.3.4}current\_positions}{79}{subsubsection.7.18.3.4}%
+\contentsline {subsubsection}{\numberline {7.18.3.5}losing\_trades}{79}{subsubsection.7.18.3.5}%
+\contentsline {subsubsection}{\numberline {7.18.3.6}max\_drawdown}{79}{subsubsection.7.18.3.6}%
+\contentsline {subsubsection}{\numberline {7.18.3.7}max\_drawdown\_reached}{79}{subsubsection.7.18.3.7}%
+\contentsline {subsubsection}{\numberline {7.18.3.8}max\_leverage}{79}{subsubsection.7.18.3.8}%
+\contentsline {subsubsection}{\numberline {7.18.3.9}max\_position\_size}{80}{subsubsection.7.18.3.9}%
+\contentsline {subsubsection}{\numberline {7.18.3.10}risk\_per\_trade}{80}{subsubsection.7.18.3.10}%
+\contentsline {subsubsection}{\numberline {7.18.3.11}stop\_loss\_pct}{80}{subsubsection.7.18.3.11}%
+\contentsline {subsubsection}{\numberline {7.18.3.12}take\_profit\_pct}{80}{subsubsection.7.18.3.12}%
+\contentsline {subsubsection}{\numberline {7.18.3.13}total\_profit}{80}{subsubsection.7.18.3.13}%
+\contentsline {subsubsection}{\numberline {7.18.3.14}total\_trades}{80}{subsubsection.7.18.3.14}%
+\contentsline {subsubsection}{\numberline {7.18.3.15}volatility\_adjustment}{80}{subsubsection.7.18.3.15}%
+\contentsline {subsubsection}{\numberline {7.18.3.16}winning\_trades}{80}{subsubsection.7.18.3.16}%
+\contentsline {section}{\numberline {7.19}risk\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}manager.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Risk\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Manager Class Reference}{80}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Constructor \& Destructor Documentation}{81}{subsection.7.19.1}%
+\contentsline {subsubsection}{\numberline {7.19.1.1}\_\_init\_\_()}{81}{subsubsection.7.19.1.1}%
+\contentsline {subsection}{\numberline {7.19.2}Member Function Documentation}{81}{subsection.7.19.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.1}calculate\_hedging\_position()}{81}{subsubsection.7.19.2.1}%
+\contentsline {subsubsection}{\numberline {7.19.2.2}calculate\_position\_size()}{81}{subsubsection.7.19.2.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.3}calculate\_risk\_reward\_ratio()}{81}{subsubsection.7.19.2.3}%
+\contentsline {subsubsection}{\numberline {7.19.2.4}calculate\_stop\_loss()}{82}{subsubsection.7.19.2.4}%
+\contentsline {subsubsection}{\numberline {7.19.2.5}check\_risk\_limits()}{82}{subsubsection.7.19.2.5}%
+\contentsline {subsubsection}{\numberline {7.19.2.6}get\_risk\_metrics()}{82}{subsubsection.7.19.2.6}%
+\contentsline {subsubsection}{\numberline {7.19.2.7}update\_metrics()}{82}{subsubsection.7.19.2.7}%
+\contentsline {subsection}{\numberline {7.19.3}Member Data Documentation}{82}{subsection.7.19.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.1}current\_drawdown}{82}{subsubsection.7.19.3.1}%
+\contentsline {subsubsection}{\numberline {7.19.3.2}losing\_trades}{82}{subsubsection.7.19.3.2}%
+\contentsline {subsubsection}{\numberline {7.19.3.3}max\_drawdown}{82}{subsubsection.7.19.3.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.4}max\_drawdown\_reached}{82}{subsubsection.7.19.3.4}%
+\contentsline {subsubsection}{\numberline {7.19.3.5}max\_position\_size}{82}{subsubsection.7.19.3.5}%
+\contentsline {subsubsection}{\numberline {7.19.3.6}risk\_per\_trade}{82}{subsubsection.7.19.3.6}%
+\contentsline {subsubsection}{\numberline {7.19.3.7}stop\_loss\_pct}{83}{subsubsection.7.19.3.7}%
+\contentsline {subsubsection}{\numberline {7.19.3.8}take\_profit\_pct}{83}{subsubsection.7.19.3.8}%
+\contentsline {subsubsection}{\numberline {7.19.3.9}total\_profit}{83}{subsubsection.7.19.3.9}%
+\contentsline {subsubsection}{\numberline {7.19.3.10}total\_trades}{83}{subsubsection.7.19.3.10}%
+\contentsline {subsubsection}{\numberline {7.19.3.11}volatility\_adjustment}{83}{subsubsection.7.19.3.11}%
+\contentsline {subsubsection}{\numberline {7.19.3.12}winning\_trades}{83}{subsubsection.7.19.3.12}%
+\contentsline {section}{\numberline {7.20}main.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Risk\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Metric Class Reference}{83}{section.7.20}%
+\contentsline {subsection}{\numberline {7.20.1}Member Data Documentation}{83}{subsection.7.20.1}%
+\contentsline {subsubsection}{\numberline {7.20.1.1}id}{83}{subsubsection.7.20.1.1}%
+\contentsline {subsubsection}{\numberline {7.20.1.2}metric\_name}{83}{subsubsection.7.20.1.2}%
+\contentsline {subsubsection}{\numberline {7.20.1.3}symbol}{83}{subsubsection.7.20.1.3}%
+\contentsline {subsubsection}{\numberline {7.20.1.4}timestamp}{84}{subsubsection.7.20.1.4}%
+\contentsline {subsubsection}{\numberline {7.20.1.5}value}{84}{subsubsection.7.20.1.5}%
+\contentsline {section}{\numberline {7.21}settings.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Settings Class Reference}{84}{section.7.21}%
+\contentsline {subsection}{\numberline {7.21.1}Member Data Documentation}{84}{subsection.7.21.1}%
+\contentsline {subsubsection}{\numberline {7.21.1.1}currency\_mode}{84}{subsubsection.7.21.1.1}%
+\contentsline {subsubsection}{\numberline {7.21.1.2}logging\_enabled}{84}{subsubsection.7.21.1.2}%
+\contentsline {subsubsection}{\numberline {7.21.1.3}telegram\_chat\_id}{84}{subsubsection.7.21.1.3}%
+\contentsline {subsubsection}{\numberline {7.21.1.4}telegram\_token}{84}{subsubsection.7.21.1.4}%
+\contentsline {subsubsection}{\numberline {7.21.1.5}trading\_enabled}{84}{subsubsection.7.21.1.5}%
+\contentsline {subsubsection}{\numberline {7.21.1.6}twelve\_data\_key}{84}{subsubsection.7.21.1.6}%
+\contentsline {section}{\numberline {7.22}strategy\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}framework.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Strategy\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Framework Class Reference}{85}{section.7.22}%
+\contentsline {subsection}{\numberline {7.22.1}Constructor \& Destructor Documentation}{85}{subsection.7.22.1}%
+\contentsline {subsubsection}{\numberline {7.22.1.1}\_\_init\_\_()}{85}{subsubsection.7.22.1.1}%
+\contentsline {subsection}{\numberline {7.22.2}Member Function Documentation}{86}{subsection.7.22.2}%
+\contentsline {subsubsection}{\numberline {7.22.2.1}\_check\_safety()}{86}{subsubsection.7.22.2.1}%
+\contentsline {subsubsection}{\numberline {7.22.2.2}\_validate\_weights()}{86}{subsubsection.7.22.2.2}%
+\contentsline {subsubsection}{\numberline {7.22.2.3}execute\_trade()}{86}{subsubsection.7.22.2.3}%
+\contentsline {subsubsection}{\numberline {7.22.2.4}generate\_combined\_signals()}{86}{subsubsection.7.22.2.4}%
+\contentsline {subsubsection}{\numberline {7.22.2.5}get\_combined\_metrics()}{86}{subsubsection.7.22.2.5}%
+\contentsline {subsubsection}{\numberline {7.22.2.6}get\_strategy\_metrics()}{86}{subsubsection.7.22.2.6}%
+\contentsline {subsubsection}{\numberline {7.22.2.7}initialize\_strategies()}{86}{subsubsection.7.22.2.7}%
+\contentsline {subsubsection}{\numberline {7.22.2.8}optimize\_weights()}{87}{subsubsection.7.22.2.8}%
+\contentsline {subsubsection}{\numberline {7.22.2.9}plot\_strategy\_performance()}{87}{subsubsection.7.22.2.9}%
+\contentsline {subsubsection}{\numberline {7.22.2.10}rebalance()}{87}{subsubsection.7.22.2.10}%
+\contentsline {subsubsection}{\numberline {7.22.2.11}update\_metrics()}{87}{subsubsection.7.22.2.11}%
+\contentsline {subsubsection}{\numberline {7.22.2.12}validate\_weights()}{87}{subsubsection.7.22.2.12}%
+\contentsline {subsection}{\numberline {7.22.3}Member Data Documentation}{87}{subsection.7.22.3}%
+\contentsline {subsubsection}{\numberline {7.22.3.1}active}{87}{subsubsection.7.22.3.1}%
+\contentsline {subsubsection}{\numberline {7.22.3.2}backtester}{87}{subsubsection.7.22.3.2}%
+\contentsline {subsubsection}{\numberline {7.22.3.3}consecutive\_losses}{87}{subsubsection.7.22.3.3}%
+\contentsline {subsubsection}{\numberline {7.22.3.4}correlation\_matrix}{87}{subsubsection.7.22.3.4}%
+\contentsline {subsubsection}{\numberline {7.22.3.5}correlation\_threshold}{87}{subsubsection.7.22.3.5}%
+\contentsline {subsubsection}{\numberline {7.22.3.6}current\_drawdown}{88}{subsubsection.7.22.3.6}%
+\contentsline {subsubsection}{\numberline {7.22.3.7}last\_rebalance}{88}{subsubsection.7.22.3.7}%
+\contentsline {subsubsection}{\numberline {7.22.3.8}last\_update}{88}{subsubsection.7.22.3.8}%
+\contentsline {subsubsection}{\numberline {7.22.3.9}max\_drawdown}{88}{subsubsection.7.22.3.9}%
+\contentsline {subsubsection}{\numberline {7.22.3.10}max\_position\_size}{88}{subsubsection.7.22.3.10}%
+\contentsline {subsubsection}{\numberline {7.22.3.11}risk\_manager}{88}{subsubsection.7.22.3.11}%
+\contentsline {subsubsection}{\numberline {7.22.3.12}strategies}{88}{subsubsection.7.22.3.12}%
+\contentsline {subsubsection}{\numberline {7.22.3.13}strategy\_instances}{88}{subsubsection.7.22.3.13}%
+\contentsline {subsubsection}{\numberline {7.22.3.14}weights}{88}{subsubsection.7.22.3.14}%
+\contentsline {section}{\numberline {7.23}test\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}real\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}time\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}analysis.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Test\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Real\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Time\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Analyzer Class Reference}{88}{section.7.23}%
+\contentsline {subsection}{\numberline {7.23.1}Member Function Documentation}{89}{subsection.7.23.1}%
+\contentsline {subsubsection}{\numberline {7.23.1.1}setUp()}{89}{subsubsection.7.23.1.1}%
+\contentsline {subsubsection}{\numberline {7.23.1.2}test\_calculate\_position\_sizing()}{89}{subsubsection.7.23.1.2}%
+\contentsline {subsubsection}{\numberline {7.23.1.3}test\_check\_risk\_limits()}{89}{subsubsection.7.23.1.3}%
+\contentsline {subsubsection}{\numberline {7.23.1.4}test\_get\_position\_adjustments()}{89}{subsubsection.7.23.1.4}%
+\contentsline {subsubsection}{\numberline {7.23.1.5}test\_get\_real\_time\_metrics()}{89}{subsubsection.7.23.1.5}%
+\contentsline {subsubsection}{\numberline {7.23.1.6}test\_optimize\_positions()}{89}{subsubsection.7.23.1.6}%
+\contentsline {subsubsection}{\numberline {7.23.1.7}test\_plot\_real\_time\_analysis()}{89}{subsubsection.7.23.1.7}%
+\contentsline {subsubsection}{\numberline {7.23.1.8}test\_update\_positions()}{89}{subsubsection.7.23.1.8}%
+\contentsline {subsection}{\numberline {7.23.2}Member Data Documentation}{89}{subsection.7.23.2}%
+\contentsline {subsubsection}{\numberline {7.23.2.1}analyzer}{89}{subsubsection.7.23.2.1}%
+\contentsline {subsubsection}{\numberline {7.23.2.2}positions}{90}{subsubsection.7.23.2.2}%
+\contentsline {subsubsection}{\numberline {7.23.2.3}price\_data}{90}{subsubsection.7.23.2.3}%
+\contentsline {subsubsection}{\numberline {7.23.2.4}returns}{90}{subsubsection.7.23.2.4}%
+\contentsline {section}{\numberline {7.24}test\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}reporting.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Test\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Reporter Class Reference}{90}{section.7.24}%
+\contentsline {subsection}{\numberline {7.24.1}Member Function Documentation}{91}{subsection.7.24.1}%
+\contentsline {subsubsection}{\numberline {7.24.1.1}setUp()}{91}{subsubsection.7.24.1.1}%
+\contentsline {subsubsection}{\numberline {7.24.1.2}test\_generate\_html\_report()}{91}{subsubsection.7.24.1.2}%
+\contentsline {subsubsection}{\numberline {7.24.1.3}test\_generate\_performance\_report()}{91}{subsubsection.7.24.1.3}%
+\contentsline {subsubsection}{\numberline {7.24.1.4}test\_generate\_portfolio\_report()}{91}{subsubsection.7.24.1.4}%
+\contentsline {subsubsection}{\numberline {7.24.1.5}test\_generate\_risk\_report()}{91}{subsubsection.7.24.1.5}%
+\contentsline {subsubsection}{\numberline {7.24.1.6}test\_plot\_performance()}{91}{subsubsection.7.24.1.6}%
+\contentsline {subsubsection}{\numberline {7.24.1.7}test\_plot\_portfolio\_analysis()}{91}{subsubsection.7.24.1.7}%
+\contentsline {subsubsection}{\numberline {7.24.1.8}test\_save\_report()}{91}{subsubsection.7.24.1.8}%
+\contentsline {subsection}{\numberline {7.24.2}Member Data Documentation}{91}{subsection.7.24.2}%
+\contentsline {subsubsection}{\numberline {7.24.2.1}actuals}{91}{subsubsection.7.24.2.1}%
+\contentsline {subsubsection}{\numberline {7.24.2.2}positions}{91}{subsubsection.7.24.2.2}%
+\contentsline {subsubsection}{\numberline {7.24.2.3}predictions}{92}{subsubsection.7.24.2.3}%
+\contentsline {subsubsection}{\numberline {7.24.2.4}reporter}{92}{subsubsection.7.24.2.4}%
+\contentsline {subsubsection}{\numberline {7.24.2.5}returns}{92}{subsubsection.7.24.2.5}%
+\contentsline {section}{\numberline {7.25}main.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Trade Class Reference}{92}{section.7.25}%
+\contentsline {subsection}{\numberline {7.25.1}Member Data Documentation}{92}{subsection.7.25.1}%
+\contentsline {subsubsection}{\numberline {7.25.1.1}id}{92}{subsubsection.7.25.1.1}%
+\contentsline {subsubsection}{\numberline {7.25.1.2}price}{92}{subsubsection.7.25.1.2}%
+\contentsline {subsubsection}{\numberline {7.25.1.3}quantity}{93}{subsubsection.7.25.1.3}%
+\contentsline {subsubsection}{\numberline {7.25.1.4}side}{93}{subsubsection.7.25.1.4}%
+\contentsline {subsubsection}{\numberline {7.25.1.5}status}{93}{subsubsection.7.25.1.5}%
+\contentsline {subsubsection}{\numberline {7.25.1.6}strategy}{93}{subsubsection.7.25.1.6}%
+\contentsline {subsubsection}{\numberline {7.25.1.7}symbol}{93}{subsubsection.7.25.1.7}%
+\contentsline {subsubsection}{\numberline {7.25.1.8}timestamp}{93}{subsubsection.7.25.1.8}%
+\contentsline {section}{\numberline {7.26}strategy\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}framework.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Trading\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Strategy Class Reference}{93}{section.7.26}%
+\contentsline {subsection}{\numberline {7.26.1}Constructor \& Destructor Documentation}{93}{subsection.7.26.1}%
+\contentsline {subsubsection}{\numberline {7.26.1.1}\_\_init\_\_()}{93}{subsubsection.7.26.1.1}%
+\contentsline {subsection}{\numberline {7.26.2}Member Function Documentation}{93}{subsection.7.26.2}%
+\contentsline {subsubsection}{\numberline {7.26.2.1}calculate\_metrics()}{93}{subsubsection.7.26.2.1}%
+\contentsline {subsubsection}{\numberline {7.26.2.2}generate\_signals()}{94}{subsubsection.7.26.2.2}%
+\contentsline {subsection}{\numberline {7.26.3}Member Data Documentation}{94}{subsection.7.26.3}%
+\contentsline {subsubsection}{\numberline {7.26.3.1}correlation\_matrix}{94}{subsubsection.7.26.3.1}%
+\contentsline {subsubsection}{\numberline {7.26.3.2}metrics}{94}{subsubsection.7.26.3.2}%
+\contentsline {subsubsection}{\numberline {7.26.3.3}name}{94}{subsubsection.7.26.3.3}%
+\contentsline {subsubsection}{\numberline {7.26.3.4}parameters}{94}{subsubsection.7.26.3.4}%
+\contentsline {section}{\numberline {7.27}cost\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}analysis.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Transaction\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Cost\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Analyzer Class Reference}{94}{section.7.27}%
+\contentsline {subsection}{\numberline {7.27.1}Constructor \& Destructor Documentation}{95}{subsection.7.27.1}%
+\contentsline {subsubsection}{\numberline {7.27.1.1}\_\_init\_\_()}{95}{subsubsection.7.27.1.1}%
+\contentsline {subsection}{\numberline {7.27.2}Member Function Documentation}{95}{subsection.7.27.2}%
+\contentsline {subsubsection}{\numberline {7.27.2.1}\_cache\_result()}{95}{subsubsection.7.27.2.1}%
+\contentsline {subsubsection}{\numberline {7.27.2.2}\_get\_cache\_key()}{95}{subsubsection.7.27.2.2}%
+\contentsline {subsubsection}{\numberline {7.27.2.3}\_get\_cached\_result()}{95}{subsubsection.7.27.2.3}%
+\contentsline {subsubsection}{\numberline {7.27.2.4}analyze\_trade\_costs()}{95}{subsubsection.7.27.2.4}%
+\contentsline {subsubsection}{\numberline {7.27.2.5}calculate\_commission\_cost()}{96}{subsubsection.7.27.2.5}%
+\contentsline {subsubsection}{\numberline {7.27.2.6}calculate\_market\_impact()}{96}{subsubsection.7.27.2.6}%
+\contentsline {subsubsection}{\numberline {7.27.2.7}calculate\_slippage()}{96}{subsubsection.7.27.2.7}%
+\contentsline {subsubsection}{\numberline {7.27.2.8}calculate\_total\_transaction\_cost()}{96}{subsubsection.7.27.2.8}%
+\contentsline {subsubsection}{\numberline {7.27.2.9}get\_cost\_metrics()}{96}{subsubsection.7.27.2.9}%
+\contentsline {subsubsection}{\numberline {7.27.2.10}optimize\_trade\_size()}{96}{subsubsection.7.27.2.10}%
+\contentsline {subsubsection}{\numberline {7.27.2.11}plot\_cost\_analysis()}{97}{subsubsection.7.27.2.11}%
+\contentsline {subsection}{\numberline {7.27.3}Member Data Documentation}{97}{subsection.7.27.3}%
+\contentsline {subsubsection}{\numberline {7.27.3.1}base\_commission}{97}{subsubsection.7.27.3.1}%
+\contentsline {subsubsection}{\numberline {7.27.3.2}cache\_enabled}{97}{subsubsection.7.27.3.2}%
+\contentsline {subsubsection}{\numberline {7.27.3.3}cost\_cache}{97}{subsubsection.7.27.3.3}%
+\contentsline {subsubsection}{\numberline {7.27.3.4}liquidity\_threshold}{97}{subsubsection.7.27.3.4}%
+\contentsline {subsubsection}{\numberline {7.27.3.5}market\_impact\_exponent}{97}{subsubsection.7.27.3.5}%
+\contentsline {subsubsection}{\numberline {7.27.3.6}slippage\_base}{97}{subsubsection.7.27.3.6}%
+\contentsline {section}{\numberline {7.28}transformer\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}model.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Transformer\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Block Class Reference}{97}{section.7.28}%
+\contentsline {subsection}{\numberline {7.28.1}Constructor \& Destructor Documentation}{98}{subsection.7.28.1}%
+\contentsline {subsubsection}{\numberline {7.28.1.1}\_\_init\_\_()}{98}{subsubsection.7.28.1.1}%
+\contentsline {subsection}{\numberline {7.28.2}Member Function Documentation}{98}{subsection.7.28.2}%
+\contentsline {subsubsection}{\numberline {7.28.2.1}call()}{98}{subsubsection.7.28.2.1}%
+\contentsline {subsection}{\numberline {7.28.3}Member Data Documentation}{98}{subsection.7.28.3}%
+\contentsline {subsubsection}{\numberline {7.28.3.1}att}{98}{subsubsection.7.28.3.1}%
+\contentsline {subsubsection}{\numberline {7.28.3.2}dropout1}{98}{subsubsection.7.28.3.2}%
+\contentsline {subsubsection}{\numberline {7.28.3.3}dropout2}{98}{subsubsection.7.28.3.3}%
+\contentsline {subsubsection}{\numberline {7.28.3.4}ffn}{98}{subsubsection.7.28.3.4}%
+\contentsline {subsubsection}{\numberline {7.28.3.5}layernorm1}{98}{subsubsection.7.28.3.5}%
+\contentsline {subsubsection}{\numberline {7.28.3.6}layernorm2}{98}{subsubsection.7.28.3.6}%
+\contentsline {section}{\numberline {7.29}transformer\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}model.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Transformer\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}Model Class Reference}{98}{section.7.29}%
+\contentsline {subsection}{\numberline {7.29.1}Constructor \& Destructor Documentation}{99}{subsection.7.29.1}%
+\contentsline {subsubsection}{\numberline {7.29.1.1}\_\_init\_\_()}{99}{subsubsection.7.29.1.1}%
+\contentsline {subsection}{\numberline {7.29.2}Member Function Documentation}{100}{subsection.7.29.2}%
+\contentsline {subsubsection}{\numberline {7.29.2.1}\_create\_callbacks()}{100}{subsubsection.7.29.2.1}%
+\contentsline {subsubsection}{\numberline {7.29.2.2}build\_model()}{100}{subsubsection.7.29.2.2}%
+\contentsline {subsubsection}{\numberline {7.29.2.3}evaluate()}{100}{subsubsection.7.29.2.3}%
+\contentsline {subsubsection}{\numberline {7.29.2.4}get\_metrics()}{100}{subsubsection.7.29.2.4}%
+\contentsline {subsubsection}{\numberline {7.29.2.5}get\_model\_summary()}{100}{subsubsection.7.29.2.5}%
+\contentsline {subsubsection}{\numberline {7.29.2.6}load\_model()}{100}{subsubsection.7.29.2.6}%
+\contentsline {subsubsection}{\numberline {7.29.2.7}predict()}{100}{subsubsection.7.29.2.7}%
+\contentsline {subsubsection}{\numberline {7.29.2.8}prepare\_data()}{101}{subsubsection.7.29.2.8}%
+\contentsline {subsubsection}{\numberline {7.29.2.9}save\_model()}{101}{subsubsection.7.29.2.9}%
+\contentsline {subsubsection}{\numberline {7.29.2.10}train()}{101}{subsubsection.7.29.2.10}%
+\contentsline {subsection}{\numberline {7.29.3}Member Data Documentation}{101}{subsection.7.29.3}%
+\contentsline {subsubsection}{\numberline {7.29.3.1}batch\_size}{101}{subsubsection.7.29.3.1}%
+\contentsline {subsubsection}{\numberline {7.29.3.2}callbacks}{101}{subsubsection.7.29.3.2}%
+\contentsline {subsubsection}{\numberline {7.29.3.3}dropout\_rate}{101}{subsubsection.7.29.3.3}%
+\contentsline {subsubsection}{\numberline {7.29.3.4}embed\_dim}{101}{subsubsection.7.29.3.4}%
+\contentsline {subsubsection}{\numberline {7.29.3.5}epochs}{101}{subsubsection.7.29.3.5}%
+\contentsline {subsubsection}{\numberline {7.29.3.6}ff\_dim}{101}{subsubsection.7.29.3.6}%
+\contentsline {subsubsection}{\numberline {7.29.3.7}input\_shape}{101}{subsubsection.7.29.3.7}%
+\contentsline {subsubsection}{\numberline {7.29.3.8}last\_update}{102}{subsubsection.7.29.3.8}%
+\contentsline {subsubsection}{\numberline {7.29.3.9}learning\_rate}{102}{subsubsection.7.29.3.9}%
+\contentsline {subsubsection}{\numberline {7.29.3.10}metrics}{102}{subsubsection.7.29.3.10}%
+\contentsline {subsubsection}{\numberline {7.29.3.11}model}{102}{subsubsection.7.29.3.11}%
+\contentsline {subsubsection}{\numberline {7.29.3.12}num\_heads}{102}{subsubsection.7.29.3.12}%
+\contentsline {subsubsection}{\numberline {7.29.3.13}num\_transformer\_blocks}{102}{subsubsection.7.29.3.13}%
+\contentsline {subsubsection}{\numberline {7.29.3.14}patience}{102}{subsubsection.7.29.3.14}%
+\contentsline {subsubsection}{\numberline {7.29.3.15}scaler}{102}{subsubsection.7.29.3.15}%
+\contentsline {subsubsection}{\numberline {7.29.3.16}verbose}{102}{subsubsection.7.29.3.16}%
+\contentsline {chapter}{\numberline {8}File Documentation}{103}{chapter.8}%
+\contentsline {section}{\numberline {8.1}backend/ai\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}models/allocator.py File Reference}{103}{section.8.1}%
+\contentsline {section}{\numberline {8.2}backend/ai\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}models/feature\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}engineering.py File Reference}{103}{section.8.2}%
+\contentsline {section}{\numberline {8.3}backend/ai\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}models/lstm\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}model.py File Reference}{103}{section.8.3}%
+\contentsline {section}{\numberline {8.4}backend/ai\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}models/market\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}predictor.py File Reference}{103}{section.8.4}%
+\contentsline {section}{\numberline {8.5}backend/ai\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}models/meta\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}learner.py File Reference}{104}{section.8.5}%
+\contentsline {section}{\numberline {8.6}backend/ai\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}models/meta\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}reinforcement.py File Reference}{104}{section.8.6}%
+\contentsline {section}{\numberline {8.7}backend/ai\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}models/risk\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}manager.py File Reference}{104}{section.8.7}%
+\contentsline {section}{\numberline {8.8}backend/ai\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}models/train\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}lstm.py File Reference}{104}{section.8.8}%
+\contentsline {section}{\numberline {8.9}backend/ai\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}models/transformer\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}model.py File Reference}{105}{section.8.9}%
+\contentsline {section}{\numberline {8.10}backend/api/manual\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}trade.py File Reference}{105}{section.8.10}%
+\contentsline {section}{\numberline {8.11}backend/backtesting.py File Reference}{105}{section.8.11}%
+\contentsline {section}{\numberline {8.12}backend/config/celery\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}config.py File Reference}{105}{section.8.12}%
+\contentsline {section}{\numberline {8.13}backend/config/settings.py File Reference}{105}{section.8.13}%
+\contentsline {section}{\numberline {8.14}backend/cost\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}analysis.py File Reference}{106}{section.8.14}%
+\contentsline {section}{\numberline {8.15}backend/data/websocket\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}stream.py File Reference}{106}{section.8.15}%
+\contentsline {section}{\numberline {8.16}backend/integrations/nlp\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}sentiment.py File Reference}{106}{section.8.16}%
+\contentsline {section}{\numberline {8.17}backend/integrations/telegram\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}alerts.py File Reference}{107}{section.8.17}%
+\contentsline {section}{\numberline {8.18}backend/integrations/twelve\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}data.py File Reference}{107}{section.8.18}%
+\contentsline {section}{\numberline {8.19}backend/main.py File Reference}{107}{section.8.19}%
+\contentsline {section}{\numberline {8.20}backend/market\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}simulation.py File Reference}{109}{section.8.20}%
+\contentsline {section}{\numberline {8.21}backend/metrics.py File Reference}{109}{section.8.21}%
+\contentsline {section}{\numberline {8.22}backend/ai\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}models/portfolio\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}optimizer.py File Reference}{110}{section.8.22}%
+\contentsline {section}{\numberline {8.23}backend/portfolio\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}optimizer.py File Reference}{110}{section.8.23}%
+\contentsline {section}{\numberline {8.24}backend/real\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}time\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}analysis.py File Reference}{110}{section.8.24}%
+\contentsline {section}{\numberline {8.25}backend/reporting.py File Reference}{111}{section.8.25}%
+\contentsline {section}{\numberline {8.26}backend/risk\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}management.py File Reference}{111}{section.8.26}%
+\contentsline {section}{\numberline {8.27}backend/strategies/mean\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}reversion.py File Reference}{111}{section.8.27}%
+\contentsline {section}{\numberline {8.28}backend/strategies/momentum.py File Reference}{111}{section.8.28}%
+\contentsline {section}{\numberline {8.29}backend/strategies/strategy\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}framework.py File Reference}{111}{section.8.29}%
+\contentsline {section}{\numberline {8.30}backend/tasks/backtester.py File Reference}{112}{section.8.30}%
+\contentsline {section}{\numberline {8.31}backend/tasks/celery\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}worker.py File Reference}{112}{section.8.31}%
+\contentsline {section}{\numberline {8.32}backend/tasks/strategy\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}runner.py File Reference}{112}{section.8.32}%
+\contentsline {section}{\numberline {8.33}backend/tests/test\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}real\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}time\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}analysis.py File Reference}{112}{section.8.33}%
+\contentsline {section}{\numberline {8.34}backend/tests/test\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}reporting.py File Reference}{112}{section.8.34}%
+\contentsline {section}{\numberline {8.35}backend/utils/data\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}loader.py File Reference}{112}{section.8.35}%
+\contentsline {section}{\numberline {8.36}backend/utils/latency\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}optimizer.py File Reference}{112}{section.8.36}%
+\contentsline {section}{\numberline {8.37}backend/utils/legal.py File Reference}{113}{section.8.37}%
+\contentsline {section}{\numberline {8.38}backend/utils/redis\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}client.py File Reference}{113}{section.8.38}%
+\contentsline {section}{\numberline {8.39}backend/utils/send\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}push.py File Reference}{113}{section.8.39}%
+\contentsline {section}{\numberline {8.40}backend/utils/trade\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}executor.py File Reference}{113}{section.8.40}%
+\contentsline {section}{\numberline {8.41}docs/disclaimer.txt File Reference}{113}{section.8.41}%
+\contentsline {subsection}{\numberline {8.41.1}Function Documentation}{114}{subsection.8.41.1}%
+\contentsline {subsubsection}{\numberline {8.41.1.1}whatsoever()}{114}{subsubsection.8.41.1.1}%
+\contentsline {subsection}{\numberline {8.41.2}Variable Documentation}{115}{subsection.8.41.2}%
+\contentsline {subsubsection}{\numberline {8.41.2.1}claims}{115}{subsubsection.8.41.2.1}%
+\contentsline {subsubsection}{\numberline {8.41.2.2}damages}{115}{subsubsection.8.41.2.2}%
+\contentsline {subsubsection}{\numberline {8.41.2.3}developers}{115}{subsubsection.8.41.2.3}%
+\contentsline {subsubsection}{\numberline {8.41.2.4}for}{115}{subsubsection.8.41.2.4}%
+\contentsline {subsubsection}{\numberline {8.41.2.5}implied}{115}{subsubsection.8.41.2.5}%
+\contentsline {subsubsection}{\numberline {8.41.2.6}incidental}{115}{subsubsection.8.41.2.6}%
+\contentsline {subsubsection}{\numberline {8.41.2.7}kind}{115}{subsubsection.8.41.2.7}%
+\contentsline {subsubsection}{\numberline {8.41.2.8}merchantability}{116}{subsubsection.8.41.2.8}%
+\contentsline {subsubsection}{\numberline {8.41.2.9}purpose}{116}{subsubsection.8.41.2.9}%
+\contentsline {subsubsection}{\numberline {8.41.2.10}special}{116}{subsubsection.8.41.2.10}%
+\contentsline {subsubsection}{\numberline {8.41.2.11}unenforceable}{116}{subsubsection.8.41.2.11}%
+\contentsline {section}{\numberline {8.42}docs/\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}README.md File Reference}{116}{section.8.42}%
+\contentsline {section}{\numberline {8.43}README.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}md File Reference}{116}{section.8.43}%
+\contentsline {section}{\numberline {8.44}docs/user\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}agreement.txt File Reference}{116}{section.8.44}%
+\contentsline {subsection}{\numberline {8.44.1}Variable Documentation}{117}{subsection.8.44.1}%
+\contentsline {subsubsection}{\numberline {8.44.1.1}claims}{117}{subsubsection.8.44.1.1}%
+\contentsline {subsubsection}{\numberline {8.44.1.2}damages\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{117}{subsubsection.8.44.1.2}%
+\contentsline {subsubsection}{\numberline {8.44.1.3}damages\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{118}{subsubsection.8.44.1.3}%
+\contentsline {subsubsection}{\numberline {8.44.1.4}for\hspace {0.1cm}{\footnotesize \ttfamily [1/6]}}{118}{subsubsection.8.44.1.4}%
+\contentsline {subsubsection}{\numberline {8.44.1.5}for\hspace {0.1cm}{\footnotesize \ttfamily [2/6]}}{118}{subsubsection.8.44.1.5}%
+\contentsline {subsubsection}{\numberline {8.44.1.6}for\hspace {0.1cm}{\footnotesize \ttfamily [3/6]}}{118}{subsubsection.8.44.1.6}%
+\contentsline {subsubsection}{\numberline {8.44.1.7}for\hspace {0.1cm}{\footnotesize \ttfamily [4/6]}}{118}{subsubsection.8.44.1.7}%
+\contentsline {subsubsection}{\numberline {8.44.1.8}for\hspace {0.1cm}{\footnotesize \ttfamily [5/6]}}{118}{subsubsection.8.44.1.8}%
+\contentsline {subsubsection}{\numberline {8.44.1.9}for\hspace {0.1cm}{\footnotesize \ttfamily [6/6]}}{119}{subsubsection.8.44.1.9}%
+\contentsline {subsubsection}{\numberline {8.44.1.10}incidental}{119}{subsubsection.8.44.1.10}%
+\contentsline {subsubsection}{\numberline {8.44.1.11}special}{119}{subsubsection.8.44.1.11}%
+\contentsline {subsubsection}{\numberline {8.44.1.12}unenforceable}{119}{subsubsection.8.44.1.12}%
+\contentsline {section}{\numberline {8.45}LICENSE.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}txt File Reference}{119}{section.8.45}%
+\contentsline {subsection}{\numberline {8.45.1}Function Documentation}{120}{subsection.8.45.1}%
+\contentsline {subsubsection}{\numberline {8.45.1.1}Copyright()}{120}{subsubsection.8.45.1.1}%
+\contentsline {subsection}{\numberline {8.45.2}Variable Documentation}{120}{subsection.8.45.2}%
+\contentsline {subsubsection}{\numberline {8.45.2.1}copyright}{120}{subsubsection.8.45.2.1}%
+\contentsline {subsubsection}{\numberline {8.45.2.2}distribution}{120}{subsubsection.8.45.2.2}%
+\contentsline {subsubsection}{\numberline {8.45.2.3}it}{120}{subsubsection.8.45.2.3}%
+\contentsline {subsubsection}{\numberline {8.45.2.4}medium}{120}{subsubsection.8.45.2.4}%
+\contentsline {subsubsection}{\numberline {8.45.2.5}modification}{120}{subsubsection.8.45.2.5}%
+\contentsline {subsubsection}{\numberline {8.45.2.6}patent}{120}{subsubsection.8.45.2.6}%
+\contentsline {subsubsection}{\numberline {8.45.2.7}publication}{120}{subsubsection.8.45.2.7}%
+\contentsline {subsubsection}{\numberline {8.45.2.8}secret}{120}{subsubsection.8.45.2.8}%
+\contentsline {section}{\numberline {8.46}backend/requirements.txt File Reference}{120}{section.8.46}%
+\contentsline {section}{\numberline {8.47}requirements.\discretionary {\mbox {\scriptsize $\DOTSB \leftarrow \joinrel \rhook $}}{}{}txt File Reference}{120}{section.8.47}%
