@@ -1,54 +1,14 @@
-import logging
-from fastapi import FastAPI, HTTPException, Request, status, Depends
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.gzip import GZipMiddleware
-from fastapi.middleware.trustedhost import TrustedHostMiddleware
-from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
-from fastapi.middleware.sessions import SessionMiddleware
-from fastapi.middleware.authentication import AuthenticationMiddleware
-from sentry_sdk import init, capture_exception
-from starlette.middleware.base import BaseHTTPMiddleware
-from starlette.middleware.errors import ServerErrorMiddleware
-from starlette.middleware.gzip import GZipMiddleware as StarletteGZipMiddleware
-from starlette.middleware.cors import CORSMiddleware as StarletteCORSMiddleware
-from starlette.middleware.sessions import SessionMiddleware as StarletteSessionMiddleware
-from starlette.middleware.authentication import AuthenticationMiddleware as StarletteAuthMiddleware
-from starlette.middleware.trustedhost import TrustedHostMiddleware as StarletteTrustedHostMiddleware
-from starlette.middleware.httpsredirect import HTTPSRedirectMiddleware as StarletteHTTPSRedirectMiddleware
-from opentelemetry import trace
-from opentelemetry.sdk.trace import TracerProvider
-from opentelemetry.sdk.trace.export import BatchSpanProcessor
-from opentelemetry.exporter.jaeger import JaegerExporter
-from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
-from opentelemetry.instrumentation.requests import RequestsInstrumentor
-from opentelemetry.instrumentation.sqlalchemy import SQLAlchemyInstrumentor
+from fastapi import FastAPI
 import uvicorn
-import logging
-from datetime import datetime
-import traceback
-import time
-import asyncio
-from typing import Dict, Any, Optional, List, Union
-import json
-import hashlib
-import hmac
-import secrets
-from pydantic import BaseModel, Field, validator
-from fastapi.security import OAuth2PasswordBearer
-from fastapi.security.utils import get_authorization_scheme_param
-from jose import JWTError, jwt
-from jose.exceptions import ExpiredSignatureError
-from passlib.context import CryptContext
-import aiohttp
-import aioredis
-from cachetools import TTLCache
-import psutil
-import asyncio
-from concurrent.futures import ThreadPoolExecutor
-from functools import lru_cache
-import numpy as np
-import numba
-from numba import jit, prange
+
+app = FastAPI()
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 import pandas as pd
 from scipy import stats
 import plotly.graph_objects as go

@@ -1,4 +1,4 @@
-# Use an official Python runtime with pre-installed packages
+# Use an official Python runtime
 FROM python:3.11-slim
 
 # Set working directory
@@ -8,14 +8,11 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpq-dev \
-    libssl-dev \
-    libffi-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip and install requirements
-COPY requirements.txt .
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+COPY minimal_requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . .
@@ -29,9 +26,6 @@ RUN mkdir -p /app/data /app/logs
 
 # Set permissions
 RUN chmod +x /app/backend/main.py
-
-# Expose ports
-EXPOSE 8000
 
 # Start command
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"] \
