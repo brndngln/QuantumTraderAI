@@ -5,7 +5,7 @@ from datetime import datetime
 from pydantic import BaseModel
 from fastapi import HTTPException
 import redis
-from redis import asyncio as aioredis
+from redis.asyncio import Redis
 import json
 from enum import Enum
 from decimal import Decimal
@@ -31,8 +31,9 @@ class QuantumMetrics(BaseModel):
 
 class QuantumVault:
     def __init__(self):
-        self.redis_pool = aioredis.from_url(
-            "redis://localhost:6379",
+        self.redis_pool = Redis(
+            host="localhost",
+            port=6379,
             decode_responses=True
         )
         self.quantum_states = {

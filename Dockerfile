@@ -22,10 +22,8 @@ RUN pip install --no-cache-dir \
     redis==5.0.1 \
     python-jose[cryptography]==3.3.0 \
     passlib[bcrypt]==1.7.4 \
-    python-multipart==0.0.6
-
-# Install aioredis separately
-RUN pip install --no-cache-dir aioredis==2.2.5
+    python-multipart==0.0.6 \
+    redis==5.0.1
 
 # Copy application code
 COPY . .
