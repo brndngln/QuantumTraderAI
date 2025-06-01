@@ -1,14 +1,107 @@
-from fastapi import FastAPI
+import logging
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.exceptions import RequestValidationError
+from starlette.exceptions import HTTPException as StarletteHTTPException
 import uvicorn
+import sentry_sdk
+from sentry_sdk.integrations.asgi import SentryAsgiMiddleware
+from sentry_sdk.integrations.logging import LoggingIntegration
+from structlog import configure, get_logger
+from structlog.stdlib import LoggerFactory
 
-app = FastAPI()
+# Configure logging
+configure(logger_factory=LoggerFactory())
+logger = get_logger()
+
+# Initialize Sentry
+sentry_sdk.init(
+    dsn="your_sentry_dsn_here",
+    integrations=[
+        LoggingIntegration(event_level=logging.ERROR)
+    ],
+    traces_sample_rate=1.0,
+)
+
+app = FastAPI(
+    title="Quantum Trader AI API",
+    description="Advanced trading platform with AI-powered strategies",
+    version="1.0.0"
+)
+
+# Add Sentry middleware
+app.add_middleware(SentryAsgiMiddleware)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    process_time = time.time() - start_time
+    logger.info(
+        "request",
+        method=request.method,
+        path=request.url.path,
+        status_code=response.status_code,
+        duration=process_time
+    )
+    return response
+
+@app.exception_handler(StarletteHTTPException)
+async def http_exception_handler(request: Request, exc: StarletteHTTPException):
+    logger.error(
+        "http_exception",
+        status_code=exc.status_code,
+        detail=str(exc.detail)
+    )
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"message": exc.detail}
+    )
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    logger.error(
+        "validation_error",
+        errors=exc.errors(),
+        body=exc.body
+    )
+    return JSONResponse(
+        status_code=422,
+        content={"detail": exc.errors(), "body": exc.body}
+    )
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    logger.info("root_endpoint_accessed")
+    return {"message": "Quantum Trader AI API is running"}
+
+@app.get("/health")
+async def health_check():
+    logger.info("health_check")
+    return {
+        "status": "healthy",
+        "timestamp": datetime.utcnow().isoformat(),
+        "version": "1.0.0"
+    }
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(
+        "backend.main:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True,
+        log_level="info"
+    )
 import pandas as pd
 from scipy import stats
 import plotly.graph_objects as go
