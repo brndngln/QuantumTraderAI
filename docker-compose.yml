@@ -7,18 +7,84 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/app/backend
+      - ./logs:/app/logs
     depends_on:
       - redis
+      - celery_worker
     environment:
       - CELERY_BROKER=redis://redis:6379/0
+      - PYTHONPATH=/app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
   redis:
     image: "redis:alpine"
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   celery_worker:
     build: .
     command: celery -A backend.tasks.strategy_runner worker --loglevel=info
     volumes:
       - ./backend:/app/backend
+      - ./logs:/app/logs
     depends_on:
       - redis
+    environment:
+      - CELERY_BROKER=redis://redis:6379/0
+      - PYTHONPATH=/app
+    healthcheck:
+      test: ["CMD", "celery", "inspect", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  celery_beat:
+    build: .
+    command: celery -A backend.tasks.strategy_runner beat --loglevel=info
+    volumes:
+      - ./backend:/app/backend
+      - ./logs:/app/logs
+    depends_on:
+      - redis
+    environment:
+      - CELERY_BROKER=redis://redis:6379/0
+      - PYTHONPATH=/app
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - backend
+      - redis
+      - celery_worker
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+volumes:
+  redis_data:
+    driver: local
+  grafana_data:
+    driver: local

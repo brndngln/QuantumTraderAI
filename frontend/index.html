@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Trader AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-12 w-auto" src="logo.png" alt="Quantum Trader AI">
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#dashboard" class="nav-link active">Dashboard</a>
+                            <a href="#trading" class="nav-link">Trading</a>
+                            <a href="#analytics" class="nav-link">Analytics</a>
+                            <a href="#settings" class="nav-link">Settings</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button class="p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <div class="ml-3 relative">
+                            <div>
+                                <button class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    <img class="h-8 w-8 rounded-full" src="avatar.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Dashboard Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Performance Card -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-chart-line text-3xl text-green-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <h3 class="text-sm font-medium text-gray-500 truncate">Performance</h3>
+                            <dl class="mt-2">
+                                <dt class="text-sm font-normal text-gray-900">Total Return</dt>
+                                <dd class="text-3xl font-semibold text-gray-900">+12.5%</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risk Card -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-shield-alt text-3xl text-yellow-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <h3 class="text-sm font-medium text-gray-500 truncate">Risk Level</h3>
+                            <dl class="mt-2">
+                                <dt class="text-sm font-normal text-gray-900">Current Risk</dt>
+                                <dd class="text-3xl font-semibold text-gray-900">Medium</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Card -->
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-pie-chart text-3xl text-blue-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <h3 class="text-sm font-medium text-gray-500 truncate">Portfolio</h3>
+                            <dl class="mt-2">
+                                <dt class="text-sm font-normal text-gray-900">Total Value</dt>
+                                <dd class="text-3xl font-semibold text-gray-900">$500,000</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trading Section -->
+        <div class="mt-8">
+            <div class="bg-white shadow rounded-lg">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Trading Interface</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Trading Form -->
+                        <div class="col-span-1">
+                            <form class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Symbol</label>
+                                    <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus:ring-2 focus:ring-offset-2">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Position Size</label>
+                                    <input type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus:ring-2 focus:ring-offset-2">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Strategy</label>
+                                    <select class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 focus:ring-2 focus:ring-offset-2">
+                                        <option>Momentum</option>
+                                        <option>Mean Reversion</option>
+                                        <option>Multi-Strategy</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    Execute Trade
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Trading Chart -->
+                        <div class="col-span-1">
+                            <div id="trading-chart" class="h-96"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Section -->
+        <div class="mt-8">
+            <div class="bg-white shadow rounded-lg">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Performance Analytics</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Metrics Cards -->
+                        <div class="bg-white overflow-hidden shadow rounded-lg">
+                            <div class="p-5">
+                                <h3 class="text-sm font-medium text-gray-500">Sharpe Ratio</h3>
+                                <p class="text-2xl font-semibold text-gray-900">1.85</p>
+                            </div>
+                        </div>
+                        <div class="bg-white overflow-hidden shadow rounded-lg">
+                            <div class="p-5">
+                                <h3 class="text-sm font-medium text-gray-500">Max Drawdown</h3>
+                                <p class="text-2xl font-semibold text-gray-900">-5.2%</p>
+                            </div>
+                        </div>
+                        <div class="bg-white overflow-hidden shadow rounded-lg">
+                            <div class="p-5">
+                                <h3 class="text-sm font-medium text-gray-500">Annual Return</h3>
+                                <p class="text-2xl font-semibold text-gray-900">15.3%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-300">
+                <p class="text-base">Quantum Trader AI © 2025. All rights reserved.</p>
+                <p class="mt-2">This software is provided "AS IS" with no warranty of any kind.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
