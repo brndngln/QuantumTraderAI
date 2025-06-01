@@ -3,33 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Trader AI</title>
+    <meta name="description" content="QuantumTraderAI - Advanced AI-Powered Trading Platform">
+    <meta name="keywords" content="quantum trading, AI trading, portfolio management, algorithmic trading">
+    <title>QuantumTraderAI - Advanced AI Trading Platform</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    
+    <!-- CSS Framework -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.5.2/dist/forms.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body class="bg-gray-100">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <img class="h-12 w-auto" src="logo.png" alt="Quantum Trader AI">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow-lg">
+            <nav class="container mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <img src="/assets/logo.png" alt="QuantumTraderAI" class="h-12 w-auto">
+                        <h1 class="text-2xl font-bold ml-4">QuantumTraderAI</h1>
                     </div>
-                    <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline space-x-4">
-                            <a href="#dashboard" class="nav-link active">Dashboard</a>
-                            <a href="#trading" class="nav-link">Trading</a>
-                            <a href="#analytics" class="nav-link">Analytics</a>
-                            <a href="#settings" class="nav-link">Settings</a>
-                        </div>
+                    
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#dashboard" class="nav-link active">Dashboard</a>
+                        <a href="#strategies" class="nav-link">Strategies</a>
+                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                        <a href="#settings" class="nav-link">Settings</a>
+                        <a href="#support" class="nav-link">Support</a>
                     </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-4 flex items-center md:ml-6">
-                        <button class="p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    
+                    <div class="flex items-center space-x-4">
+                        <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-200">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button id="notifications" class="p-2 rounded-lg hover:bg-gray-200">
                             <i class="fas fa-bell"></i>
                         </button>
                         <div class="ml-3 relative">

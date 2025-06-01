@@ -1,0 +1,62 @@
+QUANTUMTRADERAI USER AGREEMENT
+
+1. ACCEPTANCE OF AGREEMENT
+By using QuantumTraderAI, you agree to be bound by this User Agreement and all applicable laws and regulations. If you do not agree with these terms, do not use the software.
+
+2. LICENSE GRANT
+The authors grant you a non-exclusive, non-transferable license to use QuantumTraderAI for personal, non-commercial purposes only.
+
+3. RESTRICTIONS
+You agree not to:
+- Reverse engineer, decompile, or disassemble the software
+- Modify or create derivative works
+- Use the software for commercial purposes without explicit permission
+- Share or distribute the software without authorization
+- Use the software in a way that could damage, disable, or impair the functionality
+
+4. USER RESPONSIBILITIES
+You are solely responsible for:
+- Ensuring your system meets the minimum requirements
+- Maintaining the security of your account and data
+- Complying with all applicable laws and regulations
+- Using the software in an ethical and legal manner
+
+5. TRADING RISKS
+You acknowledge that:
+- Trading involves significant risk
+- Past performance does not guarantee future results
+- You should only trade with risk capital
+- You are responsible for your own trading decisions
+
+6. PRIVACY
+The software may collect certain usage data for analytics and improvement purposes. You agree to the terms of our Privacy Policy.
+
+7. TERMINATION
+The authors reserve the right to terminate your access to the software at any time without notice.
+
+8. LIMITATION OF LIABILITY
+In no event shall the authors be liable for any damages arising from the use of the software, including but not limited to:
+- Direct, indirect, incidental, special, or consequential damages
+- Loss of profits or data
+- Trading losses
+- Technical failures
+
+9. INDEMNIFICATION
+You agree to indemnify and hold harmless the authors from any claims arising from your use of the software.
+
+10. GOVERNING LAW
+This agreement shall be governed by and construed in accordance with the laws of the jurisdiction in which the software is used.
+
+11. ENTIRE AGREEMENT
+This agreement constitutes the entire understanding between the parties regarding the use of QuantumTraderAI.
+
+12. MODIFICATIONS
+The authors reserve the right to modify this agreement at any time without notice.
+
+13. SEVERABILITY
+If any provision of this agreement is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.
+
+14. CONTACT INFORMATION
+For questions regarding this agreement, please contact:
+QuantumTraderAI Support
+support@quantumtraderai.com
