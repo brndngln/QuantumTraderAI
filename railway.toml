@@ -17,22 +17,29 @@ command = "python -m pip install --upgrade pip && pip install -r requirements.tx
 branch = "main"
 
 [app.services]
-web = { ports = [8000], memory = "1GB", cpu = "2" }
-redis = { ports = [6379], memory = "512MB", cpu = "1" }
-frontend = { ports = [3000], memory = "512MB", cpu = "1" }
-worker = { memory = "512MB", cpu = "1" }
-
-[app.services.web]
-command = "uvicorn backend.main:app --host 0.0.0.0 --port 8000"
-
-[app.services.redis]
-command = "redis-server --requirepass $REDIS_PASSWORD"
-
-[app.services.frontend]
-command = "npm start"
-
-[app.services.worker]
-command = "celery -A backend.worker worker --loglevel=info"
+web = { 
+  ports = [8000], 
+  memory = "1GB", 
+  cpu = "2",
+  command = "uvicorn backend.main:app --host 0.0.0.0 --port 8000"
+}
+redis = { 
+  ports = [6379], 
+  memory = "512MB", 
+  cpu = "1",
+  command = "redis-server --requirepass $REDIS_PASSWORD"
+}
+frontend = { 
+  ports = [3000], 
+  memory = "512MB", 
+  cpu = "1",
+  command = "npm start"
+}
+worker = { 
+  memory = "512MB", 
+  cpu = "1",
+  command = "celery -A backend.worker worker --loglevel=info"
+}
 
 [app.variables]
 REDIS_PASSWORD = "your_secure_redis_password"
