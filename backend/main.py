@@ -121,13 +121,19 @@ AI_CONFIG = {
     }
 }
 
+# Initialize quantum components
+quantum_optimizer = QuantumPortfolioOptimizer()
+quantum_risk_manager = QuantumRiskManager()
+
 # Initialize AI safety monitoring
 ai_safety_monitor = {
     'consecutive_losses': 0,
     'current_drawdown': 0,
     'last_user_confirmation': None,
     'active': True,
-    'last_decision': None
+    'last_decision': None,
+    'quantum_risk_score': 0,
+    'quantum_adjustment_factor': 1.0
 }
 
 # AI decision logging
