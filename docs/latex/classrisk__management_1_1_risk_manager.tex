@@ -1,0 +1,248 @@
+\doxysection{risk\+\_\+management.\+Risk\+Manager Class Reference}
+\hypertarget{classrisk__management_1_1_risk_manager}{}\label{classrisk__management_1_1_risk_manager}\index{risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrisk__management_1_1_risk_manager_a94b050496a84f1aaeac2210fa5c89b25}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_aba8ccfa8877b1394ade6f9460b6fb5aa}{max\+\_\+position\+\_\+size}}=0.\+05, float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a4e3fdd842aaf86c941818da6d8df8ce1}{max\+\_\+drawdown}}=0.\+02, float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a6e2e7bdeb11e9784462bdc7531e8fe29}{stop\+\_\+loss\+\_\+pct}}=0.\+02, float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_ac2b71d0ce37799a477584f41e49b7916}{take\+\_\+profit\+\_\+pct}}=0.\+03, float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a14cbb134ac6b63b0a4720fbc04dc9d9c}{risk\+\_\+per\+\_\+trade}}=0.\+01, bool \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a14c079fa8ef3d7b2d4c2cb8c2d77517f}{volatility\+\_\+adjustment}}=True, float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a3de4d413465a91867d2107cdaa9b2d7e}{correlation\+\_\+threshold}}=0.\+8, float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_ac842b7d404f7131f3d37d08da801e840}{max\+\_\+leverage}}=2.\+0)
+\item 
+float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a737372947187874c390dc238bca1f566}{calculate\+\_\+position\+\_\+size}} (self, float current\+\_\+price, float portfolio\+\_\+value, float volatility, float leverage=1.\+0)
+\item 
+Tuple\mbox{[}float, float\mbox{]} \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a2e855db76cab97e4a991e062bec12d47}{calculate\+\_\+stop\+\_\+loss}} (self, float entry\+\_\+price, float volatility, float position\+\_\+size)
+\item 
+float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_af8cd79f878d2a88bcaf5bfc81d3f120e}{calculate\+\_\+risk\+\_\+reward\+\_\+ratio}} (self, float stop\+\_\+loss, float take\+\_\+profit, float entry\+\_\+price)
+\item 
+None \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a04d82d1f751ea7325a0eb17bb0fe539e}{update\+\_\+metrics}} (self, float trade\+\_\+pnl, float portfolio\+\_\+value)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a90c3149c3c027e81b33c524e9e06602c}{get\+\_\+risk\+\_\+metrics}} (self)
+\item 
+bool \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a0591620f7715796e517f10cdd70a319d}{check\+\_\+position\+\_\+correlation}} (self, str new\+\_\+position)
+\item 
+None \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a5d4693802f2e42d3c30d4a7412197c19}{update\+\_\+correlation\+\_\+matrix}} (self, pd.\+Data\+Frame price\+\_\+data)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a51bc4c31aefc00cb2d2d0a6f777855cb}{get\+\_\+position\+\_\+limits}} (self, float portfolio\+\_\+value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrisk__management_1_1_risk_manager_aba8ccfa8877b1394ade6f9460b6fb5aa}{max\+\_\+position\+\_\+size}} = max\+\_\+position\+\_\+size
+\item 
+\mbox{\hyperlink{classrisk__management_1_1_risk_manager_a4e3fdd842aaf86c941818da6d8df8ce1}{max\+\_\+drawdown}} = max\+\_\+drawdown
+\item 
+\mbox{\hyperlink{classrisk__management_1_1_risk_manager_a6e2e7bdeb11e9784462bdc7531e8fe29}{stop\+\_\+loss\+\_\+pct}} = stop\+\_\+loss\+\_\+pct
+\item 
+\mbox{\hyperlink{classrisk__management_1_1_risk_manager_ac2b71d0ce37799a477584f41e49b7916}{take\+\_\+profit\+\_\+pct}} = take\+\_\+profit\+\_\+pct
+\item 
+\mbox{\hyperlink{classrisk__management_1_1_risk_manager_a14cbb134ac6b63b0a4720fbc04dc9d9c}{risk\+\_\+per\+\_\+trade}} = risk\+\_\+per\+\_\+trade
+\item 
+\mbox{\hyperlink{classrisk__management_1_1_risk_manager_a14c079fa8ef3d7b2d4c2cb8c2d77517f}{volatility\+\_\+adjustment}} = volatility\+\_\+adjustment
+\item 
+\mbox{\hyperlink{classrisk__management_1_1_risk_manager_a3de4d413465a91867d2107cdaa9b2d7e}{correlation\+\_\+threshold}} = correlation\+\_\+threshold
+\item 
+\mbox{\hyperlink{classrisk__management_1_1_risk_manager_ac842b7d404f7131f3d37d08da801e840}{max\+\_\+leverage}} = max\+\_\+leverage
+\item 
+float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_af9ae6f2293717ee1133651832dae701a}{current\+\_\+drawdown}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a0f65e62de3f109248bd4e3a54456ed8d}{max\+\_\+drawdown\+\_\+reached}} = 0.\+0
+\item 
+int \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a362fb365bcb5803da087f8ebe0ac2e74}{total\+\_\+trades}} = 0
+\item 
+int \mbox{\hyperlink{classrisk__management_1_1_risk_manager_ae2fd77a286d1853341158004f4c08788}{winning\+\_\+trades}} = 0
+\item 
+int \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a99d6537ade068312102727582a8ec815}{losing\+\_\+trades}} = 0
+\item 
+float \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a3f257a142d7dec5c4bbfbb3644686582}{total\+\_\+profit}} = 0.\+0
+\item 
+dict \mbox{\hyperlink{classrisk__management_1_1_risk_manager_a7fc315e43b5656031904ce4a245ff555}{current\+\_\+positions}} = \{\}
+\item 
+\mbox{\hyperlink{classrisk__management_1_1_risk_manager_a25c8d02e7aed09ec0318b3bccb89bbf9}{correlation\+\_\+matrix}} = None
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classrisk__management_1_1_risk_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classrisk__management_1_1_risk_manager_a94b050496a84f1aaeac2210fa5c89b25}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a94b050496a84f1aaeac2210fa5c89b25} 
+risk\+\_\+management.\+Risk\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float }]{max\+\_\+position\+\_\+size}{ = {\ttfamily 0.05}, }\item[{float }]{max\+\_\+drawdown}{ = {\ttfamily 0.02}, }\item[{float }]{stop\+\_\+loss\+\_\+pct}{ = {\ttfamily 0.02}, }\item[{float }]{take\+\_\+profit\+\_\+pct}{ = {\ttfamily 0.03}, }\item[{float }]{risk\+\_\+per\+\_\+trade}{ = {\ttfamily 0.01}, }\item[{bool }]{volatility\+\_\+adjustment}{ = {\ttfamily True}, }\item[{float }]{correlation\+\_\+threshold}{ = {\ttfamily 0.8}, }\item[{float }]{max\+\_\+leverage}{ = {\ttfamily 2.0}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize risk management system
+
+Args:
+    max_position_size: Maximum position size as % of portfolio
+    max_drawdown: Maximum allowed drawdown
+    stop_loss_pct: Stop loss percentage
+    take_profit_pct: Take profit percentage
+    risk_per_trade: Risk per trade as % of portfolio
+    volatility_adjustment: Whether to adjust position size based on volatility
+    correlation_threshold: Maximum allowed correlation between positions
+    max_leverage: Maximum leverage allowed
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classrisk__management_1_1_risk_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classrisk__management_1_1_risk_manager_a737372947187874c390dc238bca1f566}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!calculate\_position\_size@{calculate\_position\_size}}
+\index{calculate\_position\_size@{calculate\_position\_size}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{calculate\_position\_size()}{calculate\_position\_size()}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a737372947187874c390dc238bca1f566} 
+ float risk\+\_\+management.\+Risk\+Manager.\+calculate\+\_\+position\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{current\+\_\+price}{, }\item[{float}]{portfolio\+\_\+value}{, }\item[{float}]{volatility}{, }\item[{float }]{leverage}{ = {\ttfamily 1.0}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate optimal position size\end{DoxyVerb}
+ \Hypertarget{classrisk__management_1_1_risk_manager_af8cd79f878d2a88bcaf5bfc81d3f120e}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!calculate\_risk\_reward\_ratio@{calculate\_risk\_reward\_ratio}}
+\index{calculate\_risk\_reward\_ratio@{calculate\_risk\_reward\_ratio}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{calculate\_risk\_reward\_ratio()}{calculate\_risk\_reward\_ratio()}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_af8cd79f878d2a88bcaf5bfc81d3f120e} 
+ float risk\+\_\+management.\+Risk\+Manager.\+calculate\+\_\+risk\+\_\+reward\+\_\+ratio (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{stop\+\_\+loss}{, }\item[{float}]{take\+\_\+profit}{, }\item[{float}]{entry\+\_\+price}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate risk/reward ratio\end{DoxyVerb}
+ \Hypertarget{classrisk__management_1_1_risk_manager_a2e855db76cab97e4a991e062bec12d47}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!calculate\_stop\_loss@{calculate\_stop\_loss}}
+\index{calculate\_stop\_loss@{calculate\_stop\_loss}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{calculate\_stop\_loss()}{calculate\_stop\_loss()}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a2e855db76cab97e4a991e062bec12d47} 
+ Tuple\mbox{[}float, float\mbox{]} risk\+\_\+management.\+Risk\+Manager.\+calculate\+\_\+stop\+\_\+loss (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{entry\+\_\+price}{, }\item[{float}]{volatility}{, }\item[{float}]{position\+\_\+size}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate stop loss and take profit levels\end{DoxyVerb}
+ \Hypertarget{classrisk__management_1_1_risk_manager_a0591620f7715796e517f10cdd70a319d}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!check\_position\_correlation@{check\_position\_correlation}}
+\index{check\_position\_correlation@{check\_position\_correlation}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{check\_position\_correlation()}{check\_position\_correlation()}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a0591620f7715796e517f10cdd70a319d} 
+ bool risk\+\_\+management.\+Risk\+Manager.\+check\+\_\+position\+\_\+correlation (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{new\+\_\+position}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check correlation with existing positions\end{DoxyVerb}
+ \Hypertarget{classrisk__management_1_1_risk_manager_a51bc4c31aefc00cb2d2d0a6f777855cb}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!get\_position\_limits@{get\_position\_limits}}
+\index{get\_position\_limits@{get\_position\_limits}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{get\_position\_limits()}{get\_position\_limits()}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a51bc4c31aefc00cb2d2d0a6f777855cb} 
+ Dict\mbox{[}str, float\mbox{]} risk\+\_\+management.\+Risk\+Manager.\+get\+\_\+position\+\_\+limits (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{portfolio\+\_\+value}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get position limits based on current portfolio\end{DoxyVerb}
+ \Hypertarget{classrisk__management_1_1_risk_manager_a90c3149c3c027e81b33c524e9e06602c}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!get\_risk\_metrics@{get\_risk\_metrics}}
+\index{get\_risk\_metrics@{get\_risk\_metrics}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{get\_risk\_metrics()}{get\_risk\_metrics()}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a90c3149c3c027e81b33c524e9e06602c} 
+ Dict\mbox{[}str, float\mbox{]} risk\+\_\+management.\+Risk\+Manager.\+get\+\_\+risk\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get current risk metrics\end{DoxyVerb}
+ \Hypertarget{classrisk__management_1_1_risk_manager_a5d4693802f2e42d3c30d4a7412197c19}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!update\_correlation\_matrix@{update\_correlation\_matrix}}
+\index{update\_correlation\_matrix@{update\_correlation\_matrix}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{update\_correlation\_matrix()}{update\_correlation\_matrix()}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a5d4693802f2e42d3c30d4a7412197c19} 
+ None risk\+\_\+management.\+Risk\+Manager.\+update\+\_\+correlation\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{price\+\_\+data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update correlation matrix\end{DoxyVerb}
+ \Hypertarget{classrisk__management_1_1_risk_manager_a04d82d1f751ea7325a0eb17bb0fe539e}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!update\_metrics@{update\_metrics}}
+\index{update\_metrics@{update\_metrics}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{update\_metrics()}{update\_metrics()}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a04d82d1f751ea7325a0eb17bb0fe539e} 
+ None risk\+\_\+management.\+Risk\+Manager.\+update\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{trade\+\_\+pnl}{, }\item[{float}]{portfolio\+\_\+value}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update risk metrics\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classrisk__management_1_1_risk_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classrisk__management_1_1_risk_manager_a25c8d02e7aed09ec0318b3bccb89bbf9}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!correlation\_matrix@{correlation\_matrix}}
+\index{correlation\_matrix@{correlation\_matrix}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{correlation\_matrix}{correlation\_matrix}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a25c8d02e7aed09ec0318b3bccb89bbf9} 
+risk\+\_\+management.\+Risk\+Manager.\+correlation\+\_\+matrix = None}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_a3de4d413465a91867d2107cdaa9b2d7e}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!correlation\_threshold@{correlation\_threshold}}
+\index{correlation\_threshold@{correlation\_threshold}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{correlation\_threshold}{correlation\_threshold}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a3de4d413465a91867d2107cdaa9b2d7e} 
+risk\+\_\+management.\+Risk\+Manager.\+correlation\+\_\+threshold = correlation\+\_\+threshold}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_af9ae6f2293717ee1133651832dae701a}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!current\_drawdown@{current\_drawdown}}
+\index{current\_drawdown@{current\_drawdown}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{current\_drawdown}{current\_drawdown}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_af9ae6f2293717ee1133651832dae701a} 
+risk\+\_\+management.\+Risk\+Manager.\+current\+\_\+drawdown = 0.\+0}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_a7fc315e43b5656031904ce4a245ff555}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!current\_positions@{current\_positions}}
+\index{current\_positions@{current\_positions}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{current\_positions}{current\_positions}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a7fc315e43b5656031904ce4a245ff555} 
+dict risk\+\_\+management.\+Risk\+Manager.\+current\+\_\+positions = \{\}}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_a99d6537ade068312102727582a8ec815}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!losing\_trades@{losing\_trades}}
+\index{losing\_trades@{losing\_trades}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{losing\_trades}{losing\_trades}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a99d6537ade068312102727582a8ec815} 
+risk\+\_\+management.\+Risk\+Manager.\+losing\+\_\+trades = 0}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_a4e3fdd842aaf86c941818da6d8df8ce1}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!max\_drawdown@{max\_drawdown}}
+\index{max\_drawdown@{max\_drawdown}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{max\_drawdown}{max\_drawdown}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a4e3fdd842aaf86c941818da6d8df8ce1} 
+risk\+\_\+management.\+Risk\+Manager.\+max\+\_\+drawdown = max\+\_\+drawdown}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_a0f65e62de3f109248bd4e3a54456ed8d}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!max\_drawdown\_reached@{max\_drawdown\_reached}}
+\index{max\_drawdown\_reached@{max\_drawdown\_reached}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{max\_drawdown\_reached}{max\_drawdown\_reached}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a0f65e62de3f109248bd4e3a54456ed8d} 
+risk\+\_\+management.\+Risk\+Manager.\+max\+\_\+drawdown\+\_\+reached = 0.\+0}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_ac842b7d404f7131f3d37d08da801e840}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!max\_leverage@{max\_leverage}}
+\index{max\_leverage@{max\_leverage}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{max\_leverage}{max\_leverage}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_ac842b7d404f7131f3d37d08da801e840} 
+risk\+\_\+management.\+Risk\+Manager.\+max\+\_\+leverage = max\+\_\+leverage}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_aba8ccfa8877b1394ade6f9460b6fb5aa}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!max\_position\_size@{max\_position\_size}}
+\index{max\_position\_size@{max\_position\_size}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{max\_position\_size}{max\_position\_size}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_aba8ccfa8877b1394ade6f9460b6fb5aa} 
+risk\+\_\+management.\+Risk\+Manager.\+max\+\_\+position\+\_\+size = max\+\_\+position\+\_\+size}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_a14cbb134ac6b63b0a4720fbc04dc9d9c}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!risk\_per\_trade@{risk\_per\_trade}}
+\index{risk\_per\_trade@{risk\_per\_trade}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{risk\_per\_trade}{risk\_per\_trade}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a14cbb134ac6b63b0a4720fbc04dc9d9c} 
+risk\+\_\+management.\+Risk\+Manager.\+risk\+\_\+per\+\_\+trade = risk\+\_\+per\+\_\+trade}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_a6e2e7bdeb11e9784462bdc7531e8fe29}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!stop\_loss\_pct@{stop\_loss\_pct}}
+\index{stop\_loss\_pct@{stop\_loss\_pct}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{stop\_loss\_pct}{stop\_loss\_pct}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a6e2e7bdeb11e9784462bdc7531e8fe29} 
+risk\+\_\+management.\+Risk\+Manager.\+stop\+\_\+loss\+\_\+pct = stop\+\_\+loss\+\_\+pct}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_ac2b71d0ce37799a477584f41e49b7916}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!take\_profit\_pct@{take\_profit\_pct}}
+\index{take\_profit\_pct@{take\_profit\_pct}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{take\_profit\_pct}{take\_profit\_pct}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_ac2b71d0ce37799a477584f41e49b7916} 
+risk\+\_\+management.\+Risk\+Manager.\+take\+\_\+profit\+\_\+pct = take\+\_\+profit\+\_\+pct}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_a3f257a142d7dec5c4bbfbb3644686582}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!total\_profit@{total\_profit}}
+\index{total\_profit@{total\_profit}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{total\_profit}{total\_profit}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a3f257a142d7dec5c4bbfbb3644686582} 
+risk\+\_\+management.\+Risk\+Manager.\+total\+\_\+profit = 0.\+0}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_a362fb365bcb5803da087f8ebe0ac2e74}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!total\_trades@{total\_trades}}
+\index{total\_trades@{total\_trades}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{total\_trades}{total\_trades}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a362fb365bcb5803da087f8ebe0ac2e74} 
+risk\+\_\+management.\+Risk\+Manager.\+total\+\_\+trades = 0}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_a14c079fa8ef3d7b2d4c2cb8c2d77517f}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!volatility\_adjustment@{volatility\_adjustment}}
+\index{volatility\_adjustment@{volatility\_adjustment}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{volatility\_adjustment}{volatility\_adjustment}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_a14c079fa8ef3d7b2d4c2cb8c2d77517f} 
+risk\+\_\+management.\+Risk\+Manager.\+volatility\+\_\+adjustment = volatility\+\_\+adjustment}
+
+\Hypertarget{classrisk__management_1_1_risk_manager_ae2fd77a286d1853341158004f4c08788}\index{risk\_management.RiskManager@{risk\_management.RiskManager}!winning\_trades@{winning\_trades}}
+\index{winning\_trades@{winning\_trades}!risk\_management.RiskManager@{risk\_management.RiskManager}}
+\doxysubsubsection{\texorpdfstring{winning\_trades}{winning\_trades}}
+{\footnotesize\ttfamily \label{classrisk__management_1_1_risk_manager_ae2fd77a286d1853341158004f4c08788} 
+risk\+\_\+management.\+Risk\+Manager.\+winning\+\_\+trades = 0}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{risk__management_8py}{risk\+\_\+management.\+py}}\end{DoxyCompactItemize}

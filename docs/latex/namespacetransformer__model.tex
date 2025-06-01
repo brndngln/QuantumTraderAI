@@ -1,0 +1,51 @@
+\doxysection{transformer\+\_\+model Namespace Reference}
+\hypertarget{namespacetransformer__model}{}\label{namespacetransformer__model}\index{transformer\_model@{transformer\_model}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention}{Multi\+Head\+Self\+Attention}}
+\item 
+class \mbox{\hyperlink{classtransformer__model_1_1_transformer_block}{Transformer\+Block}}
+\item 
+class \mbox{\hyperlink{classtransformer__model_1_1_transformer_model}{Transformer\+Model}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetransformer__model_acaf3a50d73aff34014e2b1921a5f4cc1}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{namespacetransformer__model_a9da3e3a1b6c83e142b493fcb92edb82f}{transformer}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\Hypertarget{namespacetransformer__model_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacetransformer__model_acaf3a50d73aff34014e2b1921a5f4cc1}\index{transformer\_model@{transformer\_model}!logger@{logger}}
+\index{logger@{logger}!transformer\_model@{transformer\_model}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily \label{namespacetransformer__model_acaf3a50d73aff34014e2b1921a5f4cc1} 
+transformer\+\_\+model.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{namespacetransformer__model_a9da3e3a1b6c83e142b493fcb92edb82f}\index{transformer\_model@{transformer\_model}!transformer@{transformer}}
+\index{transformer@{transformer}!transformer\_model@{transformer\_model}}
+\doxysubsubsection{\texorpdfstring{transformer}{transformer}}
+{\footnotesize\ttfamily \label{namespacetransformer__model_a9da3e3a1b6c83e142b493fcb92edb82f} 
+transformer\+\_\+model.\+transformer}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ TransformerModel(}
+\DoxyCodeLine{00002\ \ \ \ \ input\_shape=(60,\ 10),\ \ \textcolor{comment}{\#\ 60\ timesteps,\ 10\ features}}
+\DoxyCodeLine{00003\ \ \ \ \ embed\_dim=64,}
+\DoxyCodeLine{00004\ \ \ \ \ num\_heads=4,}
+\DoxyCodeLine{00005\ \ \ \ \ ff\_dim=32,}
+\DoxyCodeLine{00006\ \ \ \ \ num\_transformer\_blocks=3,}
+\DoxyCodeLine{00007\ \ \ \ \ dropout\_rate=0.2,}
+\DoxyCodeLine{00008\ \ \ \ \ learning\_rate=0.001,}
+\DoxyCodeLine{00009\ \ \ \ \ batch\_size=32,}
+\DoxyCodeLine{00010\ \ \ \ \ epochs=100,}
+\DoxyCodeLine{00011\ \ \ \ \ patience=10}
+\DoxyCodeLine{00012\ )}
+
+\end{DoxyCode}

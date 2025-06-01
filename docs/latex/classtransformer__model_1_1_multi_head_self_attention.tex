@@ -1,0 +1,122 @@
+\doxysection{transformer\+\_\+model.\+Multi\+Head\+Self\+Attention Class Reference}
+\hypertarget{classtransformer__model_1_1_multi_head_self_attention}{}\label{classtransformer__model_1_1_multi_head_self_attention}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+Inheritance diagram for transformer\+\_\+model.\+Multi\+Head\+Self\+Attention\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtransformer__model_1_1_multi_head_self_attention}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_ae98e6ef089e8523bea4fd6c4a9d6eda6}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}}, \mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_aa1a62667862d6884c22eae20d180d182}{num\+\_\+heads}}=8)
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_ad489bb12e871f79f267ffff343e76845}{attention}} (self, query, key, value)
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a112a02d6a7d39e789cf58417e50f77b1}{separate\+\_\+heads}} (self, x, batch\+\_\+size)
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_af962de8e1ef2768e4da3620c7bc96a67}{call}} (self, inputs)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}} = embed\+\_\+dim
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_aa1a62667862d6884c22eae20d180d182}{num\+\_\+heads}} = num\+\_\+heads
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a396dbb5cf409087c3c81caa6dd136571}{projection\+\_\+dim}} = \mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}} // \mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_aa1a62667862d6884c22eae20d180d182}{num\+\_\+heads}}
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a67f13562786b252bfaad55f1ddb10caa}{query\+\_\+dense}} = Dense(\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}})
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a9ccb5c417a8a1a3d1d91485b3186f024}{key\+\_\+dense}} = Dense(\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}})
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a71eeb8c1ca6310466d8cb3e327562a7e}{value\+\_\+dense}} = Dense(\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}})
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a29f7ad27c79b8ad4edbbc014e11c6a5b}{combine\+\_\+heads}} = Dense(\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}})
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_ae98e6ef089e8523bea4fd6c4a9d6eda6}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_ae98e6ef089e8523bea4fd6c4a9d6eda6} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{embed\+\_\+dim}{, }\item[{}]{num\+\_\+heads}{ = {\ttfamily 8}}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_ad489bb12e871f79f267ffff343e76845}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!attention@{attention}}
+\index{attention@{attention}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{attention()}{attention()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_ad489bb12e871f79f267ffff343e76845} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+attention (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{query}{, }\item[{}]{key}{, }\item[{}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_af962de8e1ef2768e4da3620c7bc96a67}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!call@{call}}
+\index{call@{call}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{call()}{call()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_af962de8e1ef2768e4da3620c7bc96a67} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+call (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{inputs}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_a112a02d6a7d39e789cf58417e50f77b1}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!separate\_heads@{separate\_heads}}
+\index{separate\_heads@{separate\_heads}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{separate\_heads()}{separate\_heads()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_a112a02d6a7d39e789cf58417e50f77b1} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+separate\+\_\+heads (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{x}{, }\item[{}]{batch\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_a29f7ad27c79b8ad4edbbc014e11c6a5b}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!combine\_heads@{combine\_heads}}
+\index{combine\_heads@{combine\_heads}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{combine\_heads}{combine\_heads}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_a29f7ad27c79b8ad4edbbc014e11c6a5b} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+combine\+\_\+heads = Dense(\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}})}
+
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!embed\_dim@{embed\_dim}}
+\index{embed\_dim@{embed\_dim}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{embed\_dim}{embed\_dim}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+embed\+\_\+dim = embed\+\_\+dim}
+
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_a9ccb5c417a8a1a3d1d91485b3186f024}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!key\_dense@{key\_dense}}
+\index{key\_dense@{key\_dense}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{key\_dense}{key\_dense}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_a9ccb5c417a8a1a3d1d91485b3186f024} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+key\+\_\+dense = Dense(\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}})}
+
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_aa1a62667862d6884c22eae20d180d182}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!num\_heads@{num\_heads}}
+\index{num\_heads@{num\_heads}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{num\_heads}{num\_heads}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_aa1a62667862d6884c22eae20d180d182} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+num\+\_\+heads = num\+\_\+heads}
+
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_a396dbb5cf409087c3c81caa6dd136571}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!projection\_dim@{projection\_dim}}
+\index{projection\_dim@{projection\_dim}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{projection\_dim}{projection\_dim}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_a396dbb5cf409087c3c81caa6dd136571} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+projection\+\_\+dim = \mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}} // \mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_aa1a62667862d6884c22eae20d180d182}{num\+\_\+heads}}}
+
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_a67f13562786b252bfaad55f1ddb10caa}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!query\_dense@{query\_dense}}
+\index{query\_dense@{query\_dense}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{query\_dense}{query\_dense}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_a67f13562786b252bfaad55f1ddb10caa} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+query\+\_\+dense = Dense(\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}})}
+
+\Hypertarget{classtransformer__model_1_1_multi_head_self_attention_a71eeb8c1ca6310466d8cb3e327562a7e}\index{transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}!value\_dense@{value\_dense}}
+\index{value\_dense@{value\_dense}!transformer\_model.MultiHeadSelfAttention@{transformer\_model.MultiHeadSelfAttention}}
+\doxysubsubsection{\texorpdfstring{value\_dense}{value\_dense}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_multi_head_self_attention_a71eeb8c1ca6310466d8cb3e327562a7e} 
+transformer\+\_\+model.\+Multi\+Head\+Self\+Attention.\+value\+\_\+dense = Dense(\mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention_a703e38e00e160ef9b82044ff2122afff}{embed\+\_\+dim}})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/ai\+\_\+models/\mbox{\hyperlink{transformer__model_8py}{transformer\+\_\+model.\+py}}\end{DoxyCompactItemize}

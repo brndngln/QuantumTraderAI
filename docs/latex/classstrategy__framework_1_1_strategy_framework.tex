@@ -1,0 +1,267 @@
+\doxysection{strategy\+\_\+framework.\+Strategy\+Framework Class Reference}
+\hypertarget{classstrategy__framework_1_1_strategy_framework}{}\label{classstrategy__framework_1_1_strategy_framework}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a7570bf54190c78e5199cdf7f04f2cf9a}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, List\mbox{[}Type\mbox{[}\mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy}{Trading\+Strategy}}\mbox{]}\mbox{]} \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a35f05fd15eddeb13609294a0de9b0540}{strategies}}, Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a41e3e37b30d98c1930e71d3496b7933f}{weights}}=None, \mbox{\hyperlink{classrisk__management_1_1_risk_manager}{Risk\+Manager}} \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_aeb98a4d050291a1380076f9afd64c794}{risk\+\_\+manager}}=None, \mbox{\hyperlink{classbacktesting_1_1_backtester}{Backtester}} \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_aaa175723ad563812cf2c32a19bb24421}{backtester}}=None)
+\item 
+bool \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a37895daedc7d3bdcb0107231c068f2ba}{execute\+\_\+trade}} (self, dict trade\+\_\+details)
+\item 
+None \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a54b3c277eadbe51314d0611480d2e5e5}{initialize\+\_\+strategies}} (self, pd.\+Data\+Frame data)
+\item 
+None \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a5a6327fa3174541c4f06a1e0994b3ef5}{update\+\_\+metrics}} (self, dict trade\+\_\+result)
+\item 
+bool \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_afe60d0c44778d3480df63fe61f9903de}{validate\+\_\+weights}} (self)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_adb3503d6fd20941864f1c4ae920a61aa}{optimize\+\_\+weights}} (self)
+\item 
+pd.\+Series \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a0e0f434aa9ed63fe1d29f310ee5fd9cf}{generate\+\_\+combined\+\_\+signals}} (self, pd.\+Data\+Frame data)
+\item 
+None \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a68b3ce77751511460530f253b8ef9f8f}{rebalance}} (self, pd.\+Data\+Frame data)
+\item 
+Dict\mbox{[}str, Dict\mbox{]} \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_aa39ee324e02437fe90d5fd10e805cb2e}{get\+\_\+strategy\+\_\+metrics}} (self)
+\item 
+Dict \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a8b4f4ec78e3d65617bba6152e8900bd4}{get\+\_\+combined\+\_\+metrics}} (self, pd.\+Data\+Frame data)
+\item 
+None \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a694040570302241e4c73a9c9ec3c5927}{plot\+\_\+strategy\+\_\+performance}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a35f05fd15eddeb13609294a0de9b0540}{strategies}} = strategies
+\item 
+dict \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a41e3e37b30d98c1930e71d3496b7933f}{weights}} = weights or \{s.\+\_\+\+\_\+name\+\_\+\+\_\+\+: 1/len(\mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a35f05fd15eddeb13609294a0de9b0540}{strategies}}) \mbox{\hyperlink{disclaimer_8txt_ae854055138006e411cb061eaa066e4ee}{for}} s in \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a35f05fd15eddeb13609294a0de9b0540}{strategies}}\}
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_aeb98a4d050291a1380076f9afd64c794}{risk\+\_\+manager}} = risk\+\_\+manager or \mbox{\hyperlink{classrisk__management_1_1_risk_manager}{Risk\+Manager}}()
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_aaa175723ad563812cf2c32a19bb24421}{backtester}} = backtester or \mbox{\hyperlink{classbacktesting_1_1_backtester}{Backtester}}()
+\item 
+dict \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_ae0142842c2fda654f162680b9091937f}{strategy\+\_\+instances}} = \{\}
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_adb67e5f36fe5e4dd2a715d5870124443}{last\+\_\+update}} = None
+\item 
+float \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a4a1eda6a072e76e806f7c576e744ac9a}{max\+\_\+position\+\_\+size}} = 0.\+1
+\item 
+float \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a3d877e750b666dc394bfcc836be9cd29}{max\+\_\+drawdown}} = 0.\+05
+\item 
+int \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a71f825198a5bb5af6f0c29394cdc76ab}{consecutive\+\_\+losses}} = 0
+\item 
+int \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_ae0b03c6f939443f1ca16b368e3f362db}{current\+\_\+drawdown}} = 0
+\item 
+bool \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_ae63baf8090c66a3609db02087f70cd45}{active}} = True
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_ab002397a7969c0b1f04a993d558d63e8}{correlation\+\_\+threshold}}
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a25bbec1deef562b3a36512ffac75fa03}{last\+\_\+rebalance}}
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a60e1b70683448a4acaeb5fb478c32b48}{correlation\+\_\+matrix}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a6d257b80129cde9f3ef333820c7ba624}{\+\_\+validate\+\_\+weights}} (self)
+\item 
+bool \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_ae5109482c07b868ffb2c74a1124f8a31}{\+\_\+check\+\_\+safety}} (self, dict trade\+\_\+details)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_a7570bf54190c78e5199cdf7f04f2cf9a}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a7570bf54190c78e5199cdf7f04f2cf9a} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{List\mbox{[}Type\mbox{[}\mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy}{Trading\+Strategy}}\mbox{]}\mbox{]}}]{strategies}{, }\item[{Dict\mbox{[}str, float\mbox{]} }]{weights}{ = {\ttfamily None}, }\item[{\mbox{\hyperlink{classrisk__management_1_1_risk_manager}{Risk\+Manager}} }]{risk\+\_\+manager}{ = {\ttfamily None}, }\item[{\mbox{\hyperlink{classbacktesting_1_1_backtester}{Backtester}} }]{backtester}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize strategy framework with safety measures
+
+Args:
+    strategies: List of strategy classes
+    weights: Weights for each strategy
+    risk_manager: Risk management instance
+    backtester: Backtesting instance
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_ae5109482c07b868ffb2c74a1124f8a31}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!\_check\_safety@{\_check\_safety}}
+\index{\_check\_safety@{\_check\_safety}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{\_check\_safety()}{\_check\_safety()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_ae5109482c07b868ffb2c74a1124f8a31} 
+ bool strategy\+\_\+framework.\+Strategy\+Framework.\+\_\+check\+\_\+safety (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{dict}]{trade\+\_\+details}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Check if trade is within safety parameters\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_a6d257b80129cde9f3ef333820c7ba624}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!\_validate\_weights@{\_validate\_weights}}
+\index{\_validate\_weights@{\_validate\_weights}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{\_validate\_weights()}{\_validate\_weights()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a6d257b80129cde9f3ef333820c7ba624} 
+ bool strategy\+\_\+framework.\+Strategy\+Framework.\+\_\+validate\+\_\+weights (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Validate strategy weights\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_a37895daedc7d3bdcb0107231c068f2ba}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!execute\_trade@{execute\_trade}}
+\index{execute\_trade@{execute\_trade}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{execute\_trade()}{execute\_trade()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a37895daedc7d3bdcb0107231c068f2ba} 
+ bool strategy\+\_\+framework.\+Strategy\+Framework.\+execute\+\_\+trade (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{dict}]{trade\+\_\+details}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Execute trade with safety checks\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_a0e0f434aa9ed63fe1d29f310ee5fd9cf}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!generate\_combined\_signals@{generate\_combined\_signals}}
+\index{generate\_combined\_signals@{generate\_combined\_signals}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{generate\_combined\_signals()}{generate\_combined\_signals()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a0e0f434aa9ed63fe1d29f310ee5fd9cf} 
+ pd.\+Series strategy\+\_\+framework.\+Strategy\+Framework.\+generate\+\_\+combined\+\_\+signals (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate combined signals from all strategies\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_a8b4f4ec78e3d65617bba6152e8900bd4}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!get\_combined\_metrics@{get\_combined\_metrics}}
+\index{get\_combined\_metrics@{get\_combined\_metrics}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{get\_combined\_metrics()}{get\_combined\_metrics()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a8b4f4ec78e3d65617bba6152e8900bd4} 
+ Dict strategy\+\_\+framework.\+Strategy\+Framework.\+get\+\_\+combined\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get combined strategy metrics\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_aa39ee324e02437fe90d5fd10e805cb2e}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!get\_strategy\_metrics@{get\_strategy\_metrics}}
+\index{get\_strategy\_metrics@{get\_strategy\_metrics}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{get\_strategy\_metrics()}{get\_strategy\_metrics()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_aa39ee324e02437fe90d5fd10e805cb2e} 
+ Dict\mbox{[}str, Dict\mbox{]} strategy\+\_\+framework.\+Strategy\+Framework.\+get\+\_\+strategy\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get metrics for all strategies\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_a54b3c277eadbe51314d0611480d2e5e5}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!initialize\_strategies@{initialize\_strategies}}
+\index{initialize\_strategies@{initialize\_strategies}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{initialize\_strategies()}{initialize\_strategies()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a54b3c277eadbe51314d0611480d2e5e5} 
+ None strategy\+\_\+framework.\+Strategy\+Framework.\+initialize\+\_\+strategies (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize all strategies with safety checks\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_adb3503d6fd20941864f1c4ae920a61aa}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!optimize\_weights@{optimize\_weights}}
+\index{optimize\_weights@{optimize\_weights}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{optimize\_weights()}{optimize\_weights()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_adb3503d6fd20941864f1c4ae920a61aa} 
+ Dict\mbox{[}str, float\mbox{]} strategy\+\_\+framework.\+Strategy\+Framework.\+optimize\+\_\+weights (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Optimize strategy weights based on correlations and performance\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_a694040570302241e4c73a9c9ec3c5927}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!plot\_strategy\_performance@{plot\_strategy\_performance}}
+\index{plot\_strategy\_performance@{plot\_strategy\_performance}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{plot\_strategy\_performance()}{plot\_strategy\_performance()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a694040570302241e4c73a9c9ec3c5927} 
+ None strategy\+\_\+framework.\+Strategy\+Framework.\+plot\+\_\+strategy\+\_\+performance (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Plot strategy performance\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_a68b3ce77751511460530f253b8ef9f8f}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!rebalance@{rebalance}}
+\index{rebalance@{rebalance}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{rebalance()}{rebalance()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a68b3ce77751511460530f253b8ef9f8f} 
+ None strategy\+\_\+framework.\+Strategy\+Framework.\+rebalance (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Rebalance strategy weights\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_a5a6327fa3174541c4f06a1e0994b3ef5}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!update\_metrics@{update\_metrics}}
+\index{update\_metrics@{update\_metrics}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{update\_metrics()}{update\_metrics()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a5a6327fa3174541c4f06a1e0994b3ef5} 
+ None strategy\+\_\+framework.\+Strategy\+Framework.\+update\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{dict}]{trade\+\_\+result}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update safety metrics based on trade results\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_strategy_framework_afe60d0c44778d3480df63fe61f9903de}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!validate\_weights@{validate\_weights}}
+\index{validate\_weights@{validate\_weights}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{validate\_weights()}{validate\_weights()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_afe60d0c44778d3480df63fe61f9903de} 
+ bool strategy\+\_\+framework.\+Strategy\+Framework.\+validate\+\_\+weights (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Validate that weights sum to 1\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_ae63baf8090c66a3609db02087f70cd45}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!active@{active}}
+\index{active@{active}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{active}{active}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_ae63baf8090c66a3609db02087f70cd45} 
+bool strategy\+\_\+framework.\+Strategy\+Framework.\+active = True}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_aaa175723ad563812cf2c32a19bb24421}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!backtester@{backtester}}
+\index{backtester@{backtester}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{backtester}{backtester}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_aaa175723ad563812cf2c32a19bb24421} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+backtester = backtester or \mbox{\hyperlink{classbacktesting_1_1_backtester}{Backtester}}()}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_a71f825198a5bb5af6f0c29394cdc76ab}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!consecutive\_losses@{consecutive\_losses}}
+\index{consecutive\_losses@{consecutive\_losses}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{consecutive\_losses}{consecutive\_losses}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a71f825198a5bb5af6f0c29394cdc76ab} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+consecutive\+\_\+losses = 0}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_a60e1b70683448a4acaeb5fb478c32b48}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!correlation\_matrix@{correlation\_matrix}}
+\index{correlation\_matrix@{correlation\_matrix}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{correlation\_matrix}{correlation\_matrix}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a60e1b70683448a4acaeb5fb478c32b48} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+correlation\+\_\+matrix}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_ab002397a7969c0b1f04a993d558d63e8}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!correlation\_threshold@{correlation\_threshold}}
+\index{correlation\_threshold@{correlation\_threshold}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{correlation\_threshold}{correlation\_threshold}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_ab002397a7969c0b1f04a993d558d63e8} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+correlation\+\_\+threshold}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_ae0b03c6f939443f1ca16b368e3f362db}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!current\_drawdown@{current\_drawdown}}
+\index{current\_drawdown@{current\_drawdown}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{current\_drawdown}{current\_drawdown}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_ae0b03c6f939443f1ca16b368e3f362db} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+current\+\_\+drawdown = 0}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_a25bbec1deef562b3a36512ffac75fa03}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!last\_rebalance@{last\_rebalance}}
+\index{last\_rebalance@{last\_rebalance}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{last\_rebalance}{last\_rebalance}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a25bbec1deef562b3a36512ffac75fa03} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+last\+\_\+rebalance}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_adb67e5f36fe5e4dd2a715d5870124443}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!last\_update@{last\_update}}
+\index{last\_update@{last\_update}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{last\_update}{last\_update}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_adb67e5f36fe5e4dd2a715d5870124443} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+last\+\_\+update = None}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_a3d877e750b666dc394bfcc836be9cd29}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!max\_drawdown@{max\_drawdown}}
+\index{max\_drawdown@{max\_drawdown}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{max\_drawdown}{max\_drawdown}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a3d877e750b666dc394bfcc836be9cd29} 
+float strategy\+\_\+framework.\+Strategy\+Framework.\+max\+\_\+drawdown = 0.\+05}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_a4a1eda6a072e76e806f7c576e744ac9a}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!max\_position\_size@{max\_position\_size}}
+\index{max\_position\_size@{max\_position\_size}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{max\_position\_size}{max\_position\_size}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a4a1eda6a072e76e806f7c576e744ac9a} 
+float strategy\+\_\+framework.\+Strategy\+Framework.\+max\+\_\+position\+\_\+size = 0.\+1}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_aeb98a4d050291a1380076f9afd64c794}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!risk\_manager@{risk\_manager}}
+\index{risk\_manager@{risk\_manager}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{risk\_manager}{risk\_manager}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_aeb98a4d050291a1380076f9afd64c794} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+risk\+\_\+manager = risk\+\_\+manager or \mbox{\hyperlink{classrisk__management_1_1_risk_manager}{Risk\+Manager}}()}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_a35f05fd15eddeb13609294a0de9b0540}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!strategies@{strategies}}
+\index{strategies@{strategies}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{strategies}{strategies}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a35f05fd15eddeb13609294a0de9b0540} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+strategies = strategies}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_ae0142842c2fda654f162680b9091937f}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!strategy\_instances@{strategy\_instances}}
+\index{strategy\_instances@{strategy\_instances}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{strategy\_instances}{strategy\_instances}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_ae0142842c2fda654f162680b9091937f} 
+dict strategy\+\_\+framework.\+Strategy\+Framework.\+strategy\+\_\+instances = \{\}}
+
+\Hypertarget{classstrategy__framework_1_1_strategy_framework_a41e3e37b30d98c1930e71d3496b7933f}\index{strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}!weights@{weights}}
+\index{weights@{weights}!strategy\_framework.StrategyFramework@{strategy\_framework.StrategyFramework}}
+\doxysubsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_strategy_framework_a41e3e37b30d98c1930e71d3496b7933f} 
+strategy\+\_\+framework.\+Strategy\+Framework.\+weights = weights or \{s.\+\_\+\+\_\+name\+\_\+\+\_\+\+: 1/len(\mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a35f05fd15eddeb13609294a0de9b0540}{strategies}}) \mbox{\hyperlink{disclaimer_8txt_ae854055138006e411cb061eaa066e4ee}{for}} s in \mbox{\hyperlink{classstrategy__framework_1_1_strategy_framework_a35f05fd15eddeb13609294a0de9b0540}{strategies}}\}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/strategies/\mbox{\hyperlink{strategy__framework_8py}{strategy\+\_\+framework.\+py}}\end{DoxyCompactItemize}

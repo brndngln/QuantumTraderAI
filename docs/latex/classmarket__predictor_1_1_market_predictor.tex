@@ -1,0 +1,180 @@
+\doxysection{market\+\_\+predictor.\+Market\+Predictor Class Reference}
+\hypertarget{classmarket__predictor_1_1_market_predictor}{}\label{classmarket__predictor_1_1_market_predictor}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a96b656536ce3e1d6687a86366ed338e8}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, int \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_aef9442fed9b12e8cfe4b9be17f4e1c5d}{prediction\+\_\+horizon}}=1, int \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_adb59b176db69ef45dd228efef3e76be0}{lookback\+\_\+window}}=60, str \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_aef64ba532c3952352fa66ae553bd7e42}{model\+\_\+type}}=\textquotesingle{}random\+\_\+forest\textquotesingle{}, float \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a8647a5cda5375e467d1d504e89b0f82c}{feature\+\_\+importance\+\_\+threshold}}=0.\+01, float \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a3a5879514851dda7cea8c341ad35099b}{validation\+\_\+split}}=0.\+2)
+\item 
+Tuple\mbox{[}np.\+ndarray, np.\+ndarray\mbox{]} \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a1a389c238d6902f61aaaacadee14e9c3}{prepare\+\_\+features}} (self, pd.\+Data\+Frame df)
+\item 
+None \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_af3d9234018dbe3c33cd024ab4436894c}{train\+\_\+model}} (self, np.\+ndarray X, np.\+ndarray y)
+\item 
+np.\+ndarray \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a892abbe69a414aff46d3cd44aaa0f5a1}{predict}} (self, np.\+ndarray X)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a2e075556009ac2e1f049dd76af40ac6e}{evaluate}} (self, np.\+ndarray X, np.\+ndarray y)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_aac05d73a58945c040397863310b85183}{get\+\_\+feature\+\_\+importances}} (self)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a961bbd2938751eb6aa8409d7c8f24d16}{get\+\_\+model\+\_\+metrics}} (self)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a7ba416b8bee212934ed6f84f9c9cc595}{create\+\_\+prediction\+\_\+pipeline}} (self, pd.\+Data\+Frame df)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_aef9442fed9b12e8cfe4b9be17f4e1c5d}{prediction\+\_\+horizon}} = prediction\+\_\+horizon
+\item 
+\mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_adb59b176db69ef45dd228efef3e76be0}{lookback\+\_\+window}} = lookback\+\_\+window
+\item 
+str \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_aef64ba532c3952352fa66ae553bd7e42}{model\+\_\+type}} = model\+\_\+type
+\item 
+\mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a8647a5cda5375e467d1d504e89b0f82c}{feature\+\_\+importance\+\_\+threshold}} = feature\+\_\+importance\+\_\+threshold
+\item 
+\mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a3a5879514851dda7cea8c341ad35099b}{validation\+\_\+split}} = validation\+\_\+split
+\item 
+\mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_addb1fd8a276e74b4acf14a8ba2b29f2e}{model}} = None
+\item 
+\mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_a9f2ff672d3cdbc33ea67616585cf51ae}{scaler}} = Standard\+Scaler()
+\item 
+dict \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_abcaae2e1e37e04c69e3a9b2891945311}{feature\+\_\+importances}} = \{\}
+\item 
+Optional\mbox{[}datetime\mbox{]} \mbox{\hyperlink{classmarket__predictor_1_1_market_predictor_aa7a7544c93a1dc28499006374716595a}{last\+\_\+update}} = None
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classmarket__predictor_1_1_market_predictor_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmarket__predictor_1_1_market_predictor_a96b656536ce3e1d6687a86366ed338e8}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_a96b656536ce3e1d6687a86366ed338e8} 
+market\+\_\+predictor.\+Market\+Predictor.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{int }]{prediction\+\_\+horizon}{ = {\ttfamily 1}, }\item[{int }]{lookback\+\_\+window}{ = {\ttfamily 60}, }\item[{str }]{model\+\_\+type}{ = {\ttfamily \textquotesingle{}random\+\_\+forest\textquotesingle{}}, }\item[{float }]{feature\+\_\+importance\+\_\+threshold}{ = {\ttfamily 0.01}, }\item[{float }]{validation\+\_\+split}{ = {\ttfamily 0.2}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize market predictor
+
+Args:
+    prediction_horizon: Number of periods to predict
+    lookback_window: Number of past periods to use
+    model_type: Type of prediction model
+    feature_importance_threshold: Minimum importance for features
+    validation_split: Split ratio for validation set
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classmarket__predictor_1_1_market_predictor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmarket__predictor_1_1_market_predictor_a7ba416b8bee212934ed6f84f9c9cc595}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!create\_prediction\_pipeline@{create\_prediction\_pipeline}}
+\index{create\_prediction\_pipeline@{create\_prediction\_pipeline}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{create\_prediction\_pipeline()}{create\_prediction\_pipeline()}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_a7ba416b8bee212934ed6f84f9c9cc595} 
+ pd.\+Data\+Frame market\+\_\+predictor.\+Market\+Predictor.\+create\+\_\+prediction\+\_\+pipeline (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create complete prediction pipeline\end{DoxyVerb}
+ \Hypertarget{classmarket__predictor_1_1_market_predictor_a2e075556009ac2e1f049dd76af40ac6e}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_a2e075556009ac2e1f049dd76af40ac6e} 
+ Dict\mbox{[}str, float\mbox{]} market\+\_\+predictor.\+Market\+Predictor.\+evaluate (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X}{, }\item[{np.\+ndarray}]{y}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Evaluate model performance\end{DoxyVerb}
+ \Hypertarget{classmarket__predictor_1_1_market_predictor_aac05d73a58945c040397863310b85183}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!get\_feature\_importances@{get\_feature\_importances}}
+\index{get\_feature\_importances@{get\_feature\_importances}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{get\_feature\_importances()}{get\_feature\_importances()}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_aac05d73a58945c040397863310b85183} 
+ Dict\mbox{[}str, float\mbox{]} market\+\_\+predictor.\+Market\+Predictor.\+get\+\_\+feature\+\_\+importances (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get feature importances\end{DoxyVerb}
+ \Hypertarget{classmarket__predictor_1_1_market_predictor_a961bbd2938751eb6aa8409d7c8f24d16}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!get\_model\_metrics@{get\_model\_metrics}}
+\index{get\_model\_metrics@{get\_model\_metrics}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{get\_model\_metrics()}{get\_model\_metrics()}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_a961bbd2938751eb6aa8409d7c8f24d16} 
+ Dict\mbox{[}str, float\mbox{]} market\+\_\+predictor.\+Market\+Predictor.\+get\+\_\+model\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get model metrics\end{DoxyVerb}
+ \Hypertarget{classmarket__predictor_1_1_market_predictor_a892abbe69a414aff46d3cd44aaa0f5a1}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!predict@{predict}}
+\index{predict@{predict}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_a892abbe69a414aff46d3cd44aaa0f5a1} 
+ np.\+ndarray market\+\_\+predictor.\+Market\+Predictor.\+predict (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make predictions\end{DoxyVerb}
+ \Hypertarget{classmarket__predictor_1_1_market_predictor_a1a389c238d6902f61aaaacadee14e9c3}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!prepare\_features@{prepare\_features}}
+\index{prepare\_features@{prepare\_features}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{prepare\_features()}{prepare\_features()}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_a1a389c238d6902f61aaaacadee14e9c3} 
+ Tuple\mbox{[}np.\+ndarray, np.\+ndarray\mbox{]} market\+\_\+predictor.\+Market\+Predictor.\+prepare\+\_\+features (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prepare features and target for prediction\end{DoxyVerb}
+ \Hypertarget{classmarket__predictor_1_1_market_predictor_af3d9234018dbe3c33cd024ab4436894c}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!train\_model@{train\_model}}
+\index{train\_model@{train\_model}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{train\_model()}{train\_model()}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_af3d9234018dbe3c33cd024ab4436894c} 
+ None market\+\_\+predictor.\+Market\+Predictor.\+train\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X}{, }\item[{np.\+ndarray}]{y}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Train prediction model\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classmarket__predictor_1_1_market_predictor_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmarket__predictor_1_1_market_predictor_a8647a5cda5375e467d1d504e89b0f82c}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!feature\_importance\_threshold@{feature\_importance\_threshold}}
+\index{feature\_importance\_threshold@{feature\_importance\_threshold}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{feature\_importance\_threshold}{feature\_importance\_threshold}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_a8647a5cda5375e467d1d504e89b0f82c} 
+market\+\_\+predictor.\+Market\+Predictor.\+feature\+\_\+importance\+\_\+threshold = feature\+\_\+importance\+\_\+threshold}
+
+\Hypertarget{classmarket__predictor_1_1_market_predictor_abcaae2e1e37e04c69e3a9b2891945311}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!feature\_importances@{feature\_importances}}
+\index{feature\_importances@{feature\_importances}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{feature\_importances}{feature\_importances}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_abcaae2e1e37e04c69e3a9b2891945311} 
+market\+\_\+predictor.\+Market\+Predictor.\+feature\+\_\+importances = \{\}}
+
+\Hypertarget{classmarket__predictor_1_1_market_predictor_aa7a7544c93a1dc28499006374716595a}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!last\_update@{last\_update}}
+\index{last\_update@{last\_update}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{last\_update}{last\_update}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_aa7a7544c93a1dc28499006374716595a} 
+Optional\mbox{[}datetime\mbox{]} market\+\_\+predictor.\+Market\+Predictor.\+last\+\_\+update = None}
+
+\Hypertarget{classmarket__predictor_1_1_market_predictor_adb59b176db69ef45dd228efef3e76be0}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!lookback\_window@{lookback\_window}}
+\index{lookback\_window@{lookback\_window}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{lookback\_window}{lookback\_window}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_adb59b176db69ef45dd228efef3e76be0} 
+market\+\_\+predictor.\+Market\+Predictor.\+lookback\+\_\+window = lookback\+\_\+window}
+
+\Hypertarget{classmarket__predictor_1_1_market_predictor_addb1fd8a276e74b4acf14a8ba2b29f2e}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!model@{model}}
+\index{model@{model}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_addb1fd8a276e74b4acf14a8ba2b29f2e} 
+market\+\_\+predictor.\+Market\+Predictor.\+model = None}
+
+\Hypertarget{classmarket__predictor_1_1_market_predictor_aef64ba532c3952352fa66ae553bd7e42}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!model\_type@{model\_type}}
+\index{model\_type@{model\_type}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{model\_type}{model\_type}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_aef64ba532c3952352fa66ae553bd7e42} 
+market\+\_\+predictor.\+Market\+Predictor.\+model\+\_\+type = model\+\_\+type}
+
+\Hypertarget{classmarket__predictor_1_1_market_predictor_aef9442fed9b12e8cfe4b9be17f4e1c5d}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!prediction\_horizon@{prediction\_horizon}}
+\index{prediction\_horizon@{prediction\_horizon}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{prediction\_horizon}{prediction\_horizon}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_aef9442fed9b12e8cfe4b9be17f4e1c5d} 
+market\+\_\+predictor.\+Market\+Predictor.\+prediction\+\_\+horizon = prediction\+\_\+horizon}
+
+\Hypertarget{classmarket__predictor_1_1_market_predictor_a9f2ff672d3cdbc33ea67616585cf51ae}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!scaler@{scaler}}
+\index{scaler@{scaler}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{scaler}{scaler}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_a9f2ff672d3cdbc33ea67616585cf51ae} 
+market\+\_\+predictor.\+Market\+Predictor.\+scaler = Standard\+Scaler()}
+
+\Hypertarget{classmarket__predictor_1_1_market_predictor_a3a5879514851dda7cea8c341ad35099b}\index{market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}!validation\_split@{validation\_split}}
+\index{validation\_split@{validation\_split}!market\_predictor.MarketPredictor@{market\_predictor.MarketPredictor}}
+\doxysubsubsection{\texorpdfstring{validation\_split}{validation\_split}}
+{\footnotesize\ttfamily \label{classmarket__predictor_1_1_market_predictor_a3a5879514851dda7cea8c341ad35099b} 
+market\+\_\+predictor.\+Market\+Predictor.\+validation\+\_\+split = validation\+\_\+split}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/ai\+\_\+models/\mbox{\hyperlink{market__predictor_8py}{market\+\_\+predictor.\+py}}\end{DoxyCompactItemize}

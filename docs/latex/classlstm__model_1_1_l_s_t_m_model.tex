@@ -1,0 +1,533 @@
+\doxysection{lstm\+\_\+model.\+LSTMModel Class Reference}
+\hypertarget{classlstm__model_1_1_l_s_t_m_model}{}\label{classlstm__model_1_1_l_s_t_m_model}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a93c31d443ca0275f0ec4c8a683a0eaed}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Tuple\mbox{[}int, int\mbox{]} \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a950c91ad71700bfd8ae16c5a4af19488}{input\+\_\+shape}}=(60, 10), float \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_afbb074683825d60ab0545de620c0054d}{dropout\+\_\+rate}}=0.\+2, float \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_aab46afcebadd6ca4cd16bb3df52347b5}{learning\+\_\+rate}}=0.\+001, int \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a527d8212cf7aba0f65143f2529e57ea1}{batch\+\_\+size}}=32, int \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_acf8ee5858d914633ca358c2708c14607}{epochs}}=100, int \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a5a4fbfc2be6136180c5369cb6a97473c}{patience}}=10, int \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a46550dae6050969947da6c7ba69fc91f}{verbose}}=1, Dict \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_acc2b18f548dcb75ffd1ecdc1980cb0dd}{user\+\_\+config}}=None)
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_af03d22decb25d9c98b4a4cb2c9111693}{build\+\_\+model}} (self)
+\item 
+None \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_ac6db8fa0066f79ada4c9611f65b447f6}{train}} (self, np.\+ndarray X\+\_\+train, np.\+ndarray y\+\_\+train, Optional\mbox{[}np.\+ndarray\mbox{]} X\+\_\+val=None, Optional\mbox{[}np.\+ndarray\mbox{]} y\+\_\+val=None)
+\item 
+np.\+ndarray \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a36b01aa0220ec9c63d4495be86fab82a}{predict}} (self, np.\+ndarray X)
+\item 
+Tuple\mbox{[}np.\+ndarray, np.\+ndarray\mbox{]} \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_ac07beec589883b26a9cc7359528c9974}{prepare\+\_\+data}} (self, pd.\+Data\+Frame data)
+\item 
+None \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_ac6db8fa0066f79ada4c9611f65b447f6}{train}} (self, np.\+ndarray X\+\_\+train, np.\+ndarray y\+\_\+train, Optional\mbox{[}np.\+ndarray\mbox{]} X\+\_\+val=None, Optional\mbox{[}np.\+ndarray\mbox{]} y\+\_\+val=None)
+\item 
+np.\+ndarray \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a36b01aa0220ec9c63d4495be86fab82a}{predict}} (self, np.\+ndarray X)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a02d31866ce98f0e4dd805793875db869}{evaluate}} (self, np.\+ndarray X\+\_\+test, np.\+ndarray y\+\_\+test)
+\item 
+None \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_afdfac39c7523f7b08488712235ef0f97}{save\+\_\+model}} (self, str path)
+\item 
+None \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_aeda71a22ff48119283a3c073d4608f55}{load\+\_\+model}} (self, str path)
+\item 
+Dict\mbox{[}str, List\mbox{[}float\mbox{]}\mbox{]} \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_af7f2430edd97bed5891dda9d451d271e}{get\+\_\+metrics}} (self)
+\item 
+str \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a0de21fd1651ab9d6e699718020a5856c}{get\+\_\+model\+\_\+summary}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a950c91ad71700bfd8ae16c5a4af19488}{input\+\_\+shape}} = input\+\_\+shape
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_afbb074683825d60ab0545de620c0054d}{dropout\+\_\+rate}} = dropout\+\_\+rate
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_aab46afcebadd6ca4cd16bb3df52347b5}{learning\+\_\+rate}} = learning\+\_\+rate
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a527d8212cf7aba0f65143f2529e57ea1}{batch\+\_\+size}} = batch\+\_\+size
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_acf8ee5858d914633ca358c2708c14607}{epochs}} = epochs
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a5a4fbfc2be6136180c5369cb6a97473c}{patience}} = patience
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a46550dae6050969947da6c7ba69fc91f}{verbose}} = verbose
+\item 
+None \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a94235715dc1760432f15d5616186ee6a}{model}} = None
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a3604a4b7418140f26173001ec5c1b7a3}{scaler}} = Standard\+Scaler()
+\item 
+dict \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_aaf96ad1263eb0434c6272c17e43a8cc7}{metrics}}
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a5ae89e3df6667953b258c8b50430cb18}{last\+\_\+update}} = None
+\item 
+int \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a6c2e321f3b470b106904153ad7202ae7}{max\+\_\+memory\+\_\+usage}} = 2e9
+\item 
+int \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a1d072391c7f3482db7ef75b7752dcd16}{max\+\_\+training\+\_\+time}} = 3600
+\item 
+int \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a1bc5e8ebe4268932dd6f30137f1a086b}{max\+\_\+prediction\+\_\+time}} = 5
+\item 
+float \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_af444895a3cc80c86a7063556752d2412}{error\+\_\+threshold}} = 0.\+05
+\item 
+int \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a11e900de60ccda357810c179be0d450e}{max\+\_\+consecutive\+\_\+errors}} = 3
+\item 
+int \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a2c0d71d39a875803ed6c46e7d31e9bd1}{error\+\_\+count}} = 0
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a91a8278dde4f56b53281186a6862bf61}{last\+\_\+error}} = None
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_acc2b18f548dcb75ffd1ecdc1980cb0dd}{user\+\_\+config}} = user\+\_\+config or \{\}
+\item 
+bool \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a32b36739befd69050ebf0165ee9cec4e}{user\+\_\+override}} = False
+\item 
+bool \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a0d61f3e3edb45275c65df4f97e86a7ad}{user\+\_\+paused}} = False
+\item 
+bool \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_ab6ba2e1e1d9fdabcb1ff162e0709243f}{user\+\_\+configured}} = False
+\item 
+list \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a6e43786e000872cf8df3928c24b62a44}{training\+\_\+times}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a4326190fcf2c7aeadb0f47f082652b3a}{prediction\+\_\+times}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_afd15f8dcd2cb2e4a893a8a026cff0d81}{memory\+\_\+usage}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_acf36914260cd59329268c79538ff9cf8}{cpu\+\_\+usage}} = \mbox{[}$\,$\mbox{]}
+\item 
+bool \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a859ba16961743ab1601a348b1ac68b6e}{is\+\_\+training}} = False
+\item 
+bool \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a42b5205a51b3602524f0f49764a3a82b}{is\+\_\+predicting}} = False
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a8beb934f94c4273049a92da884fdf25f}{last\+\_\+training\+\_\+start}} = None
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a75b6f4d2921b5eacf4547882dce4f0ca}{last\+\_\+prediction\+\_\+start}} = None
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a9744b0aa26e9e1f056c3e5cd3ee594e8}{last\+\_\+memory\+\_\+check}} = None
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_afe0a6732f4c7c8cb38b9e291da76d339}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+dict \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a1f00a8d5c6b96acd367b782beba402a5}{train\+\_\+metrics}}
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a29fe8399bede7b2a8b733b530814238b}{last\+\_\+error\+\_\+timestamp}} = datetime.\+now()
+\item 
+dict \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a0745d34e2321e2b4180f2701a125c9f5}{model\+\_\+config}}
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a94d103eafbf695b53d703a2230d950d8}{last\+\_\+checkpoint}} = datetime.\+now()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_ab2ef8c4c7b48ac13a4cbc66ce0890715}{\+\_\+validate\+\_\+configuration}} (self)
+\item 
+bool \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a497eb146cc410a8d5753b5c255401dbd}{\+\_\+check\+\_\+memory\+\_\+usage}} (self)
+\item 
+bool \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a11f87a0d4d1b4026069a72ad40142959}{\+\_\+check\+\_\+cpu\+\_\+usage}} (self)
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_ada336342a266c7fd54cf2212b02eb331}{\+\_\+log\+\_\+model\+\_\+state}} (self, str state)
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_ac0dd9b03c68e0e15b5bcddbca458e1a8}{\+\_\+handle\+\_\+error}} (self, Exception error, str operation)
+\item 
+bool \mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a352343b469d99a5d1fda1d5535ced633}{\+\_\+validate\+\_\+data}} (self, np.\+ndarray X, Optional\mbox{[}np.\+ndarray\mbox{]} y=None)
+\item 
+\mbox{\hyperlink{classlstm__model_1_1_l_s_t_m_model_a013d1274210e493d00c9fb8682aef759}{\+\_\+save\+\_\+metrics}} (self)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a93c31d443ca0275f0ec4c8a683a0eaed}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a93c31d443ca0275f0ec4c8a683a0eaed} 
+lstm\+\_\+model.\+LSTMModel.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Tuple\mbox{[}int, int\mbox{]} }]{input\+\_\+shape}{ = {\ttfamily (60,~10)}, }\item[{float }]{dropout\+\_\+rate}{ = {\ttfamily 0.2}, }\item[{float }]{learning\+\_\+rate}{ = {\ttfamily 0.001}, }\item[{int }]{batch\+\_\+size}{ = {\ttfamily 32}, }\item[{int }]{epochs}{ = {\ttfamily 100}, }\item[{int }]{patience}{ = {\ttfamily 10}, }\item[{int }]{verbose}{ = {\ttfamily 1}, }\item[{Dict }]{user\+\_\+config}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize LSTM model with safety measures
+
+Args:
+    input_shape: Shape of input data (timesteps, features)
+    dropout_rate: Dropout rate for regularization
+    learning_rate: Learning rate for optimizer
+    batch_size: Batch size for training
+    epochs: Number of training epochs
+    patience: Patience for early stopping
+    verbose: Verbosity level
+    user_config: User-defined configuration overrides
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a11f87a0d4d1b4026069a72ad40142959}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!\_check\_cpu\_usage@{\_check\_cpu\_usage}}
+\index{\_check\_cpu\_usage@{\_check\_cpu\_usage}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{\_check\_cpu\_usage()}{\_check\_cpu\_usage()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a11f87a0d4d1b4026069a72ad40142959} 
+ bool lstm\+\_\+model.\+LSTMModel.\+\_\+check\+\_\+cpu\+\_\+usage (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Check if CPU usage is within limits\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_a497eb146cc410a8d5753b5c255401dbd}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!\_check\_memory\_usage@{\_check\_memory\_usage}}
+\index{\_check\_memory\_usage@{\_check\_memory\_usage}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{\_check\_memory\_usage()}{\_check\_memory\_usage()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a497eb146cc410a8d5753b5c255401dbd} 
+ bool lstm\+\_\+model.\+LSTMModel.\+\_\+check\+\_\+memory\+\_\+usage (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Check if memory usage is within limits\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_ac0dd9b03c68e0e15b5bcddbca458e1a8}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!\_handle\_error@{\_handle\_error}}
+\index{\_handle\_error@{\_handle\_error}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{\_handle\_error()}{\_handle\_error()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_ac0dd9b03c68e0e15b5bcddbca458e1a8} 
+lstm\+\_\+model.\+LSTMModel.\+\_\+handle\+\_\+error (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Exception}]{error}{, }\item[{str}]{operation}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Handle model errors with enhanced safety measures\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_ada336342a266c7fd54cf2212b02eb331}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!\_log\_model\_state@{\_log\_model\_state}}
+\index{\_log\_model\_state@{\_log\_model\_state}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{\_log\_model\_state()}{\_log\_model\_state()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_ada336342a266c7fd54cf2212b02eb331} 
+lstm\+\_\+model.\+LSTMModel.\+\_\+log\+\_\+model\+\_\+state (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Log model state changes\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_a013d1274210e493d00c9fb8682aef759}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!\_save\_metrics@{\_save\_metrics}}
+\index{\_save\_metrics@{\_save\_metrics}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{\_save\_metrics()}{\_save\_metrics()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a013d1274210e493d00c9fb8682aef759} 
+lstm\+\_\+model.\+LSTMModel.\+\_\+save\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Save comprehensive metrics with enhanced monitoring\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_ab2ef8c4c7b48ac13a4cbc66ce0890715}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!\_validate\_configuration@{\_validate\_configuration}}
+\index{\_validate\_configuration@{\_validate\_configuration}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{\_validate\_configuration()}{\_validate\_configuration()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_ab2ef8c4c7b48ac13a4cbc66ce0890715} 
+lstm\+\_\+model.\+LSTMModel.\+\_\+validate\+\_\+configuration (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Validate user configuration\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_a352343b469d99a5d1fda1d5535ced633}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!\_validate\_data@{\_validate\_data}}
+\index{\_validate\_data@{\_validate\_data}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{\_validate\_data()}{\_validate\_data()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a352343b469d99a5d1fda1d5535ced633} 
+ bool lstm\+\_\+model.\+LSTMModel.\+\_\+validate\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X}{, }\item[{Optional\mbox{[}np.\+ndarray\mbox{]} }]{y}{ = {\ttfamily None}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Validate input data with enhanced checks\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_af03d22decb25d9c98b4a4cb2c9111693}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!build\_model@{build\_model}}
+\index{build\_model@{build\_model}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{build\_model()}{build\_model()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_af03d22decb25d9c98b4a4cb2c9111693} 
+lstm\+\_\+model.\+LSTMModel.\+build\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build enhanced LSTM model with safety measures\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_a02d31866ce98f0e4dd805793875db869}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a02d31866ce98f0e4dd805793875db869} 
+ Dict\mbox{[}str, float\mbox{]} lstm\+\_\+model.\+LSTMModel.\+evaluate (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X\+\_\+test}{, }\item[{np.\+ndarray}]{y\+\_\+test}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Evaluate model performance\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_af7f2430edd97bed5891dda9d451d271e}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!get\_metrics@{get\_metrics}}
+\index{get\_metrics@{get\_metrics}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{get\_metrics()}{get\_metrics()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_af7f2430edd97bed5891dda9d451d271e} 
+ Dict\mbox{[}str, List\mbox{[}float\mbox{]}\mbox{]} lstm\+\_\+model.\+LSTMModel.\+get\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get training metrics history\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_a0de21fd1651ab9d6e699718020a5856c}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!get\_model\_summary@{get\_model\_summary}}
+\index{get\_model\_summary@{get\_model\_summary}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{get\_model\_summary()}{get\_model\_summary()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a0de21fd1651ab9d6e699718020a5856c} 
+ str lstm\+\_\+model.\+LSTMModel.\+get\+\_\+model\+\_\+summary (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get model architecture summary\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_aeda71a22ff48119283a3c073d4608f55}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!load\_model@{load\_model}}
+\index{load\_model@{load\_model}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{load\_model()}{load\_model()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_aeda71a22ff48119283a3c073d4608f55} 
+ None lstm\+\_\+model.\+LSTMModel.\+load\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load a pre-trained model\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_a36b01aa0220ec9c63d4495be86fab82a}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!predict@{predict}}
+\index{predict@{predict}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a36b01aa0220ec9c63d4495be86fab82a} 
+ np.\+ndarray lstm\+\_\+model.\+LSTMModel.\+predict (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make predictions with enhanced safety and monitoring\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_a36b01aa0220ec9c63d4495be86fab82a}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!predict@{predict}}
+\index{predict@{predict}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a36b01aa0220ec9c63d4495be86fab82a} 
+ np.\+ndarray lstm\+\_\+model.\+LSTMModel.\+predict (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make predictions using the trained model\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_ac07beec589883b26a9cc7359528c9974}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!prepare\_data@{prepare\_data}}
+\index{prepare\_data@{prepare\_data}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{prepare\_data()}{prepare\_data()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_ac07beec589883b26a9cc7359528c9974} 
+ Tuple\mbox{[}np.\+ndarray, np.\+ndarray\mbox{]} lstm\+\_\+model.\+LSTMModel.\+prepare\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prepare data for LSTM input\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_afdfac39c7523f7b08488712235ef0f97}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!save\_model@{save\_model}}
+\index{save\_model@{save\_model}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{save\_model()}{save\_model()}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_afdfac39c7523f7b08488712235ef0f97} 
+ None lstm\+\_\+model.\+LSTMModel.\+save\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Save the trained model\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_ac6db8fa0066f79ada4c9611f65b447f6}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!train@{train}}
+\index{train@{train}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_ac6db8fa0066f79ada4c9611f65b447f6} 
+ None lstm\+\_\+model.\+LSTMModel.\+train (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X\+\_\+train}{, }\item[{np.\+ndarray}]{y\+\_\+train}{, }\item[{Optional\mbox{[}np.\+ndarray\mbox{]} }]{X\+\_\+val}{ = {\ttfamily None}, }\item[{Optional\mbox{[}np.\+ndarray\mbox{]} }]{y\+\_\+val}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Train LSTM model with enhanced safety and monitoring\end{DoxyVerb}
+ \Hypertarget{classlstm__model_1_1_l_s_t_m_model_ac6db8fa0066f79ada4c9611f65b447f6}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!train@{train}}
+\index{train@{train}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_ac6db8fa0066f79ada4c9611f65b447f6} 
+ None lstm\+\_\+model.\+LSTMModel.\+train (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X\+\_\+train}{, }\item[{np.\+ndarray}]{y\+\_\+train}{, }\item[{Optional\mbox{[}np.\+ndarray\mbox{]} }]{X\+\_\+val}{ = {\ttfamily None}, }\item[{Optional\mbox{[}np.\+ndarray\mbox{]} }]{y\+\_\+val}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Train the LSTM model\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a527d8212cf7aba0f65143f2529e57ea1}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!batch\_size@{batch\_size}}
+\index{batch\_size@{batch\_size}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{batch\_size}{batch\_size}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a527d8212cf7aba0f65143f2529e57ea1} 
+lstm\+\_\+model.\+LSTMModel.\+batch\+\_\+size = batch\+\_\+size}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_acf36914260cd59329268c79538ff9cf8}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!cpu\_usage@{cpu\_usage}}
+\index{cpu\_usage@{cpu\_usage}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{cpu\_usage}{cpu\_usage}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_acf36914260cd59329268c79538ff9cf8} 
+list lstm\+\_\+model.\+LSTMModel.\+cpu\+\_\+usage = \mbox{[}$\,$\mbox{]}}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_afbb074683825d60ab0545de620c0054d}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!dropout\_rate@{dropout\_rate}}
+\index{dropout\_rate@{dropout\_rate}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{dropout\_rate}{dropout\_rate}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_afbb074683825d60ab0545de620c0054d} 
+lstm\+\_\+model.\+LSTMModel.\+dropout\+\_\+rate = dropout\+\_\+rate}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_acf8ee5858d914633ca358c2708c14607}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!epochs@{epochs}}
+\index{epochs@{epochs}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{epochs}{epochs}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_acf8ee5858d914633ca358c2708c14607} 
+lstm\+\_\+model.\+LSTMModel.\+epochs = epochs}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a2c0d71d39a875803ed6c46e7d31e9bd1}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!error\_count@{error\_count}}
+\index{error\_count@{error\_count}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{error\_count}{error\_count}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a2c0d71d39a875803ed6c46e7d31e9bd1} 
+int lstm\+\_\+model.\+LSTMModel.\+error\+\_\+count = 0}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_af444895a3cc80c86a7063556752d2412}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!error\_threshold@{error\_threshold}}
+\index{error\_threshold@{error\_threshold}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{error\_threshold}{error\_threshold}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_af444895a3cc80c86a7063556752d2412} 
+float lstm\+\_\+model.\+LSTMModel.\+error\+\_\+threshold = 0.\+05}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a950c91ad71700bfd8ae16c5a4af19488}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!input\_shape@{input\_shape}}
+\index{input\_shape@{input\_shape}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{input\_shape}{input\_shape}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a950c91ad71700bfd8ae16c5a4af19488} 
+lstm\+\_\+model.\+LSTMModel.\+input\+\_\+shape = input\+\_\+shape}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a42b5205a51b3602524f0f49764a3a82b}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!is\_predicting@{is\_predicting}}
+\index{is\_predicting@{is\_predicting}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{is\_predicting}{is\_predicting}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a42b5205a51b3602524f0f49764a3a82b} 
+bool lstm\+\_\+model.\+LSTMModel.\+is\+\_\+predicting = False}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a859ba16961743ab1601a348b1ac68b6e}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!is\_training@{is\_training}}
+\index{is\_training@{is\_training}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{is\_training}{is\_training}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a859ba16961743ab1601a348b1ac68b6e} 
+bool lstm\+\_\+model.\+LSTMModel.\+is\+\_\+training = False}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a94d103eafbf695b53d703a2230d950d8}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!last\_checkpoint@{last\_checkpoint}}
+\index{last\_checkpoint@{last\_checkpoint}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{last\_checkpoint}{last\_checkpoint}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a94d103eafbf695b53d703a2230d950d8} 
+lstm\+\_\+model.\+LSTMModel.\+last\+\_\+checkpoint = datetime.\+now()}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a91a8278dde4f56b53281186a6862bf61}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!last\_error@{last\_error}}
+\index{last\_error@{last\_error}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{last\_error}{last\_error}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a91a8278dde4f56b53281186a6862bf61} 
+lstm\+\_\+model.\+LSTMModel.\+last\+\_\+error = None}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a29fe8399bede7b2a8b733b530814238b}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!last\_error\_timestamp@{last\_error\_timestamp}}
+\index{last\_error\_timestamp@{last\_error\_timestamp}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{last\_error\_timestamp}{last\_error\_timestamp}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a29fe8399bede7b2a8b733b530814238b} 
+lstm\+\_\+model.\+LSTMModel.\+last\+\_\+error\+\_\+timestamp = datetime.\+now()}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a9744b0aa26e9e1f056c3e5cd3ee594e8}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!last\_memory\_check@{last\_memory\_check}}
+\index{last\_memory\_check@{last\_memory\_check}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{last\_memory\_check}{last\_memory\_check}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a9744b0aa26e9e1f056c3e5cd3ee594e8} 
+lstm\+\_\+model.\+LSTMModel.\+last\+\_\+memory\+\_\+check = None}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a75b6f4d2921b5eacf4547882dce4f0ca}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!last\_prediction\_start@{last\_prediction\_start}}
+\index{last\_prediction\_start@{last\_prediction\_start}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{last\_prediction\_start}{last\_prediction\_start}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a75b6f4d2921b5eacf4547882dce4f0ca} 
+lstm\+\_\+model.\+LSTMModel.\+last\+\_\+prediction\+\_\+start = None}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a8beb934f94c4273049a92da884fdf25f}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!last\_training\_start@{last\_training\_start}}
+\index{last\_training\_start@{last\_training\_start}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{last\_training\_start}{last\_training\_start}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a8beb934f94c4273049a92da884fdf25f} 
+lstm\+\_\+model.\+LSTMModel.\+last\+\_\+training\+\_\+start = None}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a5ae89e3df6667953b258c8b50430cb18}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!last\_update@{last\_update}}
+\index{last\_update@{last\_update}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{last\_update}{last\_update}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a5ae89e3df6667953b258c8b50430cb18} 
+lstm\+\_\+model.\+LSTMModel.\+last\+\_\+update = None}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_aab46afcebadd6ca4cd16bb3df52347b5}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!learning\_rate@{learning\_rate}}
+\index{learning\_rate@{learning\_rate}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{learning\_rate}{learning\_rate}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_aab46afcebadd6ca4cd16bb3df52347b5} 
+lstm\+\_\+model.\+LSTMModel.\+learning\+\_\+rate = learning\+\_\+rate}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_afe0a6732f4c7c8cb38b9e291da76d339}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!logger@{logger}}
+\index{logger@{logger}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_afe0a6732f4c7c8cb38b9e291da76d339} 
+lstm\+\_\+model.\+LSTMModel.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a11e900de60ccda357810c179be0d450e}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!max\_consecutive\_errors@{max\_consecutive\_errors}}
+\index{max\_consecutive\_errors@{max\_consecutive\_errors}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{max\_consecutive\_errors}{max\_consecutive\_errors}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a11e900de60ccda357810c179be0d450e} 
+int lstm\+\_\+model.\+LSTMModel.\+max\+\_\+consecutive\+\_\+errors = 3}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a6c2e321f3b470b106904153ad7202ae7}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!max\_memory\_usage@{max\_memory\_usage}}
+\index{max\_memory\_usage@{max\_memory\_usage}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{max\_memory\_usage}{max\_memory\_usage}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a6c2e321f3b470b106904153ad7202ae7} 
+int lstm\+\_\+model.\+LSTMModel.\+max\+\_\+memory\+\_\+usage = 2e9}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a1bc5e8ebe4268932dd6f30137f1a086b}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!max\_prediction\_time@{max\_prediction\_time}}
+\index{max\_prediction\_time@{max\_prediction\_time}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{max\_prediction\_time}{max\_prediction\_time}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a1bc5e8ebe4268932dd6f30137f1a086b} 
+int lstm\+\_\+model.\+LSTMModel.\+max\+\_\+prediction\+\_\+time = 5}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a1d072391c7f3482db7ef75b7752dcd16}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!max\_training\_time@{max\_training\_time}}
+\index{max\_training\_time@{max\_training\_time}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{max\_training\_time}{max\_training\_time}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a1d072391c7f3482db7ef75b7752dcd16} 
+int lstm\+\_\+model.\+LSTMModel.\+max\+\_\+training\+\_\+time = 3600}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_afd15f8dcd2cb2e4a893a8a026cff0d81}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!memory\_usage@{memory\_usage}}
+\index{memory\_usage@{memory\_usage}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{memory\_usage}{memory\_usage}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_afd15f8dcd2cb2e4a893a8a026cff0d81} 
+list lstm\+\_\+model.\+LSTMModel.\+memory\+\_\+usage = \mbox{[}$\,$\mbox{]}}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_aaf96ad1263eb0434c6272c17e43a8cc7}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!metrics@{metrics}}
+\index{metrics@{metrics}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_aaf96ad1263eb0434c6272c17e43a8cc7} 
+dict lstm\+\_\+model.\+LSTMModel.\+metrics}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'loss'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'val\_loss'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'accuracy'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'val\_accuracy'}:\ []}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a94235715dc1760432f15d5616186ee6a}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!model@{model}}
+\index{model@{model}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a94235715dc1760432f15d5616186ee6a} 
+None lstm\+\_\+model.\+LSTMModel.\+model = None}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a0745d34e2321e2b4180f2701a125c9f5}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!model\_config@{model\_config}}
+\index{model\_config@{model\_config}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{model\_config}{model\_config}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a0745d34e2321e2b4180f2701a125c9f5} 
+dict lstm\+\_\+model.\+LSTMModel.\+model\+\_\+config}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'architecture'}:\ model.to\_json(),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'optimizer'}:\ str(optimizer)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a5a4fbfc2be6136180c5369cb6a97473c}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!patience@{patience}}
+\index{patience@{patience}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{patience}{patience}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a5a4fbfc2be6136180c5369cb6a97473c} 
+lstm\+\_\+model.\+LSTMModel.\+patience = patience}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a4326190fcf2c7aeadb0f47f082652b3a}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!prediction\_times@{prediction\_times}}
+\index{prediction\_times@{prediction\_times}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{prediction\_times}{prediction\_times}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a4326190fcf2c7aeadb0f47f082652b3a} 
+list lstm\+\_\+model.\+LSTMModel.\+prediction\+\_\+times = \mbox{[}$\,$\mbox{]}}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a3604a4b7418140f26173001ec5c1b7a3}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!scaler@{scaler}}
+\index{scaler@{scaler}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{scaler}{scaler}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a3604a4b7418140f26173001ec5c1b7a3} 
+lstm\+\_\+model.\+LSTMModel.\+scaler = Standard\+Scaler()}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a1f00a8d5c6b96acd367b782beba402a5}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!train\_metrics@{train\_metrics}}
+\index{train\_metrics@{train\_metrics}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{train\_metrics}{train\_metrics}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a1f00a8d5c6b96acd367b782beba402a5} 
+dict lstm\+\_\+model.\+LSTMModel.\+train\+\_\+metrics}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'loss'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'accuracy'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'val\_loss'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'val\_accuracy'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'memory\_usage'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'cpu\_usage'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'training\_time'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'prediction\_time'}:\ []}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a6e43786e000872cf8df3928c24b62a44}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!training\_times@{training\_times}}
+\index{training\_times@{training\_times}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{training\_times}{training\_times}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a6e43786e000872cf8df3928c24b62a44} 
+list lstm\+\_\+model.\+LSTMModel.\+training\+\_\+times = \mbox{[}$\,$\mbox{]}}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_acc2b18f548dcb75ffd1ecdc1980cb0dd}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!user\_config@{user\_config}}
+\index{user\_config@{user\_config}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{user\_config}{user\_config}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_acc2b18f548dcb75ffd1ecdc1980cb0dd} 
+lstm\+\_\+model.\+LSTMModel.\+user\+\_\+config = user\+\_\+config or \{\}}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_ab6ba2e1e1d9fdabcb1ff162e0709243f}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!user\_configured@{user\_configured}}
+\index{user\_configured@{user\_configured}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{user\_configured}{user\_configured}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_ab6ba2e1e1d9fdabcb1ff162e0709243f} 
+bool lstm\+\_\+model.\+LSTMModel.\+user\+\_\+configured = False}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a32b36739befd69050ebf0165ee9cec4e}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!user\_override@{user\_override}}
+\index{user\_override@{user\_override}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{user\_override}{user\_override}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a32b36739befd69050ebf0165ee9cec4e} 
+bool lstm\+\_\+model.\+LSTMModel.\+user\+\_\+override = False}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a0d61f3e3edb45275c65df4f97e86a7ad}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!user\_paused@{user\_paused}}
+\index{user\_paused@{user\_paused}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{user\_paused}{user\_paused}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a0d61f3e3edb45275c65df4f97e86a7ad} 
+bool lstm\+\_\+model.\+LSTMModel.\+user\+\_\+paused = False}
+
+\Hypertarget{classlstm__model_1_1_l_s_t_m_model_a46550dae6050969947da6c7ba69fc91f}\index{lstm\_model.LSTMModel@{lstm\_model.LSTMModel}!verbose@{verbose}}
+\index{verbose@{verbose}!lstm\_model.LSTMModel@{lstm\_model.LSTMModel}}
+\doxysubsubsection{\texorpdfstring{verbose}{verbose}}
+{\footnotesize\ttfamily \label{classlstm__model_1_1_l_s_t_m_model_a46550dae6050969947da6c7ba69fc91f} 
+lstm\+\_\+model.\+LSTMModel.\+verbose = verbose}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/ai\+\_\+models/\mbox{\hyperlink{lstm__model_8py}{lstm\+\_\+model.\+py}}\end{DoxyCompactItemize}

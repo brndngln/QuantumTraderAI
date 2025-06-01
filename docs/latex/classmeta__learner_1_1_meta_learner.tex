@@ -1,0 +1,192 @@
+\doxysection{meta\+\_\+learner.\+Meta\+Learner Class Reference}
+\hypertarget{classmeta__learner_1_1_meta_learner}{}\label{classmeta__learner_1_1_meta_learner}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a4bcf71952d23596a161c5698c0e1a769}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_ae0838ba211118abb213e01912723448b}{history\+\_\+file}}=\textquotesingle{}data/trade\+\_\+history.\+json\textquotesingle{}, int \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a3a0d028262060b22c714ecdade29c68a}{lookback\+\_\+window}}=30, float \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a238ebfa7b32f8b66505a4d92bed6f8ce}{confidence\+\_\+threshold}}=0.\+6, int \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_ae60931852ed6b802ecda45d56676555a}{min\+\_\+samples}}=10)
+\item 
+List\mbox{[}Dict\mbox{]} \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_ae378b616aee0892a678c0b5acf3db91b}{load\+\_\+history}} (self)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_ae72d541bead1763b6c02bcab0866874b}{evaluate\+\_\+strategies}} (self, List\mbox{[}Dict\mbox{]} history)
+\item 
+bool \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a794926228809b21f45f0e644b04fe465}{train\+\_\+model}} (self, bool force=False)
+\item 
+List\mbox{[}Tuple\mbox{[}str, float\mbox{]}\mbox{]} \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a2becd24e6db11419b8276c0ff2a9fbb2}{recommend\+\_\+strategies}} (self)
+\item 
+float \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_aeb41acabf55773b7468c28b7bd849ef4}{confidence\+\_\+score}} (self, str strategy)
+\item 
+Dict \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a742282f441968412a7ec8b5555924d00}{get\+\_\+strategy\+\_\+metrics}} (self, str strategy)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmeta__learner_1_1_meta_learner_ae0838ba211118abb213e01912723448b}{history\+\_\+file}} = history\+\_\+file
+\item 
+dict \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a52ecac6fb3a704b7e8e336fdf7b264fa}{strategy\+\_\+scores}} = \{\}
+\item 
+\mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a3a0d028262060b22c714ecdade29c68a}{lookback\+\_\+window}} = lookback\+\_\+window
+\item 
+\mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a238ebfa7b32f8b66505a4d92bed6f8ce}{confidence\+\_\+threshold}} = confidence\+\_\+threshold
+\item 
+\mbox{\hyperlink{classmeta__learner_1_1_meta_learner_ae60931852ed6b802ecda45d56676555a}{min\+\_\+samples}} = min\+\_\+samples
+\item 
+\mbox{\hyperlink{classmeta__learner_1_1_meta_learner_af20fb1b9ee69edd8ef3cffae3683ed2f}{model}} = Random\+Forest\+Regressor(n\+\_\+estimators=100, random\+\_\+state=42)
+\item 
+\mbox{\hyperlink{classmeta__learner_1_1_meta_learner_abf453f3d01839106c1fd81d806598ed1}{scaler}} = Standard\+Scaler()
+\item 
+list \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_af7b2300c2ace2b33001f6f53f325030e}{feature\+\_\+columns}} = \mbox{[}\textquotesingle{}pnl\textquotesingle{}, \textquotesingle{}volatility\textquotesingle{}, \textquotesingle{}market\+\_\+trend\textquotesingle{}, \textquotesingle{}time\+\_\+of\+\_\+day\textquotesingle{}\mbox{]}
+\item 
+Optional\mbox{[}datetime\mbox{]} \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_ab79390387bfa7858820aaf4b6553c442}{last\+\_\+update}} = None
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Dict \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a1eb405dea5ab39c58eff277cdeb13264}{\+\_\+calculate\+\_\+features}} (self, Dict trade)
+\item 
+float \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a8a7cc498e7a6cd330c89219de2f0c372}{\+\_\+get\+\_\+time\+\_\+of\+\_\+day\+\_\+feature}} (self, str timestamp)
+\item 
+Tuple\mbox{[}np.\+ndarray, np.\+ndarray\mbox{]} \mbox{\hyperlink{classmeta__learner_1_1_meta_learner_a43de5a97d5e1cb2a04d6577fc6ad9a4a}{\+\_\+prepare\+\_\+features}} (self, List\mbox{[}Dict\mbox{]} history)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classmeta__learner_1_1_meta_learner_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmeta__learner_1_1_meta_learner_a4bcf71952d23596a161c5698c0e1a769}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_a4bcf71952d23596a161c5698c0e1a769} 
+meta\+\_\+learner.\+Meta\+Learner.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str }]{history\+\_\+file}{ = {\ttfamily \textquotesingle{}data/trade\+\_\+history.json\textquotesingle{}}, }\item[{int }]{lookback\+\_\+window}{ = {\ttfamily 30}, }\item[{float }]{confidence\+\_\+threshold}{ = {\ttfamily 0.6}, }\item[{int }]{min\+\_\+samples}{ = {\ttfamily 10}}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classmeta__learner_1_1_meta_learner_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmeta__learner_1_1_meta_learner_a1eb405dea5ab39c58eff277cdeb13264}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!\_calculate\_features@{\_calculate\_features}}
+\index{\_calculate\_features@{\_calculate\_features}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{\_calculate\_features()}{\_calculate\_features()}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_a1eb405dea5ab39c58eff277cdeb13264} 
+ Dict meta\+\_\+learner.\+Meta\+Learner.\+\_\+calculate\+\_\+features (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Dict}]{trade}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Calculate advanced features for each trade\end{DoxyVerb}
+ \Hypertarget{classmeta__learner_1_1_meta_learner_a8a7cc498e7a6cd330c89219de2f0c372}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!\_get\_time\_of\_day\_feature@{\_get\_time\_of\_day\_feature}}
+\index{\_get\_time\_of\_day\_feature@{\_get\_time\_of\_day\_feature}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{\_get\_time\_of\_day\_feature()}{\_get\_time\_of\_day\_feature()}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_a8a7cc498e7a6cd330c89219de2f0c372} 
+ float meta\+\_\+learner.\+Meta\+Learner.\+\_\+get\+\_\+time\+\_\+of\+\_\+day\+\_\+feature (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{timestamp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Convert timestamp to time of day feature\end{DoxyVerb}
+ \Hypertarget{classmeta__learner_1_1_meta_learner_a43de5a97d5e1cb2a04d6577fc6ad9a4a}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!\_prepare\_features@{\_prepare\_features}}
+\index{\_prepare\_features@{\_prepare\_features}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{\_prepare\_features()}{\_prepare\_features()}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_a43de5a97d5e1cb2a04d6577fc6ad9a4a} 
+ Tuple\mbox{[}np.\+ndarray, np.\+ndarray\mbox{]} meta\+\_\+learner.\+Meta\+Learner.\+\_\+prepare\+\_\+features (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{List\mbox{[}Dict\mbox{]}}]{history}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Prepare features and labels for training\end{DoxyVerb}
+ \Hypertarget{classmeta__learner_1_1_meta_learner_aeb41acabf55773b7468c28b7bd849ef4}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!confidence\_score@{confidence\_score}}
+\index{confidence\_score@{confidence\_score}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{confidence\_score()}{confidence\_score()}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_aeb41acabf55773b7468c28b7bd849ef4} 
+ float meta\+\_\+learner.\+Meta\+Learner.\+confidence\+\_\+score (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{strategy}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate confidence score using multiple metrics\end{DoxyVerb}
+ \Hypertarget{classmeta__learner_1_1_meta_learner_ae72d541bead1763b6c02bcab0866874b}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!evaluate\_strategies@{evaluate\_strategies}}
+\index{evaluate\_strategies@{evaluate\_strategies}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{evaluate\_strategies()}{evaluate\_strategies()}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_ae72d541bead1763b6c02bcab0866874b} 
+ Dict\mbox{[}str, float\mbox{]} meta\+\_\+learner.\+Meta\+Learner.\+evaluate\+\_\+strategies (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{List\mbox{[}Dict\mbox{]}}]{history}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Evaluate strategies using advanced statistical methods\end{DoxyVerb}
+ \Hypertarget{classmeta__learner_1_1_meta_learner_a742282f441968412a7ec8b5555924d00}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!get\_strategy\_metrics@{get\_strategy\_metrics}}
+\index{get\_strategy\_metrics@{get\_strategy\_metrics}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{get\_strategy\_metrics()}{get\_strategy\_metrics()}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_a742282f441968412a7ec8b5555924d00} 
+ Dict meta\+\_\+learner.\+Meta\+Learner.\+get\+\_\+strategy\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{strategy}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get detailed metrics for a specific strategy\end{DoxyVerb}
+ \Hypertarget{classmeta__learner_1_1_meta_learner_ae378b616aee0892a678c0b5acf3db91b}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!load\_history@{load\_history}}
+\index{load\_history@{load\_history}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{load\_history()}{load\_history()}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_ae378b616aee0892a678c0b5acf3db91b} 
+ List\mbox{[}Dict\mbox{]} meta\+\_\+learner.\+Meta\+Learner.\+load\+\_\+history (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load and validate trade history\end{DoxyVerb}
+ \Hypertarget{classmeta__learner_1_1_meta_learner_a2becd24e6db11419b8276c0ff2a9fbb2}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!recommend\_strategies@{recommend\_strategies}}
+\index{recommend\_strategies@{recommend\_strategies}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{recommend\_strategies()}{recommend\_strategies()}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_a2becd24e6db11419b8276c0ff2a9fbb2} 
+ List\mbox{[}Tuple\mbox{[}str, float\mbox{]}\mbox{]} meta\+\_\+learner.\+Meta\+Learner.\+recommend\+\_\+strategies (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Recommend strategies with confidence scores\end{DoxyVerb}
+ \Hypertarget{classmeta__learner_1_1_meta_learner_a794926228809b21f45f0e644b04fe465}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!train\_model@{train\_model}}
+\index{train\_model@{train\_model}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{train\_model()}{train\_model()}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_a794926228809b21f45f0e644b04fe465} 
+ bool meta\+\_\+learner.\+Meta\+Learner.\+train\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{bool }]{force}{ = {\ttfamily False}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Train the meta-learning model\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classmeta__learner_1_1_meta_learner_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmeta__learner_1_1_meta_learner_a238ebfa7b32f8b66505a4d92bed6f8ce}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!confidence\_threshold@{confidence\_threshold}}
+\index{confidence\_threshold@{confidence\_threshold}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{confidence\_threshold}{confidence\_threshold}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_a238ebfa7b32f8b66505a4d92bed6f8ce} 
+meta\+\_\+learner.\+Meta\+Learner.\+confidence\+\_\+threshold = confidence\+\_\+threshold}
+
+\Hypertarget{classmeta__learner_1_1_meta_learner_af7b2300c2ace2b33001f6f53f325030e}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!feature\_columns@{feature\_columns}}
+\index{feature\_columns@{feature\_columns}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{feature\_columns}{feature\_columns}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_af7b2300c2ace2b33001f6f53f325030e} 
+list meta\+\_\+learner.\+Meta\+Learner.\+feature\+\_\+columns = \mbox{[}\textquotesingle{}pnl\textquotesingle{}, \textquotesingle{}volatility\textquotesingle{}, \textquotesingle{}market\+\_\+trend\textquotesingle{}, \textquotesingle{}time\+\_\+of\+\_\+day\textquotesingle{}\mbox{]}}
+
+\Hypertarget{classmeta__learner_1_1_meta_learner_ae0838ba211118abb213e01912723448b}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!history\_file@{history\_file}}
+\index{history\_file@{history\_file}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{history\_file}{history\_file}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_ae0838ba211118abb213e01912723448b} 
+meta\+\_\+learner.\+Meta\+Learner.\+history\+\_\+file = history\+\_\+file}
+
+\Hypertarget{classmeta__learner_1_1_meta_learner_ab79390387bfa7858820aaf4b6553c442}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!last\_update@{last\_update}}
+\index{last\_update@{last\_update}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{last\_update}{last\_update}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_ab79390387bfa7858820aaf4b6553c442} 
+meta\+\_\+learner.\+Meta\+Learner.\+last\+\_\+update = None}
+
+\Hypertarget{classmeta__learner_1_1_meta_learner_a3a0d028262060b22c714ecdade29c68a}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!lookback\_window@{lookback\_window}}
+\index{lookback\_window@{lookback\_window}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{lookback\_window}{lookback\_window}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_a3a0d028262060b22c714ecdade29c68a} 
+meta\+\_\+learner.\+Meta\+Learner.\+lookback\+\_\+window = lookback\+\_\+window}
+
+\Hypertarget{classmeta__learner_1_1_meta_learner_ae60931852ed6b802ecda45d56676555a}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!min\_samples@{min\_samples}}
+\index{min\_samples@{min\_samples}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{min\_samples}{min\_samples}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_ae60931852ed6b802ecda45d56676555a} 
+meta\+\_\+learner.\+Meta\+Learner.\+min\+\_\+samples = min\+\_\+samples}
+
+\Hypertarget{classmeta__learner_1_1_meta_learner_af20fb1b9ee69edd8ef3cffae3683ed2f}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!model@{model}}
+\index{model@{model}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_af20fb1b9ee69edd8ef3cffae3683ed2f} 
+meta\+\_\+learner.\+Meta\+Learner.\+model = Random\+Forest\+Regressor(n\+\_\+estimators=100, random\+\_\+state=42)}
+
+\Hypertarget{classmeta__learner_1_1_meta_learner_abf453f3d01839106c1fd81d806598ed1}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!scaler@{scaler}}
+\index{scaler@{scaler}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{scaler}{scaler}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_abf453f3d01839106c1fd81d806598ed1} 
+meta\+\_\+learner.\+Meta\+Learner.\+scaler = Standard\+Scaler()}
+
+\Hypertarget{classmeta__learner_1_1_meta_learner_a52ecac6fb3a704b7e8e336fdf7b264fa}\index{meta\_learner.MetaLearner@{meta\_learner.MetaLearner}!strategy\_scores@{strategy\_scores}}
+\index{strategy\_scores@{strategy\_scores}!meta\_learner.MetaLearner@{meta\_learner.MetaLearner}}
+\doxysubsubsection{\texorpdfstring{strategy\_scores}{strategy\_scores}}
+{\footnotesize\ttfamily \label{classmeta__learner_1_1_meta_learner_a52ecac6fb3a704b7e8e336fdf7b264fa} 
+dict meta\+\_\+learner.\+Meta\+Learner.\+strategy\+\_\+scores = \{\}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/ai\+\_\+models/\mbox{\hyperlink{meta__learner_8py}{meta\+\_\+learner.\+py}}\end{DoxyCompactItemize}

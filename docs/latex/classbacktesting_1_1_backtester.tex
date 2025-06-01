@@ -1,0 +1,189 @@
+\doxysection{backtesting.\+Backtester Class Reference}
+\hypertarget{classbacktesting_1_1_backtester}{}\label{classbacktesting_1_1_backtester}\index{backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbacktesting_1_1_backtester_ac93ff35ef0fdd35ffb4f587e31fed8e7}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, float \mbox{\hyperlink{classbacktesting_1_1_backtester_a9b332e66bacc07df6a2a0402076f0cca}{initial\+\_\+capital}}=100000.\+0, float \mbox{\hyperlink{classbacktesting_1_1_backtester_a5e5de8a11dca49aad74dae24f8597914}{commission}}=0.\+001, float \mbox{\hyperlink{classbacktesting_1_1_backtester_a507587facc0019e3672e5812baff5f60}{slippage}}=0.\+0005, int \mbox{\hyperlink{classbacktesting_1_1_backtester_a5e6301964db6178ffa5f9db37358f174}{max\+\_\+positions}}=10, float \mbox{\hyperlink{classbacktesting_1_1_backtester_a138be2a75d4dc2bed13314a168a75ac2}{risk\+\_\+per\+\_\+trade}}=0.\+01, str \mbox{\hyperlink{classbacktesting_1_1_backtester_a4abdf0b85d3b4b82d2431ec02567c021}{data\+\_\+frequency}}=\textquotesingle{}daily\textquotesingle{})
+\item 
+None \mbox{\hyperlink{classbacktesting_1_1_backtester_a1c2760eab136951c7d024a0fbadcd145}{initialize\+\_\+portfolio}} (self, datetime start\+\_\+date)
+\item 
+float \mbox{\hyperlink{classbacktesting_1_1_backtester_add3139646257ea09374f9bb2a78c82fe}{calculate\+\_\+position\+\_\+size}} (self, float current\+\_\+price, float volatility)
+\item 
+Dict \mbox{\hyperlink{classbacktesting_1_1_backtester_ad1455c8c68120fcde73995804af3b789}{execute\+\_\+trade}} (self, str symbol, float price, float position\+\_\+size, str direction)
+\item 
+None \mbox{\hyperlink{classbacktesting_1_1_backtester_a7b218aba68b57dbc6fe45fae67a37a94}{close\+\_\+trade}} (self, Dict trade, float exit\+\_\+price)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classbacktesting_1_1_backtester_a45ec8e2e1b43f68744f1a826d70800cb}{calculate\+\_\+metrics}} (self)
+\item 
+Dict \mbox{\hyperlink{classbacktesting_1_1_backtester_a985d6c9474d4f27ad8efa35a0d2f10b6}{run\+\_\+backtest}} (self, callable strategy, pd.\+Data\+Frame data, datetime start\+\_\+date, datetime end\+\_\+date)
+\item 
+None \mbox{\hyperlink{classbacktesting_1_1_backtester_a046eeea9ae15c00f6e3521700b82e7d4}{plot\+\_\+results}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbacktesting_1_1_backtester_a9b332e66bacc07df6a2a0402076f0cca}{initial\+\_\+capital}} = initial\+\_\+capital
+\item 
+\mbox{\hyperlink{classbacktesting_1_1_backtester_a5e5de8a11dca49aad74dae24f8597914}{commission}} = commission
+\item 
+\mbox{\hyperlink{classbacktesting_1_1_backtester_a507587facc0019e3672e5812baff5f60}{slippage}} = slippage
+\item 
+\mbox{\hyperlink{classbacktesting_1_1_backtester_a5e6301964db6178ffa5f9db37358f174}{max\+\_\+positions}} = max\+\_\+positions
+\item 
+\mbox{\hyperlink{classbacktesting_1_1_backtester_a138be2a75d4dc2bed13314a168a75ac2}{risk\+\_\+per\+\_\+trade}} = risk\+\_\+per\+\_\+trade
+\item 
+\mbox{\hyperlink{classbacktesting_1_1_backtester_a4abdf0b85d3b4b82d2431ec02567c021}{data\+\_\+frequency}} = data\+\_\+frequency
+\item 
+dict \mbox{\hyperlink{classbacktesting_1_1_backtester_a7330c2a4197e88c8dfec475afc88d4f9}{portfolio}} = None
+\item 
+list \mbox{\hyperlink{classbacktesting_1_1_backtester_acc5b19cc7555abd8a4dc5ee009b9188e}{trades}} = \mbox{[}$\,$\mbox{]}
+\item 
+dict \mbox{\hyperlink{classbacktesting_1_1_backtester_a4af8d8a37928a433af6df1583311b66d}{metrics}} = \{\}
+\item 
+int \mbox{\hyperlink{classbacktesting_1_1_backtester_a4a10406ab9e8ac6820cc2a9df7e8095a}{current\+\_\+position}} = 0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classbacktesting_1_1_backtester_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbacktesting_1_1_backtester_ac93ff35ef0fdd35ffb4f587e31fed8e7}\index{backtesting.Backtester@{backtesting.Backtester}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_ac93ff35ef0fdd35ffb4f587e31fed8e7} 
+backtesting.\+Backtester.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float }]{initial\+\_\+capital}{ = {\ttfamily 100000.0}, }\item[{float }]{commission}{ = {\ttfamily 0.001}, }\item[{float }]{slippage}{ = {\ttfamily 0.0005}, }\item[{int }]{max\+\_\+positions}{ = {\ttfamily 10}, }\item[{float }]{risk\+\_\+per\+\_\+trade}{ = {\ttfamily 0.01}, }\item[{str }]{data\+\_\+frequency}{ = {\ttfamily \textquotesingle{}daily\textquotesingle{}}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize backtesting framework
+
+Args:
+    initial_capital: Starting capital
+    commission: Trading commission
+    slippage: Slippage percentage
+    max_positions: Maximum concurrent positions
+    risk_per_trade: Risk per trade
+    data_frequency: Data frequency
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classbacktesting_1_1_backtester_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbacktesting_1_1_backtester_a45ec8e2e1b43f68744f1a826d70800cb}\index{backtesting.Backtester@{backtesting.Backtester}!calculate\_metrics@{calculate\_metrics}}
+\index{calculate\_metrics@{calculate\_metrics}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{calculate\_metrics()}{calculate\_metrics()}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a45ec8e2e1b43f68744f1a826d70800cb} 
+ Dict\mbox{[}str, float\mbox{]} backtesting.\+Backtester.\+calculate\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate backtesting metrics\end{DoxyVerb}
+ \Hypertarget{classbacktesting_1_1_backtester_add3139646257ea09374f9bb2a78c82fe}\index{backtesting.Backtester@{backtesting.Backtester}!calculate\_position\_size@{calculate\_position\_size}}
+\index{calculate\_position\_size@{calculate\_position\_size}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{calculate\_position\_size()}{calculate\_position\_size()}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_add3139646257ea09374f9bb2a78c82fe} 
+ float backtesting.\+Backtester.\+calculate\+\_\+position\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{current\+\_\+price}{, }\item[{float}]{volatility}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate position size based on risk\end{DoxyVerb}
+ \Hypertarget{classbacktesting_1_1_backtester_a7b218aba68b57dbc6fe45fae67a37a94}\index{backtesting.Backtester@{backtesting.Backtester}!close\_trade@{close\_trade}}
+\index{close\_trade@{close\_trade}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{close\_trade()}{close\_trade()}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a7b218aba68b57dbc6fe45fae67a37a94} 
+ None backtesting.\+Backtester.\+close\+\_\+trade (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Dict}]{trade}{, }\item[{float}]{exit\+\_\+price}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Close a trade position\end{DoxyVerb}
+ \Hypertarget{classbacktesting_1_1_backtester_ad1455c8c68120fcde73995804af3b789}\index{backtesting.Backtester@{backtesting.Backtester}!execute\_trade@{execute\_trade}}
+\index{execute\_trade@{execute\_trade}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{execute\_trade()}{execute\_trade()}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_ad1455c8c68120fcde73995804af3b789} 
+ Dict backtesting.\+Backtester.\+execute\+\_\+trade (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{symbol}{, }\item[{float}]{price}{, }\item[{float}]{position\+\_\+size}{, }\item[{str}]{direction}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Execute a trade\end{DoxyVerb}
+ \Hypertarget{classbacktesting_1_1_backtester_a1c2760eab136951c7d024a0fbadcd145}\index{backtesting.Backtester@{backtesting.Backtester}!initialize\_portfolio@{initialize\_portfolio}}
+\index{initialize\_portfolio@{initialize\_portfolio}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{initialize\_portfolio()}{initialize\_portfolio()}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a1c2760eab136951c7d024a0fbadcd145} 
+ None backtesting.\+Backtester.\+initialize\+\_\+portfolio (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{datetime}]{start\+\_\+date}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize portfolio\end{DoxyVerb}
+ \Hypertarget{classbacktesting_1_1_backtester_a046eeea9ae15c00f6e3521700b82e7d4}\index{backtesting.Backtester@{backtesting.Backtester}!plot\_results@{plot\_results}}
+\index{plot\_results@{plot\_results}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{plot\_results()}{plot\_results()}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a046eeea9ae15c00f6e3521700b82e7d4} 
+ None backtesting.\+Backtester.\+plot\+\_\+results (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Plot backtest results\end{DoxyVerb}
+ \Hypertarget{classbacktesting_1_1_backtester_a985d6c9474d4f27ad8efa35a0d2f10b6}\index{backtesting.Backtester@{backtesting.Backtester}!run\_backtest@{run\_backtest}}
+\index{run\_backtest@{run\_backtest}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{run\_backtest()}{run\_backtest()}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a985d6c9474d4f27ad8efa35a0d2f10b6} 
+ Dict backtesting.\+Backtester.\+run\+\_\+backtest (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{callable}]{strategy}{, }\item[{pd.\+Data\+Frame}]{data}{, }\item[{datetime}]{start\+\_\+date}{, }\item[{datetime}]{end\+\_\+date}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Run backtesting\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classbacktesting_1_1_backtester_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classbacktesting_1_1_backtester_a5e5de8a11dca49aad74dae24f8597914}\index{backtesting.Backtester@{backtesting.Backtester}!commission@{commission}}
+\index{commission@{commission}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{commission}{commission}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a5e5de8a11dca49aad74dae24f8597914} 
+backtesting.\+Backtester.\+commission = commission}
+
+\Hypertarget{classbacktesting_1_1_backtester_a4a10406ab9e8ac6820cc2a9df7e8095a}\index{backtesting.Backtester@{backtesting.Backtester}!current\_position@{current\_position}}
+\index{current\_position@{current\_position}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{current\_position}{current\_position}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a4a10406ab9e8ac6820cc2a9df7e8095a} 
+int backtesting.\+Backtester.\+current\+\_\+position = 0}
+
+\Hypertarget{classbacktesting_1_1_backtester_a4abdf0b85d3b4b82d2431ec02567c021}\index{backtesting.Backtester@{backtesting.Backtester}!data\_frequency@{data\_frequency}}
+\index{data\_frequency@{data\_frequency}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{data\_frequency}{data\_frequency}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a4abdf0b85d3b4b82d2431ec02567c021} 
+backtesting.\+Backtester.\+data\+\_\+frequency = data\+\_\+frequency}
+
+\Hypertarget{classbacktesting_1_1_backtester_a9b332e66bacc07df6a2a0402076f0cca}\index{backtesting.Backtester@{backtesting.Backtester}!initial\_capital@{initial\_capital}}
+\index{initial\_capital@{initial\_capital}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{initial\_capital}{initial\_capital}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a9b332e66bacc07df6a2a0402076f0cca} 
+backtesting.\+Backtester.\+initial\+\_\+capital = initial\+\_\+capital}
+
+\Hypertarget{classbacktesting_1_1_backtester_a5e6301964db6178ffa5f9db37358f174}\index{backtesting.Backtester@{backtesting.Backtester}!max\_positions@{max\_positions}}
+\index{max\_positions@{max\_positions}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{max\_positions}{max\_positions}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a5e6301964db6178ffa5f9db37358f174} 
+backtesting.\+Backtester.\+max\+\_\+positions = max\+\_\+positions}
+
+\Hypertarget{classbacktesting_1_1_backtester_a4af8d8a37928a433af6df1583311b66d}\index{backtesting.Backtester@{backtesting.Backtester}!metrics@{metrics}}
+\index{metrics@{metrics}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a4af8d8a37928a433af6df1583311b66d} 
+dict backtesting.\+Backtester.\+metrics = \{\}}
+
+\Hypertarget{classbacktesting_1_1_backtester_a7330c2a4197e88c8dfec475afc88d4f9}\index{backtesting.Backtester@{backtesting.Backtester}!portfolio@{portfolio}}
+\index{portfolio@{portfolio}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{portfolio}{portfolio}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a7330c2a4197e88c8dfec475afc88d4f9} 
+dict backtesting.\+Backtester.\+portfolio = None}
+
+\Hypertarget{classbacktesting_1_1_backtester_a138be2a75d4dc2bed13314a168a75ac2}\index{backtesting.Backtester@{backtesting.Backtester}!risk\_per\_trade@{risk\_per\_trade}}
+\index{risk\_per\_trade@{risk\_per\_trade}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{risk\_per\_trade}{risk\_per\_trade}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a138be2a75d4dc2bed13314a168a75ac2} 
+backtesting.\+Backtester.\+risk\+\_\+per\+\_\+trade = risk\+\_\+per\+\_\+trade}
+
+\Hypertarget{classbacktesting_1_1_backtester_a507587facc0019e3672e5812baff5f60}\index{backtesting.Backtester@{backtesting.Backtester}!slippage@{slippage}}
+\index{slippage@{slippage}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{slippage}{slippage}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_a507587facc0019e3672e5812baff5f60} 
+backtesting.\+Backtester.\+slippage = slippage}
+
+\Hypertarget{classbacktesting_1_1_backtester_acc5b19cc7555abd8a4dc5ee009b9188e}\index{backtesting.Backtester@{backtesting.Backtester}!trades@{trades}}
+\index{trades@{trades}!backtesting.Backtester@{backtesting.Backtester}}
+\doxysubsubsection{\texorpdfstring{trades}{trades}}
+{\footnotesize\ttfamily \label{classbacktesting_1_1_backtester_acc5b19cc7555abd8a4dc5ee009b9188e} 
+list backtesting.\+Backtester.\+trades = \mbox{[}$\,$\mbox{]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{backtesting_8py}{backtesting.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,195 @@
+\doxysection{cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer Class Reference}
+\hypertarget{classcost__analysis_1_1_transaction_cost_analyzer}{}\label{classcost__analysis_1_1_transaction_cost_analyzer}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a71dfc4ea8c1fcc88815aa31179389190}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, float \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a5d3f69b5fcbd8d5de4c1e41e11b2ad37}{base\+\_\+commission}}=0.\+001, float \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a7950191e1e3f697dce83ac2ce39000d5}{slippage\+\_\+base}}=0.\+0005, float \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a1547626ae37d1a04e0c1ec0821449b28}{liquidity\+\_\+threshold}}=0.\+05, float \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a2028e9b770611c984b724187960a6c0f}{market\+\_\+impact\+\_\+exponent}}=0.\+6, bool \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_ab966be5bc9f86829f66929323ddf406d}{cache\+\_\+enabled}}=True)
+\item 
+float \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_aa999bd501440bea30624edd1cd554385}{calculate\+\_\+commission\+\_\+cost}} (self, float trade\+\_\+size, float price)
+\item 
+float \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a589515636f208df9273b602be92a333d}{calculate\+\_\+slippage}} (self, float trade\+\_\+size, float price, float market\+\_\+volume)
+\item 
+float \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_ab2bbecd6bdc9e761efb0c24a71101ea4}{calculate\+\_\+market\+\_\+impact}} (self, float trade\+\_\+size, float price, float market\+\_\+volume)
+\item 
+float \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a64d04f97d4ab651e465bab9b0fcc58fd}{calculate\+\_\+total\+\_\+transaction\+\_\+cost}} (self, float trade\+\_\+size, float price, float market\+\_\+volume)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_ab96cfc74474def663f224f0d68c12813}{analyze\+\_\+trade\+\_\+costs}} (self, pd.\+Data\+Frame trade\+\_\+data)
+\item 
+float \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a7fd4e28443337f3739afba9a5d33d594}{optimize\+\_\+trade\+\_\+size}} (self, float target\+\_\+size, float price, float market\+\_\+volume, float max\+\_\+cost\+\_\+ratio=0.\+01)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a7bf02b45f2234473492697450eb13f1d}{get\+\_\+cost\+\_\+metrics}} (self)
+\item 
+None \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_ad9cd4a4034dca84febcb2e02efd4e858}{plot\+\_\+cost\+\_\+analysis}} (self, pd.\+Data\+Frame trade\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a5d3f69b5fcbd8d5de4c1e41e11b2ad37}{base\+\_\+commission}} = base\+\_\+commission
+\item 
+\mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a7950191e1e3f697dce83ac2ce39000d5}{slippage\+\_\+base}} = slippage\+\_\+base
+\item 
+\mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a1547626ae37d1a04e0c1ec0821449b28}{liquidity\+\_\+threshold}} = liquidity\+\_\+threshold
+\item 
+\mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a2028e9b770611c984b724187960a6c0f}{market\+\_\+impact\+\_\+exponent}} = market\+\_\+impact\+\_\+exponent
+\item 
+\mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_ab966be5bc9f86829f66929323ddf406d}{cache\+\_\+enabled}} = cache\+\_\+enabled
+\item 
+dict \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a84655b7a4a1375b0fde211b6fea1d034}{cost\+\_\+cache}} = \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a5498c3bb2565b3586da41e0e76e11842}{\+\_\+get\+\_\+cache\+\_\+key}} (self, float trade\+\_\+size, float price, float market\+\_\+volume)
+\item 
+None \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a088732bfeb7f5f5f857960822cf3162a}{\+\_\+cache\+\_\+result}} (self, str key, Any result)
+\item 
+Optional\mbox{[}Any\mbox{]} \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer_a2cef8d0946d2473ac8b6d1fee037f9be}{\+\_\+get\+\_\+cached\+\_\+result}} (self, str key)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a71dfc4ea8c1fcc88815aa31179389190}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a71dfc4ea8c1fcc88815aa31179389190} 
+cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float }]{base\+\_\+commission}{ = {\ttfamily 0.001}, }\item[{float }]{slippage\+\_\+base}{ = {\ttfamily 0.0005}, }\item[{float }]{liquidity\+\_\+threshold}{ = {\ttfamily 0.05}, }\item[{float }]{market\+\_\+impact\+\_\+exponent}{ = {\ttfamily 0.6}, }\item[{bool }]{cache\+\_\+enabled}{ = {\ttfamily True}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize transaction cost analyzer
+
+Args:
+    base_commission: Base commission rate
+    slippage_base: Base slippage percentage
+    liquidity_threshold: Threshold for liquidity impact
+    market_impact_exponent: Exponent for market impact calculation
+    cache_enabled: Enable caching of calculations
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a088732bfeb7f5f5f857960822cf3162a}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!\_cache\_result@{\_cache\_result}}
+\index{\_cache\_result@{\_cache\_result}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{\_cache\_result()}{\_cache\_result()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a088732bfeb7f5f5f857960822cf3162a} 
+ None cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+\_\+cache\+\_\+result (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{key}{, }\item[{Any}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Cache result with TTL\end{DoxyVerb}
+ \Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a5498c3bb2565b3586da41e0e76e11842}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!\_get\_cache\_key@{\_get\_cache\_key}}
+\index{\_get\_cache\_key@{\_get\_cache\_key}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{\_get\_cache\_key()}{\_get\_cache\_key()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a5498c3bb2565b3586da41e0e76e11842} 
+ str cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+\_\+get\+\_\+cache\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{trade\+\_\+size}{, }\item[{float}]{price}{, }\item[{float}]{market\+\_\+volume}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Generate cache key based on trade parameters\end{DoxyVerb}
+ \Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a2cef8d0946d2473ac8b6d1fee037f9be}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!\_get\_cached\_result@{\_get\_cached\_result}}
+\index{\_get\_cached\_result@{\_get\_cached\_result}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{\_get\_cached\_result()}{\_get\_cached\_result()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a2cef8d0946d2473ac8b6d1fee037f9be} 
+ Optional\mbox{[}Any\mbox{]} cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+\_\+get\+\_\+cached\+\_\+result (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Get cached result if valid\end{DoxyVerb}
+ \Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_ab96cfc74474def663f224f0d68c12813}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!analyze\_trade\_costs@{analyze\_trade\_costs}}
+\index{analyze\_trade\_costs@{analyze\_trade\_costs}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{analyze\_trade\_costs()}{analyze\_trade\_costs()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_ab96cfc74474def663f224f0d68c12813} 
+ pd.\+Data\+Frame cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+analyze\+\_\+trade\+\_\+costs (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{trade\+\_\+data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Analyze transaction costs for a series of trades\end{DoxyVerb}
+ \Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_aa999bd501440bea30624edd1cd554385}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!calculate\_commission\_cost@{calculate\_commission\_cost}}
+\index{calculate\_commission\_cost@{calculate\_commission\_cost}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{calculate\_commission\_cost()}{calculate\_commission\_cost()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_aa999bd501440bea30624edd1cd554385} 
+ float cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+calculate\+\_\+commission\+\_\+cost (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{trade\+\_\+size}{, }\item[{float}]{price}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate commission cost with caching and optimization\end{DoxyVerb}
+ \Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_ab2bbecd6bdc9e761efb0c24a71101ea4}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!calculate\_market\_impact@{calculate\_market\_impact}}
+\index{calculate\_market\_impact@{calculate\_market\_impact}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{calculate\_market\_impact()}{calculate\_market\_impact()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_ab2bbecd6bdc9e761efb0c24a71101ea4} 
+ float cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+calculate\+\_\+market\+\_\+impact (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{trade\+\_\+size}{, }\item[{float}]{price}{, }\item[{float}]{market\+\_\+volume}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate market impact with caching and optimization\end{DoxyVerb}
+ \Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a589515636f208df9273b602be92a333d}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!calculate\_slippage@{calculate\_slippage}}
+\index{calculate\_slippage@{calculate\_slippage}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{calculate\_slippage()}{calculate\_slippage()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a589515636f208df9273b602be92a333d} 
+ float cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+calculate\+\_\+slippage (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{trade\+\_\+size}{, }\item[{float}]{price}{, }\item[{float}]{market\+\_\+volume}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate slippage with caching and optimization\end{DoxyVerb}
+ \Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a64d04f97d4ab651e465bab9b0fcc58fd}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!calculate\_total\_transaction\_cost@{calculate\_total\_transaction\_cost}}
+\index{calculate\_total\_transaction\_cost@{calculate\_total\_transaction\_cost}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{calculate\_total\_transaction\_cost()}{calculate\_total\_transaction\_cost()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a64d04f97d4ab651e465bab9b0fcc58fd} 
+ float cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+calculate\+\_\+total\+\_\+transaction\+\_\+cost (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{trade\+\_\+size}{, }\item[{float}]{price}{, }\item[{float}]{market\+\_\+volume}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate total transaction cost with caching and optimization\end{DoxyVerb}
+ \Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a7bf02b45f2234473492697450eb13f1d}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!get\_cost\_metrics@{get\_cost\_metrics}}
+\index{get\_cost\_metrics@{get\_cost\_metrics}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{get\_cost\_metrics()}{get\_cost\_metrics()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a7bf02b45f2234473492697450eb13f1d} 
+ Dict\mbox{[}str, float\mbox{]} cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+get\+\_\+cost\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get current cost parameters\end{DoxyVerb}
+ \Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a7fd4e28443337f3739afba9a5d33d594}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!optimize\_trade\_size@{optimize\_trade\_size}}
+\index{optimize\_trade\_size@{optimize\_trade\_size}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{optimize\_trade\_size()}{optimize\_trade\_size()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a7fd4e28443337f3739afba9a5d33d594} 
+ float cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+optimize\+\_\+trade\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{target\+\_\+size}{, }\item[{float}]{price}{, }\item[{float}]{market\+\_\+volume}{, }\item[{float }]{max\+\_\+cost\+\_\+ratio}{ = {\ttfamily 0.01}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Optimize trade size to minimize transaction costs\end{DoxyVerb}
+ \Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_ad9cd4a4034dca84febcb2e02efd4e858}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!plot\_cost\_analysis@{plot\_cost\_analysis}}
+\index{plot\_cost\_analysis@{plot\_cost\_analysis}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{plot\_cost\_analysis()}{plot\_cost\_analysis()}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_ad9cd4a4034dca84febcb2e02efd4e858} 
+ None cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+plot\+\_\+cost\+\_\+analysis (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{trade\+\_\+data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Plot cost analysis results\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a5d3f69b5fcbd8d5de4c1e41e11b2ad37}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!base\_commission@{base\_commission}}
+\index{base\_commission@{base\_commission}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{base\_commission}{base\_commission}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a5d3f69b5fcbd8d5de4c1e41e11b2ad37} 
+cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+base\+\_\+commission = base\+\_\+commission}
+
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_ab966be5bc9f86829f66929323ddf406d}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!cache\_enabled@{cache\_enabled}}
+\index{cache\_enabled@{cache\_enabled}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{cache\_enabled}{cache\_enabled}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_ab966be5bc9f86829f66929323ddf406d} 
+cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+cache\+\_\+enabled = cache\+\_\+enabled}
+
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a84655b7a4a1375b0fde211b6fea1d034}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!cost\_cache@{cost\_cache}}
+\index{cost\_cache@{cost\_cache}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{cost\_cache}{cost\_cache}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a84655b7a4a1375b0fde211b6fea1d034} 
+dict cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+cost\+\_\+cache = \{\}}
+
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a1547626ae37d1a04e0c1ec0821449b28}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!liquidity\_threshold@{liquidity\_threshold}}
+\index{liquidity\_threshold@{liquidity\_threshold}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{liquidity\_threshold}{liquidity\_threshold}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a1547626ae37d1a04e0c1ec0821449b28} 
+cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+liquidity\+\_\+threshold = liquidity\+\_\+threshold}
+
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a2028e9b770611c984b724187960a6c0f}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!market\_impact\_exponent@{market\_impact\_exponent}}
+\index{market\_impact\_exponent@{market\_impact\_exponent}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{market\_impact\_exponent}{market\_impact\_exponent}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a2028e9b770611c984b724187960a6c0f} 
+cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+market\+\_\+impact\+\_\+exponent = market\+\_\+impact\+\_\+exponent}
+
+\Hypertarget{classcost__analysis_1_1_transaction_cost_analyzer_a7950191e1e3f697dce83ac2ce39000d5}\index{cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}!slippage\_base@{slippage\_base}}
+\index{slippage\_base@{slippage\_base}!cost\_analysis.TransactionCostAnalyzer@{cost\_analysis.TransactionCostAnalyzer}}
+\doxysubsubsection{\texorpdfstring{slippage\_base}{slippage\_base}}
+{\footnotesize\ttfamily \label{classcost__analysis_1_1_transaction_cost_analyzer_a7950191e1e3f697dce83ac2ce39000d5} 
+cost\+\_\+analysis.\+Transaction\+Cost\+Analyzer.\+slippage\+\_\+base = slippage\+\_\+base}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{cost__analysis_8py}{cost\+\_\+analysis.\+py}}\end{DoxyCompactItemize}

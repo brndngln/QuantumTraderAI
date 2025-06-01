@@ -1,0 +1,79 @@
+\doxysection{main.\+Request\+Validator Class Reference}
+\hypertarget{classmain_1_1_request_validator}{}\label{classmain_1_1_request_validator}\index{main.RequestValidator@{main.RequestValidator}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_request_validator_a0cf4a7c4af79acd8213e8f7d8bf7b927}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classmain_1_1_request_validator_a3f264ed40fe79b689dcd59c854dc994d}{validate\+\_\+request}} (self, Request request)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_request_validator_a0caca9e3232302f818a31046b85d7596}{executor}} = Thread\+Pool\+Executor(max\+\_\+workers=4)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_request_validator_a2b97555b00383f8b46af1bde643e0d25}{\+\_\+validate\+\_\+ip}} (self, Request request)
+\item 
+\mbox{\hyperlink{classmain_1_1_request_validator_a630f570fce8cc99595e9c01145670ceb}{\+\_\+validate\+\_\+rate\+\_\+limit}} (self, Request request)
+\item 
+\mbox{\hyperlink{classmain_1_1_request_validator_aa64b7059b0de4dca6b15bdd96ccc7ad3}{\+\_\+validate\+\_\+headers}} (self, Request request)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classmain_1_1_request_validator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmain_1_1_request_validator_a0cf4a7c4af79acd8213e8f7d8bf7b927}\index{main.RequestValidator@{main.RequestValidator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!main.RequestValidator@{main.RequestValidator}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classmain_1_1_request_validator_a0cf4a7c4af79acd8213e8f7d8bf7b927} 
+main.\+Request\+Validator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classmain_1_1_request_validator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmain_1_1_request_validator_aa64b7059b0de4dca6b15bdd96ccc7ad3}\index{main.RequestValidator@{main.RequestValidator}!\_validate\_headers@{\_validate\_headers}}
+\index{\_validate\_headers@{\_validate\_headers}!main.RequestValidator@{main.RequestValidator}}
+\doxysubsubsection{\texorpdfstring{\_validate\_headers()}{\_validate\_headers()}}
+{\footnotesize\ttfamily \label{classmain_1_1_request_validator_aa64b7059b0de4dca6b15bdd96ccc7ad3} 
+main.\+Request\+Validator.\+\_\+validate\+\_\+headers (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Request}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classmain_1_1_request_validator_a2b97555b00383f8b46af1bde643e0d25}\index{main.RequestValidator@{main.RequestValidator}!\_validate\_ip@{\_validate\_ip}}
+\index{\_validate\_ip@{\_validate\_ip}!main.RequestValidator@{main.RequestValidator}}
+\doxysubsubsection{\texorpdfstring{\_validate\_ip()}{\_validate\_ip()}}
+{\footnotesize\ttfamily \label{classmain_1_1_request_validator_a2b97555b00383f8b46af1bde643e0d25} 
+main.\+Request\+Validator.\+\_\+validate\+\_\+ip (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Request}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classmain_1_1_request_validator_a630f570fce8cc99595e9c01145670ceb}\index{main.RequestValidator@{main.RequestValidator}!\_validate\_rate\_limit@{\_validate\_rate\_limit}}
+\index{\_validate\_rate\_limit@{\_validate\_rate\_limit}!main.RequestValidator@{main.RequestValidator}}
+\doxysubsubsection{\texorpdfstring{\_validate\_rate\_limit()}{\_validate\_rate\_limit()}}
+{\footnotesize\ttfamily \label{classmain_1_1_request_validator_a630f570fce8cc99595e9c01145670ceb} 
+main.\+Request\+Validator.\+\_\+validate\+\_\+rate\+\_\+limit (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Request}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classmain_1_1_request_validator_a3f264ed40fe79b689dcd59c854dc994d}\index{main.RequestValidator@{main.RequestValidator}!validate\_request@{validate\_request}}
+\index{validate\_request@{validate\_request}!main.RequestValidator@{main.RequestValidator}}
+\doxysubsubsection{\texorpdfstring{validate\_request()}{validate\_request()}}
+{\footnotesize\ttfamily \label{classmain_1_1_request_validator_a3f264ed40fe79b689dcd59c854dc994d} 
+main.\+Request\+Validator.\+validate\+\_\+request (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Request}]{request}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classmain_1_1_request_validator_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmain_1_1_request_validator_a0caca9e3232302f818a31046b85d7596}\index{main.RequestValidator@{main.RequestValidator}!executor@{executor}}
+\index{executor@{executor}!main.RequestValidator@{main.RequestValidator}}
+\doxysubsubsection{\texorpdfstring{executor}{executor}}
+{\footnotesize\ttfamily \label{classmain_1_1_request_validator_a0caca9e3232302f818a31046b85d7596} 
+main.\+Request\+Validator.\+executor = Thread\+Pool\+Executor(max\+\_\+workers=4)}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{main_8py}{main.\+py}}\end{DoxyCompactItemize}

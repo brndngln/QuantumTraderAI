@@ -1,0 +1,206 @@
+\doxysection{legal.\+Legal\+Protector Class Reference}
+\hypertarget{classlegal_1_1_legal_protector}{}\label{classlegal_1_1_legal_protector}\index{legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlegal_1_1_legal_protector_ac3dc1d6b20491cb0605f08ee10ae1549}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+bool \mbox{\hyperlink{classlegal_1_1_legal_protector_ad8ec0a01522d6e5e37354d01e178a362}{show\+\_\+disclaimer}} (self)
+\item 
+bool \mbox{\hyperlink{classlegal_1_1_legal_protector_a98763a09263eeb84c2d2b337006d4d31}{require\+\_\+user\+\_\+agreement}} (self)
+\item 
+Dict\mbox{[}str, Any\mbox{]} \mbox{\hyperlink{classlegal_1_1_legal_protector_a33c99c80e341902ca812721343e09c96}{validate\+\_\+usage}} (self)
+\item 
+None \mbox{\hyperlink{classlegal_1_1_legal_protector_aa3b630f2fb7f0e72d3b1ac46b05ff19c}{log\+\_\+action}} (self, str action\+\_\+type, Dict\mbox{[}str, Any\mbox{]} details)
+\item 
+str \mbox{\hyperlink{classlegal_1_1_legal_protector_a985fc3d8a3ff31febc5e17c93eef44c5}{get\+\_\+disclaimer}} (self)
+\item 
+str \mbox{\hyperlink{classlegal_1_1_legal_protector_a5dca67a66962476481f853b159db07d4}{get\+\_\+user\+\_\+agreement}} (self)
+\item 
+str \mbox{\hyperlink{classlegal_1_1_legal_protector_a886e03d9bcedf87fc9c3f312e1581af8}{get\+\_\+privacy\+\_\+policy}} (self)
+\item 
+Dict\mbox{[}str, Any\mbox{]} \mbox{\hyperlink{classlegal_1_1_legal_protector_ae6860fc7dcff229fe316e2db682f4c6a}{check\+\_\+compliance}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlegal_1_1_legal_protector_aafeba5924b136c954037b615af52913a}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+bool \mbox{\hyperlink{classlegal_1_1_legal_protector_a6c87cbd0c7753414bfcc301802c1b982}{disclaimer\+\_\+shown}} = False
+\item 
+bool \mbox{\hyperlink{classlegal_1_1_legal_protector_a621e8149684ea6dd9ccdee7208295f11}{user\+\_\+agreement\+\_\+accepted}} = False
+\item 
+\mbox{\hyperlink{classlegal_1_1_legal_protector_ac375c8260e37fc542b0c4c75cec0928a}{last\+\_\+disclaimer\+\_\+check}} = None
+\item 
+\mbox{\hyperlink{classlegal_1_1_legal_protector_ad374e1ee85e95778524d7e1a86e7203a}{last\+\_\+agreement\+\_\+check}} = None
+\item 
+str \mbox{\hyperlink{classlegal_1_1_legal_protector_ac76c1b6bd82b2725a5f372bc1e0c5ca5}{disclaimer}} = self.\+\_\+load\+\_\+legal\+\_\+document(\textquotesingle{}disclaimer.\+txt\textquotesingle{})
+\item 
+str \mbox{\hyperlink{classlegal_1_1_legal_protector_aa52fbf890edaffc824b7da9bf2a11ee8}{user\+\_\+agreement}} = self.\+\_\+load\+\_\+legal\+\_\+document(\textquotesingle{}user\+\_\+agreement.\+txt\textquotesingle{})
+\item 
+str \mbox{\hyperlink{classlegal_1_1_legal_protector_a01c17df7b9a2b53890ba2dfd20aba4a4}{privacy\+\_\+policy}} = self.\+\_\+load\+\_\+legal\+\_\+document(\textquotesingle{}privacy\+\_\+policy.\+txt\textquotesingle{})
+\item 
+str \mbox{\hyperlink{classlegal_1_1_legal_protector_a5c4cd1d978cbf80537287b808c9c1e5d}{compliance\+\_\+dir}} = Path(\+\_\+\+\_\+file\+\_\+\+\_\+).parent.\+parent / \textquotesingle{}compliance\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classlegal_1_1_legal_protector_abc49449267a0bdcb1232571c7b6d0e14}{\+\_\+load\+\_\+legal\+\_\+document}} (self, str filename)
+\item 
+None \mbox{\hyperlink{classlegal_1_1_legal_protector_ad13501fe447c70b227ac09e60390ea4f}{\+\_\+save\+\_\+compliance\+\_\+record}} (self, str record\+\_\+type, Dict\mbox{[}str, Any\mbox{]} data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class for handling legal compliance and user protection\end{DoxyVerb}
+ 
+
+\label{doc-constructors}
+\Hypertarget{classlegal_1_1_legal_protector_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlegal_1_1_legal_protector_ac3dc1d6b20491cb0605f08ee10ae1549}\index{legal.LegalProtector@{legal.LegalProtector}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_ac3dc1d6b20491cb0605f08ee10ae1549} 
+legal.\+Legal\+Protector.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize legal protection system\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classlegal_1_1_legal_protector_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlegal_1_1_legal_protector_abc49449267a0bdcb1232571c7b6d0e14}\index{legal.LegalProtector@{legal.LegalProtector}!\_load\_legal\_document@{\_load\_legal\_document}}
+\index{\_load\_legal\_document@{\_load\_legal\_document}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{\_load\_legal\_document()}{\_load\_legal\_document()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_abc49449267a0bdcb1232571c7b6d0e14} 
+ str legal.\+Legal\+Protector.\+\_\+load\+\_\+legal\+\_\+document (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Load legal document from file\end{DoxyVerb}
+ \Hypertarget{classlegal_1_1_legal_protector_ad13501fe447c70b227ac09e60390ea4f}\index{legal.LegalProtector@{legal.LegalProtector}!\_save\_compliance\_record@{\_save\_compliance\_record}}
+\index{\_save\_compliance\_record@{\_save\_compliance\_record}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{\_save\_compliance\_record()}{\_save\_compliance\_record()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_ad13501fe447c70b227ac09e60390ea4f} 
+ None legal.\+Legal\+Protector.\+\_\+save\+\_\+compliance\+\_\+record (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{record\+\_\+type}{, }\item[{Dict\mbox{[}str, Any\mbox{]}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Save compliance record to file\end{DoxyVerb}
+ \Hypertarget{classlegal_1_1_legal_protector_ae6860fc7dcff229fe316e2db682f4c6a}\index{legal.LegalProtector@{legal.LegalProtector}!check\_compliance@{check\_compliance}}
+\index{check\_compliance@{check\_compliance}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{check\_compliance()}{check\_compliance()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_ae6860fc7dcff229fe316e2db682f4c6a} 
+ Dict\mbox{[}str, Any\mbox{]} legal.\+Legal\+Protector.\+check\+\_\+compliance (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check overall compliance status\end{DoxyVerb}
+ \Hypertarget{classlegal_1_1_legal_protector_a985fc3d8a3ff31febc5e17c93eef44c5}\index{legal.LegalProtector@{legal.LegalProtector}!get\_disclaimer@{get\_disclaimer}}
+\index{get\_disclaimer@{get\_disclaimer}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{get\_disclaimer()}{get\_disclaimer()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_a985fc3d8a3ff31febc5e17c93eef44c5} 
+ str legal.\+Legal\+Protector.\+get\+\_\+disclaimer (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get disclaimer text\end{DoxyVerb}
+ \Hypertarget{classlegal_1_1_legal_protector_a886e03d9bcedf87fc9c3f312e1581af8}\index{legal.LegalProtector@{legal.LegalProtector}!get\_privacy\_policy@{get\_privacy\_policy}}
+\index{get\_privacy\_policy@{get\_privacy\_policy}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{get\_privacy\_policy()}{get\_privacy\_policy()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_a886e03d9bcedf87fc9c3f312e1581af8} 
+ str legal.\+Legal\+Protector.\+get\+\_\+privacy\+\_\+policy (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get privacy policy text\end{DoxyVerb}
+ \Hypertarget{classlegal_1_1_legal_protector_a5dca67a66962476481f853b159db07d4}\index{legal.LegalProtector@{legal.LegalProtector}!get\_user\_agreement@{get\_user\_agreement}}
+\index{get\_user\_agreement@{get\_user\_agreement}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{get\_user\_agreement()}{get\_user\_agreement()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_a5dca67a66962476481f853b159db07d4} 
+ str legal.\+Legal\+Protector.\+get\+\_\+user\+\_\+agreement (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get user agreement text\end{DoxyVerb}
+ \Hypertarget{classlegal_1_1_legal_protector_aa3b630f2fb7f0e72d3b1ac46b05ff19c}\index{legal.LegalProtector@{legal.LegalProtector}!log\_action@{log\_action}}
+\index{log\_action@{log\_action}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{log\_action()}{log\_action()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_aa3b630f2fb7f0e72d3b1ac46b05ff19c} 
+ None legal.\+Legal\+Protector.\+log\+\_\+action (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{action\+\_\+type}{, }\item[{Dict\mbox{[}str, Any\mbox{]}}]{details}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Log user actions for compliance\end{DoxyVerb}
+ \Hypertarget{classlegal_1_1_legal_protector_a98763a09263eeb84c2d2b337006d4d31}\index{legal.LegalProtector@{legal.LegalProtector}!require\_user\_agreement@{require\_user\_agreement}}
+\index{require\_user\_agreement@{require\_user\_agreement}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{require\_user\_agreement()}{require\_user\_agreement()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_a98763a09263eeb84c2d2b337006d4d31} 
+ bool legal.\+Legal\+Protector.\+require\+\_\+user\+\_\+agreement (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Require user to accept terms of service\end{DoxyVerb}
+ \Hypertarget{classlegal_1_1_legal_protector_ad8ec0a01522d6e5e37354d01e178a362}\index{legal.LegalProtector@{legal.LegalProtector}!show\_disclaimer@{show\_disclaimer}}
+\index{show\_disclaimer@{show\_disclaimer}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{show\_disclaimer()}{show\_disclaimer()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_ad8ec0a01522d6e5e37354d01e178a362} 
+ bool legal.\+Legal\+Protector.\+show\+\_\+disclaimer (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Show disclaimer to user and get acceptance\end{DoxyVerb}
+ \Hypertarget{classlegal_1_1_legal_protector_a33c99c80e341902ca812721343e09c96}\index{legal.LegalProtector@{legal.LegalProtector}!validate\_usage@{validate\_usage}}
+\index{validate\_usage@{validate\_usage}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{validate\_usage()}{validate\_usage()}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_a33c99c80e341902ca812721343e09c96} 
+ Dict\mbox{[}str, Any\mbox{]} legal.\+Legal\+Protector.\+validate\+\_\+usage (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Validate legal compliance before usage\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classlegal_1_1_legal_protector_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlegal_1_1_legal_protector_a5c4cd1d978cbf80537287b808c9c1e5d}\index{legal.LegalProtector@{legal.LegalProtector}!compliance\_dir@{compliance\_dir}}
+\index{compliance\_dir@{compliance\_dir}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{compliance\_dir}{compliance\_dir}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_a5c4cd1d978cbf80537287b808c9c1e5d} 
+str legal.\+Legal\+Protector.\+compliance\+\_\+dir = Path(\+\_\+\+\_\+file\+\_\+\+\_\+).parent.\+parent / \textquotesingle{}compliance\textquotesingle{}}
+
+\Hypertarget{classlegal_1_1_legal_protector_ac76c1b6bd82b2725a5f372bc1e0c5ca5}\index{legal.LegalProtector@{legal.LegalProtector}!disclaimer@{disclaimer}}
+\index{disclaimer@{disclaimer}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{disclaimer}{disclaimer}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_ac76c1b6bd82b2725a5f372bc1e0c5ca5} 
+str legal.\+Legal\+Protector.\+disclaimer = self.\+\_\+load\+\_\+legal\+\_\+document(\textquotesingle{}disclaimer.\+txt\textquotesingle{})}
+
+\Hypertarget{classlegal_1_1_legal_protector_a6c87cbd0c7753414bfcc301802c1b982}\index{legal.LegalProtector@{legal.LegalProtector}!disclaimer\_shown@{disclaimer\_shown}}
+\index{disclaimer\_shown@{disclaimer\_shown}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{disclaimer\_shown}{disclaimer\_shown}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_a6c87cbd0c7753414bfcc301802c1b982} 
+legal.\+Legal\+Protector.\+disclaimer\+\_\+shown = False}
+
+\Hypertarget{classlegal_1_1_legal_protector_ad374e1ee85e95778524d7e1a86e7203a}\index{legal.LegalProtector@{legal.LegalProtector}!last\_agreement\_check@{last\_agreement\_check}}
+\index{last\_agreement\_check@{last\_agreement\_check}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{last\_agreement\_check}{last\_agreement\_check}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_ad374e1ee85e95778524d7e1a86e7203a} 
+legal.\+Legal\+Protector.\+last\+\_\+agreement\+\_\+check = None}
+
+\Hypertarget{classlegal_1_1_legal_protector_ac375c8260e37fc542b0c4c75cec0928a}\index{legal.LegalProtector@{legal.LegalProtector}!last\_disclaimer\_check@{last\_disclaimer\_check}}
+\index{last\_disclaimer\_check@{last\_disclaimer\_check}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{last\_disclaimer\_check}{last\_disclaimer\_check}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_ac375c8260e37fc542b0c4c75cec0928a} 
+legal.\+Legal\+Protector.\+last\+\_\+disclaimer\+\_\+check = None}
+
+\Hypertarget{classlegal_1_1_legal_protector_aafeba5924b136c954037b615af52913a}\index{legal.LegalProtector@{legal.LegalProtector}!logger@{logger}}
+\index{logger@{logger}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_aafeba5924b136c954037b615af52913a} 
+legal.\+Legal\+Protector.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{classlegal_1_1_legal_protector_a01c17df7b9a2b53890ba2dfd20aba4a4}\index{legal.LegalProtector@{legal.LegalProtector}!privacy\_policy@{privacy\_policy}}
+\index{privacy\_policy@{privacy\_policy}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{privacy\_policy}{privacy\_policy}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_a01c17df7b9a2b53890ba2dfd20aba4a4} 
+str legal.\+Legal\+Protector.\+privacy\+\_\+policy = self.\+\_\+load\+\_\+legal\+\_\+document(\textquotesingle{}privacy\+\_\+policy.\+txt\textquotesingle{})}
+
+\Hypertarget{classlegal_1_1_legal_protector_aa52fbf890edaffc824b7da9bf2a11ee8}\index{legal.LegalProtector@{legal.LegalProtector}!user\_agreement@{user\_agreement}}
+\index{user\_agreement@{user\_agreement}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{user\_agreement}{user\_agreement}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_aa52fbf890edaffc824b7da9bf2a11ee8} 
+str legal.\+Legal\+Protector.\+user\+\_\+agreement = self.\+\_\+load\+\_\+legal\+\_\+document(\textquotesingle{}user\+\_\+agreement.\+txt\textquotesingle{})}
+
+\Hypertarget{classlegal_1_1_legal_protector_a621e8149684ea6dd9ccdee7208295f11}\index{legal.LegalProtector@{legal.LegalProtector}!user\_agreement\_accepted@{user\_agreement\_accepted}}
+\index{user\_agreement\_accepted@{user\_agreement\_accepted}!legal.LegalProtector@{legal.LegalProtector}}
+\doxysubsubsection{\texorpdfstring{user\_agreement\_accepted}{user\_agreement\_accepted}}
+{\footnotesize\ttfamily \label{classlegal_1_1_legal_protector_a621e8149684ea6dd9ccdee7208295f11} 
+bool legal.\+Legal\+Protector.\+user\+\_\+agreement\+\_\+accepted = False}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/utils/\mbox{\hyperlink{legal_8py}{legal.\+py}}\end{DoxyCompactItemize}

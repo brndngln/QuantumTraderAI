@@ -1,0 +1,86 @@
+\doxysection{strategy\+\_\+framework.\+Trading\+Strategy Class Reference}
+\hypertarget{classstrategy__framework_1_1_trading_strategy}{}\label{classstrategy__framework_1_1_trading_strategy}\index{strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy_aa6587250c54299c02c7c1f996f4e762a}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str \mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy_a9ef5ae6078c06a2399fe7631e07b4eaa}{name}}, Dict \mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy_a7e4d3c712a2a9326436bc6a74518b6de}{parameters}}=None)
+\item 
+pd.\+Series \mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy_aeb484d881e28de9ca4b33809ec06f1f5}{generate\+\_\+signals}} (self, pd.\+Data\+Frame data)
+\item 
+Dict \mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy_a80a20ad6cf958f3db90fee9f5b24745c}{calculate\+\_\+metrics}} (self, pd.\+Series returns)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy_a9ef5ae6078c06a2399fe7631e07b4eaa}{name}} = name
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy_a7e4d3c712a2a9326436bc6a74518b6de}{parameters}} = parameters or \{\}
+\item 
+dict \mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy_a531bfff5c5cb76709032009b03b6ec63}{metrics}} = \{\}
+\item 
+\mbox{\hyperlink{classstrategy__framework_1_1_trading_strategy_af447c71df7ff9dd19ba61cdc76a6dc8a}{correlation\+\_\+matrix}} = None
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classstrategy__framework_1_1_trading_strategy_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classstrategy__framework_1_1_trading_strategy_aa6587250c54299c02c7c1f996f4e762a}\index{strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_trading_strategy_aa6587250c54299c02c7c1f996f4e762a} 
+strategy\+\_\+framework.\+Trading\+Strategy.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{name}{, }\item[{Dict }]{parameters}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classstrategy__framework_1_1_trading_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classstrategy__framework_1_1_trading_strategy_a80a20ad6cf958f3db90fee9f5b24745c}\index{strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}!calculate\_metrics@{calculate\_metrics}}
+\index{calculate\_metrics@{calculate\_metrics}!strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}}
+\doxysubsubsection{\texorpdfstring{calculate\_metrics()}{calculate\_metrics()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_trading_strategy_a80a20ad6cf958f3db90fee9f5b24745c} 
+ Dict strategy\+\_\+framework.\+Trading\+Strategy.\+calculate\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Series}]{returns}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate strategy metrics\end{DoxyVerb}
+ \Hypertarget{classstrategy__framework_1_1_trading_strategy_aeb484d881e28de9ca4b33809ec06f1f5}\index{strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}!generate\_signals@{generate\_signals}}
+\index{generate\_signals@{generate\_signals}!strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}}
+\doxysubsubsection{\texorpdfstring{generate\_signals()}{generate\_signals()}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_trading_strategy_aeb484d881e28de9ca4b33809ec06f1f5} 
+ pd.\+Series strategy\+\_\+framework.\+Trading\+Strategy.\+generate\+\_\+signals (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate trading signals\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classstrategy__framework_1_1_trading_strategy_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classstrategy__framework_1_1_trading_strategy_af447c71df7ff9dd19ba61cdc76a6dc8a}\index{strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}!correlation\_matrix@{correlation\_matrix}}
+\index{correlation\_matrix@{correlation\_matrix}!strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}}
+\doxysubsubsection{\texorpdfstring{correlation\_matrix}{correlation\_matrix}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_trading_strategy_af447c71df7ff9dd19ba61cdc76a6dc8a} 
+strategy\+\_\+framework.\+Trading\+Strategy.\+correlation\+\_\+matrix = None}
+
+\Hypertarget{classstrategy__framework_1_1_trading_strategy_a531bfff5c5cb76709032009b03b6ec63}\index{strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}!metrics@{metrics}}
+\index{metrics@{metrics}!strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_trading_strategy_a531bfff5c5cb76709032009b03b6ec63} 
+dict strategy\+\_\+framework.\+Trading\+Strategy.\+metrics = \{\}}
+
+\Hypertarget{classstrategy__framework_1_1_trading_strategy_a9ef5ae6078c06a2399fe7631e07b4eaa}\index{strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}!name@{name}}
+\index{name@{name}!strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_trading_strategy_a9ef5ae6078c06a2399fe7631e07b4eaa} 
+strategy\+\_\+framework.\+Trading\+Strategy.\+name = name}
+
+\Hypertarget{classstrategy__framework_1_1_trading_strategy_a7e4d3c712a2a9326436bc6a74518b6de}\index{strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}!parameters@{parameters}}
+\index{parameters@{parameters}!strategy\_framework.TradingStrategy@{strategy\_framework.TradingStrategy}}
+\doxysubsubsection{\texorpdfstring{parameters}{parameters}}
+{\footnotesize\ttfamily \label{classstrategy__framework_1_1_trading_strategy_a7e4d3c712a2a9326436bc6a74518b6de} 
+strategy\+\_\+framework.\+Trading\+Strategy.\+parameters = parameters or \{\}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/strategies/\mbox{\hyperlink{strategy__framework_8py}{strategy\+\_\+framework.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\doxysection{docs Directory Reference}
+\hypertarget{dir_49e56c817e5e54854c35e136979f97ca}{}\label{dir_49e56c817e5e54854c35e136979f97ca}\index{docs Directory Reference@{docs Directory Reference}}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{README.md_autotoc_md0}{}\doxysubsection{\texorpdfstring{Quantum Trader AI Documentation}{Quantum Trader AI Documentation}}\label{README.md_autotoc_md0}
+\hypertarget{README.md_autotoc_md1}{}\doxysubsection{\texorpdfstring{Overview}{Overview}}\label{README.md_autotoc_md1}
+Quantum Trader AI is an advanced trading system that combines machine learning, real-\/time analysis, and sophisticated portfolio optimization to provide optimal trading decisions.\hypertarget{README.md_autotoc_md2}{}\doxysubsection{\texorpdfstring{Components}{Components}}\label{README.md_autotoc_md2}
+\hypertarget{README.md_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{1. Real-\/time Analysis}{1. Real-\/time Analysis}}\label{README.md_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Position monitoring and risk metrics calculation
+\item Dynamic position sizing
+\item Risk limit checking and alerts
+\item Portfolio rebalancing
+\item Performance tracking
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{2. Reporting}{2. Reporting}}\label{README.md_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Performance metrics calculation
+\item Portfolio analysis
+\item Risk reporting
+\item Interactive visualizations
+\item HTML report generation
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{3. Integration}{3. Integration}}\label{README.md_autotoc_md5}
+
+\begin{DoxyItemize}
+\item Fast\+API backend
+\item Real-\/time monitoring
+\item Automated rebalancing
+\item Risk management
+\item Portfolio optimization
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md6}{}\doxysubsection{\texorpdfstring{Setup}{Setup}}\label{README.md_autotoc_md6}
+
+\begin{DoxyEnumerate}
+\item Install dependencies\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pip\ install\ -\/r\ requirements.txt}
+
+\end{DoxyCode}
+
+\item Configure environment variables\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cp\ .env.example\ .env}
+
+\end{DoxyCode}
+
+\item Run tests\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pytest}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md7}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{README.md_autotoc_md7}
+\hypertarget{README.md_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{Real-\/time Analysis}{Real-\/time Analysis}}\label{README.md_autotoc_md8}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{from}\ backend.real\_time\_analysis\ \textcolor{keyword}{import}\ RealTimeAnalyzer}
+\DoxyCodeLine{}
+\DoxyCodeLine{analyzer\ =\ RealTimeAnalyzer()}
+\DoxyCodeLine{positions\ =\ \{\textcolor{stringliteral}{'AAPL'}:\ 0.3,\ \textcolor{stringliteral}{'GOOGL'}:\ 0.2\}}
+\DoxyCodeLine{analyzer.update\_positions(positions)}
+
+\end{DoxyCode}
+\hypertarget{README.md_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Reporting}{Reporting}}\label{README.md_autotoc_md9}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{from}\ backend.reporting\ \textcolor{keyword}{import}\ Reporter}
+\DoxyCodeLine{}
+\DoxyCodeLine{reporter\ =\ Reporter()}
+\DoxyCodeLine{report\ =\ reporter.generate\_performance\_report(returns,\ positions)}
+
+\end{DoxyCode}
+\hypertarget{README.md_autotoc_md10}{}\doxysubsection{\texorpdfstring{Testing}{Testing}}\label{README.md_autotoc_md10}
+The project includes comprehensive unit tests for all major components\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pytest\ tests/}
+
+\end{DoxyCode}
+\hypertarget{README.md_autotoc_md11}{}\doxysubsection{\texorpdfstring{Contributing}{Contributing}}\label{README.md_autotoc_md11}
+
+\begin{DoxyEnumerate}
+\item Fork the repository
+\item Create a feature branch
+\item Commit your changes
+\item Push to the branch
+\item Create a Pull Request
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md12}{}\doxysubsection{\texorpdfstring{License}{License}}\label{README.md_autotoc_md12}
+\mbox{[}Your License Here\mbox{]}\hypertarget{README.md_autotoc_md13}{}\doxysubsection{\texorpdfstring{Contact}{Contact}}\label{README.md_autotoc_md13}
+For support or questions, please contact \mbox{[}Your Contact Information Here\mbox{]} 

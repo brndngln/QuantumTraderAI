@@ -1,0 +1,82 @@
+\doxysection{metrics Namespace Reference}
+\hypertarget{namespacemetrics}{}\label{namespacemetrics}\index{metrics@{metrics}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmetrics_1_1_metrics}{Metrics}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{namespacemetrics_acb063c7dd23fdc53928ae77c78f8c2c8}{\+\_\+fast\+\_\+sharpe\+\_\+ratio}} (np.\+ndarray returns, float risk\+\_\+free\+\_\+rate)
+\item 
+float \mbox{\hyperlink{namespacemetrics_ae7e0302677dde3922ab2c4c9d97e75b9}{\+\_\+fast\+\_\+max\+\_\+drawdown}} (np.\+ndarray cumulative)
+\item 
+Dict \mbox{\hyperlink{namespacemetrics_ad9a095d32b25f7e6deea32426ca60470}{\+\_\+fast\+\_\+basic\+\_\+metrics}} (np.\+ndarray returns, float risk\+\_\+free\+\_\+rate)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemetrics_afd0059ec91230c73e3c1e852ba5063c8}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+dict \mbox{\hyperlink{namespacemetrics_aa13a91c68646fab1039136a26e655a60}{metrics\+\_\+cache}} = \{\}
+\item 
+\mbox{\hyperlink{namespacemetrics_ae616b54f2b1d19f3a659127a0b585b2b}{last\+\_\+cache\+\_\+update}} = datetime.\+min
+\item 
+int \mbox{\hyperlink{namespacemetrics_a48aeecd50073d40137b3931c4e757ddc}{CACHE\+\_\+\+TTL}} = 300
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{namespacemetrics_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacemetrics_ad9a095d32b25f7e6deea32426ca60470}\index{metrics@{metrics}!\_fast\_basic\_metrics@{\_fast\_basic\_metrics}}
+\index{\_fast\_basic\_metrics@{\_fast\_basic\_metrics}!metrics@{metrics}}
+\doxysubsubsection{\texorpdfstring{\_fast\_basic\_metrics()}{\_fast\_basic\_metrics()}}
+{\footnotesize\ttfamily \label{namespacemetrics_ad9a095d32b25f7e6deea32426ca60470} 
+ Dict metrics.\+\_\+fast\+\_\+basic\+\_\+metrics (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{returns}{, }\item[{float}]{risk\+\_\+free\+\_\+rate}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Fast basic metrics calculation using Numba\end{DoxyVerb}
+ \Hypertarget{namespacemetrics_ae7e0302677dde3922ab2c4c9d97e75b9}\index{metrics@{metrics}!\_fast\_max\_drawdown@{\_fast\_max\_drawdown}}
+\index{\_fast\_max\_drawdown@{\_fast\_max\_drawdown}!metrics@{metrics}}
+\doxysubsubsection{\texorpdfstring{\_fast\_max\_drawdown()}{\_fast\_max\_drawdown()}}
+{\footnotesize\ttfamily \label{namespacemetrics_ae7e0302677dde3922ab2c4c9d97e75b9} 
+ float metrics.\+\_\+fast\+\_\+max\+\_\+drawdown (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{cumulative}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Fast maximum drawdown calculation using Numba\end{DoxyVerb}
+ \Hypertarget{namespacemetrics_acb063c7dd23fdc53928ae77c78f8c2c8}\index{metrics@{metrics}!\_fast\_sharpe\_ratio@{\_fast\_sharpe\_ratio}}
+\index{\_fast\_sharpe\_ratio@{\_fast\_sharpe\_ratio}!metrics@{metrics}}
+\doxysubsubsection{\texorpdfstring{\_fast\_sharpe\_ratio()}{\_fast\_sharpe\_ratio()}}
+{\footnotesize\ttfamily \label{namespacemetrics_acb063c7dd23fdc53928ae77c78f8c2c8} 
+ float metrics.\+\_\+fast\+\_\+sharpe\+\_\+ratio (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{returns}{, }\item[{float}]{risk\+\_\+free\+\_\+rate}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Fast Sharpe ratio calculation using Numba\end{DoxyVerb}
+ 
+
+\label{doc-var-members}
+\Hypertarget{namespacemetrics_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacemetrics_a48aeecd50073d40137b3931c4e757ddc}\index{metrics@{metrics}!CACHE\_TTL@{CACHE\_TTL}}
+\index{CACHE\_TTL@{CACHE\_TTL}!metrics@{metrics}}
+\doxysubsubsection{\texorpdfstring{CACHE\_TTL}{CACHE\_TTL}}
+{\footnotesize\ttfamily \label{namespacemetrics_a48aeecd50073d40137b3931c4e757ddc} 
+int metrics.\+CACHE\+\_\+\+TTL = 300}
+
+\Hypertarget{namespacemetrics_ae616b54f2b1d19f3a659127a0b585b2b}\index{metrics@{metrics}!last\_cache\_update@{last\_cache\_update}}
+\index{last\_cache\_update@{last\_cache\_update}!metrics@{metrics}}
+\doxysubsubsection{\texorpdfstring{last\_cache\_update}{last\_cache\_update}}
+{\footnotesize\ttfamily \label{namespacemetrics_ae616b54f2b1d19f3a659127a0b585b2b} 
+metrics.\+last\+\_\+cache\+\_\+update = datetime.\+min}
+
+\Hypertarget{namespacemetrics_afd0059ec91230c73e3c1e852ba5063c8}\index{metrics@{metrics}!logger@{logger}}
+\index{logger@{logger}!metrics@{metrics}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily \label{namespacemetrics_afd0059ec91230c73e3c1e852ba5063c8} 
+metrics.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{namespacemetrics_aa13a91c68646fab1039136a26e655a60}\index{metrics@{metrics}!metrics\_cache@{metrics\_cache}}
+\index{metrics\_cache@{metrics\_cache}!metrics@{metrics}}
+\doxysubsubsection{\texorpdfstring{metrics\_cache}{metrics\_cache}}
+{\footnotesize\ttfamily \label{namespacemetrics_aa13a91c68646fab1039136a26e655a60} 
+dict metrics.\+metrics\+\_\+cache = \{\}}
+

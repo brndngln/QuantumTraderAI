@@ -1,0 +1,240 @@
+\doxysection{backend/main.py File Reference}
+\hypertarget{main_8py}{}\label{main_8py}\index{backend/main.py@{backend/main.py}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmain_1_1_trade}{main.\+Trade}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_performance_metric}{main.\+Performance\+Metric}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_risk_metric}{main.\+Risk\+Metric}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_request_validator}{main.\+Request\+Validator}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_cache_manager}{main.\+Cache\+Manager}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_rate_limiter}{main.\+Rate\+Limiter}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_performance_monitor}{main.\+Performance\+Monitor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacemain}{main}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemain_a7db45a116721b66ee30e97533fc7b465}{main.\+log\+\_\+ai\+\_\+decision}} (str decision\+\_\+type, dict details)
+\item 
+bool \mbox{\hyperlink{namespacemain_af84c61f65cca20da156cdf7cb7908b64}{main.\+check\+\_\+ai\+\_\+safety}} (dict trade\+\_\+details)
+\item 
+bool \mbox{\hyperlink{namespacemain_a95e667b26a7076e1e972bf4340ca8a19}{main.\+require\+\_\+user\+\_\+confirmation}} (dict decision)
+\item 
+\mbox{\hyperlink{namespacemain_a650ca23279c4b05ab47a70278feba327}{main.\+ping\+\_\+connection}} (dbapi\+\_\+connection, connection\+\_\+record, connection\+\_\+proxy)
+\item 
+\mbox{\hyperlink{namespacemain_a153c51f50728eed3c7634b654ce959f1}{main.\+get\+\_\+db}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a03d0cc92082b111add00ecad798e7e89}{main.\+get\+\_\+cache}} (namespace=\textquotesingle{}default\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacemain_a83dd5174ddce4f83469d9ee275f442e2}{main.\+get\+\_\+redis\+\_\+pool}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a31d6d9481cce00161c8cd1f74fccb41a}{main.\+get\+\_\+memcached\+\_\+client}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a8e4e8d2c878cd1530dbafcd261f003f4}{main.\+custom\+\_\+exception\+\_\+handler}} (Request request, Exception exc)
+\item 
+\mbox{\hyperlink{namespacemain_ad92c4a99107223c4eaabc10b99f36570}{main.\+add\+\_\+security\+\_\+headers}} (Request request, call\+\_\+next)
+\item 
+\mbox{\hyperlink{namespacemain_ac9c2618c18f707e5810eb18b7ddf2d79}{main.\+monitor\+\_\+performance}} (Request request, call\+\_\+next)
+\item 
+\mbox{\hyperlink{namespacemain_a31d7f07e4298a8168857e894dfc3e41d}{main.\+update\+\_\+metrics}} (str endpoint, float response\+\_\+time)
+\item 
+\mbox{\hyperlink{namespacemain_a21f382072ab9220cd5658da898bd6e07}{main.\+circuit\+\_\+breaker}} (fn, \texorpdfstring{$\ast$}{*}args, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}kwargs)
+\item 
+\mbox{\hyperlink{namespacemain_a79c2ca5d95bb7f27bceec8bbdcc42ecb}{main.\+run\+\_\+background\+\_\+task}} (task)
+\item 
+\mbox{\hyperlink{namespacemain_ad7584bc6183087e82bf9c04f563c6112}{main.\+validate\+\_\+request}} (Request request, call\+\_\+next)
+\item 
+\mbox{\hyperlink{namespacemain_a7496121fd0cf09bcb695124265121b39}{main.\+add\+\_\+process\+\_\+time\+\_\+header}} (Request request, call\+\_\+next)
+\item 
+\mbox{\hyperlink{namespacemain_af0fb25cf693c599e0d77e29e802af13a}{main.\+health\+\_\+check}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a6fcf5c9ccedcc74cd72d709c205938bf}{main.\+get\+\_\+metrics}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a82f50f8b598afeb472eaf2c23164bb43}{main.\+read\+\_\+root}} ()
+\item 
+\mbox{\hyperlink{namespacemain_accc6a7aecb078ec76cbfc90bfdc4a408}{main.\+run\+\_\+all\+\_\+strategies}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{namespacemain_aea83290aab45b2bfbdf0542c35ad4d90}{main.\+AI\+\_\+\+CONFIG}}
+\item 
+dict \mbox{\hyperlink{namespacemain_aa51553296938c1af0c2c94846c47a91f}{main.\+ai\+\_\+safety\+\_\+monitor}}
+\item 
+\mbox{\hyperlink{namespacemain_ad39dcd94f0ffc845ab416c0783c20d25}{main.\+level}}
+\item 
+\mbox{\hyperlink{namespacemain_a758a4b3c52742d78aa30e49d058acea4}{main.\+format}}
+\item 
+\mbox{\hyperlink{namespacemain_abc8fd2c6474f154e4b0bc05a0a64aa82}{main.\+handlers}}
+\item 
+\mbox{\hyperlink{namespacemain_ae8177e2ad0b47dc8a8fa5289282c6407}{main.\+datefmt}}
+\item 
+\mbox{\hyperlink{namespacemain_ae1d4a0295c904f672a1f044188274bf1}{main.\+logger}} = logging.\+get\+Logger("{}quantum\+\_\+trader"{})
+\item 
+\mbox{\hyperlink{namespacemain_aab7b909058f2501860a3f24e1dd241dd}{main.\+jaeger\+\_\+exporter}}
+\item 
+\mbox{\hyperlink{namespacemain_ac057fc2af61b1ccb7e1d02095e27bbd8}{main.\+span\+\_\+processor}} = Batch\+Span\+Processor(\mbox{\hyperlink{namespacemain_aab7b909058f2501860a3f24e1dd241dd}{jaeger\+\_\+exporter}})
+\item 
+str \mbox{\hyperlink{namespacemain_aafe365dd47478c3ae610ff76275b6a4e}{main.\+DATABASE\+\_\+\+URL}} = "{}postgresql+asyncpg\+://user\+:password@localhost/quantum\+\_\+trader"{}
+\item 
+\mbox{\hyperlink{namespacemain_abbd462ee949c43b59de652c35814ad40}{main.\+engine}}
+\item 
+\mbox{\hyperlink{namespacemain_a75a3328cd96d3afacbd37f66a20adc3b}{main.\+Session\+Local}}
+\item 
+\mbox{\hyperlink{namespacemain_a87c59ca41397e993be09fd9e50087113}{main.\+Base}} = declarative\+\_\+base()
+\item 
+dict \mbox{\hyperlink{namespacemain_ab3a50b860c175f7d0eafa940f272fca4}{main.\+CACHE\+\_\+\+CONFIG}}
+\item 
+\mbox{\hyperlink{namespacemain_a5fa94f0581009434c7a63791944d6ff4}{main.\+app}}
+\item 
+int \mbox{\hyperlink{namespacemain_a0c2dcf6b3e1757f0c5902d7d6f89e856}{main.\+RATE\+\_\+\+LIMIT\+\_\+\+WINDOW}} = 60
+\item 
+int \mbox{\hyperlink{namespacemain_a3637902075f25f6c23faeb92aed2e6de}{main.\+RATE\+\_\+\+LIMIT\+\_\+\+REQUESTS}} = 100
+\item 
+\mbox{\hyperlink{namespacemain_ad0aeb957c34d3c8ce204f847e756bda0}{main.\+rate\+\_\+limit\+\_\+cache}} = TTLCache(maxsize=1000, ttl=\mbox{\hyperlink{namespacemain_a0c2dcf6b3e1757f0c5902d7d6f89e856}{RATE\+\_\+\+LIMIT\+\_\+\+WINDOW}})
+\item 
+\mbox{\hyperlink{namespacemain_acb79c4b50749db070c04695ae0d2268c}{main.\+SECRET\+\_\+\+KEY}} = secrets.\+token\+\_\+hex(32)
+\item 
+str \mbox{\hyperlink{namespacemain_ab3d37350025686d235c856080bd0fde5}{main.\+ALGORITHM}} = "{}HS256"{}
+\item 
+int \mbox{\hyperlink{namespacemain_a101e28b4e41edd15a65688c4482bfb7c}{main.\+ACCESS\+\_\+\+TOKEN\+\_\+\+EXPIRE\+\_\+\+MINUTES}} = 30
+\item 
+\mbox{\hyperlink{namespacemain_ad38a3eb6ec65f2989ae1db98e2412834}{main.\+pwd\+\_\+context}} = Crypt\+Context(schemes=\mbox{[}"{}bcrypt"{}\mbox{]}, deprecated="{}auto"{})
+\item 
+\mbox{\hyperlink{namespacemain_ab7c77aad3c81568e608a7c212fe72538}{main.\+redis\+\_\+pool}} = None
+\item 
+\mbox{\hyperlink{namespacemain_a9cf31f5a48c7c7de22ecfcfebe941f32}{main.\+memcached\+\_\+client}} = None
+\item 
+\mbox{\hyperlink{namespacemain_adb48cdabec07a8237d8fe01f21d66673}{main.\+dsn}}
+\item 
+\mbox{\hyperlink{namespacemain_a81b16e340b705221af46feae19e38190}{main.\+traces\+\_\+sample\+\_\+rate}}
+\item 
+\mbox{\hyperlink{namespacemain_a98a9e81c52949020b9c8f2595ee4e1fd}{main.\+environment}}
+\item 
+\mbox{\hyperlink{namespacemain_afa3ae522c427ee3f6fd4bdf43006b065}{main.\+integrations}}
+\item 
+\mbox{\hyperlink{namespacemain_a68a5f6361d452743cdcaeacb8a214ea4}{main.\+before\+\_\+send}}
+\item 
+int \mbox{\hyperlink{namespacemain_aa6b0f66504a4e957c6b5d77bb86dcc97}{main.\+CIRCUIT\+\_\+\+TIMEOUT}} = 30000
+\item 
+int \mbox{\hyperlink{namespacemain_a189f5aa9df825e0d4bb802306c2c5478}{main.\+last\+\_\+failure\+\_\+time}} = 0
+\item 
+bool \mbox{\hyperlink{namespacemain_a86385eee90884bb5f146b09a58fac36b}{main.\+circuit\+\_\+open}} = False
+\item 
+\mbox{\hyperlink{namespacemain_aa6e08b45f90b150c94f994ddc5a9f0ee}{main.\+background\+\_\+tasks}} = set()
+\item 
+\mbox{\hyperlink{namespacemain_a3b8b11e81317d0e97984ac154fe9603e}{main.\+cache\+\_\+manager}} = \mbox{\hyperlink{classmain_1_1_cache_manager}{Cache\+Manager}}()
+\item 
+\mbox{\hyperlink{namespacemain_ab277227e15a80c8a674b8540cc01f33f}{main.\+allow\+\_\+origins}}
+\item 
+\mbox{\hyperlink{namespacemain_a723efd63c798243e87a130a80fcdafc0}{main.\+allow\+\_\+credentials}}
+\item 
+\mbox{\hyperlink{namespacemain_a1b7923d71410345d3dbff8017b7e6f0d}{main.\+allow\+\_\+methods}}
+\item 
+\mbox{\hyperlink{namespacemain_ab58bda9b3875379c76aa7d3bd977b5bd}{main.\+allow\+\_\+headers}}
+\item 
+\mbox{\hyperlink{namespacemain_a9451a6826b7a5f469689aaab001b5a56}{main.\+expose\+\_\+headers}}
+\item 
+\mbox{\hyperlink{namespacemain_a97497898ce7734473f7102a7f54c98dd}{main.\+allow\+\_\+origin\+\_\+regex}}
+\item 
+\mbox{\hyperlink{namespacemain_a74fcd44c170a5c29c2dcedab98c0a22e}{main.\+max\+\_\+age}}
+\item 
+\mbox{\hyperlink{namespacemain_afe3fef6c001e2d833be9ac987586a762}{main.\+minimum\+\_\+size}}
+\item 
+\mbox{\hyperlink{namespacemain_a281b7c62b4df8747551ed92fc3e87e3c}{main.\+compresslevel}}
+\item 
+\mbox{\hyperlink{namespacemain_a4457b12e6d50cf849e9f3c29a73f4b8d}{main.\+server\+\_\+side}}
+\item 
+\mbox{\hyperlink{namespacemain_a98ec5ea88e385bb82163a87a4bd3ef13}{main.\+client\+\_\+side}}
+\item 
+\mbox{\hyperlink{namespacemain_af71c6bb704c1f23a61fbcd659b7dbed9}{main.\+allowed\+\_\+hosts}}
+\item 
+\mbox{\hyperlink{namespacemain_a284b7d784e16bf1c0b6c828006fed75b}{main.\+except\+\_\+hosts}}
+\item 
+\mbox{\hyperlink{namespacemain_adfc14002b61f11b32a9805b6fa3b085e}{main.\+status\+\_\+code}}
+\item 
+\mbox{\hyperlink{namespacemain_acedb228f868dbad4b47eaafc28995d30}{main.\+ssl\+\_\+host}}
+\item 
+\mbox{\hyperlink{namespacemain_a2bb517f1251de92b69060993f98cc721}{main.\+ssl\+\_\+port}}
+\item 
+\mbox{\hyperlink{namespacemain_a6f3bdfce14905aae9f2bb69b88a50eec}{main.\+secret\+\_\+key}}
+\item 
+\mbox{\hyperlink{namespacemain_ac4678309a30e82ff684f8332b39d89df}{main.\+session\+\_\+cookie}}
+\item 
+\mbox{\hyperlink{namespacemain_a8a59e5a88f4f5ea50769529bf9557197}{main.\+same\+\_\+site}}
+\item 
+\mbox{\hyperlink{namespacemain_a8a697a46cf8b6c4a7ba3dc145543f8dd}{main.\+https\+\_\+only}}
+\item 
+\mbox{\hyperlink{namespacemain_a39d891adc8681a3e4aa9bbd0e2374897}{main.\+cookie\+\_\+domain}}
+\item 
+\mbox{\hyperlink{namespacemain_ac084c4c168e58834232cb61675ad76a0}{main.\+headers}}
+\item 
+\mbox{\hyperlink{namespacemain_aaf1f35f0f5cc66d5427fbf3b15aa8f19}{main.\+max\+\_\+requests}}
+\item 
+\mbox{\hyperlink{namespacemain_ae1ea5d7d8ba9156ef06beef9bf8901a8}{main.\+window}}
+\item 
+\mbox{\hyperlink{namespacemain_a5a6ec387441960b0e275c21d3edb0b73}{main.\+key\+\_\+func}}
+\item 
+\mbox{\hyperlink{namespacemain_a1f4763c7d9785b85d544effe78e3ca9f}{main.\+storage}}
+\item 
+\mbox{\hyperlink{namespacemain_a2d36f3b33ec10ccef4d8605227b790d3}{main.\+on\+\_\+limit\+\_\+exceeded}}
+\item 
+\mbox{\hyperlink{namespacemain_abd5b6c80fbc3c037fce893ae7f6d2b05}{main.\+threshold}}
+\item 
+\mbox{\hyperlink{namespacemain_a125de59989f8d39e288981228ea8144a}{main.\+metrics\+\_\+store}}
+\item 
+\mbox{\hyperlink{namespacemain_ad0348948ebe3c63f466833759bf6542a}{main.\+on\+\_\+slow\+\_\+request}}
+\item 
+\mbox{\hyperlink{namespacemain_af40c255af29cee6c284d9225ea884015}{main.\+backend}}
+\item 
+\mbox{\hyperlink{namespacemain_a0cd90a3fba285deb01905f29468e3229}{main.\+on\+\_\+error}}
+\item 
+\mbox{\hyperlink{namespacemain_a442fc71b3435270d1521d8a79a849c0d}{main.\+cache}}
+\item 
+\mbox{\hyperlink{namespacemain_a04c3e263365fc3c3e8d63e0b6aef0c0f}{main.\+cache\+\_\+key\+\_\+func}}
+\item 
+\mbox{\hyperlink{namespacemain_a9b043e61bcb37518dcb46993cf349d09}{main.\+cache\+\_\+ttl}}
+\item 
+\mbox{\hyperlink{namespacemain_a3f39693b71cda58d67c6b3f5a408b5d7}{main.\+cache\+\_\+bypass\+\_\+func}}
+\item 
+\mbox{\hyperlink{namespacemain_ae5f401cbe0bd12e62ee03958c6c49321}{main.\+tracer}}
+\item 
+\mbox{\hyperlink{namespacemain_a968b4ea6f202e1eddb778322ec296301}{main.\+span\+\_\+name\+\_\+func}}
+\item 
+\mbox{\hyperlink{namespacemain_a829c7f57105f74c875ef0f765c3d4270}{main.\+trace\+\_\+id\+\_\+header}}
+\item 
+\mbox{\hyperlink{namespacemain_a660585d25b434eda3ebd52665d332ead}{main.\+span\+\_\+id\+\_\+header}}
+\item 
+\mbox{\hyperlink{namespacemain_af4d00a1ed9c85528c5cdc45f0a73c801}{main.\+log\+\_\+format}}
+\item 
+\mbox{\hyperlink{namespacemain_a7c448fa533f5ed7dc4a0d2c1eeada635}{main.\+log\+\_\+level}}
+\item 
+\mbox{\hyperlink{namespacemain_a83cf5491028bfe1172aabab032da4623}{main.\+include\+\_\+headers}}
+\item 
+\mbox{\hyperlink{namespacemain_af895c32617455ec84d6a30117c14c5a3}{main.\+include\+\_\+body}}
+\item 
+\mbox{\hyperlink{namespacemain_a991c69eb34158eecf3308e4991c65630}{main.\+validators}}
+\item 
+\mbox{\hyperlink{namespacemain_a3acdb96693bcc0db9a99e92c69c81646}{main.\+failure\+\_\+threshold}}
+\item 
+\mbox{\hyperlink{namespacemain_a17c1244fbfed3db17e0451f2869563a2}{main.\+reset\+\_\+timeout}}
+\item 
+\mbox{\hyperlink{namespacemain_a762e14bd918c8055a811a4d0741dba30}{main.\+on\+\_\+circuit\+\_\+open}}
+\item 
+dict \mbox{\hyperlink{namespacemain_a0c77e91743989d481a013b9deb26aa70}{main.\+market\+\_\+data\+\_\+cache}} = \{\}
+\item 
+\mbox{\hyperlink{namespacemain_ad5824bf1c5d90e788ba773658857d350}{main.\+last\+\_\+cache\+\_\+update}} = datetime.\+min
+\item 
+int \mbox{\hyperlink{namespacemain_a5d720be1eec45e22ed147eb7a046cb13}{main.\+CACHE\+\_\+\+TTL}} = 300
+\end{DoxyCompactItemize}

@@ -1,0 +1,173 @@
+\doxysection{market\+\_\+simulation.\+Market\+Simulator Class Reference}
+\hypertarget{classmarket__simulation_1_1_market_simulator}{}\label{classmarket__simulation_1_1_market_simulator}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_ac2bc0b01b97944e09aa8caa2dedef22f}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, pd.\+Data\+Frame \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a5441e3422cfe5cf6a69dbe166ee13a09}{market\+\_\+data}}, int \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a3315cd787736fcbd3f517b68dc77232a}{order\+\_\+book\+\_\+depth}}=10, float \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_afb65dca05e2109bf7f0d9d5641bc4f7a}{liquidity\+\_\+threshold}}=0.\+05, float \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a35f0b4c67306579cba8f2b01400490a4}{market\+\_\+impact\+\_\+exponent}}=0.\+6, float \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a1738270e337d4e7bfd7640511ff9ebb9}{slippage\+\_\+base}}=0.\+0005)
+\item 
+Dict \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a219cd28c38f61315df6d63f756c6ed73}{simulate\+\_\+order\+\_\+book}} (self, float price, float volume, str side)
+\item 
+float \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_ad86f030d8c295068f95531c95cface4a}{calculate\+\_\+market\+\_\+impact}} (self, float trade\+\_\+size, float market\+\_\+volume)
+\item 
+Dict \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a62feb7ef0f2a18436db5e9f4b5a61437}{simulate\+\_\+trade}} (self, float price, float volume, str side, float market\+\_\+volume)
+\item 
+Dict \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_ad8c7b4a0225e3b35ecb84121074573e1}{simulate\+\_\+market\+\_\+impact}} (self, List\mbox{[}Dict\mbox{]} trades, float market\+\_\+volume)
+\item 
+Dict \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a83d2aa8b8cdc48c44d087a0a60dbd6ae}{simulate\+\_\+liquidity}} (self, List\mbox{[}Dict\mbox{]} trades, float market\+\_\+volume)
+\item 
+Dict \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_ac1d89471a898c2978e5d9b5f4fb1a8dd}{simulate\+\_\+trading\+\_\+day}} (self, List\mbox{[}Dict\mbox{]} trades, float market\+\_\+volume)
+\item 
+None \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a00eef55bf063c578b52e23f8f6600eac}{plot\+\_\+market\+\_\+simulation}} (self, List\mbox{[}Dict\mbox{]} trades, float market\+\_\+volume)
+\item 
+Dict \mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_aa9363eafd2852ceb50344ce8efb47730}{get\+\_\+simulation\+\_\+metrics}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a5441e3422cfe5cf6a69dbe166ee13a09}{market\+\_\+data}} = market\+\_\+data
+\item 
+\mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a3315cd787736fcbd3f517b68dc77232a}{order\+\_\+book\+\_\+depth}} = order\+\_\+book\+\_\+depth
+\item 
+\mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_afb65dca05e2109bf7f0d9d5641bc4f7a}{liquidity\+\_\+threshold}} = liquidity\+\_\+threshold
+\item 
+\mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a35f0b4c67306579cba8f2b01400490a4}{market\+\_\+impact\+\_\+exponent}} = market\+\_\+impact\+\_\+exponent
+\item 
+\mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a1738270e337d4e7bfd7640511ff9ebb9}{slippage\+\_\+base}} = slippage\+\_\+base
+\item 
+\mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a3379ff3d51c116e4be5c539501f352cb}{metrics}} = Metrics()
+\item 
+\mbox{\hyperlink{classmarket__simulation_1_1_market_simulator_a841340d94d5cf07b83ef10fe4979aa40}{cost\+\_\+analyzer}} = cost\+\_\+analyzer
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classmarket__simulation_1_1_market_simulator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmarket__simulation_1_1_market_simulator_ac2bc0b01b97944e09aa8caa2dedef22f}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_ac2bc0b01b97944e09aa8caa2dedef22f} 
+market\+\_\+simulation.\+Market\+Simulator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{market\+\_\+data}{, }\item[{int }]{order\+\_\+book\+\_\+depth}{ = {\ttfamily 10}, }\item[{float }]{liquidity\+\_\+threshold}{ = {\ttfamily 0.05}, }\item[{float }]{market\+\_\+impact\+\_\+exponent}{ = {\ttfamily 0.6}, }\item[{float }]{slippage\+\_\+base}{ = {\ttfamily 0.0005}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize market simulator
+
+Args:
+    market_data: Market data DataFrame
+    order_book_depth: Depth of order book to simulate
+    liquidity_threshold: Threshold for liquidity impact
+    market_impact_exponent: Exponent for market impact calculation
+    slippage_base: Base slippage percentage
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classmarket__simulation_1_1_market_simulator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmarket__simulation_1_1_market_simulator_ad86f030d8c295068f95531c95cface4a}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!calculate\_market\_impact@{calculate\_market\_impact}}
+\index{calculate\_market\_impact@{calculate\_market\_impact}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{calculate\_market\_impact()}{calculate\_market\_impact()}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_ad86f030d8c295068f95531c95cface4a} 
+ float market\+\_\+simulation.\+Market\+Simulator.\+calculate\+\_\+market\+\_\+impact (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{trade\+\_\+size}{, }\item[{float}]{market\+\_\+volume}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate market impact\end{DoxyVerb}
+ \Hypertarget{classmarket__simulation_1_1_market_simulator_aa9363eafd2852ceb50344ce8efb47730}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!get\_simulation\_metrics@{get\_simulation\_metrics}}
+\index{get\_simulation\_metrics@{get\_simulation\_metrics}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{get\_simulation\_metrics()}{get\_simulation\_metrics()}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_aa9363eafd2852ceb50344ce8efb47730} 
+ Dict market\+\_\+simulation.\+Market\+Simulator.\+get\+\_\+simulation\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get simulation parameters\end{DoxyVerb}
+ \Hypertarget{classmarket__simulation_1_1_market_simulator_a00eef55bf063c578b52e23f8f6600eac}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!plot\_market\_simulation@{plot\_market\_simulation}}
+\index{plot\_market\_simulation@{plot\_market\_simulation}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{plot\_market\_simulation()}{plot\_market\_simulation()}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_a00eef55bf063c578b52e23f8f6600eac} 
+ None market\+\_\+simulation.\+Market\+Simulator.\+plot\+\_\+market\+\_\+simulation (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{List\mbox{[}Dict\mbox{]}}]{trades}{, }\item[{float}]{market\+\_\+volume}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Plot market simulation results\end{DoxyVerb}
+ \Hypertarget{classmarket__simulation_1_1_market_simulator_a83d2aa8b8cdc48c44d087a0a60dbd6ae}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!simulate\_liquidity@{simulate\_liquidity}}
+\index{simulate\_liquidity@{simulate\_liquidity}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{simulate\_liquidity()}{simulate\_liquidity()}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_a83d2aa8b8cdc48c44d087a0a60dbd6ae} 
+ Dict market\+\_\+simulation.\+Market\+Simulator.\+simulate\+\_\+liquidity (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{List\mbox{[}Dict\mbox{]}}]{trades}{, }\item[{float}]{market\+\_\+volume}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Simulate liquidity impact\end{DoxyVerb}
+ \Hypertarget{classmarket__simulation_1_1_market_simulator_ad8c7b4a0225e3b35ecb84121074573e1}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!simulate\_market\_impact@{simulate\_market\_impact}}
+\index{simulate\_market\_impact@{simulate\_market\_impact}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{simulate\_market\_impact()}{simulate\_market\_impact()}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_ad8c7b4a0225e3b35ecb84121074573e1} 
+ Dict market\+\_\+simulation.\+Market\+Simulator.\+simulate\+\_\+market\+\_\+impact (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{List\mbox{[}Dict\mbox{]}}]{trades}{, }\item[{float}]{market\+\_\+volume}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Simulate market impact of multiple trades\end{DoxyVerb}
+ \Hypertarget{classmarket__simulation_1_1_market_simulator_a219cd28c38f61315df6d63f756c6ed73}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!simulate\_order\_book@{simulate\_order\_book}}
+\index{simulate\_order\_book@{simulate\_order\_book}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{simulate\_order\_book()}{simulate\_order\_book()}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_a219cd28c38f61315df6d63f756c6ed73} 
+ Dict market\+\_\+simulation.\+Market\+Simulator.\+simulate\+\_\+order\+\_\+book (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{price}{, }\item[{float}]{volume}{, }\item[{str}]{side}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Simulate order book execution\end{DoxyVerb}
+ \Hypertarget{classmarket__simulation_1_1_market_simulator_a62feb7ef0f2a18436db5e9f4b5a61437}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!simulate\_trade@{simulate\_trade}}
+\index{simulate\_trade@{simulate\_trade}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{simulate\_trade()}{simulate\_trade()}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_a62feb7ef0f2a18436db5e9f4b5a61437} 
+ Dict market\+\_\+simulation.\+Market\+Simulator.\+simulate\+\_\+trade (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{price}{, }\item[{float}]{volume}{, }\item[{str}]{side}{, }\item[{float}]{market\+\_\+volume}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Simulate trade execution\end{DoxyVerb}
+ \Hypertarget{classmarket__simulation_1_1_market_simulator_ac1d89471a898c2978e5d9b5f4fb1a8dd}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!simulate\_trading\_day@{simulate\_trading\_day}}
+\index{simulate\_trading\_day@{simulate\_trading\_day}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{simulate\_trading\_day()}{simulate\_trading\_day()}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_ac1d89471a898c2978e5d9b5f4fb1a8dd} 
+ Dict market\+\_\+simulation.\+Market\+Simulator.\+simulate\+\_\+trading\+\_\+day (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{List\mbox{[}Dict\mbox{]}}]{trades}{, }\item[{float}]{market\+\_\+volume}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Simulate a full trading day\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classmarket__simulation_1_1_market_simulator_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmarket__simulation_1_1_market_simulator_a841340d94d5cf07b83ef10fe4979aa40}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!cost\_analyzer@{cost\_analyzer}}
+\index{cost\_analyzer@{cost\_analyzer}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{cost\_analyzer}{cost\_analyzer}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_a841340d94d5cf07b83ef10fe4979aa40} 
+market\+\_\+simulation.\+Market\+Simulator.\+cost\+\_\+analyzer = cost\+\_\+analyzer}
+
+\Hypertarget{classmarket__simulation_1_1_market_simulator_afb65dca05e2109bf7f0d9d5641bc4f7a}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!liquidity\_threshold@{liquidity\_threshold}}
+\index{liquidity\_threshold@{liquidity\_threshold}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{liquidity\_threshold}{liquidity\_threshold}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_afb65dca05e2109bf7f0d9d5641bc4f7a} 
+market\+\_\+simulation.\+Market\+Simulator.\+liquidity\+\_\+threshold = liquidity\+\_\+threshold}
+
+\Hypertarget{classmarket__simulation_1_1_market_simulator_a5441e3422cfe5cf6a69dbe166ee13a09}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!market\_data@{market\_data}}
+\index{market\_data@{market\_data}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{market\_data}{market\_data}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_a5441e3422cfe5cf6a69dbe166ee13a09} 
+market\+\_\+simulation.\+Market\+Simulator.\+market\+\_\+data = market\+\_\+data}
+
+\Hypertarget{classmarket__simulation_1_1_market_simulator_a35f0b4c67306579cba8f2b01400490a4}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!market\_impact\_exponent@{market\_impact\_exponent}}
+\index{market\_impact\_exponent@{market\_impact\_exponent}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{market\_impact\_exponent}{market\_impact\_exponent}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_a35f0b4c67306579cba8f2b01400490a4} 
+market\+\_\+simulation.\+Market\+Simulator.\+market\+\_\+impact\+\_\+exponent = market\+\_\+impact\+\_\+exponent}
+
+\Hypertarget{classmarket__simulation_1_1_market_simulator_a3379ff3d51c116e4be5c539501f352cb}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!metrics@{metrics}}
+\index{metrics@{metrics}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_a3379ff3d51c116e4be5c539501f352cb} 
+market\+\_\+simulation.\+Market\+Simulator.\+metrics = Metrics()}
+
+\Hypertarget{classmarket__simulation_1_1_market_simulator_a3315cd787736fcbd3f517b68dc77232a}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!order\_book\_depth@{order\_book\_depth}}
+\index{order\_book\_depth@{order\_book\_depth}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{order\_book\_depth}{order\_book\_depth}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_a3315cd787736fcbd3f517b68dc77232a} 
+market\+\_\+simulation.\+Market\+Simulator.\+order\+\_\+book\+\_\+depth = order\+\_\+book\+\_\+depth}
+
+\Hypertarget{classmarket__simulation_1_1_market_simulator_a1738270e337d4e7bfd7640511ff9ebb9}\index{market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}!slippage\_base@{slippage\_base}}
+\index{slippage\_base@{slippage\_base}!market\_simulation.MarketSimulator@{market\_simulation.MarketSimulator}}
+\doxysubsubsection{\texorpdfstring{slippage\_base}{slippage\_base}}
+{\footnotesize\ttfamily \label{classmarket__simulation_1_1_market_simulator_a1738270e337d4e7bfd7640511ff9ebb9} 
+market\+\_\+simulation.\+Market\+Simulator.\+slippage\+\_\+base = slippage\+\_\+base}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{market__simulation_8py}{market\+\_\+simulation.\+py}}\end{DoxyCompactItemize}

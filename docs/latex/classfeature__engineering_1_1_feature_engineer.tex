@@ -1,0 +1,383 @@
+\doxysection{feature\+\_\+engineering.\+Feature\+Engineer Class Reference}
+\hypertarget{classfeature__engineering_1_1_feature_engineer}{}\label{classfeature__engineering_1_1_feature_engineer}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a615188b68de61a5d3b28ec11fade5c5e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, List\mbox{[}int\mbox{]} \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a830c548cdb2571532dc5ac972a0b87e6}{window\+\_\+sizes}}=\mbox{[}10, 20, 50, 100\mbox{]}, List\mbox{[}str\mbox{]} \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_afcacd4537d9b7d3316e0460fb9b6bb8a}{technical\+\_\+indicators}}=\mbox{[}\textquotesingle{}RSI\textquotesingle{}, \textquotesingle{}MACD\textquotesingle{}, \textquotesingle{}BB\textquotesingle{}, \textquotesingle{}ADX\textquotesingle{}, \textquotesingle{}OBV\textquotesingle{}\mbox{]}, List\mbox{[}str\mbox{]} \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_adc0950c988896b97c640327e8322bddb}{volatility\+\_\+features}}=\mbox{[}\textquotesingle{}ATR\textquotesingle{}, \textquotesingle{}BBANDS\textquotesingle{}\mbox{]}, List\mbox{[}str\mbox{]} \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_af57e7afb8a0a3ca203098a52af1a6157}{volume\+\_\+features}}=\mbox{[}\textquotesingle{}OBV\textquotesingle{}, \textquotesingle{}MFI\textquotesingle{}\mbox{]}, List\mbox{[}str\mbox{]} \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a6d8cf09b4dc2c09de202a45c2e4cf832}{momentum\+\_\+features}}=\mbox{[}\textquotesingle{}RSI\textquotesingle{}, \textquotesingle{}ROC\textquotesingle{}, \textquotesingle{}ADX\textquotesingle{}\mbox{]}, Dict \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a7db0778011806a53bc02c31b8ad58b3c}{user\+\_\+config}}=None)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a9628843e84613ebef95a94ae6a86114f}{calculate\+\_\+technical\+\_\+indicators}} (self, pd.\+Data\+Frame df)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a51b2dcf765cdf08fc00bff672c3b0c54}{calculate\+\_\+volatility\+\_\+features}} (self, pd.\+Data\+Frame df)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_ad98de64b1a13cf9f00366d269a6008f0}{calculate\+\_\+volume\+\_\+features}} (self, pd.\+Data\+Frame df)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a7d9ec11a4209a87244b4bd1b24f23f9a}{calculate\+\_\+momentum\+\_\+features}} (self, pd.\+Data\+Frame df)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a4d88ba7a43f92278acc3e2548a6238f6}{calculate\+\_\+time\+\_\+features}} (self, pd.\+Data\+Frame df)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a013f01d87dffb46197de2c9bd512b1f1}{calculate\+\_\+market\+\_\+regime\+\_\+features}} (self, pd.\+Data\+Frame df)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_ac2b24915e065e6f02dc71fede0ffa863}{normalize\+\_\+features}} (self, pd.\+Data\+Frame df)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a2dbd320f2df18e8f540d8cf9ed061f0b}{create\+\_\+feature\+\_\+matrix}} (self, pd.\+Data\+Frame df)
+\item 
+List\mbox{[}str\mbox{]} \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_ab1dd476a6cae81f3569b583b30cf352a}{get\+\_\+feature\+\_\+columns}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a830c548cdb2571532dc5ac972a0b87e6}{window\+\_\+sizes}} = window\+\_\+sizes
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_afcacd4537d9b7d3316e0460fb9b6bb8a}{technical\+\_\+indicators}} = technical\+\_\+indicators
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_adc0950c988896b97c640327e8322bddb}{volatility\+\_\+features}} = volatility\+\_\+features
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_af57e7afb8a0a3ca203098a52af1a6157}{volume\+\_\+features}} = volume\+\_\+features
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a6d8cf09b4dc2c09de202a45c2e4cf832}{momentum\+\_\+features}} = momentum\+\_\+features
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_afce864daee2a621be57c21dc203063cc}{scaler}} = Standard\+Scaler()
+\item 
+dict \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_ae28d5be8a903e0c320345ba04ef173f4}{feature\+\_\+cache}} = \{\}
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a04ddef66c7571f7e40fad3eb25e233c0}{last\+\_\+update}} = None
+\item 
+int \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_ad8a563fb9386036c3536bb0df7c6a882}{max\+\_\+features}} = 100
+\item 
+float \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a1df89bb731fc636ae5e3a1e2471aabc7}{feature\+\_\+importance\+\_\+threshold}} = 0.\+01
+\item 
+int \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_aa5e81cc8c5f634fee61d41fb3105fd33}{memory\+\_\+limit}} = 1e9
+\item 
+int \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a1b8f4a148704332148217dfd7dc009e6}{computation\+\_\+time\+\_\+limit}} = 5
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a7db0778011806a53bc02c31b8ad58b3c}{user\+\_\+config}} = user\+\_\+config or \{\}
+\item 
+bool \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_adda07f28bbbb350fa576d5e475d3637d}{user\+\_\+override}} = False
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_af6f13aa1b6143bc383129c61172efe81}{feature\+\_\+blacklist}} = set(self.\+user\+\_\+config.\+get(\textquotesingle{}blacklisted\+\_\+features\textquotesingle{}, \mbox{[}$\,$\mbox{]}))
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a8883f49dfa326ffa3db4b8696f840335}{feature\+\_\+whitelist}} = set(self.\+user\+\_\+config.\+get(\textquotesingle{}whitelisted\+\_\+features\textquotesingle{}, \mbox{[}$\,$\mbox{]}))
+\item 
+dict \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_aaa97ca71abcf0648d4389e56f5227f17}{feature\+\_\+importance}} = \{\}
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a6efc9c5f1ffadda4d94bd42c3cc598be}{last\+\_\+feature\+\_\+update}} = datetime.\+now()
+\item 
+dict \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a9f9e96c5390ced4b85797fd628e64170}{feature\+\_\+calculation\+\_\+times}} = \{\}
+\item 
+dict \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_ad79a1ac982439b0f805a97e7306f1942}{memory\+\_\+usage}} = \{\}
+\item 
+int \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a3fdf21171cec4764e2a0f4b9df741e2d}{error\+\_\+count}} = 0
+\item 
+int \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_aefa7897287b053479e8932e418ed812b}{max\+\_\+errors}} = 5
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a4c7ca46e58f2b6da21c56e931e62f6eb}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a50bcf4ee2e69c56993276074b0b7910e}{feature\+\_\+selector}} = None
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_aee6e3092a4e10289efaacf412cd17d95}{last\+\_\+feature\+\_\+selection}} = None
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a03b5a24bd9c09ec05ea38effa73431fb}{feature\+\_\+columns}} = df.\+columns.\+tolist()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_ac724d456eaf00a35b6ce0c558c9f4d65}{\+\_\+validate\+\_\+configuration}} (self)
+\item 
+bool \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_ab5dce16d42824b877090e283188ef80f}{\+\_\+check\+\_\+memory\+\_\+usage}} (self, pd.\+Data\+Frame df)
+\item 
+bool \mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a3617a215b2a1537ba7bd812cfe1ba417}{\+\_\+check\+\_\+computation\+\_\+time}} (self, float start\+\_\+time)
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_aec2c6a6175037f92210709e37503a92a}{\+\_\+log\+\_\+feature\+\_\+calculation}} (self, str feature\+\_\+name, float calculation\+\_\+time)
+\item 
+\mbox{\hyperlink{classfeature__engineering_1_1_feature_engineer_a0b0f620062ae16aecc14ab14875cb74d}{\+\_\+handle\+\_\+error}} (self, Exception error, str feature\+\_\+name)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a615188b68de61a5d3b28ec11fade5c5e}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a615188b68de61a5d3b28ec11fade5c5e} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{List\mbox{[}int\mbox{]} }]{window\+\_\+sizes}{ = {\ttfamily \mbox{[}10,~20,~50,~100\mbox{]}}, }\item[{List\mbox{[}str\mbox{]} }]{technical\+\_\+indicators}{ = {\ttfamily \mbox{[}\textquotesingle{}RSI\textquotesingle{},~\textquotesingle{}MACD\textquotesingle{},~\textquotesingle{}BB\textquotesingle{},~\textquotesingle{}ADX\textquotesingle{},~\textquotesingle{}OBV\textquotesingle{}\mbox{]}}, }\item[{List\mbox{[}str\mbox{]} }]{volatility\+\_\+features}{ = {\ttfamily \mbox{[}\textquotesingle{}ATR\textquotesingle{},~\textquotesingle{}BBANDS\textquotesingle{}\mbox{]}}, }\item[{List\mbox{[}str\mbox{]} }]{volume\+\_\+features}{ = {\ttfamily \mbox{[}\textquotesingle{}OBV\textquotesingle{},~\textquotesingle{}MFI\textquotesingle{}\mbox{]}}, }\item[{List\mbox{[}str\mbox{]} }]{momentum\+\_\+features}{ = {\ttfamily \mbox{[}\textquotesingle{}RSI\textquotesingle{},~\textquotesingle{}ROC\textquotesingle{},~\textquotesingle{}ADX\textquotesingle{}\mbox{]}}, }\item[{Dict }]{user\+\_\+config}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize feature engineering pipeline with safety measures
+
+Args:
+    window_sizes: List of window sizes for rolling calculations
+    technical_indicators: List of technical indicators to calculate
+    volatility_features: List of volatility features
+    volume_features: List of volume features
+    momentum_features: List of momentum features
+    user_config: User-defined configuration overrides
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a3617a215b2a1537ba7bd812cfe1ba417}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!\_check\_computation\_time@{\_check\_computation\_time}}
+\index{\_check\_computation\_time@{\_check\_computation\_time}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{\_check\_computation\_time()}{\_check\_computation\_time()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a3617a215b2a1537ba7bd812cfe1ba417} 
+ bool feature\+\_\+engineering.\+Feature\+Engineer.\+\_\+check\+\_\+computation\+\_\+time (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{start\+\_\+time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Check if computation time is within limits\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_ab5dce16d42824b877090e283188ef80f}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!\_check\_memory\_usage@{\_check\_memory\_usage}}
+\index{\_check\_memory\_usage@{\_check\_memory\_usage}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{\_check\_memory\_usage()}{\_check\_memory\_usage()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_ab5dce16d42824b877090e283188ef80f} 
+ bool feature\+\_\+engineering.\+Feature\+Engineer.\+\_\+check\+\_\+memory\+\_\+usage (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Check if memory usage is within limits\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_a0b0f620062ae16aecc14ab14875cb74d}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!\_handle\_error@{\_handle\_error}}
+\index{\_handle\_error@{\_handle\_error}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{\_handle\_error()}{\_handle\_error()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a0b0f620062ae16aecc14ab14875cb74d} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+\_\+handle\+\_\+error (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Exception}]{error}{, }\item[{str}]{feature\+\_\+name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Handle calculation errors with safety measures\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_aec2c6a6175037f92210709e37503a92a}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!\_log\_feature\_calculation@{\_log\_feature\_calculation}}
+\index{\_log\_feature\_calculation@{\_log\_feature\_calculation}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{\_log\_feature\_calculation()}{\_log\_feature\_calculation()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_aec2c6a6175037f92210709e37503a92a} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+\_\+log\+\_\+feature\+\_\+calculation (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{feature\+\_\+name}{, }\item[{float}]{calculation\+\_\+time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Log feature calculation statistics\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_ac724d456eaf00a35b6ce0c558c9f4d65}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!\_validate\_configuration@{\_validate\_configuration}}
+\index{\_validate\_configuration@{\_validate\_configuration}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{\_validate\_configuration()}{\_validate\_configuration()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_ac724d456eaf00a35b6ce0c558c9f4d65} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+\_\+validate\+\_\+configuration (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Validate user configuration\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_a013f01d87dffb46197de2c9bd512b1f1}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!calculate\_market\_regime\_features@{calculate\_market\_regime\_features}}
+\index{calculate\_market\_regime\_features@{calculate\_market\_regime\_features}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{calculate\_market\_regime\_features()}{calculate\_market\_regime\_features()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a013f01d87dffb46197de2c9bd512b1f1} 
+ pd.\+Data\+Frame feature\+\_\+engineering.\+Feature\+Engineer.\+calculate\+\_\+market\+\_\+regime\+\_\+features (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate market regime features\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_a7d9ec11a4209a87244b4bd1b24f23f9a}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!calculate\_momentum\_features@{calculate\_momentum\_features}}
+\index{calculate\_momentum\_features@{calculate\_momentum\_features}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{calculate\_momentum\_features()}{calculate\_momentum\_features()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a7d9ec11a4209a87244b4bd1b24f23f9a} 
+ pd.\+Data\+Frame feature\+\_\+engineering.\+Feature\+Engineer.\+calculate\+\_\+momentum\+\_\+features (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate momentum indicators\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_a9628843e84613ebef95a94ae6a86114f}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!calculate\_technical\_indicators@{calculate\_technical\_indicators}}
+\index{calculate\_technical\_indicators@{calculate\_technical\_indicators}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{calculate\_technical\_indicators()}{calculate\_technical\_indicators()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a9628843e84613ebef95a94ae6a86114f} 
+ pd.\+Data\+Frame feature\+\_\+engineering.\+Feature\+Engineer.\+calculate\+\_\+technical\+\_\+indicators (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate technical indicators with safety checks\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_a4d88ba7a43f92278acc3e2548a6238f6}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!calculate\_time\_features@{calculate\_time\_features}}
+\index{calculate\_time\_features@{calculate\_time\_features}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{calculate\_time\_features()}{calculate\_time\_features()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a4d88ba7a43f92278acc3e2548a6238f6} 
+ pd.\+Data\+Frame feature\+\_\+engineering.\+Feature\+Engineer.\+calculate\+\_\+time\+\_\+features (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate time-based features with safety checks\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_a51b2dcf765cdf08fc00bff672c3b0c54}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!calculate\_volatility\_features@{calculate\_volatility\_features}}
+\index{calculate\_volatility\_features@{calculate\_volatility\_features}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{calculate\_volatility\_features()}{calculate\_volatility\_features()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a51b2dcf765cdf08fc00bff672c3b0c54} 
+ pd.\+Data\+Frame feature\+\_\+engineering.\+Feature\+Engineer.\+calculate\+\_\+volatility\+\_\+features (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate volatility features\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_ad98de64b1a13cf9f00366d269a6008f0}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!calculate\_volume\_features@{calculate\_volume\_features}}
+\index{calculate\_volume\_features@{calculate\_volume\_features}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{calculate\_volume\_features()}{calculate\_volume\_features()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_ad98de64b1a13cf9f00366d269a6008f0} 
+ pd.\+Data\+Frame feature\+\_\+engineering.\+Feature\+Engineer.\+calculate\+\_\+volume\+\_\+features (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate volume-based features\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_a2dbd320f2df18e8f540d8cf9ed061f0b}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!create\_feature\_matrix@{create\_feature\_matrix}}
+\index{create\_feature\_matrix@{create\_feature\_matrix}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{create\_feature\_matrix()}{create\_feature\_matrix()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a2dbd320f2df18e8f540d8cf9ed061f0b} 
+ pd.\+Data\+Frame feature\+\_\+engineering.\+Feature\+Engineer.\+create\+\_\+feature\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create complete feature matrix\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_ab1dd476a6cae81f3569b583b30cf352a}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!get\_feature\_columns@{get\_feature\_columns}}
+\index{get\_feature\_columns@{get\_feature\_columns}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{get\_feature\_columns()}{get\_feature\_columns()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_ab1dd476a6cae81f3569b583b30cf352a} 
+ List\mbox{[}str\mbox{]} feature\+\_\+engineering.\+Feature\+Engineer.\+get\+\_\+feature\+\_\+columns (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get list of feature columns\end{DoxyVerb}
+ \Hypertarget{classfeature__engineering_1_1_feature_engineer_ac2b24915e065e6f02dc71fede0ffa863}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!normalize\_features@{normalize\_features}}
+\index{normalize\_features@{normalize\_features}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{normalize\_features()}{normalize\_features()}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_ac2b24915e065e6f02dc71fede0ffa863} 
+ pd.\+Data\+Frame feature\+\_\+engineering.\+Feature\+Engineer.\+normalize\+\_\+features (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{df}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Normalize features using Z-score normalization\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a1b8f4a148704332148217dfd7dc009e6}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!computation\_time\_limit@{computation\_time\_limit}}
+\index{computation\_time\_limit@{computation\_time\_limit}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{computation\_time\_limit}{computation\_time\_limit}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a1b8f4a148704332148217dfd7dc009e6} 
+int feature\+\_\+engineering.\+Feature\+Engineer.\+computation\+\_\+time\+\_\+limit = 5}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a3fdf21171cec4764e2a0f4b9df741e2d}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!error\_count@{error\_count}}
+\index{error\_count@{error\_count}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{error\_count}{error\_count}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a3fdf21171cec4764e2a0f4b9df741e2d} 
+int feature\+\_\+engineering.\+Feature\+Engineer.\+error\+\_\+count = 0}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_af6f13aa1b6143bc383129c61172efe81}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!feature\_blacklist@{feature\_blacklist}}
+\index{feature\_blacklist@{feature\_blacklist}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{feature\_blacklist}{feature\_blacklist}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_af6f13aa1b6143bc383129c61172efe81} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+feature\+\_\+blacklist = set(self.\+user\+\_\+config.\+get(\textquotesingle{}blacklisted\+\_\+features\textquotesingle{}, \mbox{[}$\,$\mbox{]}))}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_ae28d5be8a903e0c320345ba04ef173f4}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!feature\_cache@{feature\_cache}}
+\index{feature\_cache@{feature\_cache}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{feature\_cache}{feature\_cache}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_ae28d5be8a903e0c320345ba04ef173f4} 
+dict feature\+\_\+engineering.\+Feature\+Engineer.\+feature\+\_\+cache = \{\}}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a9f9e96c5390ced4b85797fd628e64170}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!feature\_calculation\_times@{feature\_calculation\_times}}
+\index{feature\_calculation\_times@{feature\_calculation\_times}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{feature\_calculation\_times}{feature\_calculation\_times}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a9f9e96c5390ced4b85797fd628e64170} 
+dict feature\+\_\+engineering.\+Feature\+Engineer.\+feature\+\_\+calculation\+\_\+times = \{\}}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a03b5a24bd9c09ec05ea38effa73431fb}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!feature\_columns@{feature\_columns}}
+\index{feature\_columns@{feature\_columns}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{feature\_columns}{feature\_columns}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a03b5a24bd9c09ec05ea38effa73431fb} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+feature\+\_\+columns = df.\+columns.\+tolist()}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_aaa97ca71abcf0648d4389e56f5227f17}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!feature\_importance@{feature\_importance}}
+\index{feature\_importance@{feature\_importance}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{feature\_importance}{feature\_importance}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_aaa97ca71abcf0648d4389e56f5227f17} 
+dict feature\+\_\+engineering.\+Feature\+Engineer.\+feature\+\_\+importance = \{\}}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a1df89bb731fc636ae5e3a1e2471aabc7}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!feature\_importance\_threshold@{feature\_importance\_threshold}}
+\index{feature\_importance\_threshold@{feature\_importance\_threshold}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{feature\_importance\_threshold}{feature\_importance\_threshold}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a1df89bb731fc636ae5e3a1e2471aabc7} 
+float feature\+\_\+engineering.\+Feature\+Engineer.\+feature\+\_\+importance\+\_\+threshold = 0.\+01}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a50bcf4ee2e69c56993276074b0b7910e}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!feature\_selector@{feature\_selector}}
+\index{feature\_selector@{feature\_selector}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{feature\_selector}{feature\_selector}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a50bcf4ee2e69c56993276074b0b7910e} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+feature\+\_\+selector = None}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a8883f49dfa326ffa3db4b8696f840335}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!feature\_whitelist@{feature\_whitelist}}
+\index{feature\_whitelist@{feature\_whitelist}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{feature\_whitelist}{feature\_whitelist}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a8883f49dfa326ffa3db4b8696f840335} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+feature\+\_\+whitelist = set(self.\+user\+\_\+config.\+get(\textquotesingle{}whitelisted\+\_\+features\textquotesingle{}, \mbox{[}$\,$\mbox{]}))}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_aee6e3092a4e10289efaacf412cd17d95}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!last\_feature\_selection@{last\_feature\_selection}}
+\index{last\_feature\_selection@{last\_feature\_selection}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{last\_feature\_selection}{last\_feature\_selection}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_aee6e3092a4e10289efaacf412cd17d95} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+last\+\_\+feature\+\_\+selection = None}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a6efc9c5f1ffadda4d94bd42c3cc598be}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!last\_feature\_update@{last\_feature\_update}}
+\index{last\_feature\_update@{last\_feature\_update}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{last\_feature\_update}{last\_feature\_update}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a6efc9c5f1ffadda4d94bd42c3cc598be} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+last\+\_\+feature\+\_\+update = datetime.\+now()}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a04ddef66c7571f7e40fad3eb25e233c0}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!last\_update@{last\_update}}
+\index{last\_update@{last\_update}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{last\_update}{last\_update}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a04ddef66c7571f7e40fad3eb25e233c0} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+last\+\_\+update = None}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a4c7ca46e58f2b6da21c56e931e62f6eb}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!logger@{logger}}
+\index{logger@{logger}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a4c7ca46e58f2b6da21c56e931e62f6eb} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_aefa7897287b053479e8932e418ed812b}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!max\_errors@{max\_errors}}
+\index{max\_errors@{max\_errors}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{max\_errors}{max\_errors}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_aefa7897287b053479e8932e418ed812b} 
+int feature\+\_\+engineering.\+Feature\+Engineer.\+max\+\_\+errors = 5}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_ad8a563fb9386036c3536bb0df7c6a882}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!max\_features@{max\_features}}
+\index{max\_features@{max\_features}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{max\_features}{max\_features}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_ad8a563fb9386036c3536bb0df7c6a882} 
+int feature\+\_\+engineering.\+Feature\+Engineer.\+max\+\_\+features = 100}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_aa5e81cc8c5f634fee61d41fb3105fd33}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!memory\_limit@{memory\_limit}}
+\index{memory\_limit@{memory\_limit}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{memory\_limit}{memory\_limit}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_aa5e81cc8c5f634fee61d41fb3105fd33} 
+int feature\+\_\+engineering.\+Feature\+Engineer.\+memory\+\_\+limit = 1e9}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_ad79a1ac982439b0f805a97e7306f1942}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!memory\_usage@{memory\_usage}}
+\index{memory\_usage@{memory\_usage}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{memory\_usage}{memory\_usage}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_ad79a1ac982439b0f805a97e7306f1942} 
+dict feature\+\_\+engineering.\+Feature\+Engineer.\+memory\+\_\+usage = \{\}}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a6d8cf09b4dc2c09de202a45c2e4cf832}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!momentum\_features@{momentum\_features}}
+\index{momentum\_features@{momentum\_features}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{momentum\_features}{momentum\_features}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a6d8cf09b4dc2c09de202a45c2e4cf832} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+momentum\+\_\+features = momentum\+\_\+features}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_afce864daee2a621be57c21dc203063cc}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!scaler@{scaler}}
+\index{scaler@{scaler}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{scaler}{scaler}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_afce864daee2a621be57c21dc203063cc} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+scaler = Standard\+Scaler()}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_afcacd4537d9b7d3316e0460fb9b6bb8a}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!technical\_indicators@{technical\_indicators}}
+\index{technical\_indicators@{technical\_indicators}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{technical\_indicators}{technical\_indicators}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_afcacd4537d9b7d3316e0460fb9b6bb8a} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+technical\+\_\+indicators = technical\+\_\+indicators}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a7db0778011806a53bc02c31b8ad58b3c}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!user\_config@{user\_config}}
+\index{user\_config@{user\_config}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{user\_config}{user\_config}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a7db0778011806a53bc02c31b8ad58b3c} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+user\+\_\+config = user\+\_\+config or \{\}}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_adda07f28bbbb350fa576d5e475d3637d}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!user\_override@{user\_override}}
+\index{user\_override@{user\_override}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{user\_override}{user\_override}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_adda07f28bbbb350fa576d5e475d3637d} 
+bool feature\+\_\+engineering.\+Feature\+Engineer.\+user\+\_\+override = False}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_adc0950c988896b97c640327e8322bddb}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!volatility\_features@{volatility\_features}}
+\index{volatility\_features@{volatility\_features}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{volatility\_features}{volatility\_features}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_adc0950c988896b97c640327e8322bddb} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+volatility\+\_\+features = volatility\+\_\+features}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_af57e7afb8a0a3ca203098a52af1a6157}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!volume\_features@{volume\_features}}
+\index{volume\_features@{volume\_features}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{volume\_features}{volume\_features}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_af57e7afb8a0a3ca203098a52af1a6157} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+volume\+\_\+features = volume\+\_\+features}
+
+\Hypertarget{classfeature__engineering_1_1_feature_engineer_a830c548cdb2571532dc5ac972a0b87e6}\index{feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}!window\_sizes@{window\_sizes}}
+\index{window\_sizes@{window\_sizes}!feature\_engineering.FeatureEngineer@{feature\_engineering.FeatureEngineer}}
+\doxysubsubsection{\texorpdfstring{window\_sizes}{window\_sizes}}
+{\footnotesize\ttfamily \label{classfeature__engineering_1_1_feature_engineer_a830c548cdb2571532dc5ac972a0b87e6} 
+feature\+\_\+engineering.\+Feature\+Engineer.\+window\+\_\+sizes = window\+\_\+sizes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/ai\+\_\+models/\mbox{\hyperlink{feature__engineering_8py}{feature\+\_\+engineering.\+py}}\end{DoxyCompactItemize}

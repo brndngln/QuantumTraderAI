@@ -1,0 +1,141 @@
+\doxysection{metrics.\+Metrics Class Reference}
+\hypertarget{classmetrics_1_1_metrics}{}\label{classmetrics_1_1_metrics}\index{metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmetrics_1_1_metrics_aece39ed8253c33a15a9979dbe0c24c21}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, float \mbox{\hyperlink{classmetrics_1_1_metrics_ae33c5c8b96ba8ef3f4cac3c13d64049e}{risk\+\_\+free\+\_\+rate}}=0.\+02, Optional\mbox{[}pd.\+Series\mbox{]} \mbox{\hyperlink{classmetrics_1_1_metrics_a20c9521145f60f6e07da9b9e1d711f33}{benchmark\+\_\+returns}}=None, int \mbox{\hyperlink{classmetrics_1_1_metrics_ae78c96fedeea3e0cea8c6b6e07dc43db}{window\+\_\+size}}=252, bool \mbox{\hyperlink{classmetrics_1_1_metrics_ad402152bed7df2302bd6b7d52c978511}{cache\+\_\+enabled}}=True)
+\item 
+float \mbox{\hyperlink{classmetrics_1_1_metrics_a2f041a81be45c04123b1ce158d6b4696}{calculate\+\_\+sharpe\+\_\+ratio}} (self, pd.\+Series returns)
+\item 
+float \mbox{\hyperlink{classmetrics_1_1_metrics_aa49517f78c9ace5305ea926738d9b0f0}{calculate\+\_\+max\+\_\+drawdown}} (self, pd.\+Series returns)
+\item 
+Dict \mbox{\hyperlink{classmetrics_1_1_metrics_ad622487e8d772e4e939fe4a8fd431395}{calculate\+\_\+basic\+\_\+metrics}} (self, pd.\+Series returns)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmetrics_1_1_metrics_ae33c5c8b96ba8ef3f4cac3c13d64049e}{risk\+\_\+free\+\_\+rate}} = risk\+\_\+free\+\_\+rate
+\item 
+\mbox{\hyperlink{classmetrics_1_1_metrics_a20c9521145f60f6e07da9b9e1d711f33}{benchmark\+\_\+returns}} = benchmark\+\_\+returns
+\item 
+\mbox{\hyperlink{classmetrics_1_1_metrics_ae78c96fedeea3e0cea8c6b6e07dc43db}{window\+\_\+size}} = window\+\_\+size
+\item 
+\mbox{\hyperlink{classmetrics_1_1_metrics_ad402152bed7df2302bd6b7d52c978511}{cache\+\_\+enabled}} = cache\+\_\+enabled
+\item 
+dict \mbox{\hyperlink{classmetrics_1_1_metrics_aa2888e81e65c4207f3e59023c2ec845f}{metrics\+\_\+cache}} = \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classmetrics_1_1_metrics_a064a3362ada2d9ea63fa46d50cb996cf}{\+\_\+get\+\_\+cache\+\_\+key}} (self, pd.\+Series returns, str method\+\_\+name)
+\item 
+None \mbox{\hyperlink{classmetrics_1_1_metrics_acbe5723d8c971606e85b46b676a0d8aa}{\+\_\+cache\+\_\+result}} (self, str key, Any result)
+\item 
+Optional\mbox{[}Any\mbox{]} \mbox{\hyperlink{classmetrics_1_1_metrics_acdb9d30667c3a8e1c9861d7c411a1113}{\+\_\+get\+\_\+cached\+\_\+result}} (self, str key)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classmetrics_1_1_metrics_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmetrics_1_1_metrics_aece39ed8253c33a15a9979dbe0c24c21}\index{metrics.Metrics@{metrics.Metrics}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_aece39ed8253c33a15a9979dbe0c24c21} 
+metrics.\+Metrics.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float }]{risk\+\_\+free\+\_\+rate}{ = {\ttfamily 0.02}, }\item[{Optional\mbox{[}pd.\+Series\mbox{]} }]{benchmark\+\_\+returns}{ = {\ttfamily None}, }\item[{int }]{window\+\_\+size}{ = {\ttfamily 252}, }\item[{bool }]{cache\+\_\+enabled}{ = {\ttfamily True}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize metrics calculator
+
+Args:
+    risk_free_rate: Annual risk-free rate
+    benchmark_returns: Benchmark returns series
+    window_size: Rolling window size
+    cache_enabled: Enable caching of calculations
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classmetrics_1_1_metrics_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmetrics_1_1_metrics_acbe5723d8c971606e85b46b676a0d8aa}\index{metrics.Metrics@{metrics.Metrics}!\_cache\_result@{\_cache\_result}}
+\index{\_cache\_result@{\_cache\_result}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{\_cache\_result()}{\_cache\_result()}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_acbe5723d8c971606e85b46b676a0d8aa} 
+ None metrics.\+Metrics.\+\_\+cache\+\_\+result (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{key}{, }\item[{Any}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Cache result with TTL\end{DoxyVerb}
+ \Hypertarget{classmetrics_1_1_metrics_a064a3362ada2d9ea63fa46d50cb996cf}\index{metrics.Metrics@{metrics.Metrics}!\_get\_cache\_key@{\_get\_cache\_key}}
+\index{\_get\_cache\_key@{\_get\_cache\_key}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{\_get\_cache\_key()}{\_get\_cache\_key()}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_a064a3362ada2d9ea63fa46d50cb996cf} 
+ str metrics.\+Metrics.\+\_\+get\+\_\+cache\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Series}]{returns}{, }\item[{str}]{method\+\_\+name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Generate cache key based on returns and method\end{DoxyVerb}
+ \Hypertarget{classmetrics_1_1_metrics_acdb9d30667c3a8e1c9861d7c411a1113}\index{metrics.Metrics@{metrics.Metrics}!\_get\_cached\_result@{\_get\_cached\_result}}
+\index{\_get\_cached\_result@{\_get\_cached\_result}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{\_get\_cached\_result()}{\_get\_cached\_result()}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_acdb9d30667c3a8e1c9861d7c411a1113} 
+ Optional\mbox{[}Any\mbox{]} metrics.\+Metrics.\+\_\+get\+\_\+cached\+\_\+result (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Get cached result if valid\end{DoxyVerb}
+ \Hypertarget{classmetrics_1_1_metrics_ad622487e8d772e4e939fe4a8fd431395}\index{metrics.Metrics@{metrics.Metrics}!calculate\_basic\_metrics@{calculate\_basic\_metrics}}
+\index{calculate\_basic\_metrics@{calculate\_basic\_metrics}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{calculate\_basic\_metrics()}{calculate\_basic\_metrics()}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_ad622487e8d772e4e939fe4a8fd431395} 
+ Dict metrics.\+Metrics.\+calculate\+\_\+basic\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Series}]{returns}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate basic performance metrics with caching and optimization\end{DoxyVerb}
+ \Hypertarget{classmetrics_1_1_metrics_aa49517f78c9ace5305ea926738d9b0f0}\index{metrics.Metrics@{metrics.Metrics}!calculate\_max\_drawdown@{calculate\_max\_drawdown}}
+\index{calculate\_max\_drawdown@{calculate\_max\_drawdown}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{calculate\_max\_drawdown()}{calculate\_max\_drawdown()}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_aa49517f78c9ace5305ea926738d9b0f0} 
+ float metrics.\+Metrics.\+calculate\+\_\+max\+\_\+drawdown (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Series}]{returns}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate maximum drawdown with caching and optimization\end{DoxyVerb}
+ \Hypertarget{classmetrics_1_1_metrics_a2f041a81be45c04123b1ce158d6b4696}\index{metrics.Metrics@{metrics.Metrics}!calculate\_sharpe\_ratio@{calculate\_sharpe\_ratio}}
+\index{calculate\_sharpe\_ratio@{calculate\_sharpe\_ratio}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{calculate\_sharpe\_ratio()}{calculate\_sharpe\_ratio()}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_a2f041a81be45c04123b1ce158d6b4696} 
+ float metrics.\+Metrics.\+calculate\+\_\+sharpe\+\_\+ratio (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Series}]{returns}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate Sharpe ratio with caching and optimization\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classmetrics_1_1_metrics_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmetrics_1_1_metrics_a20c9521145f60f6e07da9b9e1d711f33}\index{metrics.Metrics@{metrics.Metrics}!benchmark\_returns@{benchmark\_returns}}
+\index{benchmark\_returns@{benchmark\_returns}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{benchmark\_returns}{benchmark\_returns}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_a20c9521145f60f6e07da9b9e1d711f33} 
+metrics.\+Metrics.\+benchmark\+\_\+returns = benchmark\+\_\+returns}
+
+\Hypertarget{classmetrics_1_1_metrics_ad402152bed7df2302bd6b7d52c978511}\index{metrics.Metrics@{metrics.Metrics}!cache\_enabled@{cache\_enabled}}
+\index{cache\_enabled@{cache\_enabled}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{cache\_enabled}{cache\_enabled}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_ad402152bed7df2302bd6b7d52c978511} 
+metrics.\+Metrics.\+cache\+\_\+enabled = cache\+\_\+enabled}
+
+\Hypertarget{classmetrics_1_1_metrics_aa2888e81e65c4207f3e59023c2ec845f}\index{metrics.Metrics@{metrics.Metrics}!metrics\_cache@{metrics\_cache}}
+\index{metrics\_cache@{metrics\_cache}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{metrics\_cache}{metrics\_cache}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_aa2888e81e65c4207f3e59023c2ec845f} 
+dict metrics.\+Metrics.\+metrics\+\_\+cache = \{\}}
+
+\Hypertarget{classmetrics_1_1_metrics_ae33c5c8b96ba8ef3f4cac3c13d64049e}\index{metrics.Metrics@{metrics.Metrics}!risk\_free\_rate@{risk\_free\_rate}}
+\index{risk\_free\_rate@{risk\_free\_rate}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{risk\_free\_rate}{risk\_free\_rate}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_ae33c5c8b96ba8ef3f4cac3c13d64049e} 
+metrics.\+Metrics.\+risk\+\_\+free\+\_\+rate = risk\+\_\+free\+\_\+rate}
+
+\Hypertarget{classmetrics_1_1_metrics_ae78c96fedeea3e0cea8c6b6e07dc43db}\index{metrics.Metrics@{metrics.Metrics}!window\_size@{window\_size}}
+\index{window\_size@{window\_size}!metrics.Metrics@{metrics.Metrics}}
+\doxysubsubsection{\texorpdfstring{window\_size}{window\_size}}
+{\footnotesize\ttfamily \label{classmetrics_1_1_metrics_ae78c96fedeea3e0cea8c6b6e07dc43db} 
+metrics.\+Metrics.\+window\+\_\+size = window\+\_\+size}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{metrics_8py}{metrics.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,324 @@
+\doxysection{portfolio\+\_\+optimizer.\+Portfolio\+Optimizer Class Reference}
+\hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer}{}\label{classportfolio__optimizer_1_1_portfolio_optimizer}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a151596e3159b7cd303e30e2bb4a570cb}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, int \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_acd35dcc7ff422650fbaa9358ef958efe}{max\+\_\+assets}}=10, float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_afc2a872b053fc3ddab36ef17607169c1}{min\+\_\+allocation}}=0.\+01, float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_aeb155a4fae6d652f5665cfb9a0daf9a8}{max\+\_\+allocation}}=0.\+3, float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a8101ad130b2da4b8b31b835c8d2942b0}{risk\+\_\+free\+\_\+rate}}=0.\+02, str \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a33b4c59d3a2dc836b82833d1d352e5c8}{optimization\+\_\+method}}=\textquotesingle{}sharpe\+\_\+ratio\textquotesingle{})
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a7049752da59514b3f02fb49b1e0b3115}{calculate\+\_\+covariance\+\_\+matrix}} (self, pd.\+Data\+Frame returns)
+\item 
+float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a849aeb6c64deec2b639fbcf8c44c8976}{calculate\+\_\+portfolio\+\_\+return}} (self, np.\+ndarray weights, pd.\+Data\+Frame returns)
+\item 
+float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a6b3cd6d57762a043c5b8ffa1a1c0aa30}{calculate\+\_\+portfolio\+\_\+volatility}} (self, np.\+ndarray weights, pd.\+Data\+Frame cov\+\_\+matrix)
+\item 
+float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a81bae3acb581fdebafd1b14665281621}{calculate\+\_\+sharpe\+\_\+ratio}} (self, np.\+ndarray weights, pd.\+Data\+Frame returns, pd.\+Data\+Frame cov\+\_\+matrix)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_ac40456adc411ca1225e6da65cd4a69a8}{optimize\+\_\+portfolio}} (self, pd.\+Data\+Frame returns, Optional\mbox{[}pd.\+Data\+Frame\mbox{]} cov\+\_\+matrix=None)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a4456745f6bb9ac4ce9a1f7c5b5733131}{calculate\+\_\+efficient\+\_\+frontier}} (self, pd.\+Data\+Frame returns, int num\+\_\+points=20)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a7e364528cbffcdd96045a0f1917c994e}{rebalance\+\_\+portfolio}} (self, Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a5ca8e59cceca1c0dffa9e40baa04806f}{current\+\_\+weights}}, Dict\mbox{[}str, float\mbox{]} target\+\_\+weights, float transaction\+\_\+cost=0.\+001)
+\item 
+\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_aed65f57dbeee7a640f35ccd47db2853c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a8101ad130b2da4b8b31b835c8d2942b0}{risk\+\_\+free\+\_\+rate}}=0.\+02, float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_ab70e16bea34e09517c25caf43cb425cf}{max\+\_\+leverage}}=2.\+0, float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_afc2a872b053fc3ddab36ef17607169c1}{min\+\_\+allocation}}=0.\+01, float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_aeb155a4fae6d652f5665cfb9a0daf9a8}{max\+\_\+allocation}}=0.\+3, int \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a6e36da7b019a3457027b381449743b3f}{rebalance\+\_\+period}}=252, str \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a33b4c59d3a2dc836b82833d1d352e5c8}{optimization\+\_\+method}}=\textquotesingle{}risk\+\_\+parity\textquotesingle{}, Dict \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a09b6411d4363fa5d28916c34e5923f05}{constraints}}=None)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a7049752da59514b3f02fb49b1e0b3115}{calculate\+\_\+covariance\+\_\+matrix}} (self, pd.\+Data\+Frame returns)
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a8560ae67b0e1657823d962b267713028}{calculate\+\_\+correlation\+\_\+matrix}} (self, pd.\+Data\+Frame returns)
+\item 
+float \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a523e521d3ceadac7d09894e1bc344bed}{calculate\+\_\+volatility}} (self, pd.\+Series returns)
+\item 
+np.\+ndarray \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a3972119677fda5f568c836d0c239da6d}{calculate\+\_\+risk\+\_\+parity\+\_\+weights}} (self, np.\+ndarray volatilities, np.\+ndarray correlations)
+\item 
+np.\+ndarray \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_ae7bcb2ba3003d3c361d90b240d2afe81}{calculate\+\_\+min\+\_\+variance\+\_\+weights}} (self, np.\+ndarray cov\+\_\+matrix)
+\item 
+np.\+ndarray \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_affc7f06c0b16d19b1c7b383592d49a43}{calculate\+\_\+max\+\_\+diversification\+\_\+weights}} (self, np.\+ndarray volatilities, np.\+ndarray correlations)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_af7c968217e9521f6d541d65ee3a26ebe}{optimize\+\_\+portfolio}} (self, pd.\+Data\+Frame returns)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_aa89037426337670cbee315ef01f80a7c}{rebalance\+\_\+portfolio}} (self, Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a5ca8e59cceca1c0dffa9e40baa04806f}{current\+\_\+weights}}, Dict\mbox{[}str, float\mbox{]} target\+\_\+weights, Dict\mbox{[}str, float\mbox{]} prices, float portfolio\+\_\+value)
+\item 
+Dict \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_afcaa6fb9df1ab877c5fd662a0ca178cd}{calculate\+\_\+portfolio\+\_\+metrics}} (self, pd.\+Data\+Frame returns, Dict\mbox{[}str, float\mbox{]} weights)
+\item 
+Dict \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_ae77e9d10cc4789e70b2b57f6dfae11bf}{get\+\_\+optimization\+\_\+metrics}} (self)
+\item 
+None \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a9cd13406e752e2adc4fde85cc0ed787e}{plot\+\_\+allocation}} (self, Dict\mbox{[}str, float\mbox{]} weights)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_acd35dcc7ff422650fbaa9358ef958efe}{max\+\_\+assets}} = max\+\_\+assets
+\item 
+\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_afc2a872b053fc3ddab36ef17607169c1}{min\+\_\+allocation}} = min\+\_\+allocation
+\item 
+\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_aeb155a4fae6d652f5665cfb9a0daf9a8}{max\+\_\+allocation}} = max\+\_\+allocation
+\item 
+\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a8101ad130b2da4b8b31b835c8d2942b0}{risk\+\_\+free\+\_\+rate}} = risk\+\_\+free\+\_\+rate
+\item 
+str \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a33b4c59d3a2dc836b82833d1d352e5c8}{optimization\+\_\+method}} = optimization\+\_\+method
+\item 
+tuple \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a09b6411d4363fa5d28916c34e5923f05}{constraints}}
+\item 
+\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_ab70e16bea34e09517c25caf43cb425cf}{max\+\_\+leverage}} = max\+\_\+leverage
+\item 
+\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a6e36da7b019a3457027b381449743b3f}{rebalance\+\_\+period}} = rebalance\+\_\+period
+\item 
+\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a3f92439aeb8a9670c20096e0bc3fda74}{metrics}} = Metrics(\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a8101ad130b2da4b8b31b835c8d2942b0}{risk\+\_\+free\+\_\+rate}})
+\item 
+\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a12bcad47151eef855a2646b703b0b3ef}{last\+\_\+rebalance}} = None
+\item 
+dict \mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a5ca8e59cceca1c0dffa9e40baa04806f}{current\+\_\+weights}} = \{\}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a151596e3159b7cd303e30e2bb4a570cb}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a151596e3159b7cd303e30e2bb4a570cb} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{int }]{max\+\_\+assets}{ = {\ttfamily 10}, }\item[{float }]{min\+\_\+allocation}{ = {\ttfamily 0.01}, }\item[{float }]{max\+\_\+allocation}{ = {\ttfamily 0.3}, }\item[{float }]{risk\+\_\+free\+\_\+rate}{ = {\ttfamily 0.02}, }\item[{str }]{optimization\+\_\+method}{ = {\ttfamily \textquotesingle{}sharpe\+\_\+ratio\textquotesingle{}}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize portfolio optimizer
+
+Args:
+    max_assets: Maximum number of assets in portfolio
+    min_allocation: Minimum allocation per asset
+    max_allocation: Maximum allocation per asset
+    risk_free_rate: Risk-free rate for Sharpe ratio calculation
+    optimization_method: Method for portfolio optimization
+\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_aed65f57dbeee7a640f35ccd47db2853c}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_aed65f57dbeee7a640f35ccd47db2853c} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float }]{risk\+\_\+free\+\_\+rate}{ = {\ttfamily 0.02}, }\item[{float }]{max\+\_\+leverage}{ = {\ttfamily 2.0}, }\item[{float }]{min\+\_\+allocation}{ = {\ttfamily 0.01}, }\item[{float }]{max\+\_\+allocation}{ = {\ttfamily 0.3}, }\item[{int }]{rebalance\+\_\+period}{ = {\ttfamily 252}, }\item[{str }]{optimization\+\_\+method}{ = {\ttfamily \textquotesingle{}risk\+\_\+parity\textquotesingle{}}, }\item[{Dict }]{constraints}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize portfolio optimizer
+
+Args:
+    risk_free_rate: Annual risk-free rate
+    max_leverage: Maximum leverage allowed
+    min_allocation: Minimum allocation per asset
+    max_allocation: Maximum allocation per asset
+    rebalance_period: Period for rebalancing
+    optimization_method: Portfolio optimization method
+    constraints: Additional optimization constraints
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a8560ae67b0e1657823d962b267713028}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_correlation\_matrix@{calculate\_correlation\_matrix}}
+\index{calculate\_correlation\_matrix@{calculate\_correlation\_matrix}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_correlation\_matrix()}{calculate\_correlation\_matrix()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a8560ae67b0e1657823d962b267713028} 
+ pd.\+Data\+Frame portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+correlation\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{returns}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate correlation matrix\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a7049752da59514b3f02fb49b1e0b3115}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_covariance\_matrix@{calculate\_covariance\_matrix}}
+\index{calculate\_covariance\_matrix@{calculate\_covariance\_matrix}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_covariance\_matrix()}{calculate\_covariance\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a7049752da59514b3f02fb49b1e0b3115} 
+ pd.\+Data\+Frame portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+covariance\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{returns}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate covariance matrix of returns\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a7049752da59514b3f02fb49b1e0b3115}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_covariance\_matrix@{calculate\_covariance\_matrix}}
+\index{calculate\_covariance\_matrix@{calculate\_covariance\_matrix}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_covariance\_matrix()}{calculate\_covariance\_matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a7049752da59514b3f02fb49b1e0b3115} 
+ pd.\+Data\+Frame portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+covariance\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{returns}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate covariance matrix\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a4456745f6bb9ac4ce9a1f7c5b5733131}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_efficient\_frontier@{calculate\_efficient\_frontier}}
+\index{calculate\_efficient\_frontier@{calculate\_efficient\_frontier}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_efficient\_frontier()}{calculate\_efficient\_frontier()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a4456745f6bb9ac4ce9a1f7c5b5733131} 
+ pd.\+Data\+Frame portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+efficient\+\_\+frontier (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{returns}{, }\item[{int }]{num\+\_\+points}{ = {\ttfamily 20}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate efficient frontier\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_affc7f06c0b16d19b1c7b383592d49a43}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_max\_diversification\_weights@{calculate\_max\_diversification\_weights}}
+\index{calculate\_max\_diversification\_weights@{calculate\_max\_diversification\_weights}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_max\_diversification\_weights()}{calculate\_max\_diversification\_weights()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_affc7f06c0b16d19b1c7b383592d49a43} 
+ np.\+ndarray portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+max\+\_\+diversification\+\_\+weights (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{volatilities}{, }\item[{np.\+ndarray}]{correlations}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate maximum diversification weights\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_ae7bcb2ba3003d3c361d90b240d2afe81}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_min\_variance\_weights@{calculate\_min\_variance\_weights}}
+\index{calculate\_min\_variance\_weights@{calculate\_min\_variance\_weights}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_min\_variance\_weights()}{calculate\_min\_variance\_weights()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_ae7bcb2ba3003d3c361d90b240d2afe81} 
+ np.\+ndarray portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+min\+\_\+variance\+\_\+weights (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{cov\+\_\+matrix}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate minimum variance weights\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_afcaa6fb9df1ab877c5fd662a0ca178cd}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_portfolio\_metrics@{calculate\_portfolio\_metrics}}
+\index{calculate\_portfolio\_metrics@{calculate\_portfolio\_metrics}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_portfolio\_metrics()}{calculate\_portfolio\_metrics()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_afcaa6fb9df1ab877c5fd662a0ca178cd} 
+ Dict portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+portfolio\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{returns}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{weights}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate portfolio metrics\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a849aeb6c64deec2b639fbcf8c44c8976}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_portfolio\_return@{calculate\_portfolio\_return}}
+\index{calculate\_portfolio\_return@{calculate\_portfolio\_return}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_portfolio\_return()}{calculate\_portfolio\_return()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a849aeb6c64deec2b639fbcf8c44c8976} 
+ float portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+portfolio\+\_\+return (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{weights}{, }\item[{pd.\+Data\+Frame}]{returns}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate portfolio return\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a6b3cd6d57762a043c5b8ffa1a1c0aa30}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_portfolio\_volatility@{calculate\_portfolio\_volatility}}
+\index{calculate\_portfolio\_volatility@{calculate\_portfolio\_volatility}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_portfolio\_volatility()}{calculate\_portfolio\_volatility()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a6b3cd6d57762a043c5b8ffa1a1c0aa30} 
+ float portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+portfolio\+\_\+volatility (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{weights}{, }\item[{pd.\+Data\+Frame}]{cov\+\_\+matrix}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate portfolio volatility\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a3972119677fda5f568c836d0c239da6d}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_risk\_parity\_weights@{calculate\_risk\_parity\_weights}}
+\index{calculate\_risk\_parity\_weights@{calculate\_risk\_parity\_weights}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_risk\_parity\_weights()}{calculate\_risk\_parity\_weights()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a3972119677fda5f568c836d0c239da6d} 
+ np.\+ndarray portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+risk\+\_\+parity\+\_\+weights (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{volatilities}{, }\item[{np.\+ndarray}]{correlations}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate risk parity weights\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a81bae3acb581fdebafd1b14665281621}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_sharpe\_ratio@{calculate\_sharpe\_ratio}}
+\index{calculate\_sharpe\_ratio@{calculate\_sharpe\_ratio}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_sharpe\_ratio()}{calculate\_sharpe\_ratio()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a81bae3acb581fdebafd1b14665281621} 
+ float portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+sharpe\+\_\+ratio (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{weights}{, }\item[{pd.\+Data\+Frame}]{returns}{, }\item[{pd.\+Data\+Frame}]{cov\+\_\+matrix}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate Sharpe ratio\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a523e521d3ceadac7d09894e1bc344bed}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!calculate\_volatility@{calculate\_volatility}}
+\index{calculate\_volatility@{calculate\_volatility}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{calculate\_volatility()}{calculate\_volatility()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a523e521d3ceadac7d09894e1bc344bed} 
+ float portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+calculate\+\_\+volatility (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Series}]{returns}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate annualized volatility\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_ae77e9d10cc4789e70b2b57f6dfae11bf}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!get\_optimization\_metrics@{get\_optimization\_metrics}}
+\index{get\_optimization\_metrics@{get\_optimization\_metrics}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{get\_optimization\_metrics()}{get\_optimization\_metrics()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_ae77e9d10cc4789e70b2b57f6dfae11bf} 
+ Dict portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+get\+\_\+optimization\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get optimization parameters and metrics\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_af7c968217e9521f6d541d65ee3a26ebe}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!optimize\_portfolio@{optimize\_portfolio}}
+\index{optimize\_portfolio@{optimize\_portfolio}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{optimize\_portfolio()}{optimize\_portfolio()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_af7c968217e9521f6d541d65ee3a26ebe} 
+ Dict\mbox{[}str, float\mbox{]} portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+optimize\+\_\+portfolio (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{returns}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Optimize portfolio weights\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_ac40456adc411ca1225e6da65cd4a69a8}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!optimize\_portfolio@{optimize\_portfolio}}
+\index{optimize\_portfolio@{optimize\_portfolio}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{optimize\_portfolio()}{optimize\_portfolio()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_ac40456adc411ca1225e6da65cd4a69a8} 
+ Dict\mbox{[}str, float\mbox{]} portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+optimize\+\_\+portfolio (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{returns}{, }\item[{Optional\mbox{[}pd.\+Data\+Frame\mbox{]} }]{cov\+\_\+matrix}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Optimize portfolio weights\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a9cd13406e752e2adc4fde85cc0ed787e}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!plot\_allocation@{plot\_allocation}}
+\index{plot\_allocation@{plot\_allocation}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{plot\_allocation()}{plot\_allocation()}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a9cd13406e752e2adc4fde85cc0ed787e} 
+ None portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+plot\+\_\+allocation (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{weights}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Plot portfolio allocation\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_aa89037426337670cbee315ef01f80a7c}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!rebalance\_portfolio@{rebalance\_portfolio}}
+\index{rebalance\_portfolio@{rebalance\_portfolio}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{rebalance\_portfolio()}{rebalance\_portfolio()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_aa89037426337670cbee315ef01f80a7c} 
+ Dict\mbox{[}str, float\mbox{]} portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+rebalance\+\_\+portfolio (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{current\+\_\+weights}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{target\+\_\+weights}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{prices}{, }\item[{float}]{portfolio\+\_\+value}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate rebalancing trades\end{DoxyVerb}
+ \Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a7e364528cbffcdd96045a0f1917c994e}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!rebalance\_portfolio@{rebalance\_portfolio}}
+\index{rebalance\_portfolio@{rebalance\_portfolio}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{rebalance\_portfolio()}{rebalance\_portfolio()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a7e364528cbffcdd96045a0f1917c994e} 
+ Dict\mbox{[}str, float\mbox{]} portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+rebalance\+\_\+portfolio (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{current\+\_\+weights}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{target\+\_\+weights}{, }\item[{float }]{transaction\+\_\+cost}{ = {\ttfamily 0.001}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate portfolio rebalancing\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a09b6411d4363fa5d28916c34e5923f05}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!constraints@{constraints}}
+\index{constraints@{constraints}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{constraints}{constraints}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a09b6411d4363fa5d28916c34e5923f05} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+constraints}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{'type'}:\ \textcolor{stringliteral}{'eq'},\ \textcolor{stringliteral}{'fun'}:\ \textcolor{keyword}{lambda}\ x:\ np.sum(x)\ -\/\ 1\},\ \ \textcolor{comment}{\#\ Sum\ of\ weights\ =\ 1}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{'type'}:\ \textcolor{stringliteral}{'ineq'},\ \textcolor{stringliteral}{'fun'}:\ \textcolor{keyword}{lambda}\ x:\ x\ -\/\ self.min\_allocation\},\ \ \textcolor{comment}{\#\ Min\ allocation}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{'type'}:\ \textcolor{stringliteral}{'ineq'},\ \textcolor{stringliteral}{'fun'}:\ \textcolor{keyword}{lambda}\ x:\ self.max\_allocation\ -\/\ x\}\ \ \textcolor{comment}{\#\ Max\ allocation}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a5ca8e59cceca1c0dffa9e40baa04806f}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!current\_weights@{current\_weights}}
+\index{current\_weights@{current\_weights}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{current\_weights}{current\_weights}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a5ca8e59cceca1c0dffa9e40baa04806f} 
+dict portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+current\+\_\+weights = \{\}}
+
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a12bcad47151eef855a2646b703b0b3ef}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!last\_rebalance@{last\_rebalance}}
+\index{last\_rebalance@{last\_rebalance}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{last\_rebalance}{last\_rebalance}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a12bcad47151eef855a2646b703b0b3ef} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+last\+\_\+rebalance = None}
+
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_aeb155a4fae6d652f5665cfb9a0daf9a8}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!max\_allocation@{max\_allocation}}
+\index{max\_allocation@{max\_allocation}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{max\_allocation}{max\_allocation}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_aeb155a4fae6d652f5665cfb9a0daf9a8} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+max\+\_\+allocation = max\+\_\+allocation}
+
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_acd35dcc7ff422650fbaa9358ef958efe}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!max\_assets@{max\_assets}}
+\index{max\_assets@{max\_assets}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{max\_assets}{max\_assets}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_acd35dcc7ff422650fbaa9358ef958efe} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+max\+\_\+assets = max\+\_\+assets}
+
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_ab70e16bea34e09517c25caf43cb425cf}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!max\_leverage@{max\_leverage}}
+\index{max\_leverage@{max\_leverage}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{max\_leverage}{max\_leverage}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_ab70e16bea34e09517c25caf43cb425cf} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+max\+\_\+leverage = max\+\_\+leverage}
+
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a3f92439aeb8a9670c20096e0bc3fda74}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!metrics@{metrics}}
+\index{metrics@{metrics}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a3f92439aeb8a9670c20096e0bc3fda74} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+metrics = Metrics(\mbox{\hyperlink{classportfolio__optimizer_1_1_portfolio_optimizer_a8101ad130b2da4b8b31b835c8d2942b0}{risk\+\_\+free\+\_\+rate}})}
+
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_afc2a872b053fc3ddab36ef17607169c1}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!min\_allocation@{min\_allocation}}
+\index{min\_allocation@{min\_allocation}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{min\_allocation}{min\_allocation}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_afc2a872b053fc3ddab36ef17607169c1} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+min\+\_\+allocation = min\+\_\+allocation}
+
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a33b4c59d3a2dc836b82833d1d352e5c8}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!optimization\_method@{optimization\_method}}
+\index{optimization\_method@{optimization\_method}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{optimization\_method}{optimization\_method}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a33b4c59d3a2dc836b82833d1d352e5c8} 
+str portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+optimization\+\_\+method = optimization\+\_\+method}
+
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a6e36da7b019a3457027b381449743b3f}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!rebalance\_period@{rebalance\_period}}
+\index{rebalance\_period@{rebalance\_period}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{rebalance\_period}{rebalance\_period}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a6e36da7b019a3457027b381449743b3f} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+rebalance\+\_\+period = rebalance\+\_\+period}
+
+\Hypertarget{classportfolio__optimizer_1_1_portfolio_optimizer_a8101ad130b2da4b8b31b835c8d2942b0}\index{portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}!risk\_free\_rate@{risk\_free\_rate}}
+\index{risk\_free\_rate@{risk\_free\_rate}!portfolio\_optimizer.PortfolioOptimizer@{portfolio\_optimizer.PortfolioOptimizer}}
+\doxysubsubsection{\texorpdfstring{risk\_free\_rate}{risk\_free\_rate}}
+{\footnotesize\ttfamily \label{classportfolio__optimizer_1_1_portfolio_optimizer_a8101ad130b2da4b8b31b835c8d2942b0} 
+portfolio\+\_\+optimizer.\+Portfolio\+Optimizer.\+risk\+\_\+free\+\_\+rate = risk\+\_\+free\+\_\+rate}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/ai\+\_\+models/\mbox{\hyperlink{ai__models_2portfolio__optimizer_8py}{portfolio\+\_\+optimizer.\+py}}\item 
+backend/\mbox{\hyperlink{portfolio__optimizer_8py}{portfolio\+\_\+optimizer.\+py}}\end{DoxyCompactItemize}

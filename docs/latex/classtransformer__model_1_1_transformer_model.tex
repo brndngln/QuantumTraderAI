@@ -1,0 +1,282 @@
+\doxysection{transformer\+\_\+model.\+Transformer\+Model Class Reference}
+\hypertarget{classtransformer__model_1_1_transformer_model}{}\label{classtransformer__model_1_1_transformer_model}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a97009c8e256d0184d3badb98e4bf37ce}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Tuple\mbox{[}int, int\mbox{]} \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_af2f0469a177cca1909f57469b520435a}{input\+\_\+shape}}=(60, 10), int \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a14c76c1e413a0e916f7f952a7b7ed04f}{embed\+\_\+dim}}=64, int \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_abd86a5cb1403a1320eda6bef2098a79a}{num\+\_\+heads}}=4, int \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_abfc8cf90adeadf54849eb391daf81e85}{ff\+\_\+dim}}=32, int \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_acd2a20446154449750ce91c7610a975f}{num\+\_\+transformer\+\_\+blocks}}=3, float \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a1d4c544e9ce53cb2f05e344990016299}{dropout\+\_\+rate}}=0.\+2, float \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a354910c935eeeb2f10d0f9bb24019451}{learning\+\_\+rate}}=0.\+001, int \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a155a2a3b0e18e260b5a6905e56ef0610}{batch\+\_\+size}}=32, int \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_ab671f6f526222630f91d800117418c30}{epochs}}=100, int \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a89a2f9d36eb1567a0d9ad5ca4d173f81}{patience}}=10, int \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a735de36e18c2d26552e8aac689791c53}{verbose}}=1)
+\item 
+None \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_af09a072efdc92e55dfe1f08f4660f3fc}{build\+\_\+model}} (self)
+\item 
+Tuple\mbox{[}np.\+ndarray, np.\+ndarray\mbox{]} \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a2abff94b85cb31940e93650b4cc77831}{prepare\+\_\+data}} (self, pd.\+Data\+Frame data)
+\item 
+None \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_afb41f0a6502623589dfa7179fd3de519}{train}} (self, np.\+ndarray X\+\_\+train, np.\+ndarray y\+\_\+train, Optional\mbox{[}np.\+ndarray\mbox{]} X\+\_\+val=None, Optional\mbox{[}np.\+ndarray\mbox{]} y\+\_\+val=None)
+\item 
+np.\+ndarray \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a6c07c2366408283c3e220d69efeb9fc3}{predict}} (self, np.\+ndarray X)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a688e693a12f106bbebc2704ea513c731}{evaluate}} (self, np.\+ndarray X\+\_\+test, np.\+ndarray y\+\_\+test)
+\item 
+None \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_afdca1d0956d5d467c403aa88e78b70a7}{save\+\_\+model}} (self, str path)
+\item 
+None \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_afb6048279886d102bace89f540a0b944}{load\+\_\+model}} (self, str path)
+\item 
+Dict\mbox{[}str, List\mbox{[}float\mbox{]}\mbox{]} \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_ad8c2435cd3f6a22706ebe347548549f1}{get\+\_\+metrics}} (self)
+\item 
+str \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a5c3f8cc0cd8c913325c71ee007d3af78}{get\+\_\+model\+\_\+summary}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_af2f0469a177cca1909f57469b520435a}{input\+\_\+shape}} = input\+\_\+shape
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a14c76c1e413a0e916f7f952a7b7ed04f}{embed\+\_\+dim}} = embed\+\_\+dim
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_abd86a5cb1403a1320eda6bef2098a79a}{num\+\_\+heads}} = num\+\_\+heads
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_abfc8cf90adeadf54849eb391daf81e85}{ff\+\_\+dim}} = ff\+\_\+dim
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_acd2a20446154449750ce91c7610a975f}{num\+\_\+transformer\+\_\+blocks}} = num\+\_\+transformer\+\_\+blocks
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a1d4c544e9ce53cb2f05e344990016299}{dropout\+\_\+rate}} = dropout\+\_\+rate
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a354910c935eeeb2f10d0f9bb24019451}{learning\+\_\+rate}} = learning\+\_\+rate
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a155a2a3b0e18e260b5a6905e56ef0610}{batch\+\_\+size}} = batch\+\_\+size
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_ab671f6f526222630f91d800117418c30}{epochs}} = epochs
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a89a2f9d36eb1567a0d9ad5ca4d173f81}{patience}} = patience
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a735de36e18c2d26552e8aac689791c53}{verbose}} = verbose
+\item 
+None \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a7eed3c16f47fa0706ad49138e689032a}{model}} = None
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_model_ac4ac09a72dc10d72611f98528d8b476a}{scaler}} = Standard\+Scaler()
+\item 
+List\mbox{[}tf.\+keras.\+callbacks.\+Callback\mbox{]} \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a0f259752c64e3d243efabb7e8833fb39}{callbacks}} = self.\+\_\+create\+\_\+callbacks()
+\item 
+Optional\mbox{[}datetime\mbox{]} \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_ad562718ca4d32a9c9f0519377896442b}{last\+\_\+update}} = None
+\item 
+dict \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a9e97ae8c64aea6ef8e55dbd9d883159a}{metrics}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List\mbox{[}tf.\+keras.\+callbacks.\+Callback\mbox{]} \mbox{\hyperlink{classtransformer__model_1_1_transformer_model_a6b32c4c0c870849c44b657edf9bfb39e}{\+\_\+create\+\_\+callbacks}} (self)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classtransformer__model_1_1_transformer_model_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtransformer__model_1_1_transformer_model_a97009c8e256d0184d3badb98e4bf37ce}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a97009c8e256d0184d3badb98e4bf37ce} 
+transformer\+\_\+model.\+Transformer\+Model.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Tuple\mbox{[}int, int\mbox{]} }]{input\+\_\+shape}{ = {\ttfamily (60,~10)}, }\item[{int }]{embed\+\_\+dim}{ = {\ttfamily 64}, }\item[{int }]{num\+\_\+heads}{ = {\ttfamily 4}, }\item[{int }]{ff\+\_\+dim}{ = {\ttfamily 32}, }\item[{int }]{num\+\_\+transformer\+\_\+blocks}{ = {\ttfamily 3}, }\item[{float }]{dropout\+\_\+rate}{ = {\ttfamily 0.2}, }\item[{float }]{learning\+\_\+rate}{ = {\ttfamily 0.001}, }\item[{int }]{batch\+\_\+size}{ = {\ttfamily 32}, }\item[{int }]{epochs}{ = {\ttfamily 100}, }\item[{int }]{patience}{ = {\ttfamily 10}, }\item[{int }]{verbose}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize Transformer model for trading predictions
+
+Args:
+    input_shape: Shape of input data (timesteps, features)
+    embed_dim: Dimension of the embedding space
+    num_heads: Number of attention heads
+    ff_dim: Dimension of the feed-forward network
+    num_transformer_blocks: Number of transformer blocks
+    dropout_rate: Dropout rate for regularization
+    learning_rate: Learning rate for optimizer
+    batch_size: Batch size for training
+    epochs: Maximum number of epochs
+    patience: Patience for early stopping
+    verbose: Verbosity level
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classtransformer__model_1_1_transformer_model_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtransformer__model_1_1_transformer_model_a6b32c4c0c870849c44b657edf9bfb39e}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!\_create\_callbacks@{\_create\_callbacks}}
+\index{\_create\_callbacks@{\_create\_callbacks}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{\_create\_callbacks()}{\_create\_callbacks()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a6b32c4c0c870849c44b657edf9bfb39e} 
+ List\mbox{[}tf.\+keras.\+callbacks.\+Callback\mbox{]} transformer\+\_\+model.\+Transformer\+Model.\+\_\+create\+\_\+callbacks (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Create callbacks for training\end{DoxyVerb}
+ \Hypertarget{classtransformer__model_1_1_transformer_model_af09a072efdc92e55dfe1f08f4660f3fc}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!build\_model@{build\_model}}
+\index{build\_model@{build\_model}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{build\_model()}{build\_model()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_af09a072efdc92e55dfe1f08f4660f3fc} 
+ None transformer\+\_\+model.\+Transformer\+Model.\+build\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Build the Transformer model architecture\end{DoxyVerb}
+ \Hypertarget{classtransformer__model_1_1_transformer_model_a688e693a12f106bbebc2704ea513c731}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a688e693a12f106bbebc2704ea513c731} 
+ Dict\mbox{[}str, float\mbox{]} transformer\+\_\+model.\+Transformer\+Model.\+evaluate (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X\+\_\+test}{, }\item[{np.\+ndarray}]{y\+\_\+test}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Evaluate model performance\end{DoxyVerb}
+ \Hypertarget{classtransformer__model_1_1_transformer_model_ad8c2435cd3f6a22706ebe347548549f1}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!get\_metrics@{get\_metrics}}
+\index{get\_metrics@{get\_metrics}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{get\_metrics()}{get\_metrics()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_ad8c2435cd3f6a22706ebe347548549f1} 
+ Dict\mbox{[}str, List\mbox{[}float\mbox{]}\mbox{]} transformer\+\_\+model.\+Transformer\+Model.\+get\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get training metrics history\end{DoxyVerb}
+ \Hypertarget{classtransformer__model_1_1_transformer_model_a5c3f8cc0cd8c913325c71ee007d3af78}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!get\_model\_summary@{get\_model\_summary}}
+\index{get\_model\_summary@{get\_model\_summary}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{get\_model\_summary()}{get\_model\_summary()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a5c3f8cc0cd8c913325c71ee007d3af78} 
+ str transformer\+\_\+model.\+Transformer\+Model.\+get\+\_\+model\+\_\+summary (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get model architecture summary\end{DoxyVerb}
+ \Hypertarget{classtransformer__model_1_1_transformer_model_afb6048279886d102bace89f540a0b944}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!load\_model@{load\_model}}
+\index{load\_model@{load\_model}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{load\_model()}{load\_model()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_afb6048279886d102bace89f540a0b944} 
+ None transformer\+\_\+model.\+Transformer\+Model.\+load\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load a pre-trained model\end{DoxyVerb}
+ \Hypertarget{classtransformer__model_1_1_transformer_model_a6c07c2366408283c3e220d69efeb9fc3}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!predict@{predict}}
+\index{predict@{predict}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a6c07c2366408283c3e220d69efeb9fc3} 
+ np.\+ndarray transformer\+\_\+model.\+Transformer\+Model.\+predict (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Make predictions using the trained model\end{DoxyVerb}
+ \Hypertarget{classtransformer__model_1_1_transformer_model_a2abff94b85cb31940e93650b4cc77831}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!prepare\_data@{prepare\_data}}
+\index{prepare\_data@{prepare\_data}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{prepare\_data()}{prepare\_data()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a2abff94b85cb31940e93650b4cc77831} 
+ Tuple\mbox{[}np.\+ndarray, np.\+ndarray\mbox{]} transformer\+\_\+model.\+Transformer\+Model.\+prepare\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{pd.\+Data\+Frame}]{data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prepare data for Transformer input\end{DoxyVerb}
+ \Hypertarget{classtransformer__model_1_1_transformer_model_afdca1d0956d5d467c403aa88e78b70a7}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!save\_model@{save\_model}}
+\index{save\_model@{save\_model}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{save\_model()}{save\_model()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_afdca1d0956d5d467c403aa88e78b70a7} 
+ None transformer\+\_\+model.\+Transformer\+Model.\+save\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Save the trained model\end{DoxyVerb}
+ \Hypertarget{classtransformer__model_1_1_transformer_model_afb41f0a6502623589dfa7179fd3de519}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!train@{train}}
+\index{train@{train}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_afb41f0a6502623589dfa7179fd3de519} 
+ None transformer\+\_\+model.\+Transformer\+Model.\+train (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{np.\+ndarray}]{X\+\_\+train}{, }\item[{np.\+ndarray}]{y\+\_\+train}{, }\item[{Optional\mbox{[}np.\+ndarray\mbox{]} }]{X\+\_\+val}{ = {\ttfamily None}, }\item[{Optional\mbox{[}np.\+ndarray\mbox{]} }]{y\+\_\+val}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Train the Transformer model\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classtransformer__model_1_1_transformer_model_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classtransformer__model_1_1_transformer_model_a155a2a3b0e18e260b5a6905e56ef0610}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!batch\_size@{batch\_size}}
+\index{batch\_size@{batch\_size}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{batch\_size}{batch\_size}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a155a2a3b0e18e260b5a6905e56ef0610} 
+transformer\+\_\+model.\+Transformer\+Model.\+batch\+\_\+size = batch\+\_\+size}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_a0f259752c64e3d243efabb7e8833fb39}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!callbacks@{callbacks}}
+\index{callbacks@{callbacks}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{callbacks}{callbacks}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a0f259752c64e3d243efabb7e8833fb39} 
+List\mbox{[}tf.\+keras.\+callbacks.\+Callback\mbox{]} transformer\+\_\+model.\+Transformer\+Model.\+callbacks = self.\+\_\+create\+\_\+callbacks()}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_a1d4c544e9ce53cb2f05e344990016299}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!dropout\_rate@{dropout\_rate}}
+\index{dropout\_rate@{dropout\_rate}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{dropout\_rate}{dropout\_rate}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a1d4c544e9ce53cb2f05e344990016299} 
+transformer\+\_\+model.\+Transformer\+Model.\+dropout\+\_\+rate = dropout\+\_\+rate}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_a14c76c1e413a0e916f7f952a7b7ed04f}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!embed\_dim@{embed\_dim}}
+\index{embed\_dim@{embed\_dim}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{embed\_dim}{embed\_dim}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a14c76c1e413a0e916f7f952a7b7ed04f} 
+transformer\+\_\+model.\+Transformer\+Model.\+embed\+\_\+dim = embed\+\_\+dim}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_ab671f6f526222630f91d800117418c30}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!epochs@{epochs}}
+\index{epochs@{epochs}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{epochs}{epochs}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_ab671f6f526222630f91d800117418c30} 
+transformer\+\_\+model.\+Transformer\+Model.\+epochs = epochs}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_abfc8cf90adeadf54849eb391daf81e85}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!ff\_dim@{ff\_dim}}
+\index{ff\_dim@{ff\_dim}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{ff\_dim}{ff\_dim}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_abfc8cf90adeadf54849eb391daf81e85} 
+transformer\+\_\+model.\+Transformer\+Model.\+ff\+\_\+dim = ff\+\_\+dim}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_af2f0469a177cca1909f57469b520435a}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!input\_shape@{input\_shape}}
+\index{input\_shape@{input\_shape}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{input\_shape}{input\_shape}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_af2f0469a177cca1909f57469b520435a} 
+transformer\+\_\+model.\+Transformer\+Model.\+input\+\_\+shape = input\+\_\+shape}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_ad562718ca4d32a9c9f0519377896442b}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!last\_update@{last\_update}}
+\index{last\_update@{last\_update}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{last\_update}{last\_update}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_ad562718ca4d32a9c9f0519377896442b} 
+Optional\mbox{[}datetime\mbox{]} transformer\+\_\+model.\+Transformer\+Model.\+last\+\_\+update = None}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_a354910c935eeeb2f10d0f9bb24019451}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!learning\_rate@{learning\_rate}}
+\index{learning\_rate@{learning\_rate}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{learning\_rate}{learning\_rate}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a354910c935eeeb2f10d0f9bb24019451} 
+transformer\+\_\+model.\+Transformer\+Model.\+learning\+\_\+rate = learning\+\_\+rate}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_a9e97ae8c64aea6ef8e55dbd9d883159a}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!metrics@{metrics}}
+\index{metrics@{metrics}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a9e97ae8c64aea6ef8e55dbd9d883159a} 
+dict transformer\+\_\+model.\+Transformer\+Model.\+metrics}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'accuracy'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'loss'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'val\_accuracy'}:\ [],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'val\_loss'}:\ []}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classtransformer__model_1_1_transformer_model_a7eed3c16f47fa0706ad49138e689032a}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!model@{model}}
+\index{model@{model}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a7eed3c16f47fa0706ad49138e689032a} 
+None transformer\+\_\+model.\+Transformer\+Model.\+model = None}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_abd86a5cb1403a1320eda6bef2098a79a}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!num\_heads@{num\_heads}}
+\index{num\_heads@{num\_heads}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{num\_heads}{num\_heads}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_abd86a5cb1403a1320eda6bef2098a79a} 
+transformer\+\_\+model.\+Transformer\+Model.\+num\+\_\+heads = num\+\_\+heads}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_acd2a20446154449750ce91c7610a975f}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!num\_transformer\_blocks@{num\_transformer\_blocks}}
+\index{num\_transformer\_blocks@{num\_transformer\_blocks}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{num\_transformer\_blocks}{num\_transformer\_blocks}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_acd2a20446154449750ce91c7610a975f} 
+transformer\+\_\+model.\+Transformer\+Model.\+num\+\_\+transformer\+\_\+blocks = num\+\_\+transformer\+\_\+blocks}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_a89a2f9d36eb1567a0d9ad5ca4d173f81}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!patience@{patience}}
+\index{patience@{patience}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{patience}{patience}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a89a2f9d36eb1567a0d9ad5ca4d173f81} 
+transformer\+\_\+model.\+Transformer\+Model.\+patience = patience}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_ac4ac09a72dc10d72611f98528d8b476a}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!scaler@{scaler}}
+\index{scaler@{scaler}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{scaler}{scaler}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_ac4ac09a72dc10d72611f98528d8b476a} 
+transformer\+\_\+model.\+Transformer\+Model.\+scaler = Standard\+Scaler()}
+
+\Hypertarget{classtransformer__model_1_1_transformer_model_a735de36e18c2d26552e8aac689791c53}\index{transformer\_model.TransformerModel@{transformer\_model.TransformerModel}!verbose@{verbose}}
+\index{verbose@{verbose}!transformer\_model.TransformerModel@{transformer\_model.TransformerModel}}
+\doxysubsubsection{\texorpdfstring{verbose}{verbose}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_model_a735de36e18c2d26552e8aac689791c53} 
+transformer\+\_\+model.\+Transformer\+Model.\+verbose = verbose}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/ai\+\_\+models/\mbox{\hyperlink{transformer__model_8py}{transformer\+\_\+model.\+py}}\end{DoxyCompactItemize}

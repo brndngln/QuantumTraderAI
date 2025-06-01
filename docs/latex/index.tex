@@ -1,0 +1,84 @@
+\chapter{🚀 Quantum\+Trader\+AI\+: Autonomous AI Trading Empire }
+\hypertarget{index}{}\label{index}\index{🚀 QuantumTraderAI: Autonomous AI Trading Empire@{🚀 QuantumTraderAI: Autonomous AI Trading Empire}}
+\label{index_md__r_e_a_d_m_e}%
+\Hypertarget{index_md__r_e_a_d_m_e}%
+
+
+Quantum\+Trader\+AI is an elite, modular, scalable AI trading engine designed to start at \$100 and scale into millions. Powered by Fast\+API, LSTM, Transformers, Redis, and Docker.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md16}{}\doxysection{\texorpdfstring{🌐 Deployments}{🌐 Deployments}}\label{index_autotoc_md16}
+\hypertarget{index_autotoc_md17}{}\doxysubsection{\texorpdfstring{📦 Backend (Railway)}{📦 Backend (Railway)}}\label{index_autotoc_md17}
+
+\begin{DoxyEnumerate}
+\item Push this repo to Git\+Hub
+\item Connect Git\+Hub to \href{https://railway.app}{\texttt{Railway}}
+\item Add your {\ttfamily .env} variables\+:
+\begin{DoxyItemize}
+\item {\ttfamily TELEGRAM\+\_\+\+TOKEN}
+\item {\ttfamily TELEGRAM\+\_\+\+CHAT\+\_\+\+ID}
+\item {\ttfamily TWELVE\+\_\+\+DATA\+\_\+\+API\+\_\+\+KEY}
+\end{DoxyItemize}
+\item Railway builds your Fast\+API + Redis stack automatically
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md19}{}\doxysubsection{\texorpdfstring{🖥️ Frontend (Vercel)}{🖥️ Frontend (Vercel)}}\label{index_autotoc_md19}
+
+\begin{DoxyEnumerate}
+\item Deploy {\ttfamily /frontend/} folder via \href{https://vercel.com}{\texttt{Vercel}}
+\item Set the root to {\ttfamily frontend}
+\item Your live dashboard is now accessible globally
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md21}{}\doxysection{\texorpdfstring{🔧 Features}{🔧 Features}}\label{index_autotoc_md21}
+
+\begin{DoxyItemize}
+\item ✅ AI Strategies\+: Momentum, Reversion, LSTM, Transformer
+\item ✅ Meta-\/\+Learner\+: Self-\/tunes strategies based on PnL history
+\item ✅ Redis + Celery + Docker
+\item ✅ Mobile Command Center (React Native/\+Expo)
+\item ✅ Push Notifications + Telegram Alerts
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md23}{}\doxysection{\texorpdfstring{📲 Mobile App (Optional)}{📲 Mobile App (Optional)}}\label{index_autotoc_md23}
+Use {\ttfamily Quantum\+Trader\+Mobile} folder with Expo to deploy the native app\+:
+\begin{DoxyItemize}
+\item Biometric unlock
+\item Signal charts
+\item Live trade trigger
+\item Push alert viewer
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md25}{}\doxysection{\texorpdfstring{📂 Folder Structure}{📂 Folder Structure}}\label{index_autotoc_md25}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{QuantumTraderAI/}
+\DoxyCodeLine{├──\ backend/}
+\DoxyCodeLine{│\ \ \ ├──\ main.py}
+\DoxyCodeLine{│\ \ \ ├──\ ai\_models/meta\_learner.py}
+\DoxyCodeLine{│\ \ \ ├──\ strategies/}
+\DoxyCodeLine{│\ \ \ └──\ utils/}
+\DoxyCodeLine{├──\ frontend/}
+\DoxyCodeLine{│\ \ \ └──\ index.html}
+\DoxyCodeLine{├──\ docker-\/compose.yml}
+\DoxyCodeLine{├──\ requirements.txt}
+\DoxyCodeLine{└──\ .env.example}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md27}{}\doxysection{\texorpdfstring{💡 Meta-\/\+Learning Example}{💡 Meta-\/\+Learning Example}}\label{index_autotoc_md27}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{from}\ backend.ai\_models.meta\_learner\ \textcolor{keyword}{import}\ meta}
+\DoxyCodeLine{}
+\DoxyCodeLine{print(meta.recommend\_strategies())}
+\DoxyCodeLine{print(meta.confidence\_weight(\textcolor{stringliteral}{"{}LSTM"{}}))}
+
+\end{DoxyCode}
+ 

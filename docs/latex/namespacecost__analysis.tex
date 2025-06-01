@@ -1,0 +1,99 @@
+\doxysection{cost\+\_\+analysis Namespace Reference}
+\hypertarget{namespacecost__analysis}{}\label{namespacecost__analysis}\index{cost\_analysis@{cost\_analysis}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer}{Transaction\+Cost\+Analyzer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{namespacecost__analysis_ad631110ff07c243e2b8e26d7df85ad3b}{\+\_\+fast\+\_\+commission\+\_\+cost}} (float trade\+\_\+size, float price, float base\+\_\+commission)
+\item 
+float \mbox{\hyperlink{namespacecost__analysis_a56f7940ae89baffa3f6dc1614fb8bef6}{\+\_\+fast\+\_\+slippage}} (float trade\+\_\+size, float price, float market\+\_\+volume, float slippage\+\_\+base, float liquidity\+\_\+threshold)
+\item 
+float \mbox{\hyperlink{namespacecost__analysis_a2c540ff8e98b921704fbb7ec827a8354}{\+\_\+fast\+\_\+market\+\_\+impact}} (float trade\+\_\+size, float price, float market\+\_\+volume, float market\+\_\+impact\+\_\+exponent)
+\item 
+float \mbox{\hyperlink{namespacecost__analysis_ac69bd87fe6892a4e8174caff14b07919}{\+\_\+fast\+\_\+total\+\_\+transaction\+\_\+cost}} (float trade\+\_\+size, float price, float market\+\_\+volume, float base\+\_\+commission, float slippage\+\_\+base, float liquidity\+\_\+threshold, float market\+\_\+impact\+\_\+exponent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecost__analysis_ac867edfe501737dd66b638f23479ecc2}{logger}} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+dict \mbox{\hyperlink{namespacecost__analysis_af6ceb5950ca0e4b8b59aabdbab675d66}{cost\+\_\+cache}} = \{\}
+\item 
+\mbox{\hyperlink{namespacecost__analysis_a225e68ac3fdb82036317abbbc7ba2492}{last\+\_\+cache\+\_\+update}} = datetime.\+min
+\item 
+int \mbox{\hyperlink{namespacecost__analysis_a6239702f19cefccb6cebd37c61b0e595}{CACHE\+\_\+\+TTL}} = 300
+\item 
+\mbox{\hyperlink{namespacecost__analysis_acb945460212066bb87f26a3ddb8588c8}{cost\+\_\+analyzer}} = \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer}{Transaction\+Cost\+Analyzer}}()
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{namespacecost__analysis_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacecost__analysis_ad631110ff07c243e2b8e26d7df85ad3b}\index{cost\_analysis@{cost\_analysis}!\_fast\_commission\_cost@{\_fast\_commission\_cost}}
+\index{\_fast\_commission\_cost@{\_fast\_commission\_cost}!cost\_analysis@{cost\_analysis}}
+\doxysubsubsection{\texorpdfstring{\_fast\_commission\_cost()}{\_fast\_commission\_cost()}}
+{\footnotesize\ttfamily \label{namespacecost__analysis_ad631110ff07c243e2b8e26d7df85ad3b} 
+ float cost\+\_\+analysis.\+\_\+fast\+\_\+commission\+\_\+cost (\begin{DoxyParamCaption}\item[{float}]{trade\+\_\+size}{, }\item[{float}]{price}{, }\item[{float}]{base\+\_\+commission}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Fast commission cost calculation using Numba\end{DoxyVerb}
+ \Hypertarget{namespacecost__analysis_a2c540ff8e98b921704fbb7ec827a8354}\index{cost\_analysis@{cost\_analysis}!\_fast\_market\_impact@{\_fast\_market\_impact}}
+\index{\_fast\_market\_impact@{\_fast\_market\_impact}!cost\_analysis@{cost\_analysis}}
+\doxysubsubsection{\texorpdfstring{\_fast\_market\_impact()}{\_fast\_market\_impact()}}
+{\footnotesize\ttfamily \label{namespacecost__analysis_a2c540ff8e98b921704fbb7ec827a8354} 
+ float cost\+\_\+analysis.\+\_\+fast\+\_\+market\+\_\+impact (\begin{DoxyParamCaption}\item[{float}]{trade\+\_\+size}{, }\item[{float}]{price}{, }\item[{float}]{market\+\_\+volume}{, }\item[{float}]{market\+\_\+impact\+\_\+exponent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Fast market impact calculation using Numba\end{DoxyVerb}
+ \Hypertarget{namespacecost__analysis_a56f7940ae89baffa3f6dc1614fb8bef6}\index{cost\_analysis@{cost\_analysis}!\_fast\_slippage@{\_fast\_slippage}}
+\index{\_fast\_slippage@{\_fast\_slippage}!cost\_analysis@{cost\_analysis}}
+\doxysubsubsection{\texorpdfstring{\_fast\_slippage()}{\_fast\_slippage()}}
+{\footnotesize\ttfamily \label{namespacecost__analysis_a56f7940ae89baffa3f6dc1614fb8bef6} 
+ float cost\+\_\+analysis.\+\_\+fast\+\_\+slippage (\begin{DoxyParamCaption}\item[{float}]{trade\+\_\+size}{, }\item[{float}]{price}{, }\item[{float}]{market\+\_\+volume}{, }\item[{float}]{slippage\+\_\+base}{, }\item[{float}]{liquidity\+\_\+threshold}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Fast slippage calculation using Numba\end{DoxyVerb}
+ \Hypertarget{namespacecost__analysis_ac69bd87fe6892a4e8174caff14b07919}\index{cost\_analysis@{cost\_analysis}!\_fast\_total\_transaction\_cost@{\_fast\_total\_transaction\_cost}}
+\index{\_fast\_total\_transaction\_cost@{\_fast\_total\_transaction\_cost}!cost\_analysis@{cost\_analysis}}
+\doxysubsubsection{\texorpdfstring{\_fast\_total\_transaction\_cost()}{\_fast\_total\_transaction\_cost()}}
+{\footnotesize\ttfamily \label{namespacecost__analysis_ac69bd87fe6892a4e8174caff14b07919} 
+ float cost\+\_\+analysis.\+\_\+fast\+\_\+total\+\_\+transaction\+\_\+cost (\begin{DoxyParamCaption}\item[{float}]{trade\+\_\+size}{, }\item[{float}]{price}{, }\item[{float}]{market\+\_\+volume}{, }\item[{float}]{base\+\_\+commission}{, }\item[{float}]{slippage\+\_\+base}{, }\item[{float}]{liquidity\+\_\+threshold}{, }\item[{float}]{market\+\_\+impact\+\_\+exponent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Fast total transaction cost calculation using Numba\end{DoxyVerb}
+ 
+
+\label{doc-var-members}
+\Hypertarget{namespacecost__analysis_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacecost__analysis_a6239702f19cefccb6cebd37c61b0e595}\index{cost\_analysis@{cost\_analysis}!CACHE\_TTL@{CACHE\_TTL}}
+\index{CACHE\_TTL@{CACHE\_TTL}!cost\_analysis@{cost\_analysis}}
+\doxysubsubsection{\texorpdfstring{CACHE\_TTL}{CACHE\_TTL}}
+{\footnotesize\ttfamily \label{namespacecost__analysis_a6239702f19cefccb6cebd37c61b0e595} 
+int cost\+\_\+analysis.\+CACHE\+\_\+\+TTL = 300}
+
+\Hypertarget{namespacecost__analysis_acb945460212066bb87f26a3ddb8588c8}\index{cost\_analysis@{cost\_analysis}!cost\_analyzer@{cost\_analyzer}}
+\index{cost\_analyzer@{cost\_analyzer}!cost\_analysis@{cost\_analysis}}
+\doxysubsubsection{\texorpdfstring{cost\_analyzer}{cost\_analyzer}}
+{\footnotesize\ttfamily \label{namespacecost__analysis_acb945460212066bb87f26a3ddb8588c8} 
+cost\+\_\+analysis.\+cost\+\_\+analyzer = \mbox{\hyperlink{classcost__analysis_1_1_transaction_cost_analyzer}{Transaction\+Cost\+Analyzer}}()}
+
+\Hypertarget{namespacecost__analysis_af6ceb5950ca0e4b8b59aabdbab675d66}\index{cost\_analysis@{cost\_analysis}!cost\_cache@{cost\_cache}}
+\index{cost\_cache@{cost\_cache}!cost\_analysis@{cost\_analysis}}
+\doxysubsubsection{\texorpdfstring{cost\_cache}{cost\_cache}}
+{\footnotesize\ttfamily \label{namespacecost__analysis_af6ceb5950ca0e4b8b59aabdbab675d66} 
+dict cost\+\_\+analysis.\+cost\+\_\+cache = \{\}}
+
+\Hypertarget{namespacecost__analysis_a225e68ac3fdb82036317abbbc7ba2492}\index{cost\_analysis@{cost\_analysis}!last\_cache\_update@{last\_cache\_update}}
+\index{last\_cache\_update@{last\_cache\_update}!cost\_analysis@{cost\_analysis}}
+\doxysubsubsection{\texorpdfstring{last\_cache\_update}{last\_cache\_update}}
+{\footnotesize\ttfamily \label{namespacecost__analysis_a225e68ac3fdb82036317abbbc7ba2492} 
+cost\+\_\+analysis.\+last\+\_\+cache\+\_\+update = datetime.\+min}
+
+\Hypertarget{namespacecost__analysis_ac867edfe501737dd66b638f23479ecc2}\index{cost\_analysis@{cost\_analysis}!logger@{logger}}
+\index{logger@{logger}!cost\_analysis@{cost\_analysis}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily \label{namespacecost__analysis_ac867edfe501737dd66b638f23479ecc2} 
+cost\+\_\+analysis.\+logger = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)}
+

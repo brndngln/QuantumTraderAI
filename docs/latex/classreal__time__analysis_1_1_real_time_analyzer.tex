@@ -1,0 +1,192 @@
+\doxysection{real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer Class Reference}
+\hypertarget{classreal__time__analysis_1_1_real_time_analyzer}{}\label{classreal__time__analysis_1_1_real_time_analyzer}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a193e8a642b7961447d06847a4a7162e3}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, int \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a43ad53b1aa9ea0ec6665cd2d604cd2c6}{window\+\_\+size}}=252, int \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a2dceecaedd9516b2a01f699f57f6523a}{update\+\_\+frequency}}=60, float \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_aa442144cd2c0c435a6e099e486c6aff3}{risk\+\_\+threshold}}=0.\+02, float \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_abf5728469351ad877e54f4432ea0bb6b}{rebalance\+\_\+threshold}}=0.\+05, float \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a2caea9042cf93e7b1310571c0a1dae8e}{max\+\_\+position\+\_\+size}}=0.\+05)
+\item 
+None \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a7bdb901dab5bd5eb72416984fd444118}{update\+\_\+positions}} (self, Dict\mbox{[}str, float\mbox{]} positions)
+\item 
+Dict\mbox{[}str, bool\mbox{]} \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_aeb990dcec3c5dd488b91d1dbf85323b6}{check\+\_\+risk\+\_\+limits}} (self)
+\item 
+float \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a37f96f3c9ae9c9424203dee0a6f6bec9}{calculate\+\_\+position\+\_\+sizing}} (self, float price, float volatility, float portfolio\+\_\+value)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_abb841b467c2c9946520ff40bb1bc7b44}{optimize\+\_\+positions}} (self, Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_acf04cbe05c4e6bbdda415d29736f61a2}{current\+\_\+positions}}, Dict\mbox{[}str, float\mbox{]} target\+\_\+positions, float portfolio\+\_\+value)
+\item 
+Dict \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_af0fc48f49d8e8113ee41c5ce92ef7df7}{get\+\_\+real\+\_\+time\+\_\+metrics}} (self)
+\item 
+None \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a48b71f70682fb104bda936079ef87b4a}{plot\+\_\+real\+\_\+time\+\_\+analysis}} (self)
+\item 
+Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_abc0ac45f88c753e246cb981b6c824b39}{get\+\_\+position\+\_\+adjustments}} (self, Dict\mbox{[}str, float\mbox{]} \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_acf04cbe05c4e6bbdda415d29736f61a2}{current\+\_\+positions}}, pd.\+Data\+Frame price\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a43ad53b1aa9ea0ec6665cd2d604cd2c6}{window\+\_\+size}} = window\+\_\+size
+\item 
+\mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a2dceecaedd9516b2a01f699f57f6523a}{update\+\_\+frequency}} = update\+\_\+frequency
+\item 
+\mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_aa442144cd2c0c435a6e099e486c6aff3}{risk\+\_\+threshold}} = risk\+\_\+threshold
+\item 
+\mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_abf5728469351ad877e54f4432ea0bb6b}{rebalance\+\_\+threshold}} = rebalance\+\_\+threshold
+\item 
+\mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a2caea9042cf93e7b1310571c0a1dae8e}{max\+\_\+position\+\_\+size}} = max\+\_\+position\+\_\+size
+\item 
+\mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_aab05e6e249d5ebcecbcb7c8c9982b50f}{metrics}} = Metrics()
+\item 
+\mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a890af82a63d7d0ebb94f4a61061615e8}{last\+\_\+update}} = None
+\item 
+dict \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_acf04cbe05c4e6bbdda415d29736f61a2}{current\+\_\+positions}} = \{\}
+\item 
+dict \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a5a6cddd3259bdb7c91d9c80c2ca91e49}{risk\+\_\+metrics}} = \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classreal__time__analysis_1_1_real_time_analyzer_a8ed9335ad3a2093d0c31629bd47d0145}{\+\_\+calculate\+\_\+risk\+\_\+metrics}} (self)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_a193e8a642b7961447d06847a4a7162e3}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_a193e8a642b7961447d06847a4a7162e3} 
+real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{int }]{window\+\_\+size}{ = {\ttfamily 252}, }\item[{int }]{update\+\_\+frequency}{ = {\ttfamily 60}, }\item[{float }]{risk\+\_\+threshold}{ = {\ttfamily 0.02}, }\item[{float }]{rebalance\+\_\+threshold}{ = {\ttfamily 0.05}, }\item[{float }]{max\+\_\+position\+\_\+size}{ = {\ttfamily 0.05}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize real-time analyzer
+
+Args:
+    window_size: Rolling window size
+    update_frequency: Frequency of updates (seconds)
+    risk_threshold: Risk threshold for alerts
+    rebalance_threshold: Threshold for rebalancing
+    max_position_size: Maximum position size
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_a8ed9335ad3a2093d0c31629bd47d0145}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!\_calculate\_risk\_metrics@{\_calculate\_risk\_metrics}}
+\index{\_calculate\_risk\_metrics@{\_calculate\_risk\_metrics}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{\_calculate\_risk\_metrics()}{\_calculate\_risk\_metrics()}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_a8ed9335ad3a2093d0c31629bd47d0145} 
+ None real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+\_\+calculate\+\_\+risk\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Calculate risk metrics\end{DoxyVerb}
+ \Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_a37f96f3c9ae9c9424203dee0a6f6bec9}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!calculate\_position\_sizing@{calculate\_position\_sizing}}
+\index{calculate\_position\_sizing@{calculate\_position\_sizing}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{calculate\_position\_sizing()}{calculate\_position\_sizing()}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_a37f96f3c9ae9c9424203dee0a6f6bec9} 
+ float real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+calculate\+\_\+position\+\_\+sizing (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{float}]{price}{, }\item[{float}]{volatility}{, }\item[{float}]{portfolio\+\_\+value}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate optimal position size\end{DoxyVerb}
+ \Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_aeb990dcec3c5dd488b91d1dbf85323b6}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!check\_risk\_limits@{check\_risk\_limits}}
+\index{check\_risk\_limits@{check\_risk\_limits}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{check\_risk\_limits()}{check\_risk\_limits()}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_aeb990dcec3c5dd488b91d1dbf85323b6} 
+ Dict\mbox{[}str, bool\mbox{]} real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+check\+\_\+risk\+\_\+limits (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if risk limits are exceeded\end{DoxyVerb}
+ \Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_abc0ac45f88c753e246cb981b6c824b39}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!get\_position\_adjustments@{get\_position\_adjustments}}
+\index{get\_position\_adjustments@{get\_position\_adjustments}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{get\_position\_adjustments()}{get\_position\_adjustments()}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_abc0ac45f88c753e246cb981b6c824b39} 
+ Dict\mbox{[}str, float\mbox{]} real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+get\+\_\+position\+\_\+adjustments (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{current\+\_\+positions}{, }\item[{pd.\+Data\+Frame}]{price\+\_\+data}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate position adjustments\end{DoxyVerb}
+ \Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_af0fc48f49d8e8113ee41c5ce92ef7df7}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!get\_real\_time\_metrics@{get\_real\_time\_metrics}}
+\index{get\_real\_time\_metrics@{get\_real\_time\_metrics}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{get\_real\_time\_metrics()}{get\_real\_time\_metrics()}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_af0fc48f49d8e8113ee41c5ce92ef7df7} 
+ Dict real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+get\+\_\+real\+\_\+time\+\_\+metrics (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get current real-time metrics\end{DoxyVerb}
+ \Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_abb841b467c2c9946520ff40bb1bc7b44}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!optimize\_positions@{optimize\_positions}}
+\index{optimize\_positions@{optimize\_positions}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{optimize\_positions()}{optimize\_positions()}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_abb841b467c2c9946520ff40bb1bc7b44} 
+ Dict\mbox{[}str, float\mbox{]} real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+optimize\+\_\+positions (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{current\+\_\+positions}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{target\+\_\+positions}{, }\item[{float}]{portfolio\+\_\+value}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Optimize positions based on risk and cost\end{DoxyVerb}
+ \Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_a48b71f70682fb104bda936079ef87b4a}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!plot\_real\_time\_analysis@{plot\_real\_time\_analysis}}
+\index{plot\_real\_time\_analysis@{plot\_real\_time\_analysis}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{plot\_real\_time\_analysis()}{plot\_real\_time\_analysis()}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_a48b71f70682fb104bda936079ef87b4a} 
+ None real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+plot\+\_\+real\+\_\+time\+\_\+analysis (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Plot real-time analysis results\end{DoxyVerb}
+ \Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_a7bdb901dab5bd5eb72416984fd444118}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!update\_positions@{update\_positions}}
+\index{update\_positions@{update\_positions}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{update\_positions()}{update\_positions()}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_a7bdb901dab5bd5eb72416984fd444118} 
+ None real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+update\+\_\+positions (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{Dict\mbox{[}str, float\mbox{]}}]{positions}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update current positions\end{DoxyVerb}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_acf04cbe05c4e6bbdda415d29736f61a2}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!current\_positions@{current\_positions}}
+\index{current\_positions@{current\_positions}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{current\_positions}{current\_positions}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_acf04cbe05c4e6bbdda415d29736f61a2} 
+real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+current\+\_\+positions = \{\}}
+
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_a890af82a63d7d0ebb94f4a61061615e8}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!last\_update@{last\_update}}
+\index{last\_update@{last\_update}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{last\_update}{last\_update}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_a890af82a63d7d0ebb94f4a61061615e8} 
+real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+last\+\_\+update = None}
+
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_a2caea9042cf93e7b1310571c0a1dae8e}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!max\_position\_size@{max\_position\_size}}
+\index{max\_position\_size@{max\_position\_size}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{max\_position\_size}{max\_position\_size}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_a2caea9042cf93e7b1310571c0a1dae8e} 
+real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+max\+\_\+position\+\_\+size = max\+\_\+position\+\_\+size}
+
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_aab05e6e249d5ebcecbcb7c8c9982b50f}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!metrics@{metrics}}
+\index{metrics@{metrics}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_aab05e6e249d5ebcecbcb7c8c9982b50f} 
+real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+metrics = Metrics()}
+
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_abf5728469351ad877e54f4432ea0bb6b}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!rebalance\_threshold@{rebalance\_threshold}}
+\index{rebalance\_threshold@{rebalance\_threshold}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{rebalance\_threshold}{rebalance\_threshold}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_abf5728469351ad877e54f4432ea0bb6b} 
+real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+rebalance\+\_\+threshold = rebalance\+\_\+threshold}
+
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_a5a6cddd3259bdb7c91d9c80c2ca91e49}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!risk\_metrics@{risk\_metrics}}
+\index{risk\_metrics@{risk\_metrics}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{risk\_metrics}{risk\_metrics}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_a5a6cddd3259bdb7c91d9c80c2ca91e49} 
+real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+risk\+\_\+metrics = \{\}}
+
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_aa442144cd2c0c435a6e099e486c6aff3}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!risk\_threshold@{risk\_threshold}}
+\index{risk\_threshold@{risk\_threshold}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{risk\_threshold}{risk\_threshold}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_aa442144cd2c0c435a6e099e486c6aff3} 
+real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+risk\+\_\+threshold = risk\+\_\+threshold}
+
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_a2dceecaedd9516b2a01f699f57f6523a}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!update\_frequency@{update\_frequency}}
+\index{update\_frequency@{update\_frequency}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{update\_frequency}{update\_frequency}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_a2dceecaedd9516b2a01f699f57f6523a} 
+real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+update\+\_\+frequency = update\+\_\+frequency}
+
+\Hypertarget{classreal__time__analysis_1_1_real_time_analyzer_a43ad53b1aa9ea0ec6665cd2d604cd2c6}\index{real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}!window\_size@{window\_size}}
+\index{window\_size@{window\_size}!real\_time\_analysis.RealTimeAnalyzer@{real\_time\_analysis.RealTimeAnalyzer}}
+\doxysubsubsection{\texorpdfstring{window\_size}{window\_size}}
+{\footnotesize\ttfamily \label{classreal__time__analysis_1_1_real_time_analyzer_a43ad53b1aa9ea0ec6665cd2d604cd2c6} 
+real\+\_\+time\+\_\+analysis.\+Real\+Time\+Analyzer.\+window\+\_\+size = window\+\_\+size}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{real__time__analysis_8py}{real\+\_\+time\+\_\+analysis.\+py}}\end{DoxyCompactItemize}

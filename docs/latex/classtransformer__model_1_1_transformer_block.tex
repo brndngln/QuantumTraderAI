@@ -1,0 +1,106 @@
+\doxysection{transformer\+\_\+model.\+Transformer\+Block Class Reference}
+\hypertarget{classtransformer__model_1_1_transformer_block}{}\label{classtransformer__model_1_1_transformer_block}\index{transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}}
+Inheritance diagram for transformer\+\_\+model.\+Transformer\+Block\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtransformer__model_1_1_transformer_block}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_block_a749c5cdc2ccefc6b6d50c7072b4a79c9}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, embed\+\_\+dim, num\+\_\+heads, ff\+\_\+dim, rate=0.\+1)
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_block_a039554371b109ff57d0577cab1ce07a5}{call}} (self, inputs, training)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_block_ab94ee7f49f1ebcc53be8d2076db6b2f4}{att}} = \mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention}{Multi\+Head\+Self\+Attention}}(embed\+\_\+dim, num\+\_\+heads)
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_block_a6cace4c8563aedad48a28c6acba1d89b}{ffn}}
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_block_a795a4426a34a86670574f9fa8a78a171}{layernorm1}} = Layer\+Normalization(epsilon=1e-\/6)
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_block_ae7621a1afe3cdb315d8726b4539dbd7a}{layernorm2}} = Layer\+Normalization(epsilon=1e-\/6)
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_block_a7a91d87d19ee404bc2393af2f35e454e}{dropout1}} = Dropout(rate)
+\item 
+\mbox{\hyperlink{classtransformer__model_1_1_transformer_block_ac0b96629f1c19e089cdb0e4ff8f0eee5}{dropout2}} = Dropout(rate)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classtransformer__model_1_1_transformer_block_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtransformer__model_1_1_transformer_block_a749c5cdc2ccefc6b6d50c7072b4a79c9}\index{transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_block_a749c5cdc2ccefc6b6d50c7072b4a79c9} 
+transformer\+\_\+model.\+Transformer\+Block.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{embed\+\_\+dim}{, }\item[{}]{num\+\_\+heads}{, }\item[{}]{ff\+\_\+dim}{, }\item[{}]{rate}{ = {\ttfamily 0.1}}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classtransformer__model_1_1_transformer_block_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtransformer__model_1_1_transformer_block_a039554371b109ff57d0577cab1ce07a5}\index{transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}!call@{call}}
+\index{call@{call}!transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}}
+\doxysubsubsection{\texorpdfstring{call()}{call()}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_block_a039554371b109ff57d0577cab1ce07a5} 
+transformer\+\_\+model.\+Transformer\+Block.\+call (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{inputs}{, }\item[{}]{training}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classtransformer__model_1_1_transformer_block_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classtransformer__model_1_1_transformer_block_ab94ee7f49f1ebcc53be8d2076db6b2f4}\index{transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}!att@{att}}
+\index{att@{att}!transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}}
+\doxysubsubsection{\texorpdfstring{att}{att}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_block_ab94ee7f49f1ebcc53be8d2076db6b2f4} 
+transformer\+\_\+model.\+Transformer\+Block.\+att = \mbox{\hyperlink{classtransformer__model_1_1_multi_head_self_attention}{Multi\+Head\+Self\+Attention}}(embed\+\_\+dim, num\+\_\+heads)}
+
+\Hypertarget{classtransformer__model_1_1_transformer_block_a7a91d87d19ee404bc2393af2f35e454e}\index{transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}!dropout1@{dropout1}}
+\index{dropout1@{dropout1}!transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}}
+\doxysubsubsection{\texorpdfstring{dropout1}{dropout1}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_block_a7a91d87d19ee404bc2393af2f35e454e} 
+transformer\+\_\+model.\+Transformer\+Block.\+dropout1 = Dropout(rate)}
+
+\Hypertarget{classtransformer__model_1_1_transformer_block_ac0b96629f1c19e089cdb0e4ff8f0eee5}\index{transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}!dropout2@{dropout2}}
+\index{dropout2@{dropout2}!transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}}
+\doxysubsubsection{\texorpdfstring{dropout2}{dropout2}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_block_ac0b96629f1c19e089cdb0e4ff8f0eee5} 
+transformer\+\_\+model.\+Transformer\+Block.\+dropout2 = Dropout(rate)}
+
+\Hypertarget{classtransformer__model_1_1_transformer_block_a6cace4c8563aedad48a28c6acba1d89b}\index{transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}!ffn@{ffn}}
+\index{ffn@{ffn}!transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}}
+\doxysubsubsection{\texorpdfstring{ffn}{ffn}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_block_a6cace4c8563aedad48a28c6acba1d89b} 
+transformer\+\_\+model.\+Transformer\+Block.\+ffn}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ tf.keras.Sequential([}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ Dense(ff\_dim,\ activation=\textcolor{stringliteral}{"{}relu"{}}),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ Dense(embed\_dim),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ])}
+
+\end{DoxyCode}
+\Hypertarget{classtransformer__model_1_1_transformer_block_a795a4426a34a86670574f9fa8a78a171}\index{transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}!layernorm1@{layernorm1}}
+\index{layernorm1@{layernorm1}!transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}}
+\doxysubsubsection{\texorpdfstring{layernorm1}{layernorm1}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_block_a795a4426a34a86670574f9fa8a78a171} 
+transformer\+\_\+model.\+Transformer\+Block.\+layernorm1 = Layer\+Normalization(epsilon=1e-\/6)}
+
+\Hypertarget{classtransformer__model_1_1_transformer_block_ae7621a1afe3cdb315d8726b4539dbd7a}\index{transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}!layernorm2@{layernorm2}}
+\index{layernorm2@{layernorm2}!transformer\_model.TransformerBlock@{transformer\_model.TransformerBlock}}
+\doxysubsubsection{\texorpdfstring{layernorm2}{layernorm2}}
+{\footnotesize\ttfamily \label{classtransformer__model_1_1_transformer_block_ae7621a1afe3cdb315d8726b4539dbd7a} 
+transformer\+\_\+model.\+Transformer\+Block.\+layernorm2 = Layer\+Normalization(epsilon=1e-\/6)}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+backend/ai\+\_\+models/\mbox{\hyperlink{transformer__model_8py}{transformer\+\_\+model.\+py}}\end{DoxyCompactItemize}

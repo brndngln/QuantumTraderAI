@@ -1,0 +1,985 @@
+\doxysection{main Namespace Reference}
+\hypertarget{namespacemain}{}\label{namespacemain}\index{main@{main}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmain_1_1_cache_manager}{Cache\+Manager}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_performance_metric}{Performance\+Metric}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_performance_monitor}{Performance\+Monitor}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_rate_limiter}{Rate\+Limiter}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_request_validator}{Request\+Validator}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_risk_metric}{Risk\+Metric}}
+\item 
+class \mbox{\hyperlink{classmain_1_1_trade}{Trade}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemain_a7db45a116721b66ee30e97533fc7b465}{log\+\_\+ai\+\_\+decision}} (str decision\+\_\+type, dict details)
+\item 
+bool \mbox{\hyperlink{namespacemain_af84c61f65cca20da156cdf7cb7908b64}{check\+\_\+ai\+\_\+safety}} (dict trade\+\_\+details)
+\item 
+bool \mbox{\hyperlink{namespacemain_a95e667b26a7076e1e972bf4340ca8a19}{require\+\_\+user\+\_\+confirmation}} (dict decision)
+\item 
+\mbox{\hyperlink{namespacemain_a650ca23279c4b05ab47a70278feba327}{ping\+\_\+connection}} (dbapi\+\_\+connection, connection\+\_\+record, connection\+\_\+proxy)
+\item 
+\mbox{\hyperlink{namespacemain_a153c51f50728eed3c7634b654ce959f1}{get\+\_\+db}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a03d0cc92082b111add00ecad798e7e89}{get\+\_\+cache}} (namespace=\textquotesingle{}default\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacemain_a83dd5174ddce4f83469d9ee275f442e2}{get\+\_\+redis\+\_\+pool}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a31d6d9481cce00161c8cd1f74fccb41a}{get\+\_\+memcached\+\_\+client}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a8e4e8d2c878cd1530dbafcd261f003f4}{custom\+\_\+exception\+\_\+handler}} (Request request, Exception exc)
+\item 
+\mbox{\hyperlink{namespacemain_ad92c4a99107223c4eaabc10b99f36570}{add\+\_\+security\+\_\+headers}} (Request request, call\+\_\+next)
+\item 
+\mbox{\hyperlink{namespacemain_ac9c2618c18f707e5810eb18b7ddf2d79}{monitor\+\_\+performance}} (Request request, call\+\_\+next)
+\item 
+\mbox{\hyperlink{namespacemain_a31d7f07e4298a8168857e894dfc3e41d}{update\+\_\+metrics}} (str endpoint, float response\+\_\+time)
+\item 
+\mbox{\hyperlink{namespacemain_a21f382072ab9220cd5658da898bd6e07}{circuit\+\_\+breaker}} (fn, \texorpdfstring{$\ast$}{*}args, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}kwargs)
+\item 
+\mbox{\hyperlink{namespacemain_a79c2ca5d95bb7f27bceec8bbdcc42ecb}{run\+\_\+background\+\_\+task}} (task)
+\item 
+\mbox{\hyperlink{namespacemain_ad7584bc6183087e82bf9c04f563c6112}{validate\+\_\+request}} (Request request, call\+\_\+next)
+\item 
+\mbox{\hyperlink{namespacemain_a7496121fd0cf09bcb695124265121b39}{add\+\_\+process\+\_\+time\+\_\+header}} (Request request, call\+\_\+next)
+\item 
+\mbox{\hyperlink{namespacemain_af0fb25cf693c599e0d77e29e802af13a}{health\+\_\+check}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a6fcf5c9ccedcc74cd72d709c205938bf}{get\+\_\+metrics}} ()
+\item 
+\mbox{\hyperlink{namespacemain_a82f50f8b598afeb472eaf2c23164bb43}{read\+\_\+root}} ()
+\item 
+\mbox{\hyperlink{namespacemain_accc6a7aecb078ec76cbfc90bfdc4a408}{run\+\_\+all\+\_\+strategies}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{namespacemain_aea83290aab45b2bfbdf0542c35ad4d90}{AI\+\_\+\+CONFIG}}
+\item 
+dict \mbox{\hyperlink{namespacemain_aa51553296938c1af0c2c94846c47a91f}{ai\+\_\+safety\+\_\+monitor}}
+\item 
+\mbox{\hyperlink{namespacemain_ad39dcd94f0ffc845ab416c0783c20d25}{level}}
+\item 
+\mbox{\hyperlink{namespacemain_a758a4b3c52742d78aa30e49d058acea4}{format}}
+\item 
+\mbox{\hyperlink{namespacemain_abc8fd2c6474f154e4b0bc05a0a64aa82}{handlers}}
+\item 
+\mbox{\hyperlink{namespacemain_ae8177e2ad0b47dc8a8fa5289282c6407}{datefmt}}
+\item 
+\mbox{\hyperlink{namespacemain_ae1d4a0295c904f672a1f044188274bf1}{logger}} = logging.\+get\+Logger("{}quantum\+\_\+trader"{})
+\item 
+\mbox{\hyperlink{namespacemain_aab7b909058f2501860a3f24e1dd241dd}{jaeger\+\_\+exporter}}
+\item 
+\mbox{\hyperlink{namespacemain_ac057fc2af61b1ccb7e1d02095e27bbd8}{span\+\_\+processor}} = Batch\+Span\+Processor(\mbox{\hyperlink{namespacemain_aab7b909058f2501860a3f24e1dd241dd}{jaeger\+\_\+exporter}})
+\item 
+str \mbox{\hyperlink{namespacemain_aafe365dd47478c3ae610ff76275b6a4e}{DATABASE\+\_\+\+URL}} = "{}postgresql+asyncpg\+://user\+:password@localhost/quantum\+\_\+trader"{}
+\item 
+\mbox{\hyperlink{namespacemain_abbd462ee949c43b59de652c35814ad40}{engine}}
+\item 
+\mbox{\hyperlink{namespacemain_a75a3328cd96d3afacbd37f66a20adc3b}{Session\+Local}}
+\item 
+\mbox{\hyperlink{namespacemain_a87c59ca41397e993be09fd9e50087113}{Base}} = declarative\+\_\+base()
+\item 
+dict \mbox{\hyperlink{namespacemain_ab3a50b860c175f7d0eafa940f272fca4}{CACHE\+\_\+\+CONFIG}}
+\item 
+\mbox{\hyperlink{namespacemain_a5fa94f0581009434c7a63791944d6ff4}{app}}
+\item 
+int \mbox{\hyperlink{namespacemain_a0c2dcf6b3e1757f0c5902d7d6f89e856}{RATE\+\_\+\+LIMIT\+\_\+\+WINDOW}} = 60
+\item 
+int \mbox{\hyperlink{namespacemain_a3637902075f25f6c23faeb92aed2e6de}{RATE\+\_\+\+LIMIT\+\_\+\+REQUESTS}} = 100
+\item 
+\mbox{\hyperlink{namespacemain_ad0aeb957c34d3c8ce204f847e756bda0}{rate\+\_\+limit\+\_\+cache}} = TTLCache(maxsize=1000, ttl=\mbox{\hyperlink{namespacemain_a0c2dcf6b3e1757f0c5902d7d6f89e856}{RATE\+\_\+\+LIMIT\+\_\+\+WINDOW}})
+\item 
+\mbox{\hyperlink{namespacemain_acb79c4b50749db070c04695ae0d2268c}{SECRET\+\_\+\+KEY}} = secrets.\+token\+\_\+hex(32)
+\item 
+str \mbox{\hyperlink{namespacemain_ab3d37350025686d235c856080bd0fde5}{ALGORITHM}} = "{}HS256"{}
+\item 
+int \mbox{\hyperlink{namespacemain_a101e28b4e41edd15a65688c4482bfb7c}{ACCESS\+\_\+\+TOKEN\+\_\+\+EXPIRE\+\_\+\+MINUTES}} = 30
+\item 
+\mbox{\hyperlink{namespacemain_ad38a3eb6ec65f2989ae1db98e2412834}{pwd\+\_\+context}} = Crypt\+Context(schemes=\mbox{[}"{}bcrypt"{}\mbox{]}, deprecated="{}auto"{})
+\item 
+\mbox{\hyperlink{namespacemain_ab7c77aad3c81568e608a7c212fe72538}{redis\+\_\+pool}} = None
+\item 
+\mbox{\hyperlink{namespacemain_a9cf31f5a48c7c7de22ecfcfebe941f32}{memcached\+\_\+client}} = None
+\item 
+\mbox{\hyperlink{namespacemain_adb48cdabec07a8237d8fe01f21d66673}{dsn}}
+\item 
+\mbox{\hyperlink{namespacemain_a81b16e340b705221af46feae19e38190}{traces\+\_\+sample\+\_\+rate}}
+\item 
+\mbox{\hyperlink{namespacemain_a98a9e81c52949020b9c8f2595ee4e1fd}{environment}}
+\item 
+\mbox{\hyperlink{namespacemain_afa3ae522c427ee3f6fd4bdf43006b065}{integrations}}
+\item 
+\mbox{\hyperlink{namespacemain_a68a5f6361d452743cdcaeacb8a214ea4}{before\+\_\+send}}
+\item 
+int \mbox{\hyperlink{namespacemain_aa6b0f66504a4e957c6b5d77bb86dcc97}{CIRCUIT\+\_\+\+TIMEOUT}} = 30000
+\item 
+int \mbox{\hyperlink{namespacemain_a189f5aa9df825e0d4bb802306c2c5478}{last\+\_\+failure\+\_\+time}} = 0
+\item 
+bool \mbox{\hyperlink{namespacemain_a86385eee90884bb5f146b09a58fac36b}{circuit\+\_\+open}} = False
+\item 
+\mbox{\hyperlink{namespacemain_aa6e08b45f90b150c94f994ddc5a9f0ee}{background\+\_\+tasks}} = set()
+\item 
+\mbox{\hyperlink{namespacemain_a3b8b11e81317d0e97984ac154fe9603e}{cache\+\_\+manager}} = \mbox{\hyperlink{classmain_1_1_cache_manager}{Cache\+Manager}}()
+\item 
+\mbox{\hyperlink{namespacemain_ab277227e15a80c8a674b8540cc01f33f}{allow\+\_\+origins}}
+\item 
+\mbox{\hyperlink{namespacemain_a723efd63c798243e87a130a80fcdafc0}{allow\+\_\+credentials}}
+\item 
+\mbox{\hyperlink{namespacemain_a1b7923d71410345d3dbff8017b7e6f0d}{allow\+\_\+methods}}
+\item 
+\mbox{\hyperlink{namespacemain_ab58bda9b3875379c76aa7d3bd977b5bd}{allow\+\_\+headers}}
+\item 
+\mbox{\hyperlink{namespacemain_a9451a6826b7a5f469689aaab001b5a56}{expose\+\_\+headers}}
+\item 
+\mbox{\hyperlink{namespacemain_a97497898ce7734473f7102a7f54c98dd}{allow\+\_\+origin\+\_\+regex}}
+\item 
+\mbox{\hyperlink{namespacemain_a74fcd44c170a5c29c2dcedab98c0a22e}{max\+\_\+age}}
+\item 
+\mbox{\hyperlink{namespacemain_afe3fef6c001e2d833be9ac987586a762}{minimum\+\_\+size}}
+\item 
+\mbox{\hyperlink{namespacemain_a281b7c62b4df8747551ed92fc3e87e3c}{compresslevel}}
+\item 
+\mbox{\hyperlink{namespacemain_a4457b12e6d50cf849e9f3c29a73f4b8d}{server\+\_\+side}}
+\item 
+\mbox{\hyperlink{namespacemain_a98ec5ea88e385bb82163a87a4bd3ef13}{client\+\_\+side}}
+\item 
+\mbox{\hyperlink{namespacemain_af71c6bb704c1f23a61fbcd659b7dbed9}{allowed\+\_\+hosts}}
+\item 
+\mbox{\hyperlink{namespacemain_a284b7d784e16bf1c0b6c828006fed75b}{except\+\_\+hosts}}
+\item 
+\mbox{\hyperlink{namespacemain_adfc14002b61f11b32a9805b6fa3b085e}{status\+\_\+code}}
+\item 
+\mbox{\hyperlink{namespacemain_acedb228f868dbad4b47eaafc28995d30}{ssl\+\_\+host}}
+\item 
+\mbox{\hyperlink{namespacemain_a2bb517f1251de92b69060993f98cc721}{ssl\+\_\+port}}
+\item 
+\mbox{\hyperlink{namespacemain_a6f3bdfce14905aae9f2bb69b88a50eec}{secret\+\_\+key}}
+\item 
+\mbox{\hyperlink{namespacemain_ac4678309a30e82ff684f8332b39d89df}{session\+\_\+cookie}}
+\item 
+\mbox{\hyperlink{namespacemain_a8a59e5a88f4f5ea50769529bf9557197}{same\+\_\+site}}
+\item 
+\mbox{\hyperlink{namespacemain_a8a697a46cf8b6c4a7ba3dc145543f8dd}{https\+\_\+only}}
+\item 
+\mbox{\hyperlink{namespacemain_a39d891adc8681a3e4aa9bbd0e2374897}{cookie\+\_\+domain}}
+\item 
+\mbox{\hyperlink{namespacemain_ac084c4c168e58834232cb61675ad76a0}{headers}}
+\item 
+\mbox{\hyperlink{namespacemain_aaf1f35f0f5cc66d5427fbf3b15aa8f19}{max\+\_\+requests}}
+\item 
+\mbox{\hyperlink{namespacemain_ae1ea5d7d8ba9156ef06beef9bf8901a8}{window}}
+\item 
+\mbox{\hyperlink{namespacemain_a5a6ec387441960b0e275c21d3edb0b73}{key\+\_\+func}}
+\item 
+\mbox{\hyperlink{namespacemain_a1f4763c7d9785b85d544effe78e3ca9f}{storage}}
+\item 
+\mbox{\hyperlink{namespacemain_a2d36f3b33ec10ccef4d8605227b790d3}{on\+\_\+limit\+\_\+exceeded}}
+\item 
+\mbox{\hyperlink{namespacemain_abd5b6c80fbc3c037fce893ae7f6d2b05}{threshold}}
+\item 
+\mbox{\hyperlink{namespacemain_a125de59989f8d39e288981228ea8144a}{metrics\+\_\+store}}
+\item 
+\mbox{\hyperlink{namespacemain_ad0348948ebe3c63f466833759bf6542a}{on\+\_\+slow\+\_\+request}}
+\item 
+\mbox{\hyperlink{namespacemain_af40c255af29cee6c284d9225ea884015}{backend}}
+\item 
+\mbox{\hyperlink{namespacemain_a0cd90a3fba285deb01905f29468e3229}{on\+\_\+error}}
+\item 
+\mbox{\hyperlink{namespacemain_a442fc71b3435270d1521d8a79a849c0d}{cache}}
+\item 
+\mbox{\hyperlink{namespacemain_a04c3e263365fc3c3e8d63e0b6aef0c0f}{cache\+\_\+key\+\_\+func}}
+\item 
+\mbox{\hyperlink{namespacemain_a9b043e61bcb37518dcb46993cf349d09}{cache\+\_\+ttl}}
+\item 
+\mbox{\hyperlink{namespacemain_a3f39693b71cda58d67c6b3f5a408b5d7}{cache\+\_\+bypass\+\_\+func}}
+\item 
+\mbox{\hyperlink{namespacemain_ae5f401cbe0bd12e62ee03958c6c49321}{tracer}}
+\item 
+\mbox{\hyperlink{namespacemain_a968b4ea6f202e1eddb778322ec296301}{span\+\_\+name\+\_\+func}}
+\item 
+\mbox{\hyperlink{namespacemain_a829c7f57105f74c875ef0f765c3d4270}{trace\+\_\+id\+\_\+header}}
+\item 
+\mbox{\hyperlink{namespacemain_a660585d25b434eda3ebd52665d332ead}{span\+\_\+id\+\_\+header}}
+\item 
+\mbox{\hyperlink{namespacemain_af4d00a1ed9c85528c5cdc45f0a73c801}{log\+\_\+format}}
+\item 
+\mbox{\hyperlink{namespacemain_a7c448fa533f5ed7dc4a0d2c1eeada635}{log\+\_\+level}}
+\item 
+\mbox{\hyperlink{namespacemain_a83cf5491028bfe1172aabab032da4623}{include\+\_\+headers}}
+\item 
+\mbox{\hyperlink{namespacemain_af895c32617455ec84d6a30117c14c5a3}{include\+\_\+body}}
+\item 
+\mbox{\hyperlink{namespacemain_a991c69eb34158eecf3308e4991c65630}{validators}}
+\item 
+\mbox{\hyperlink{namespacemain_a3acdb96693bcc0db9a99e92c69c81646}{failure\+\_\+threshold}}
+\item 
+\mbox{\hyperlink{namespacemain_a17c1244fbfed3db17e0451f2869563a2}{reset\+\_\+timeout}}
+\item 
+\mbox{\hyperlink{namespacemain_a762e14bd918c8055a811a4d0741dba30}{on\+\_\+circuit\+\_\+open}}
+\item 
+dict \mbox{\hyperlink{namespacemain_a0c77e91743989d481a013b9deb26aa70}{market\+\_\+data\+\_\+cache}} = \{\}
+\item 
+\mbox{\hyperlink{namespacemain_ad5824bf1c5d90e788ba773658857d350}{last\+\_\+cache\+\_\+update}} = datetime.\+min
+\item 
+int \mbox{\hyperlink{namespacemain_a5d720be1eec45e22ed147eb7a046cb13}{CACHE\+\_\+\+TTL}} = 300
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{namespacemain_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacemain_a7496121fd0cf09bcb695124265121b39}\index{main@{main}!add\_process\_time\_header@{add\_process\_time\_header}}
+\index{add\_process\_time\_header@{add\_process\_time\_header}!main@{main}}
+\doxysubsubsection{\texorpdfstring{add\_process\_time\_header()}{add\_process\_time\_header()}}
+{\footnotesize\ttfamily \label{namespacemain_a7496121fd0cf09bcb695124265121b39} 
+main.\+add\+\_\+process\+\_\+time\+\_\+header (\begin{DoxyParamCaption}\item[{Request}]{request}{, }\item[{}]{call\+\_\+next}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_ad92c4a99107223c4eaabc10b99f36570}\index{main@{main}!add\_security\_headers@{add\_security\_headers}}
+\index{add\_security\_headers@{add\_security\_headers}!main@{main}}
+\doxysubsubsection{\texorpdfstring{add\_security\_headers()}{add\_security\_headers()}}
+{\footnotesize\ttfamily \label{namespacemain_ad92c4a99107223c4eaabc10b99f36570} 
+main.\+add\+\_\+security\+\_\+headers (\begin{DoxyParamCaption}\item[{Request}]{request}{, }\item[{}]{call\+\_\+next}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_af84c61f65cca20da156cdf7cb7908b64}\index{main@{main}!check\_ai\_safety@{check\_ai\_safety}}
+\index{check\_ai\_safety@{check\_ai\_safety}!main@{main}}
+\doxysubsubsection{\texorpdfstring{check\_ai\_safety()}{check\_ai\_safety()}}
+{\footnotesize\ttfamily \label{namespacemain_af84c61f65cca20da156cdf7cb7908b64} 
+ bool main.\+check\+\_\+ai\+\_\+safety (\begin{DoxyParamCaption}\item[{dict}]{trade\+\_\+details}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if AI decision is within safety parameters\end{DoxyVerb}
+ \Hypertarget{namespacemain_a21f382072ab9220cd5658da898bd6e07}\index{main@{main}!circuit\_breaker@{circuit\_breaker}}
+\index{circuit\_breaker@{circuit\_breaker}!main@{main}}
+\doxysubsubsection{\texorpdfstring{circuit\_breaker()}{circuit\_breaker()}}
+{\footnotesize\ttfamily \label{namespacemain_a21f382072ab9220cd5658da898bd6e07} 
+main.\+circuit\+\_\+breaker (\begin{DoxyParamCaption}\item[{}]{fn}{, }\item[{\texorpdfstring{$\ast$}{*}}]{args}{, }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{kwargs}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a8e4e8d2c878cd1530dbafcd261f003f4}\index{main@{main}!custom\_exception\_handler@{custom\_exception\_handler}}
+\index{custom\_exception\_handler@{custom\_exception\_handler}!main@{main}}
+\doxysubsubsection{\texorpdfstring{custom\_exception\_handler()}{custom\_exception\_handler()}}
+{\footnotesize\ttfamily \label{namespacemain_a8e4e8d2c878cd1530dbafcd261f003f4} 
+main.\+custom\+\_\+exception\+\_\+handler (\begin{DoxyParamCaption}\item[{Request}]{request}{, }\item[{Exception}]{exc}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a03d0cc92082b111add00ecad798e7e89}\index{main@{main}!get\_cache@{get\_cache}}
+\index{get\_cache@{get\_cache}!main@{main}}
+\doxysubsubsection{\texorpdfstring{get\_cache()}{get\_cache()}}
+{\footnotesize\ttfamily \label{namespacemain_a03d0cc92082b111add00ecad798e7e89} 
+main.\+get\+\_\+cache (\begin{DoxyParamCaption}\item[{}]{namespace}{ = {\ttfamily \textquotesingle{}default\textquotesingle{}}}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a153c51f50728eed3c7634b654ce959f1}\index{main@{main}!get\_db@{get\_db}}
+\index{get\_db@{get\_db}!main@{main}}
+\doxysubsubsection{\texorpdfstring{get\_db()}{get\_db()}}
+{\footnotesize\ttfamily \label{namespacemain_a153c51f50728eed3c7634b654ce959f1} 
+main.\+get\+\_\+db (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a31d6d9481cce00161c8cd1f74fccb41a}\index{main@{main}!get\_memcached\_client@{get\_memcached\_client}}
+\index{get\_memcached\_client@{get\_memcached\_client}!main@{main}}
+\doxysubsubsection{\texorpdfstring{get\_memcached\_client()}{get\_memcached\_client()}}
+{\footnotesize\ttfamily \label{namespacemain_a31d6d9481cce00161c8cd1f74fccb41a} 
+main.\+get\+\_\+memcached\+\_\+client (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a6fcf5c9ccedcc74cd72d709c205938bf}\index{main@{main}!get\_metrics@{get\_metrics}}
+\index{get\_metrics@{get\_metrics}!main@{main}}
+\doxysubsubsection{\texorpdfstring{get\_metrics()}{get\_metrics()}}
+{\footnotesize\ttfamily \label{namespacemain_a6fcf5c9ccedcc74cd72d709c205938bf} 
+main.\+get\+\_\+metrics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a83dd5174ddce4f83469d9ee275f442e2}\index{main@{main}!get\_redis\_pool@{get\_redis\_pool}}
+\index{get\_redis\_pool@{get\_redis\_pool}!main@{main}}
+\doxysubsubsection{\texorpdfstring{get\_redis\_pool()}{get\_redis\_pool()}}
+{\footnotesize\ttfamily \label{namespacemain_a83dd5174ddce4f83469d9ee275f442e2} 
+main.\+get\+\_\+redis\+\_\+pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_af0fb25cf693c599e0d77e29e802af13a}\index{main@{main}!health\_check@{health\_check}}
+\index{health\_check@{health\_check}!main@{main}}
+\doxysubsubsection{\texorpdfstring{health\_check()}{health\_check()}}
+{\footnotesize\ttfamily \label{namespacemain_af0fb25cf693c599e0d77e29e802af13a} 
+main.\+health\+\_\+check (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a7db45a116721b66ee30e97533fc7b465}\index{main@{main}!log\_ai\_decision@{log\_ai\_decision}}
+\index{log\_ai\_decision@{log\_ai\_decision}!main@{main}}
+\doxysubsubsection{\texorpdfstring{log\_ai\_decision()}{log\_ai\_decision()}}
+{\footnotesize\ttfamily \label{namespacemain_a7db45a116721b66ee30e97533fc7b465} 
+main.\+log\+\_\+ai\+\_\+decision (\begin{DoxyParamCaption}\item[{str}]{decision\+\_\+type}{, }\item[{dict}]{details}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Log AI decisions with full context\end{DoxyVerb}
+ \Hypertarget{namespacemain_ac9c2618c18f707e5810eb18b7ddf2d79}\index{main@{main}!monitor\_performance@{monitor\_performance}}
+\index{monitor\_performance@{monitor\_performance}!main@{main}}
+\doxysubsubsection{\texorpdfstring{monitor\_performance()}{monitor\_performance()}}
+{\footnotesize\ttfamily \label{namespacemain_ac9c2618c18f707e5810eb18b7ddf2d79} 
+main.\+monitor\+\_\+performance (\begin{DoxyParamCaption}\item[{Request}]{request}{, }\item[{}]{call\+\_\+next}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a650ca23279c4b05ab47a70278feba327}\index{main@{main}!ping\_connection@{ping\_connection}}
+\index{ping\_connection@{ping\_connection}!main@{main}}
+\doxysubsubsection{\texorpdfstring{ping\_connection()}{ping\_connection()}}
+{\footnotesize\ttfamily \label{namespacemain_a650ca23279c4b05ab47a70278feba327} 
+main.\+ping\+\_\+connection (\begin{DoxyParamCaption}\item[{}]{dbapi\+\_\+connection}{, }\item[{}]{connection\+\_\+record}{, }\item[{}]{connection\+\_\+proxy}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a82f50f8b598afeb472eaf2c23164bb43}\index{main@{main}!read\_root@{read\_root}}
+\index{read\_root@{read\_root}!main@{main}}
+\doxysubsubsection{\texorpdfstring{read\_root()}{read\_root()}}
+{\footnotesize\ttfamily \label{namespacemain_a82f50f8b598afeb472eaf2c23164bb43} 
+main.\+read\+\_\+root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a95e667b26a7076e1e972bf4340ca8a19}\index{main@{main}!require\_user\_confirmation@{require\_user\_confirmation}}
+\index{require\_user\_confirmation@{require\_user\_confirmation}!main@{main}}
+\doxysubsubsection{\texorpdfstring{require\_user\_confirmation()}{require\_user\_confirmation()}}
+{\footnotesize\ttfamily \label{namespacemain_a95e667b26a7076e1e972bf4340ca8a19} 
+ bool main.\+require\+\_\+user\+\_\+confirmation (\begin{DoxyParamCaption}\item[{dict}]{decision}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Require user confirmation for AI decisions\end{DoxyVerb}
+ \Hypertarget{namespacemain_accc6a7aecb078ec76cbfc90bfdc4a408}\index{main@{main}!run\_all\_strategies@{run\_all\_strategies}}
+\index{run\_all\_strategies@{run\_all\_strategies}!main@{main}}
+\doxysubsubsection{\texorpdfstring{run\_all\_strategies()}{run\_all\_strategies()}}
+{\footnotesize\ttfamily \label{namespacemain_accc6a7aecb078ec76cbfc90bfdc4a408} 
+main.\+run\+\_\+all\+\_\+strategies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a79c2ca5d95bb7f27bceec8bbdcc42ecb}\index{main@{main}!run\_background\_task@{run\_background\_task}}
+\index{run\_background\_task@{run\_background\_task}!main@{main}}
+\doxysubsubsection{\texorpdfstring{run\_background\_task()}{run\_background\_task()}}
+{\footnotesize\ttfamily \label{namespacemain_a79c2ca5d95bb7f27bceec8bbdcc42ecb} 
+main.\+run\+\_\+background\+\_\+task (\begin{DoxyParamCaption}\item[{}]{task}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_a31d7f07e4298a8168857e894dfc3e41d}\index{main@{main}!update\_metrics@{update\_metrics}}
+\index{update\_metrics@{update\_metrics}!main@{main}}
+\doxysubsubsection{\texorpdfstring{update\_metrics()}{update\_metrics()}}
+{\footnotesize\ttfamily \label{namespacemain_a31d7f07e4298a8168857e894dfc3e41d} 
+main.\+update\+\_\+metrics (\begin{DoxyParamCaption}\item[{str}]{endpoint}{, }\item[{float}]{response\+\_\+time}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacemain_ad7584bc6183087e82bf9c04f563c6112}\index{main@{main}!validate\_request@{validate\_request}}
+\index{validate\_request@{validate\_request}!main@{main}}
+\doxysubsubsection{\texorpdfstring{validate\_request()}{validate\_request()}}
+{\footnotesize\ttfamily \label{namespacemain_ad7584bc6183087e82bf9c04f563c6112} 
+main.\+validate\+\_\+request (\begin{DoxyParamCaption}\item[{Request}]{request}{, }\item[{}]{call\+\_\+next}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-var-members}
+\Hypertarget{namespacemain_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacemain_a101e28b4e41edd15a65688c4482bfb7c}\index{main@{main}!ACCESS\_TOKEN\_EXPIRE\_MINUTES@{ACCESS\_TOKEN\_EXPIRE\_MINUTES}}
+\index{ACCESS\_TOKEN\_EXPIRE\_MINUTES@{ACCESS\_TOKEN\_EXPIRE\_MINUTES}!main@{main}}
+\doxysubsubsection{\texorpdfstring{ACCESS\_TOKEN\_EXPIRE\_MINUTES}{ACCESS\_TOKEN\_EXPIRE\_MINUTES}}
+{\footnotesize\ttfamily \label{namespacemain_a101e28b4e41edd15a65688c4482bfb7c} 
+int main.\+ACCESS\+\_\+\+TOKEN\+\_\+\+EXPIRE\+\_\+\+MINUTES = 30}
+
+\Hypertarget{namespacemain_aea83290aab45b2bfbdf0542c35ad4d90}\index{main@{main}!AI\_CONFIG@{AI\_CONFIG}}
+\index{AI\_CONFIG@{AI\_CONFIG}!main@{main}}
+\doxysubsubsection{\texorpdfstring{AI\_CONFIG}{AI\_CONFIG}}
+{\footnotesize\ttfamily \label{namespacemain_aea83290aab45b2bfbdf0542c35ad4d90} 
+dict main.\+AI\+\_\+\+CONFIG}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'max\_strategy\_weight'}:\ 0.3,\ \ \textcolor{comment}{\#\ Maximum\ weight\ any\ single\ strategy\ can\ have}}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'min\_strategy\_weight'}:\ 0.05,\ \ \textcolor{comment}{\#\ Minimum\ weight\ any\ strategy\ can\ have}}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{'max\_position\_size'}:\ 0.05,\ \ \ \ \textcolor{comment}{\#\ Maximum\ position\ size\ as\ \%\ of\ portfolio}}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{'require\_user\_confirmation'}:\ \textcolor{keyword}{False},\ \ \textcolor{comment}{\#\ AI\ makes\ decisions\ autonomously}}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{'log\_level'}:\ \textcolor{stringliteral}{'INFO'},\ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Detailed\ logging\ of\ AI\ activities}}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{'max\_consecutive\_losses'}:\ 5,\ \textcolor{comment}{\#\ Maximum\ consecutive\ losses\ before\ AI\ pause}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{stringliteral}{'max\_drawdown'}:\ 0.10,\ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Maximum\ allowed\ drawdown\ before\ AI\ pause}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{stringliteral}{'risk\_tolerance'}:\ 0.02,\ \ \ \ \ \ \textcolor{comment}{\#\ Maximum\ daily\ risk\ per\ trade}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{stringliteral}{'profit\_target'}:\ 1.5,\ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Target\ profit\ multiple}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{stringliteral}{'stop\_loss'}:\ 0.5,\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Stop\ loss\ multiple}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{stringliteral}{'max\_leverage'}:\ 10,\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Maximum\ leverage\ allowed}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{stringliteral}{'max\_trades'}:\ 50,\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Maximum\ number\ of\ concurrent\ trades}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{stringliteral}{'portfolio\_rebalance\_freq'}:\ \textcolor{stringliteral}{'1H'},\ \ \textcolor{comment}{\#\ Portfolio\ rebalancing\ frequency}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{stringliteral}{'market\_data\_window'}:\ \textcolor{stringliteral}{'24H'},\ \textcolor{comment}{\#\ Historical\ data\ window\ for\ analysis}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{stringliteral}{'risk\_management'}:\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'volatility\_adjustment'}:\ \textcolor{keyword}{True},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'position\_sizing'}:\ \textcolor{stringliteral}{'KellyCriterion'},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'diversification\_factor'}:\ 0.8}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacemain_aa51553296938c1af0c2c94846c47a91f}\index{main@{main}!ai\_safety\_monitor@{ai\_safety\_monitor}}
+\index{ai\_safety\_monitor@{ai\_safety\_monitor}!main@{main}}
+\doxysubsubsection{\texorpdfstring{ai\_safety\_monitor}{ai\_safety\_monitor}}
+{\footnotesize\ttfamily \label{namespacemain_aa51553296938c1af0c2c94846c47a91f} 
+dict main.\+ai\+\_\+safety\+\_\+monitor}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'consecutive\_losses'}:\ 0,}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'current\_drawdown'}:\ 0,}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{'last\_user\_confirmation'}:\ \textcolor{keywordtype}{None},}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{'active'}:\ \textcolor{keyword}{True},}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{'last\_decision'}:\ \textcolor{keywordtype}{None}}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacemain_ab3d37350025686d235c856080bd0fde5}\index{main@{main}!ALGORITHM@{ALGORITHM}}
+\index{ALGORITHM@{ALGORITHM}!main@{main}}
+\doxysubsubsection{\texorpdfstring{ALGORITHM}{ALGORITHM}}
+{\footnotesize\ttfamily \label{namespacemain_ab3d37350025686d235c856080bd0fde5} 
+str main.\+ALGORITHM = "{}HS256"{}}
+
+\Hypertarget{namespacemain_a723efd63c798243e87a130a80fcdafc0}\index{main@{main}!allow\_credentials@{allow\_credentials}}
+\index{allow\_credentials@{allow\_credentials}!main@{main}}
+\doxysubsubsection{\texorpdfstring{allow\_credentials}{allow\_credentials}}
+{\footnotesize\ttfamily \label{namespacemain_a723efd63c798243e87a130a80fcdafc0} 
+main.\+allow\+\_\+credentials}
+
+\Hypertarget{namespacemain_ab58bda9b3875379c76aa7d3bd977b5bd}\index{main@{main}!allow\_headers@{allow\_headers}}
+\index{allow\_headers@{allow\_headers}!main@{main}}
+\doxysubsubsection{\texorpdfstring{allow\_headers}{allow\_headers}}
+{\footnotesize\ttfamily \label{namespacemain_ab58bda9b3875379c76aa7d3bd977b5bd} 
+main.\+allow\+\_\+headers}
+
+\Hypertarget{namespacemain_a1b7923d71410345d3dbff8017b7e6f0d}\index{main@{main}!allow\_methods@{allow\_methods}}
+\index{allow\_methods@{allow\_methods}!main@{main}}
+\doxysubsubsection{\texorpdfstring{allow\_methods}{allow\_methods}}
+{\footnotesize\ttfamily \label{namespacemain_a1b7923d71410345d3dbff8017b7e6f0d} 
+main.\+allow\+\_\+methods}
+
+\Hypertarget{namespacemain_a97497898ce7734473f7102a7f54c98dd}\index{main@{main}!allow\_origin\_regex@{allow\_origin\_regex}}
+\index{allow\_origin\_regex@{allow\_origin\_regex}!main@{main}}
+\doxysubsubsection{\texorpdfstring{allow\_origin\_regex}{allow\_origin\_regex}}
+{\footnotesize\ttfamily \label{namespacemain_a97497898ce7734473f7102a7f54c98dd} 
+main.\+allow\+\_\+origin\+\_\+regex}
+
+\Hypertarget{namespacemain_ab277227e15a80c8a674b8540cc01f33f}\index{main@{main}!allow\_origins@{allow\_origins}}
+\index{allow\_origins@{allow\_origins}!main@{main}}
+\doxysubsubsection{\texorpdfstring{allow\_origins}{allow\_origins}}
+{\footnotesize\ttfamily \label{namespacemain_ab277227e15a80c8a674b8540cc01f33f} 
+main.\+allow\+\_\+origins}
+
+\Hypertarget{namespacemain_af71c6bb704c1f23a61fbcd659b7dbed9}\index{main@{main}!allowed\_hosts@{allowed\_hosts}}
+\index{allowed\_hosts@{allowed\_hosts}!main@{main}}
+\doxysubsubsection{\texorpdfstring{allowed\_hosts}{allowed\_hosts}}
+{\footnotesize\ttfamily \label{namespacemain_af71c6bb704c1f23a61fbcd659b7dbed9} 
+main.\+allowed\+\_\+hosts}
+
+\Hypertarget{namespacemain_a5fa94f0581009434c7a63791944d6ff4}\index{main@{main}!app@{app}}
+\index{app@{app}!main@{main}}
+\doxysubsubsection{\texorpdfstring{app}{app}}
+{\footnotesize\ttfamily \label{namespacemain_a5fa94f0581009434c7a63791944d6ff4} 
+main.\+app}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ FastAPI(}
+\DoxyCodeLine{00002\ \ \ \ \ title=\textcolor{stringliteral}{"{}Quantum\ Trader\ AI\ API"{}},}
+\DoxyCodeLine{00003\ \ \ \ \ description=\textcolor{stringliteral}{"{}Advanced\ trading\ platform\ with\ AI-\/powered\ strategies"{}},}
+\DoxyCodeLine{00004\ \ \ \ \ version=\textcolor{stringliteral}{"{}1.0.0"{}},}
+\DoxyCodeLine{00005\ \ \ \ \ docs\_url=\textcolor{stringliteral}{"{}/docs"{}},}
+\DoxyCodeLine{00006\ \ \ \ \ redoc\_url=\textcolor{stringliteral}{"{}/redoc"{}},}
+\DoxyCodeLine{00007\ \ \ \ \ openapi\_url=\textcolor{stringliteral}{"{}/api/openapi.json"{}},}
+\DoxyCodeLine{00008\ \ \ \ \ default\_response\_class=JSONResponse}
+\DoxyCodeLine{00009\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacemain_af40c255af29cee6c284d9225ea884015}\index{main@{main}!backend@{backend}}
+\index{backend@{backend}!main@{main}}
+\doxysubsubsection{\texorpdfstring{backend}{backend}}
+{\footnotesize\ttfamily \label{namespacemain_af40c255af29cee6c284d9225ea884015} 
+main.\+backend}
+
+\Hypertarget{namespacemain_aa6e08b45f90b150c94f994ddc5a9f0ee}\index{main@{main}!background\_tasks@{background\_tasks}}
+\index{background\_tasks@{background\_tasks}!main@{main}}
+\doxysubsubsection{\texorpdfstring{background\_tasks}{background\_tasks}}
+{\footnotesize\ttfamily \label{namespacemain_aa6e08b45f90b150c94f994ddc5a9f0ee} 
+main.\+background\+\_\+tasks = set()}
+
+\Hypertarget{namespacemain_a87c59ca41397e993be09fd9e50087113}\index{main@{main}!Base@{Base}}
+\index{Base@{Base}!main@{main}}
+\doxysubsubsection{\texorpdfstring{Base}{Base}}
+{\footnotesize\ttfamily \label{namespacemain_a87c59ca41397e993be09fd9e50087113} 
+main.\+Base = declarative\+\_\+base()}
+
+\Hypertarget{namespacemain_a68a5f6361d452743cdcaeacb8a214ea4}\index{main@{main}!before\_send@{before\_send}}
+\index{before\_send@{before\_send}!main@{main}}
+\doxysubsubsection{\texorpdfstring{before\_send}{before\_send}}
+{\footnotesize\ttfamily \label{namespacemain_a68a5f6361d452743cdcaeacb8a214ea4} 
+main.\+before\+\_\+send}
+
+\Hypertarget{namespacemain_a442fc71b3435270d1521d8a79a849c0d}\index{main@{main}!cache@{cache}}
+\index{cache@{cache}!main@{main}}
+\doxysubsubsection{\texorpdfstring{cache}{cache}}
+{\footnotesize\ttfamily \label{namespacemain_a442fc71b3435270d1521d8a79a849c0d} 
+main.\+cache}
+
+\Hypertarget{namespacemain_a3f39693b71cda58d67c6b3f5a408b5d7}\index{main@{main}!cache\_bypass\_func@{cache\_bypass\_func}}
+\index{cache\_bypass\_func@{cache\_bypass\_func}!main@{main}}
+\doxysubsubsection{\texorpdfstring{cache\_bypass\_func}{cache\_bypass\_func}}
+{\footnotesize\ttfamily \label{namespacemain_a3f39693b71cda58d67c6b3f5a408b5d7} 
+main.\+cache\+\_\+bypass\+\_\+func}
+
+\Hypertarget{namespacemain_ab3a50b860c175f7d0eafa940f272fca4}\index{main@{main}!CACHE\_CONFIG@{CACHE\_CONFIG}}
+\index{CACHE\_CONFIG@{CACHE\_CONFIG}!main@{main}}
+\doxysubsubsection{\texorpdfstring{CACHE\_CONFIG}{CACHE\_CONFIG}}
+{\footnotesize\ttfamily \label{namespacemain_ab3a50b860c175f7d0eafa940f272fca4} 
+dict main.\+CACHE\+\_\+\+CONFIG}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'default'}:\ \{}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'cache'}:\ \textcolor{stringliteral}{'aiocache.RedisCache'},}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'endpoint'}:\ \textcolor{stringliteral}{'localhost'},}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'port'}:\ 6379,}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'ttl'}:\ 300,}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'timeout'}:\ 1}
+\DoxyCodeLine{00008\ \ \ \ \ \},}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{stringliteral}{'market\_data'}:\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'cache'}:\ \textcolor{stringliteral}{'aiocache.RedisCache'},}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'endpoint'}:\ \textcolor{stringliteral}{'localhost'},}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'port'}:\ 6379,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'ttl'}:\ 60,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'timeout'}:\ 0.5}
+\DoxyCodeLine{00015\ \ \ \ \ \},}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{stringliteral}{'performance'}:\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'cache'}:\ \textcolor{stringliteral}{'aiocache.RedisCache'},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'endpoint'}:\ \textcolor{stringliteral}{'localhost'},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'port'}:\ 6379,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'ttl'}:\ 3600,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'timeout'}:\ 1}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespacemain_a04c3e263365fc3c3e8d63e0b6aef0c0f}\index{main@{main}!cache\_key\_func@{cache\_key\_func}}
+\index{cache\_key\_func@{cache\_key\_func}!main@{main}}
+\doxysubsubsection{\texorpdfstring{cache\_key\_func}{cache\_key\_func}}
+{\footnotesize\ttfamily \label{namespacemain_a04c3e263365fc3c3e8d63e0b6aef0c0f} 
+main.\+cache\+\_\+key\+\_\+func}
+
+\Hypertarget{namespacemain_a3b8b11e81317d0e97984ac154fe9603e}\index{main@{main}!cache\_manager@{cache\_manager}}
+\index{cache\_manager@{cache\_manager}!main@{main}}
+\doxysubsubsection{\texorpdfstring{cache\_manager}{cache\_manager}}
+{\footnotesize\ttfamily \label{namespacemain_a3b8b11e81317d0e97984ac154fe9603e} 
+main.\+cache\+\_\+manager = \mbox{\hyperlink{classmain_1_1_cache_manager}{Cache\+Manager}}()}
+
+\Hypertarget{namespacemain_a5d720be1eec45e22ed147eb7a046cb13}\index{main@{main}!CACHE\_TTL@{CACHE\_TTL}}
+\index{CACHE\_TTL@{CACHE\_TTL}!main@{main}}
+\doxysubsubsection{\texorpdfstring{CACHE\_TTL}{CACHE\_TTL}}
+{\footnotesize\ttfamily \label{namespacemain_a5d720be1eec45e22ed147eb7a046cb13} 
+int main.\+CACHE\+\_\+\+TTL = 300}
+
+\Hypertarget{namespacemain_a9b043e61bcb37518dcb46993cf349d09}\index{main@{main}!cache\_ttl@{cache\_ttl}}
+\index{cache\_ttl@{cache\_ttl}!main@{main}}
+\doxysubsubsection{\texorpdfstring{cache\_ttl}{cache\_ttl}}
+{\footnotesize\ttfamily \label{namespacemain_a9b043e61bcb37518dcb46993cf349d09} 
+main.\+cache\+\_\+ttl}
+
+\Hypertarget{namespacemain_a86385eee90884bb5f146b09a58fac36b}\index{main@{main}!circuit\_open@{circuit\_open}}
+\index{circuit\_open@{circuit\_open}!main@{main}}
+\doxysubsubsection{\texorpdfstring{circuit\_open}{circuit\_open}}
+{\footnotesize\ttfamily \label{namespacemain_a86385eee90884bb5f146b09a58fac36b} 
+bool main.\+circuit\+\_\+open = False}
+
+\Hypertarget{namespacemain_aa6b0f66504a4e957c6b5d77bb86dcc97}\index{main@{main}!CIRCUIT\_TIMEOUT@{CIRCUIT\_TIMEOUT}}
+\index{CIRCUIT\_TIMEOUT@{CIRCUIT\_TIMEOUT}!main@{main}}
+\doxysubsubsection{\texorpdfstring{CIRCUIT\_TIMEOUT}{CIRCUIT\_TIMEOUT}}
+{\footnotesize\ttfamily \label{namespacemain_aa6b0f66504a4e957c6b5d77bb86dcc97} 
+int main.\+CIRCUIT\+\_\+\+TIMEOUT = 30000}
+
+\Hypertarget{namespacemain_a98ec5ea88e385bb82163a87a4bd3ef13}\index{main@{main}!client\_side@{client\_side}}
+\index{client\_side@{client\_side}!main@{main}}
+\doxysubsubsection{\texorpdfstring{client\_side}{client\_side}}
+{\footnotesize\ttfamily \label{namespacemain_a98ec5ea88e385bb82163a87a4bd3ef13} 
+main.\+client\+\_\+side}
+
+\Hypertarget{namespacemain_a281b7c62b4df8747551ed92fc3e87e3c}\index{main@{main}!compresslevel@{compresslevel}}
+\index{compresslevel@{compresslevel}!main@{main}}
+\doxysubsubsection{\texorpdfstring{compresslevel}{compresslevel}}
+{\footnotesize\ttfamily \label{namespacemain_a281b7c62b4df8747551ed92fc3e87e3c} 
+main.\+compresslevel}
+
+\Hypertarget{namespacemain_a39d891adc8681a3e4aa9bbd0e2374897}\index{main@{main}!cookie\_domain@{cookie\_domain}}
+\index{cookie\_domain@{cookie\_domain}!main@{main}}
+\doxysubsubsection{\texorpdfstring{cookie\_domain}{cookie\_domain}}
+{\footnotesize\ttfamily \label{namespacemain_a39d891adc8681a3e4aa9bbd0e2374897} 
+main.\+cookie\+\_\+domain}
+
+\Hypertarget{namespacemain_aafe365dd47478c3ae610ff76275b6a4e}\index{main@{main}!DATABASE\_URL@{DATABASE\_URL}}
+\index{DATABASE\_URL@{DATABASE\_URL}!main@{main}}
+\doxysubsubsection{\texorpdfstring{DATABASE\_URL}{DATABASE\_URL}}
+{\footnotesize\ttfamily \label{namespacemain_aafe365dd47478c3ae610ff76275b6a4e} 
+str main.\+DATABASE\+\_\+\+URL = "{}postgresql+asyncpg\+://user\+:password@localhost/quantum\+\_\+trader"{}}
+
+\Hypertarget{namespacemain_ae8177e2ad0b47dc8a8fa5289282c6407}\index{main@{main}!datefmt@{datefmt}}
+\index{datefmt@{datefmt}!main@{main}}
+\doxysubsubsection{\texorpdfstring{datefmt}{datefmt}}
+{\footnotesize\ttfamily \label{namespacemain_ae8177e2ad0b47dc8a8fa5289282c6407} 
+main.\+datefmt}
+
+\Hypertarget{namespacemain_adb48cdabec07a8237d8fe01f21d66673}\index{main@{main}!dsn@{dsn}}
+\index{dsn@{dsn}!main@{main}}
+\doxysubsubsection{\texorpdfstring{dsn}{dsn}}
+{\footnotesize\ttfamily \label{namespacemain_adb48cdabec07a8237d8fe01f21d66673} 
+main.\+dsn}
+
+\Hypertarget{namespacemain_abbd462ee949c43b59de652c35814ad40}\index{main@{main}!engine@{engine}}
+\index{engine@{engine}!main@{main}}
+\doxysubsubsection{\texorpdfstring{engine}{engine}}
+{\footnotesize\ttfamily \label{namespacemain_abbd462ee949c43b59de652c35814ad40} 
+main.\+engine}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ create\_async\_engine(}
+\DoxyCodeLine{00002\ \ \ \ \ DATABASE\_URL,}
+\DoxyCodeLine{00003\ \ \ \ \ pool\_pre\_ping=\textcolor{keyword}{True},}
+\DoxyCodeLine{00004\ \ \ \ \ pool\_size=10,}
+\DoxyCodeLine{00005\ \ \ \ \ max\_overflow=20,}
+\DoxyCodeLine{00006\ \ \ \ \ pool\_timeout=30,}
+\DoxyCodeLine{00007\ \ \ \ \ pool\_recycle=3600,}
+\DoxyCodeLine{00008\ \ \ \ \ echo=\textcolor{keyword}{False}}
+\DoxyCodeLine{00009\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacemain_a98a9e81c52949020b9c8f2595ee4e1fd}\index{main@{main}!environment@{environment}}
+\index{environment@{environment}!main@{main}}
+\doxysubsubsection{\texorpdfstring{environment}{environment}}
+{\footnotesize\ttfamily \label{namespacemain_a98a9e81c52949020b9c8f2595ee4e1fd} 
+main.\+environment}
+
+\Hypertarget{namespacemain_a284b7d784e16bf1c0b6c828006fed75b}\index{main@{main}!except\_hosts@{except\_hosts}}
+\index{except\_hosts@{except\_hosts}!main@{main}}
+\doxysubsubsection{\texorpdfstring{except\_hosts}{except\_hosts}}
+{\footnotesize\ttfamily \label{namespacemain_a284b7d784e16bf1c0b6c828006fed75b} 
+main.\+except\+\_\+hosts}
+
+\Hypertarget{namespacemain_a9451a6826b7a5f469689aaab001b5a56}\index{main@{main}!expose\_headers@{expose\_headers}}
+\index{expose\_headers@{expose\_headers}!main@{main}}
+\doxysubsubsection{\texorpdfstring{expose\_headers}{expose\_headers}}
+{\footnotesize\ttfamily \label{namespacemain_a9451a6826b7a5f469689aaab001b5a56} 
+main.\+expose\+\_\+headers}
+
+\Hypertarget{namespacemain_a3acdb96693bcc0db9a99e92c69c81646}\index{main@{main}!failure\_threshold@{failure\_threshold}}
+\index{failure\_threshold@{failure\_threshold}!main@{main}}
+\doxysubsubsection{\texorpdfstring{failure\_threshold}{failure\_threshold}}
+{\footnotesize\ttfamily \label{namespacemain_a3acdb96693bcc0db9a99e92c69c81646} 
+main.\+failure\+\_\+threshold}
+
+\Hypertarget{namespacemain_a758a4b3c52742d78aa30e49d058acea4}\index{main@{main}!format@{format}}
+\index{format@{format}!main@{main}}
+\doxysubsubsection{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily \label{namespacemain_a758a4b3c52742d78aa30e49d058acea4} 
+main.\+format}
+
+\Hypertarget{namespacemain_abc8fd2c6474f154e4b0bc05a0a64aa82}\index{main@{main}!handlers@{handlers}}
+\index{handlers@{handlers}!main@{main}}
+\doxysubsubsection{\texorpdfstring{handlers}{handlers}}
+{\footnotesize\ttfamily \label{namespacemain_abc8fd2c6474f154e4b0bc05a0a64aa82} 
+main.\+handlers}
+
+\Hypertarget{namespacemain_ac084c4c168e58834232cb61675ad76a0}\index{main@{main}!headers@{headers}}
+\index{headers@{headers}!main@{main}}
+\doxysubsubsection{\texorpdfstring{headers}{headers}}
+{\footnotesize\ttfamily \label{namespacemain_ac084c4c168e58834232cb61675ad76a0} 
+main.\+headers}
+
+\Hypertarget{namespacemain_a8a697a46cf8b6c4a7ba3dc145543f8dd}\index{main@{main}!https\_only@{https\_only}}
+\index{https\_only@{https\_only}!main@{main}}
+\doxysubsubsection{\texorpdfstring{https\_only}{https\_only}}
+{\footnotesize\ttfamily \label{namespacemain_a8a697a46cf8b6c4a7ba3dc145543f8dd} 
+main.\+https\+\_\+only}
+
+\Hypertarget{namespacemain_af895c32617455ec84d6a30117c14c5a3}\index{main@{main}!include\_body@{include\_body}}
+\index{include\_body@{include\_body}!main@{main}}
+\doxysubsubsection{\texorpdfstring{include\_body}{include\_body}}
+{\footnotesize\ttfamily \label{namespacemain_af895c32617455ec84d6a30117c14c5a3} 
+main.\+include\+\_\+body}
+
+\Hypertarget{namespacemain_a83cf5491028bfe1172aabab032da4623}\index{main@{main}!include\_headers@{include\_headers}}
+\index{include\_headers@{include\_headers}!main@{main}}
+\doxysubsubsection{\texorpdfstring{include\_headers}{include\_headers}}
+{\footnotesize\ttfamily \label{namespacemain_a83cf5491028bfe1172aabab032da4623} 
+main.\+include\+\_\+headers}
+
+\Hypertarget{namespacemain_afa3ae522c427ee3f6fd4bdf43006b065}\index{main@{main}!integrations@{integrations}}
+\index{integrations@{integrations}!main@{main}}
+\doxysubsubsection{\texorpdfstring{integrations}{integrations}}
+{\footnotesize\ttfamily \label{namespacemain_afa3ae522c427ee3f6fd4bdf43006b065} 
+main.\+integrations}
+
+\Hypertarget{namespacemain_aab7b909058f2501860a3f24e1dd241dd}\index{main@{main}!jaeger\_exporter@{jaeger\_exporter}}
+\index{jaeger\_exporter@{jaeger\_exporter}!main@{main}}
+\doxysubsubsection{\texorpdfstring{jaeger\_exporter}{jaeger\_exporter}}
+{\footnotesize\ttfamily \label{namespacemain_aab7b909058f2501860a3f24e1dd241dd} 
+main.\+jaeger\+\_\+exporter}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ JaegerExporter(}
+\DoxyCodeLine{00002\ \ \ \ \ agent\_host\_name=\textcolor{stringliteral}{'localhost'},}
+\DoxyCodeLine{00003\ \ \ \ \ agent\_port=6831,}
+\DoxyCodeLine{00004\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacemain_a5a6ec387441960b0e275c21d3edb0b73}\index{main@{main}!key\_func@{key\_func}}
+\index{key\_func@{key\_func}!main@{main}}
+\doxysubsubsection{\texorpdfstring{key\_func}{key\_func}}
+{\footnotesize\ttfamily \label{namespacemain_a5a6ec387441960b0e275c21d3edb0b73} 
+main.\+key\+\_\+func}
+
+\Hypertarget{namespacemain_ad5824bf1c5d90e788ba773658857d350}\index{main@{main}!last\_cache\_update@{last\_cache\_update}}
+\index{last\_cache\_update@{last\_cache\_update}!main@{main}}
+\doxysubsubsection{\texorpdfstring{last\_cache\_update}{last\_cache\_update}}
+{\footnotesize\ttfamily \label{namespacemain_ad5824bf1c5d90e788ba773658857d350} 
+main.\+last\+\_\+cache\+\_\+update = datetime.\+min}
+
+\Hypertarget{namespacemain_a189f5aa9df825e0d4bb802306c2c5478}\index{main@{main}!last\_failure\_time@{last\_failure\_time}}
+\index{last\_failure\_time@{last\_failure\_time}!main@{main}}
+\doxysubsubsection{\texorpdfstring{last\_failure\_time}{last\_failure\_time}}
+{\footnotesize\ttfamily \label{namespacemain_a189f5aa9df825e0d4bb802306c2c5478} 
+int main.\+last\+\_\+failure\+\_\+time = 0}
+
+\Hypertarget{namespacemain_ad39dcd94f0ffc845ab416c0783c20d25}\index{main@{main}!level@{level}}
+\index{level@{level}!main@{main}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily \label{namespacemain_ad39dcd94f0ffc845ab416c0783c20d25} 
+main.\+level}
+
+\Hypertarget{namespacemain_af4d00a1ed9c85528c5cdc45f0a73c801}\index{main@{main}!log\_format@{log\_format}}
+\index{log\_format@{log\_format}!main@{main}}
+\doxysubsubsection{\texorpdfstring{log\_format}{log\_format}}
+{\footnotesize\ttfamily \label{namespacemain_af4d00a1ed9c85528c5cdc45f0a73c801} 
+main.\+log\+\_\+format}
+
+\Hypertarget{namespacemain_a7c448fa533f5ed7dc4a0d2c1eeada635}\index{main@{main}!log\_level@{log\_level}}
+\index{log\_level@{log\_level}!main@{main}}
+\doxysubsubsection{\texorpdfstring{log\_level}{log\_level}}
+{\footnotesize\ttfamily \label{namespacemain_a7c448fa533f5ed7dc4a0d2c1eeada635} 
+main.\+log\+\_\+level}
+
+\Hypertarget{namespacemain_ae1d4a0295c904f672a1f044188274bf1}\index{main@{main}!logger@{logger}}
+\index{logger@{logger}!main@{main}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily \label{namespacemain_ae1d4a0295c904f672a1f044188274bf1} 
+main.\+logger = logging.\+get\+Logger("{}quantum\+\_\+trader"{})}
+
+\Hypertarget{namespacemain_a0c77e91743989d481a013b9deb26aa70}\index{main@{main}!market\_data\_cache@{market\_data\_cache}}
+\index{market\_data\_cache@{market\_data\_cache}!main@{main}}
+\doxysubsubsection{\texorpdfstring{market\_data\_cache}{market\_data\_cache}}
+{\footnotesize\ttfamily \label{namespacemain_a0c77e91743989d481a013b9deb26aa70} 
+dict main.\+market\+\_\+data\+\_\+cache = \{\}}
+
+\Hypertarget{namespacemain_a74fcd44c170a5c29c2dcedab98c0a22e}\index{main@{main}!max\_age@{max\_age}}
+\index{max\_age@{max\_age}!main@{main}}
+\doxysubsubsection{\texorpdfstring{max\_age}{max\_age}}
+{\footnotesize\ttfamily \label{namespacemain_a74fcd44c170a5c29c2dcedab98c0a22e} 
+main.\+max\+\_\+age}
+
+\Hypertarget{namespacemain_aaf1f35f0f5cc66d5427fbf3b15aa8f19}\index{main@{main}!max\_requests@{max\_requests}}
+\index{max\_requests@{max\_requests}!main@{main}}
+\doxysubsubsection{\texorpdfstring{max\_requests}{max\_requests}}
+{\footnotesize\ttfamily \label{namespacemain_aaf1f35f0f5cc66d5427fbf3b15aa8f19} 
+main.\+max\+\_\+requests}
+
+\Hypertarget{namespacemain_a9cf31f5a48c7c7de22ecfcfebe941f32}\index{main@{main}!memcached\_client@{memcached\_client}}
+\index{memcached\_client@{memcached\_client}!main@{main}}
+\doxysubsubsection{\texorpdfstring{memcached\_client}{memcached\_client}}
+{\footnotesize\ttfamily \label{namespacemain_a9cf31f5a48c7c7de22ecfcfebe941f32} 
+main.\+memcached\+\_\+client = None}
+
+\Hypertarget{namespacemain_a125de59989f8d39e288981228ea8144a}\index{main@{main}!metrics\_store@{metrics\_store}}
+\index{metrics\_store@{metrics\_store}!main@{main}}
+\doxysubsubsection{\texorpdfstring{metrics\_store}{metrics\_store}}
+{\footnotesize\ttfamily \label{namespacemain_a125de59989f8d39e288981228ea8144a} 
+main.\+metrics\+\_\+store}
+
+\Hypertarget{namespacemain_afe3fef6c001e2d833be9ac987586a762}\index{main@{main}!minimum\_size@{minimum\_size}}
+\index{minimum\_size@{minimum\_size}!main@{main}}
+\doxysubsubsection{\texorpdfstring{minimum\_size}{minimum\_size}}
+{\footnotesize\ttfamily \label{namespacemain_afe3fef6c001e2d833be9ac987586a762} 
+main.\+minimum\+\_\+size}
+
+\Hypertarget{namespacemain_a762e14bd918c8055a811a4d0741dba30}\index{main@{main}!on\_circuit\_open@{on\_circuit\_open}}
+\index{on\_circuit\_open@{on\_circuit\_open}!main@{main}}
+\doxysubsubsection{\texorpdfstring{on\_circuit\_open}{on\_circuit\_open}}
+{\footnotesize\ttfamily \label{namespacemain_a762e14bd918c8055a811a4d0741dba30} 
+main.\+on\+\_\+circuit\+\_\+open}
+
+\Hypertarget{namespacemain_a0cd90a3fba285deb01905f29468e3229}\index{main@{main}!on\_error@{on\_error}}
+\index{on\_error@{on\_error}!main@{main}}
+\doxysubsubsection{\texorpdfstring{on\_error}{on\_error}}
+{\footnotesize\ttfamily \label{namespacemain_a0cd90a3fba285deb01905f29468e3229} 
+main.\+on\+\_\+error}
+
+\Hypertarget{namespacemain_a2d36f3b33ec10ccef4d8605227b790d3}\index{main@{main}!on\_limit\_exceeded@{on\_limit\_exceeded}}
+\index{on\_limit\_exceeded@{on\_limit\_exceeded}!main@{main}}
+\doxysubsubsection{\texorpdfstring{on\_limit\_exceeded}{on\_limit\_exceeded}}
+{\footnotesize\ttfamily \label{namespacemain_a2d36f3b33ec10ccef4d8605227b790d3} 
+main.\+on\+\_\+limit\+\_\+exceeded}
+
+\Hypertarget{namespacemain_ad0348948ebe3c63f466833759bf6542a}\index{main@{main}!on\_slow\_request@{on\_slow\_request}}
+\index{on\_slow\_request@{on\_slow\_request}!main@{main}}
+\doxysubsubsection{\texorpdfstring{on\_slow\_request}{on\_slow\_request}}
+{\footnotesize\ttfamily \label{namespacemain_ad0348948ebe3c63f466833759bf6542a} 
+main.\+on\+\_\+slow\+\_\+request}
+
+\Hypertarget{namespacemain_ad38a3eb6ec65f2989ae1db98e2412834}\index{main@{main}!pwd\_context@{pwd\_context}}
+\index{pwd\_context@{pwd\_context}!main@{main}}
+\doxysubsubsection{\texorpdfstring{pwd\_context}{pwd\_context}}
+{\footnotesize\ttfamily \label{namespacemain_ad38a3eb6ec65f2989ae1db98e2412834} 
+main.\+pwd\+\_\+context = Crypt\+Context(schemes=\mbox{[}"{}bcrypt"{}\mbox{]}, deprecated="{}auto"{})}
+
+\Hypertarget{namespacemain_ad0aeb957c34d3c8ce204f847e756bda0}\index{main@{main}!rate\_limit\_cache@{rate\_limit\_cache}}
+\index{rate\_limit\_cache@{rate\_limit\_cache}!main@{main}}
+\doxysubsubsection{\texorpdfstring{rate\_limit\_cache}{rate\_limit\_cache}}
+{\footnotesize\ttfamily \label{namespacemain_ad0aeb957c34d3c8ce204f847e756bda0} 
+main.\+rate\+\_\+limit\+\_\+cache = TTLCache(maxsize=1000, ttl=\mbox{\hyperlink{namespacemain_a0c2dcf6b3e1757f0c5902d7d6f89e856}{RATE\+\_\+\+LIMIT\+\_\+\+WINDOW}})}
+
+\Hypertarget{namespacemain_a3637902075f25f6c23faeb92aed2e6de}\index{main@{main}!RATE\_LIMIT\_REQUESTS@{RATE\_LIMIT\_REQUESTS}}
+\index{RATE\_LIMIT\_REQUESTS@{RATE\_LIMIT\_REQUESTS}!main@{main}}
+\doxysubsubsection{\texorpdfstring{RATE\_LIMIT\_REQUESTS}{RATE\_LIMIT\_REQUESTS}}
+{\footnotesize\ttfamily \label{namespacemain_a3637902075f25f6c23faeb92aed2e6de} 
+int main.\+RATE\+\_\+\+LIMIT\+\_\+\+REQUESTS = 100}
+
+\Hypertarget{namespacemain_a0c2dcf6b3e1757f0c5902d7d6f89e856}\index{main@{main}!RATE\_LIMIT\_WINDOW@{RATE\_LIMIT\_WINDOW}}
+\index{RATE\_LIMIT\_WINDOW@{RATE\_LIMIT\_WINDOW}!main@{main}}
+\doxysubsubsection{\texorpdfstring{RATE\_LIMIT\_WINDOW}{RATE\_LIMIT\_WINDOW}}
+{\footnotesize\ttfamily \label{namespacemain_a0c2dcf6b3e1757f0c5902d7d6f89e856} 
+int main.\+RATE\+\_\+\+LIMIT\+\_\+\+WINDOW = 60}
+
+\Hypertarget{namespacemain_ab7c77aad3c81568e608a7c212fe72538}\index{main@{main}!redis\_pool@{redis\_pool}}
+\index{redis\_pool@{redis\_pool}!main@{main}}
+\doxysubsubsection{\texorpdfstring{redis\_pool}{redis\_pool}}
+{\footnotesize\ttfamily \label{namespacemain_ab7c77aad3c81568e608a7c212fe72538} 
+main.\+redis\+\_\+pool = None}
+
+\Hypertarget{namespacemain_a17c1244fbfed3db17e0451f2869563a2}\index{main@{main}!reset\_timeout@{reset\_timeout}}
+\index{reset\_timeout@{reset\_timeout}!main@{main}}
+\doxysubsubsection{\texorpdfstring{reset\_timeout}{reset\_timeout}}
+{\footnotesize\ttfamily \label{namespacemain_a17c1244fbfed3db17e0451f2869563a2} 
+main.\+reset\+\_\+timeout}
+
+\Hypertarget{namespacemain_a8a59e5a88f4f5ea50769529bf9557197}\index{main@{main}!same\_site@{same\_site}}
+\index{same\_site@{same\_site}!main@{main}}
+\doxysubsubsection{\texorpdfstring{same\_site}{same\_site}}
+{\footnotesize\ttfamily \label{namespacemain_a8a59e5a88f4f5ea50769529bf9557197} 
+main.\+same\+\_\+site}
+
+\Hypertarget{namespacemain_acb79c4b50749db070c04695ae0d2268c}\index{main@{main}!SECRET\_KEY@{SECRET\_KEY}}
+\index{SECRET\_KEY@{SECRET\_KEY}!main@{main}}
+\doxysubsubsection{\texorpdfstring{SECRET\_KEY}{SECRET\_KEY}}
+{\footnotesize\ttfamily \label{namespacemain_acb79c4b50749db070c04695ae0d2268c} 
+main.\+SECRET\+\_\+\+KEY = secrets.\+token\+\_\+hex(32)}
+
+\Hypertarget{namespacemain_a6f3bdfce14905aae9f2bb69b88a50eec}\index{main@{main}!secret\_key@{secret\_key}}
+\index{secret\_key@{secret\_key}!main@{main}}
+\doxysubsubsection{\texorpdfstring{secret\_key}{secret\_key}}
+{\footnotesize\ttfamily \label{namespacemain_a6f3bdfce14905aae9f2bb69b88a50eec} 
+main.\+secret\+\_\+key}
+
+\Hypertarget{namespacemain_a4457b12e6d50cf849e9f3c29a73f4b8d}\index{main@{main}!server\_side@{server\_side}}
+\index{server\_side@{server\_side}!main@{main}}
+\doxysubsubsection{\texorpdfstring{server\_side}{server\_side}}
+{\footnotesize\ttfamily \label{namespacemain_a4457b12e6d50cf849e9f3c29a73f4b8d} 
+main.\+server\+\_\+side}
+
+\Hypertarget{namespacemain_ac4678309a30e82ff684f8332b39d89df}\index{main@{main}!session\_cookie@{session\_cookie}}
+\index{session\_cookie@{session\_cookie}!main@{main}}
+\doxysubsubsection{\texorpdfstring{session\_cookie}{session\_cookie}}
+{\footnotesize\ttfamily \label{namespacemain_ac4678309a30e82ff684f8332b39d89df} 
+main.\+session\+\_\+cookie}
+
+\Hypertarget{namespacemain_a75a3328cd96d3afacbd37f66a20adc3b}\index{main@{main}!SessionLocal@{SessionLocal}}
+\index{SessionLocal@{SessionLocal}!main@{main}}
+\doxysubsubsection{\texorpdfstring{SessionLocal}{SessionLocal}}
+{\footnotesize\ttfamily \label{namespacemain_a75a3328cd96d3afacbd37f66a20adc3b} 
+main.\+Session\+Local}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ sessionmaker(}
+\DoxyCodeLine{00002\ \ \ \ \ autocommit=\textcolor{keyword}{False},}
+\DoxyCodeLine{00003\ \ \ \ \ autoflush=\textcolor{keyword}{False},}
+\DoxyCodeLine{00004\ \ \ \ \ bind=engine,}
+\DoxyCodeLine{00005\ \ \ \ \ class\_=AsyncSession}
+\DoxyCodeLine{00006\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacemain_a660585d25b434eda3ebd52665d332ead}\index{main@{main}!span\_id\_header@{span\_id\_header}}
+\index{span\_id\_header@{span\_id\_header}!main@{main}}
+\doxysubsubsection{\texorpdfstring{span\_id\_header}{span\_id\_header}}
+{\footnotesize\ttfamily \label{namespacemain_a660585d25b434eda3ebd52665d332ead} 
+main.\+span\+\_\+id\+\_\+header}
+
+\Hypertarget{namespacemain_a968b4ea6f202e1eddb778322ec296301}\index{main@{main}!span\_name\_func@{span\_name\_func}}
+\index{span\_name\_func@{span\_name\_func}!main@{main}}
+\doxysubsubsection{\texorpdfstring{span\_name\_func}{span\_name\_func}}
+{\footnotesize\ttfamily \label{namespacemain_a968b4ea6f202e1eddb778322ec296301} 
+main.\+span\+\_\+name\+\_\+func}
+
+\Hypertarget{namespacemain_ac057fc2af61b1ccb7e1d02095e27bbd8}\index{main@{main}!span\_processor@{span\_processor}}
+\index{span\_processor@{span\_processor}!main@{main}}
+\doxysubsubsection{\texorpdfstring{span\_processor}{span\_processor}}
+{\footnotesize\ttfamily \label{namespacemain_ac057fc2af61b1ccb7e1d02095e27bbd8} 
+main.\+span\+\_\+processor = Batch\+Span\+Processor(\mbox{\hyperlink{namespacemain_aab7b909058f2501860a3f24e1dd241dd}{jaeger\+\_\+exporter}})}
+
+\Hypertarget{namespacemain_acedb228f868dbad4b47eaafc28995d30}\index{main@{main}!ssl\_host@{ssl\_host}}
+\index{ssl\_host@{ssl\_host}!main@{main}}
+\doxysubsubsection{\texorpdfstring{ssl\_host}{ssl\_host}}
+{\footnotesize\ttfamily \label{namespacemain_acedb228f868dbad4b47eaafc28995d30} 
+main.\+ssl\+\_\+host}
+
+\Hypertarget{namespacemain_a2bb517f1251de92b69060993f98cc721}\index{main@{main}!ssl\_port@{ssl\_port}}
+\index{ssl\_port@{ssl\_port}!main@{main}}
+\doxysubsubsection{\texorpdfstring{ssl\_port}{ssl\_port}}
+{\footnotesize\ttfamily \label{namespacemain_a2bb517f1251de92b69060993f98cc721} 
+main.\+ssl\+\_\+port}
+
+\Hypertarget{namespacemain_adfc14002b61f11b32a9805b6fa3b085e}\index{main@{main}!status\_code@{status\_code}}
+\index{status\_code@{status\_code}!main@{main}}
+\doxysubsubsection{\texorpdfstring{status\_code}{status\_code}}
+{\footnotesize\ttfamily \label{namespacemain_adfc14002b61f11b32a9805b6fa3b085e} 
+main.\+status\+\_\+code}
+
+\Hypertarget{namespacemain_a1f4763c7d9785b85d544effe78e3ca9f}\index{main@{main}!storage@{storage}}
+\index{storage@{storage}!main@{main}}
+\doxysubsubsection{\texorpdfstring{storage}{storage}}
+{\footnotesize\ttfamily \label{namespacemain_a1f4763c7d9785b85d544effe78e3ca9f} 
+main.\+storage}
+
+\Hypertarget{namespacemain_abd5b6c80fbc3c037fce893ae7f6d2b05}\index{main@{main}!threshold@{threshold}}
+\index{threshold@{threshold}!main@{main}}
+\doxysubsubsection{\texorpdfstring{threshold}{threshold}}
+{\footnotesize\ttfamily \label{namespacemain_abd5b6c80fbc3c037fce893ae7f6d2b05} 
+main.\+threshold}
+
+\Hypertarget{namespacemain_a829c7f57105f74c875ef0f765c3d4270}\index{main@{main}!trace\_id\_header@{trace\_id\_header}}
+\index{trace\_id\_header@{trace\_id\_header}!main@{main}}
+\doxysubsubsection{\texorpdfstring{trace\_id\_header}{trace\_id\_header}}
+{\footnotesize\ttfamily \label{namespacemain_a829c7f57105f74c875ef0f765c3d4270} 
+main.\+trace\+\_\+id\+\_\+header}
+
+\Hypertarget{namespacemain_ae5f401cbe0bd12e62ee03958c6c49321}\index{main@{main}!tracer@{tracer}}
+\index{tracer@{tracer}!main@{main}}
+\doxysubsubsection{\texorpdfstring{tracer}{tracer}}
+{\footnotesize\ttfamily \label{namespacemain_ae5f401cbe0bd12e62ee03958c6c49321} 
+main.\+tracer}
+
+\Hypertarget{namespacemain_a81b16e340b705221af46feae19e38190}\index{main@{main}!traces\_sample\_rate@{traces\_sample\_rate}}
+\index{traces\_sample\_rate@{traces\_sample\_rate}!main@{main}}
+\doxysubsubsection{\texorpdfstring{traces\_sample\_rate}{traces\_sample\_rate}}
+{\footnotesize\ttfamily \label{namespacemain_a81b16e340b705221af46feae19e38190} 
+main.\+traces\+\_\+sample\+\_\+rate}
+
+\Hypertarget{namespacemain_a991c69eb34158eecf3308e4991c65630}\index{main@{main}!validators@{validators}}
+\index{validators@{validators}!main@{main}}
+\doxysubsubsection{\texorpdfstring{validators}{validators}}
+{\footnotesize\ttfamily \label{namespacemain_a991c69eb34158eecf3308e4991c65630} 
+main.\+validators}
+
+\Hypertarget{namespacemain_ae1ea5d7d8ba9156ef06beef9bf8901a8}\index{main@{main}!window@{window}}
+\index{window@{window}!main@{main}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily \label{namespacemain_ae1ea5d7d8ba9156ef06beef9bf8901a8} 
+main.\+window}
+
