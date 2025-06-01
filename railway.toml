@@ -1,0 +1,76 @@
+[app]
+name = "quantum-trader-backend"
+region = "us-east-1"
+
+[app.environment]
+REDIS_URL = "@redis_url"
+DATABASE_URL = "@database_url"
+API_KEY = "@api_key"
+SECRET_KEY = "@secret_key"
+
+[app.build]
+command = "python -m pip install --upgrade pip && pip install -r requirements.txt"
+
+[app.deploy]
+branch = "main"
+
+[app.services]
+web = { ports = [8000], memory = "512MB", cpu = "1" }
+redis = { ports = [6379], memory = "256MB", cpu = "0.5" }
+
+[app.services.web]
+command = "uvicorn backend.main:app --host 0.0.0.0 --port 8000"
+
+[app.services.redis]
+command = "redis-server --requirepass $REDIS_PASSWORD"
+
+[app.variables]
+REDIS_PASSWORD = "your_secure_redis_password"
+
+[app.secrets]
+redis_password = "your_secure_redis_password"
+
+[app.database]
+name = "quantum_trader_db"
+type = "postgresql"
+version = "14"
+
+[app.cache]
+name = "quantum_trader_cache"
+type = "redis"
+version = "6"
+
+[app.queues]
+name = "quantum_trader_queue"
+type = "redis"
+version = "6"
+
+[app.logs]
+name = "quantum_trader_logs"
+retention = "30d"
+
+[app.monitoring]
+name = "quantum_trader_monitoring"
+provider = "datadog"
+
+[app.security]
+name = "quantum_trader_security"
+provider = "cloudflare"
+
+[app.scale]
+min = 1
+max = 3
+
+[app.autoscaling]
+metric = "cpu"
+threshold = 80
+
+[app.healthcheck]
+path = "/health"
+interval = "30s"
+timeout = "5s"
+
+[app.cors]
+allow_origins = ["*"]
+allow_methods = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+allow_headers = ["Content-Type", "Authorization"]
