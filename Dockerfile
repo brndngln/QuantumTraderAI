@@ -1,20 +1,24 @@
-# Use an official Python runtime (non-Alpine to avoid TensorFlow issues)
+# Use an official Python runtime
 FROM python:3.11-slim
 
 # Set working directory
 WORKDIR /app
 
-# Copy requirements
-COPY requirements.txt .
-
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpq-dev \
-    redis-server \
+    libssl-dev \
+    libffi-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    libjpeg-dev \
+    zlib1g-dev \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
+# Copy requirements and install Python dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
@@ -34,21 +38,7 @@ RUN chmod +x /app/backend/main.py
 EXPOSE 8000
 
 # Start command
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"].10-slim
-
-# Set working directory
-WORKDIR /app
-
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libssl-dev \
-    libffi-dev \
-    libxml2-dev \
-    libxslt1-dev \
-    libjpeg-dev \
-    zlib1g-dev \
-    git \
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"] \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
