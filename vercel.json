@@ -30,7 +30,13 @@
     "REDIS_URL": "@redis_url",
     "DATABASE_URL": "@database_url",
     "API_KEY": "@api_key",
-    "SECRET_KEY": "@secret_key"
+    "SECRET_KEY": "@secret_key",
+    "ENVIRONMENT": "production",
+    "DEBUG": "false",
+    "CELERY_BROKER_URL": "@redis_url",
+    "CELERY_RESULT_BACKEND": "@redis_url",
+    "REACT_APP_API_URL": "https://api.quantum-trader.com",
+    "REACT_APP_ENV": "production"
   },
   "rewrites": [
     {
@@ -44,7 +50,7 @@
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "*"
+          "value": "https://quantum-trader.vercel.app"
         },
         {
           "key": "Access-Control-Allow-Methods",
@@ -52,15 +58,38 @@
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type,Authorization"
+          "value": "Content-Type,Authorization,X-Requested-With"
         }
       ]
     }
   ],
   "functions": {
     "api/**": {
-      "memory": 1024,
-      "maxDuration": 10
+      "memory": 2048,
+      "maxDuration": 30
     }
+  },
+  "github": {
+    "enabled": true,
+    "autoDeploy": true
+  },
+  "analytics": {
+    "enabled": true
+  },
+  "featureFlags": {
+    "strategyFusion": true,
+    "sectorAnalysis": true,
+    "liquidationDetection": true,
+    "marketSimulation": true
+  },
+  "security": {
+    "rateLimit": {
+      "window": 60,
+      "max": 1000
+    }
+  },
+  "errorPages": {
+    "404": "/404.html",
+    "500": "/500.html"
   }
 }

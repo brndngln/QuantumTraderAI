@@ -1,5 +1,5 @@
 [app]
-name = "quantum-trader-backend"
+name = "quantum-trader"
 region = "us-east-1"
 
 [app.environment]
@@ -7,6 +7,8 @@ REDIS_URL = "@redis_url"
 DATABASE_URL = "@database_url"
 API_KEY = "@api_key"
 SECRET_KEY = "@secret_key"
+ENVIRONMENT = "production"
+DEBUG = "false"
 
 [app.build]
 command = "python -m pip install --upgrade pip && pip install -r requirements.txt"
@@ -15,8 +17,10 @@ command = "python -m pip install --upgrade pip && pip install -r requirements.tx
 branch = "main"
 
 [app.services]
-web = { ports = [8000], memory = "512MB", cpu = "1" }
-redis = { ports = [6379], memory = "256MB", cpu = "0.5" }
+web = { ports = [8000], memory = "1GB", cpu = "2" }
+redis = { ports = [6379], memory = "512MB", cpu = "1" }
+frontend = { ports = [3000], memory = "512MB", cpu = "1" }
+worker = { memory = "512MB", cpu = "1" }
 
 [app.services.web]
 command = "uvicorn backend.main:app --host 0.0.0.0 --port 8000"
@@ -24,8 +28,16 @@ command = "uvicorn backend.main:app --host 0.0.0.0 --port 8000"
 [app.services.redis]
 command = "redis-server --requirepass $REDIS_PASSWORD"
 
+[app.services.frontend]
+command = "npm start"
+
+[app.services.worker]
+command = "celery -A backend.worker worker --loglevel=info"
+
 [app.variables]
 REDIS_PASSWORD = "your_secure_redis_password"
+CELERY_BROKER_URL = "@redis_url"
+CELERY_RESULT_BACKEND = "@redis_url"
 
 [app.secrets]
 redis_password = "your_secure_redis_password"
@@ -47,7 +59,7 @@ version = "6"
 
 [app.logs]
 name = "quantum_trader_logs"
-retention = "30d"
+retention = "60d"
 
 [app.monitoring]
 name = "quantum_trader_monitoring"
@@ -59,7 +71,7 @@ provider = "cloudflare"
 
 [app.scale]
 min = 1
-max = 3
+max = 5
 
 [app.autoscaling]
 metric = "cpu"
@@ -71,6 +83,33 @@ interval = "30s"
 timeout = "5s"
 
 [app.cors]
-allow_origins = ["*"]
+allow_origins = ["http://localhost:3000", "https://*.vercel.app"]
 allow_methods = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
-allow_headers = ["Content-Type", "Authorization"]
+allow_headers = ["Content-Type", "Authorization", "X-Requested-With"]
+
+[app.feature_flags]
+strategy_fusion = true
+sector_analysis = true
+liquidation_detection = true
+market_simulation = true
+
+[app.trading]
+max_trade_size = 100000
+max_positions = 10
+max_leverage = 5
+
+[app.ai]
+model_cache_dir = "/tmp/quantum_ai_models"
+max_model_memory = 4096
+
+[app.broker]
+timeout = 30
+retry_delay = 5
+
+[app.strategy]
+min_confidence = 0.7
+max_risk_per_trade = 0.01
+
+[app.cache_config]
+ttl = 3600
+prefix = "quantum_trader:"
