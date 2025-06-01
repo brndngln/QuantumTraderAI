@@ -10,23 +10,9 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies in stages
-COPY requirements.txt .
-
-# First install basic Python packages
-RUN pip install --no-cache-dir \
-    fastapi uvicorn numpy pandas scipy matplotlib seaborn \
-    python-dotenv pydantic sentry-sdk pytest pytest-cov black isort mypy
-
-# Then install data science packages
-RUN pip install --no-cache-dir \
-    ta ccxt ray pyarrow numba scikit-learn xgboost lightgbm \
-    torch transformers quantstats pyfolio optuna
-
-# Then install database and cloud packages
-RUN pip install --no-cache-dir \
-    tensorflow-cpu keras pymongo redis aioredis boto3 mplfinance \
-    nltk spacy tweepy alpha-vantage python-binance web3 pillow
+# Copy minimal requirements and install dependencies
+COPY minimal_requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . .
