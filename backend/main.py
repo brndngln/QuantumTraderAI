@@ -24,6 +24,7 @@ from pydantic import BaseModel
 from fastapi.security import HTTPBearer
 from jose import JWTError, jwt
 from passlib.context import CryptContext
+from cachetools import TTLCache
 
 # Load environment variables
 load_dotenv()
