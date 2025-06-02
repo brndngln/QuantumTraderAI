@@ -1,29 +1,51 @@
 {
-  "version": 2,
+  "version": 3,
   "builds": [
     {
-      "src": "frontend/index.html",
+      "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "build",
+        "framework": "react"
       }
     },
     {
       "src": "backend/main.py",
       "use": "@vercel/python",
       "config": {
-        "runtime": "python3.11"
+        "runtime": "python3.11",
+        "keepFiles": true,
+        "maxLambdaSize": "15mb"
       }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "backend/main.py"
+      "dest": "backend/main.py",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+        "Access-Control-Allow-Headers": "Content-Type,Authorization,X-Requested-With"
+      }
+    },
+    {
+      "src": "/health",
+      "dest": "backend/main.py",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/index.html",
+      "headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+      }
     }
   ],
   "env": {
@@ -31,38 +53,84 @@
     "DATABASE_URL": "@database_url",
     "API_KEY": "@api_key",
     "SECRET_KEY": "@secret_key",
+    "JWT_SECRET": "@jwt_secret",
     "ENVIRONMENT": "production",
     "DEBUG": "false",
     "CELERY_BROKER_URL": "@redis_url",
     "CELERY_RESULT_BACKEND": "@redis_url",
+    "RATE_LIMIT_WINDOW": "60",
+    "RATE_LIMIT_MAX": "1000",
     "REACT_APP_API_URL": "https://api.quantum-trader.com",
     "REACT_APP_ENV": "production"
   },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://api.quantum-trader.com/$1"
+      "destination": "https://api.quantum-trader.com/$1",
+      "headers": {
+        "X-Forwarded-Host": "${headers.host}",
+        "X-Forwarded-Proto": "https"
+      }
     }
   ],
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://quantum-trader.vercel.app"
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https:;"
         },
         {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET,POST,PUT,DELETE,OPTIONS"
+          "key": "X-DNS-Prefetch-Control",
+          "value": "on"
         },
         {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type,Authorization,X-Requested-With"
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
   ],
+  "cleanUrls": true,
+  "outputDirectory": "build",
+  "trailingSlash": false,
+  "public": "public",
+  "alias": [
+    "quantum-trader.com",
+    "www.quantum-trader.com"
+  ],
+  "redirects": [
+    {
+      "source": "/(>api|health)",
+      "destination": "/",
+      "statusCode": 308
+    }
+  ],
+  "network": {
+    "tcpKeepAlive": true,
+    "timeout": 30
+  },
   "functions": {
     "api/**": {
       "memory": 2048,

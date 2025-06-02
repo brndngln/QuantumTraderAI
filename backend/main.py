@@ -1,46 +1,268 @@
 import logging
-from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, Request, Response
+from fastapi.responses import JSONResponse, PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.middleware.sessions import SessionMiddleware
 import uvicorn
 import sentry_sdk
 from sentry_sdk.integrations.asgi import SentryAsgiMiddleware
 from sentry_sdk.integrations.logging import LoggingIntegration
 from structlog import configure, get_logger
 from structlog.stdlib import LoggerFactory
+from typing import Optional
+from datetime import datetime
+import time
+import os
+from dotenv import load_dotenv
+import redis
+from redis.exceptions import RedisError
+import json
+from pydantic import BaseModel
+from fastapi.security import HTTPBearer
+from jose import JWTError, jwt
+from passlib.context import CryptContext
+
+# Load environment variables
+load_dotenv()
 
 # Configure logging
 configure(logger_factory=LoggerFactory())
 logger = get_logger()
 
-# Initialize Sentry
+# Initialize Sentry with environment variable
 sentry_sdk.init(
-    dsn="your_sentry_dsn_here",
+    dsn=os.getenv("SENTRY_DSN", ""),
     integrations=[
-        LoggingIntegration(event_level=logging.ERROR)
+        LoggingIntegration(
+            level=logging.INFO,
+            event_level=logging.ERROR
+        )
     ],
-    traces_sample_rate=1.0,
+    traces_sample_rate=float(os.getenv("SENTRY_TRACE_RATE", "0.1")),
+    environment=os.getenv("ENVIRONMENT", "development")
 )
 
+# Security configurations
+SECRET_KEY = os.getenv("JWT_SECRET", "your-secret-key")
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
+# Initialize Redis with retry
+redis_client = None
+for _ in range(3):
+    try:
+        redis_client = redis.Redis(
+            host=os.getenv("REDIS_HOST", "localhost"),
+            port=int(os.getenv("REDIS_PORT", "6379")),
+            db=0,
+            decode_responses=True
+        )
+        redis_client.ping()
+        break
+    except RedisError as e:
+        logger.error(f"Redis connection error: {str(e)}")
+        time.sleep(2)
+
+if not redis_client:
+    raise Exception("Could not connect to Redis")
+
+# Initialize FastAPI with enhanced security
 app = FastAPI(
     title="Quantum Trader AI API",
     description="Advanced trading platform with AI-powered strategies",
-    version="1.0.0"
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json"
 )
 
-# Add Sentry middleware
-app.add_middleware(SentryAsgiMiddleware)
+# Add security middleware
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=os.getenv("SESSION_SECRET", "your-session-secret")
+)
 
-# Add CORS middleware
+# Add CORS with specific origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=os.getenv("ALLOWED_ORIGINS", "*"),
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["X-Process-Time", "X-Rate-Limit-Limit", "X-Rate-Limit-Remaining", "X-Rate-Limit-Reset"]
 )
+
+# Rate limiting configuration
+RATE_LIMIT_WINDOW = int(os.getenv("RATE_LIMIT_WINDOW", "60"))  # seconds
+RATE_LIMIT_REQUESTS = int(os.getenv("RATE_LIMIT_MAX", "100"))
+rate_limit_cache = TTLCache(maxsize=1000, ttl=RATE_LIMIT_WINDOW)
+
+# JWT configuration
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+security = HTTPBearer()
+
+# Custom exception handler
+@app.exception_handler(StarletteHTTPException)
+async def http_exception_handler(request: Request, exc: StarletteHTTPException):
+    logger.error(
+        "http_exception",
+        status_code=exc.status_code,
+        detail=str(exc.detail),
+        path=request.url.path,
+        method=request.method
+    )
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={
+            "error": {
+                "code": exc.status_code,
+                "message": str(exc.detail),
+                "timestamp": datetime.utcnow().isoformat()
+            }
+        }
+    )
+
+# Request validation middleware
+class RequestValidationMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        try:
+            # Validate request headers
+            if not request.headers.get("User-Agent"):
+                raise HTTPException(status_code=400, detail="User-Agent header is required")
+            
+            # Validate content type for POST/PUT requests
+            if request.method in ["POST", "PUT"]:
+                if not request.headers.get("Content-Type"):
+                    raise HTTPException(status_code=400, detail="Content-Type header is required")
+                
+                if not request.headers["Content-Type"].startswith("application/json"):
+                    raise HTTPException(status_code=415, detail="Content-Type must be application/json")
+            
+            # Validate authorization
+            auth_header = request.headers.get("Authorization")
+            if auth_header and not auth_header.startswith("Bearer "):
+                raise HTTPException(status_code=401, detail="Invalid authorization header format")
+            
+            return await call_next(request)
+        except Exception as e:
+            logger.error(f"Request validation error: {str(e)}")
+            raise HTTPException(status_code=400, detail=str(e))
+
+app.add_middleware(RequestValidationMiddleware)
+
+# Rate limiting middleware
+class RateLimitMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        client_ip = request.client.host
+        key = f"rate_limit:{client_ip}"
+        
+        try:
+            with redis_client.pipeline() as pipe:
+                pipe.incr(key)
+                pipe.expire(key, RATE_LIMIT_WINDOW)
+                count, _ = pipe.execute()
+                
+            if count > RATE_LIMIT_REQUESTS:
+                reset_time = redis_client.ttl(key)
+                raise HTTPException(
+                    status_code=429,
+                    detail=f"Rate limit exceeded. Reset in {reset_time} seconds"
+                )
+            
+            response = await call_next(request)
+            
+            # Add rate limit headers
+            response.headers["X-Rate-Limit-Limit"] = str(RATE_LIMIT_REQUESTS)
+            response.headers["X-Rate-Limit-Remaining"] = str(RATE_LIMIT_REQUESTS - count)
+            response.headers["X-Rate-Limit-Reset"] = str(redis_client.ttl(key))
+            
+            return response
+            
+        except RedisError as e:
+            logger.error(f"Redis error in rate limiting: {str(e)}")
+            raise HTTPException(status_code=500, detail="Internal server error")
+
+app.add_middleware(RateLimitMiddleware)
+
+# Security headers middleware
+class SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        response = await call_next(request)
+        
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["X-XSS-Protection"] = "1; mode=block"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https:;"
+        
+        return response
+
+app.add_middleware(SecurityHeadersMiddleware)
+
+# Request logging middleware
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    start_time = time.time()
+    
+    # Log request details
+    logger.info(
+        "request",
+        method=request.method,
+        path=request.url.path,
+        client_ip=request.client.host,
+        headers=dict(request.headers),
+        query_params=dict(request.query_params)
+    )
+    
+    response = await call_next(request)
+    process_time = time.time() - start_time
+    
+    # Log response details
+    logger.info(
+        "response",
+        status_code=response.status_code,
+        duration=process_time,
+        response_headers=dict(response.headers)
+    )
+    
+    return response
+
+# Health check endpoint with enhanced monitoring
+@app.get("/health", tags=["Health Check"])
+async def health_check():
+    try:
+        # Check Redis connection
+        redis_client.ping()
+        
+        # Check database connection
+        # Add your database health check here
+        
+        return {
+            "status": "healthy",
+            "timestamp": datetime.utcnow().isoformat(),
+            "version": "1.0.0",
+            "services": {
+                "redis": "healthy",
+                "database": "healthy"
+            }
+        }
+    except Exception as e:
+        logger.error(f"Health check failed: {str(e)}")
+        raise HTTPException(status_code=503, detail="Service unavailable")
+
+# Root endpoint with enhanced security
+@app.get("/", tags=["Root"])
+async def root():
+    logger.info("root_endpoint_accessed")
+    return {
+        "message": "Quantum Trader AI API is running",
+        "timestamp": datetime.utcnow().isoformat(),
+        "version": "1.0.0"
+    }
 
 @app.middleware("http")
 async def log_requests(request: Request, call_next):

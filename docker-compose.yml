@@ -1,90 +1,230 @@
 
 version: '3.9'
+
+networks:
+  quantum_trader_network:
+    driver: bridge
+    name: quantum_trader_network
+    driver_opts:
+      com.docker.network.bridge.name: quantum_trader_bridge
+
+volumes:
+  redis_data:
+    driver: local
+    driver_opts:
+      type: local
+      o: bind
+      device: ${PWD}/data/redis
+  postgres_data:
+    driver: local
+    driver_opts:
+      type: local
+      o: bind
+      device: ${PWD}/data/postgres
+  logs:
+    driver: local
+    driver_opts:
+      type: local
+      o: bind
+      device: ${PWD}/logs
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+
+x-logging:
+  &default-logging
+  driver: "json-file"
+  options:
+    max-size: "10m"
+    max-file: "3"
+    compress: "true"
+
 services:
   backend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: quantum_trader_backend
     ports:
       - "8000:8000"
     volumes:
-      - ./backend:/app/backend
-      - ./logs:/app/logs
+      - ./backend:/app:ro
+      - logs:/app/logs
+      - ./data:/app/data
     depends_on:
       - redis
+      - postgres
       - celery_worker
+      - celery_beat
     environment:
-      - CELERY_BROKER=redis://redis:6379/0
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/quantum_trader
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
       - PYTHONPATH=/app
+      - ENVIRONMENT=${ENVIRONMENT:-production}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - RATE_LIMIT_WINDOW=${RATE_LIMIT_WINDOW:-60}
+      - RATE_LIMIT_MAX=${RATE_LIMIT_MAX:-100}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 30s
+    restart: unless-stopped
+    logging: *default-logging
+    networks:
+      - quantum_trader_network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: quantum_trader_postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=quantum_trader
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    logging: *default-logging
+    networks:
+      - quantum_trader_network
 
   redis:
-    image: "redis:alpine"
+    image: redis:7-alpine
+    container_name: quantum_trader_redis
     ports:
       - "6379:6379"
     volumes:
       - redis_data:/data
-    command: redis-server --appendonly yes
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 30s
       timeout: 10s
       retries: 3
+    restart: unless-stopped
+    logging: *default-logging
+    networks:
+      - quantum_trader_network
 
   celery_worker:
-    build: .
-    command: celery -A backend.tasks.strategy_runner worker --loglevel=info
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: quantum_trader_worker
+    command: celery -A backend.tasks.strategy_runner worker --loglevel=${LOG_LEVEL:-info}
     volumes:
-      - ./backend:/app/backend
-      - ./logs:/app/logs
+      - ./backend:/app:ro
+      - logs:/app/logs
+      - ./data:/app/data
     depends_on:
       - redis
+      - postgres
     environment:
-      - CELERY_BROKER=redis://redis:6379/0
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/quantum_trader
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
       - PYTHONPATH=/app
+      - ENVIRONMENT=${ENVIRONMENT:-production}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
     healthcheck:
       test: ["CMD", "celery", "inspect", "ping"]
       interval: 30s
       timeout: 10s
       retries: 3
+    restart: unless-stopped
+    logging: *default-logging
+    networks:
+      - quantum_trader_network
 
   celery_beat:
-    build: .
-    command: celery -A backend.tasks.strategy_runner beat --loglevel=info
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: quantum_trader_beat
+    command: celery -A backend.tasks.strategy_runner beat --loglevel=${LOG_LEVEL:-info}
     volumes:
-      - ./backend:/app/backend
-      - ./logs:/app/logs
+      - ./backend:/app:ro
+      - logs:/app/logs
+      - ./data:/app/data
     depends_on:
       - redis
+      - postgres
+      - celery_worker
     environment:
-      - CELERY_BROKER=redis://redis:6379/0
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/quantum_trader
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
       - PYTHONPATH=/app
+      - ENVIRONMENT=${ENVIRONMENT:-production}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    restart: unless-stopped
+    logging: *default-logging
+    networks:
+      - quantum_trader_network
+
+  flower:
+    image: mher/flower:latest
+    container_name: quantum_trader_flower
+    ports:
+      - "5555:5555"
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - FLOWER_PORT=5555
+      - FLOWER_BASIC_AUTH=${FLOWER_USER:-admin}:${FLOWER_PASSWORD:-admin}
+    depends_on:
+      - redis
+      - celery_worker
+    restart: unless-stopped
+    logging: *default-logging
+    networks:
+      - quantum_trader_network
 
   prometheus:
     image: prom/prometheus:latest
-    ports:
-      - "9090:9090"
+    container_name: quantum_trader_prometheus
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
     depends_on:
       - backend
       - redis
-      - celery_worker
+    restart: unless-stopped
+    logging: *default-logging
+    networks:
+      - quantum_trader_network
 
   grafana:
     image: grafana/grafana:latest
-    ports:
-      - "3000:3000"
-    depends_on:
-      - prometheus
+    container_name: quantum_trader_grafana
     volumes:
       - grafana_data:/var/lib/grafana
-
-volumes:
-  redis_data:
-    driver: local
-  grafana_data:
-    driver: local
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD:-admin}
+    restart: unless-stopped
+    logging: *default-logging
+    networks:
+      - quantum_trader_network

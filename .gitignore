@@ -1,9 +1,169 @@
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
 .env
-*.log
-*.pyc
-.DS_Store
-.vscode/
+.env.backup
+
+# IDE
 .idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and databases
+*.log
 *.db
+*.sqlite3
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build and deployment
 .vercel
+.build
+node_modules/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Cache
+.cache
+*.cache
+.cache/
+
+# Coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.coverage.*.c
+.coverage.*.json
+.coverage.*.xml
+.nox/
+
+# Testing
+.coverage
+.pytest_cache/
+
+# Documentation
+_docs/
+
+# Frontend
+frontend/build/
+frontend/dist/
+
+# Backend
+backend/build/
+backend/dist/
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Local development
+.local/
+
+# Secrets
+*.key
+*.pem
+*.crt
+*.keytab
+*.pub
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Editor
+*.sublime-workspace
+*.sublime-project
+
+# Generated files
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.o
+*.obj
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.o
+*.obj
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/

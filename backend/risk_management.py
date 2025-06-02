@@ -1,200 +1,154 @@
-import numpy as np
-import pandas as pd
-from typing import Dict, List, Tuple, Optional
+from typing import Dict
 import logging
-from datetime import datetime
 import warnings
+
 warnings.filterwarnings('ignore')
 
-logger = logging.getLogger(__name__)
-
 class RiskManager:
-    def __init__(self,
-                 max_position_size: float = 0.05,
-                 max_drawdown: float = 0.02,
-                 stop_loss_pct: float = 0.02,
-                 take_profit_pct: float = 0.03,
-                 risk_per_trade: float = 0.01,
-                 volatility_adjustment: bool = True,
-                 correlation_threshold: float = 0.8,
-                 max_leverage: float = 2.0):
+    def __init__(self):
+        self.logger = logging.getLogger(__name__)
+        self.risk_parameters = {
+            'max_position_size': 0.05,  # 5% of portfolio
+            'stop_loss': 0.02,         # 2% stop loss
+            'take_profit': 0.05,       # 5% take profit
+            'max_drawdown': 0.10,      # 10% max drawdown
+            'max_leverage': 2.0,       # 2x leverage
+        }
+
+    def calculate_position_size(self, portfolio_value: float, volatility: float) -> float:
         """
-        Initialize risk management system
-        
-        Args:
-            max_position_size: Maximum position size as % of portfolio
-            max_drawdown: Maximum allowed drawdown
-            stop_loss_pct: Stop loss percentage
-            take_profit_pct: Take profit percentage
-            risk_per_trade: Risk per trade as % of portfolio
-            volatility_adjustment: Whether to adjust position size based on volatility
-            correlation_threshold: Maximum allowed correlation between positions
-            max_leverage: Maximum leverage allowed
+        Calculate optimal position size based on portfolio value and volatility
         """
-        self.max_position_size = max_position_size
-        self.max_drawdown = max_drawdown
-        self.stop_loss_pct = stop_loss_pct
-        self.take_profit_pct = take_profit_pct
-        self.risk_per_trade = risk_per_trade
-        self.volatility_adjustment = volatility_adjustment
-        self.correlation_threshold = correlation_threshold
-        self.max_leverage = max_leverage
-        
-        self.current_drawdown = 0.0
-        self.max_drawdown_reached = 0.0
-        self.total_trades = 0
-        self.winning_trades = 0
-        self.losing_trades = 0
-        self.total_profit = 0.0
-        self.current_positions = {}
-        self.correlation_matrix = None
-        
-    def calculate_position_size(self, 
-                               current_price: float, 
-                               portfolio_value: float, 
-                               volatility: float,
-                               leverage: float = 1.0) -> float:
-        """Calculate optimal position size"""
         try:
-            # Base position size based on risk per trade
-            base_size = (portfolio_value * self.risk_per_trade) / (current_price * self.stop_loss_pct)
+            # Calculate position size based on volatility and portfolio value
+            position_size = min(
+                self.risk_parameters['max_position_size'] * portfolio_value,
+                portfolio_value / (volatility * 100)  # Adjust for volatility
+            )
             
-            # Apply volatility adjustment
-            if self.volatility_adjustment:
-                base_size *= (1 / (volatility + 1e-6))
-            
-            # Apply leverage
-            base_size *= min(leverage, self.max_leverage)
-            
-            # Apply maximum position size limit
-            max_size = portfolio_value * self.max_position_size
-            position_size = min(base_size, max_size)
-            
-            return position_size
-            
+            return float(position_size)
         except Exception as e:
-            logger.error(f"Error calculating position size: {str(e)}")
+            self.logger.error(f"Error calculating position size: {str(e)}")
             return 0.0
 
-    def calculate_stop_loss(self, 
-                           entry_price: float, 
-                           volatility: float,
-                           position_size: float) -> Tuple[float, float]:
-        """Calculate stop loss and take profit levels"""
+    def calculate_stop_loss(self, entry_price: float, volatility: float) -> float:
+        """
+        Calculate stop loss level based on entry price and volatility
+        """
         try:
-            # Calculate stop loss
-            stop_loss = entry_price * (1 - self.stop_loss_pct)
+            # Calculate stop loss based on volatility and risk parameters
+            stop_loss = entry_price * (1 - self.risk_parameters['stop_loss'])
             
-            # Calculate take profit
-            take_profit = entry_price * (1 + self.take_profit_pct)
+            # Adjust for volatility
+            stop_loss = stop_loss * (1 - volatility * 0.1)
             
-            # Adjust based on volatility
-            adjustment = volatility * position_size
-            stop_loss -= adjustment
-            take_profit += adjustment
-            
-            return stop_loss, take_profit
-            
+            return float(stop_loss)
         except Exception as e:
-            logger.error(f"Error calculating stop loss: {str(e)}")
-            return 0.0, 0.0
-
-    def calculate_risk_reward_ratio(self, 
-                                  stop_loss: float, 
-                                  take_profit: float, 
-                                  entry_price: float) -> float:
-        """Calculate risk/reward ratio"""
-        try:
-            risk = abs(entry_price - stop_loss)
-            reward = abs(take_profit - entry_price)
-            return reward / risk
-            
-        except Exception as e:
-            logger.error(f"Error calculating risk/reward ratio: {str(e)}")
+            self.logger.error(f"Error calculating stop loss: {str(e)}")
             return 0.0
 
-    def update_metrics(self, 
-                      trade_pnl: float, 
-                      portfolio_value: float) -> None:
-        """Update risk metrics"""
+    def calculate_take_profit(self, entry_price: float, volatility: float) -> float:
+        """
+        Calculate take profit level based on entry price and volatility
+        """
         try:
-            self.total_trades += 1
-            self.total_profit += trade_pnl
+            # Calculate take profit based on volatility and risk parameters
+            take_profit = entry_price * (1 + self.risk_parameters['take_profit'])
             
-            if trade_pnl > 0:
-                self.winning_trades += 1
-            else:
-                self.losing_trades += 1
-                
-            # Calculate current drawdown
-            peak_value = max(portfolio_value, self.max_drawdown_reached)
-            self.current_drawdown = (peak_value - portfolio_value) / peak_value
-            self.max_drawdown_reached = max(peak_value, self.max_drawdown_reached)
+            # Adjust for volatility
+            take_profit = take_profit * (1 + volatility * 0.1)
             
+            return float(take_profit)
         except Exception as e:
-            logger.error(f"Error updating risk metrics: {str(e)}")
+            self.logger.error(f"Error calculating take profit: {str(e)}")
+            return 0.0
 
-    def get_risk_metrics(self) -> Dict[str, float]:
-        """Get current risk metrics"""
+    def calculate_margin_requirements(self, position_size: float, leverage: float) -> float:
+        """
+        Calculate margin requirements for a position
+        """
         try:
-            win_rate = self.winning_trades / self.total_trades if self.total_trades > 0 else 0
-            avg_profit = self.total_profit / self.total_trades if self.total_trades > 0 else 0
+            # Calculate margin based on position size and leverage
+            margin = position_size / leverage
             
-            return {
-                'current_drawdown': self.current_drawdown,
-                'max_drawdown': self.max_drawdown_reached,
-                'win_rate': win_rate,
-                'avg_profit': avg_profit,
-                'total_trades': self.total_trades,
-                'winning_trades': self.winning_trades,
-                'losing_trades': self.losing_trades,
-                'total_profit': self.total_profit,
-                'correlation_threshold': self.correlation_threshold,
-                'max_leverage': self.max_leverage
+            # Ensure margin is not less than minimum requirements
+            min_margin = position_size * 0.01  # 1% minimum margin
+            margin = max(margin, min_margin)
+            
+            return float(margin)
+        except Exception as e:
+            self.logger.error(f"Error calculating margin requirements: {str(e)}")
+            return 0.0
+
+    def calculate_drawdown(self, portfolio_value: float, peak_value: float) -> float:
+        """
+        Calculate current drawdown percentage
+        """
+        try:
+            # Calculate drawdown
+            drawdown = (peak_value - portfolio_value) / peak_value
+            
+            return float(drawdown)
+        except Exception as e:
+            self.logger.error(f"Error calculating drawdown: {str(e)}")
+            return 0.0
+
+    def check_risk_limits(self, portfolio_value: float, position_size: float, leverage: float) -> Dict:
+        """
+        Check if current position exceeds risk limits
+        """
+        try:
+            # Calculate risk metrics
+            risk_metrics = {
+                'position_size_pct': position_size / portfolio_value,
+                'leverage': leverage,
+                'margin': self.calculate_margin_requirements(position_size, leverage)
             }
             
-        except Exception as e:
-            logger.error(f"Error getting risk metrics: {str(e)}")
-            return {}
-
-    def check_position_correlation(self, new_position: str) -> bool:
-        """Check correlation with existing positions"""
-        try:
-            if not self.correlation_matrix or not self.current_positions:
-                return True
-                
-            # Get correlations with existing positions
-            correlations = self.correlation_matrix.loc[new_position, list(self.current_positions.keys())]
+            # Check limits
+            violations = []
+            if risk_metrics['position_size_pct'] > self.risk_parameters['max_position_size']:
+                violations.append('position_size')
+            if leverage > self.risk_parameters['max_leverage']:
+                violations.append('leverage')
             
-            # Check if any correlation exceeds threshold
-            return not (correlations > self.correlation_threshold).any()
-            
-        except Exception as e:
-            logger.error(f"Error checking position correlation: {str(e)}")
-            return True
-
-    def update_correlation_matrix(self, price_data: pd.DataFrame) -> None:
-        """Update correlation matrix"""
-        try:
-            self.correlation_matrix = price_data.pct_change().corr()
-            logger.info("Correlation matrix updated")
-            
-        except Exception as e:
-            logger.error(f"Error updating correlation matrix: {str(e)}")
-
-    def get_position_limits(self, portfolio_value: float) -> Dict[str, float]:
-        """Get position limits based on current portfolio"""
-        try:
             return {
-                'max_position_size': portfolio_value * self.max_position_size,
-                'max_leverage': self.max_leverage,
-                'current_drawdown': self.current_drawdown,
-                'max_drawdown': self.max_drawdown
+                'risk_metrics': risk_metrics,
+                'violations': violations
             }
-            
         except Exception as e:
-            logger.error(f"Error getting position limits: {str(e)}")
-            return {}
+            self.logger.error(f"Error checking risk limits: {str(e)}")
+            return {'risk_metrics': {}, 'violations': []}
 
-# Initialize global instance
-risk_manager = RiskManager()
+    def optimize_position(self, portfolio_value: float, volatility: float, leverage: float) -> Dict:
+        """
+        Optimize position parameters based on risk management rules
+        """
+        try:
+            # Calculate initial position parameters
+            position_size = self.calculate_position_size(portfolio_value, volatility)
+            stop_loss = self.calculate_stop_loss(position_size, volatility)
+            take_profit = self.calculate_take_profit(position_size, volatility)
+            margin = self.calculate_margin_requirements(position_size, leverage)
+            
+            # Check risk limits
+            risk_check = self.check_risk_limits(portfolio_value, position_size, leverage)
+            
+            return {
+                'position_size': position_size,
+                'stop_loss': stop_loss,
+                'take_profit': take_profit,
+                'margin': margin,
+                'risk_metrics': risk_check['risk_metrics'],
+                'violations': risk_check['violations']
+            }
+        except Exception as e:
+            self.logger.error(f"Error optimizing position: {str(e)}")
+            return {
+                'position_size': 0.0,
+                'stop_loss': 0.0,
+                'take_profit': 0.0,
+                'margin': 0.0,
+                'risk_metrics': {},
+                'violations': []
+            }

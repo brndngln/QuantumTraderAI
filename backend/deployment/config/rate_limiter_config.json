@@ -1,0 +1,75 @@
+{
+    "redis_url": "redis://redis:6379",
+    "global_rate_limit": 1000,
+    "window_size": 60,
+    "burst_limit": 2000,
+    "burst_window": 5,
+    "ip_whitelist": [
+        "127.0.0.1",
+        "::1"
+    ],
+    "ip_blacklist": [],
+    "user_rate_limit": {
+        "default": 100,
+        "premium": 500,
+        "enterprise": 1000
+    },
+    "endpoint_rate_limit": {
+        "/api/v1/auth": 1000,
+        "/api/v1/data": 500,
+        "/api/v1/health": 10000
+    },
+    "method_rate_limit": {
+        "GET": 1000,
+        "POST": 500,
+        "PUT": 200,
+        "DELETE": 100
+    },
+    "country_rate_limit": {
+        "US": 1000,
+        "EU": 500,
+        "AS": 300
+    },
+    "organization_rate_limit": {
+        "default": 1000,
+        "premium": 5000,
+        "enterprise": 10000
+    },
+    "token_bucket_size": 10000,
+    "token_refill_rate": 100.0,
+    "leaky_bucket_size": 10000,
+    "sliding_window_size": 1000,
+    "sliding_window_interval": 1,
+    "max_concurrent_requests": 100,
+    "request_timeout": 5,
+    "max_queue_size": 1000,
+    "queue_timeout": 30,
+    "max_retries": 3,
+    "retry_delay": 1,
+    "ip_geolocation_url": "https://ipapi.co/json/",
+    "organization_lookup_url": "https://api.example.com/organization/lookup",
+    "encryption_key": "your-encryption-key",
+    "rsa_key_size": 2048,
+    "alert_thresholds": {
+        "cpu_usage": 80.0,
+        "memory_usage": 80.0,
+        "disk_usage": 80.0,
+        "network_latency": 100.0,
+        "request_latency": 2000.0,
+        "error_rate": 0.01,
+        "concurrent_requests": 100
+    },
+    "alert_channels": ["email", "slack", "discord"],
+    "alert_webhook_urls": {
+        "slack": "",
+        "discord": ""
+    },
+    "smtp_config": {
+        "host": "smtp.example.com",
+        "port": "587",
+        "user": "",
+        "password": ""
+    },
+    "visualization_interval": 60,
+    "visualization_types": ["topology", "traffic", "performance"]
+}

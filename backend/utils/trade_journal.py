@@ -1,10 +1,9 @@
+from typing import Any, Dict, List, Optional
+from datetime import datetime
 import json
 import os
-from typing import Dict, Any, Optional
-from datetime import datetime
-from PIL import Image
+import pandas as pd
 from fastapi import HTTPException
-import redis
 from redis import asyncio as aioredis
 from pydantic import BaseModel
 from enum import Enum
@@ -26,6 +25,7 @@ class TradeEntry(BaseModel):
     size: float
     reason: TradeReason
     market_context: Dict[str, Any]
+    optional: Optional[str] = None
     screenshot_path: Optional[str] = None
 
 class TradeExit(BaseModel):
@@ -53,14 +53,13 @@ class TradeJournal:
         )
         self.logs_dir = "logs"
         os.makedirs(self.logs_dir, exist_ok=True)
-        
+    
     async def log_trade(self, entry: TradeEntry, exit: TradeExit) -> None:
         """
         Log a complete trade with entry and exit
         """
         try:
             # Create trade record
-            trade_id = f"trade_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
             trade_record = {
                 'entry': entry.dict(),
                 'exit': exit.dict(),

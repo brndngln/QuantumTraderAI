@@ -1,253 +1,191 @@
 import numpy as np
-import pandas as pd
-from typing import Dict, List, Optional
-from pydantic import BaseModel
-import redis
-from redis import asyncio as aioredis
-from datetime import datetime, timedelta
-from enum import Enum
-import random
+from fastapi import HTTPException
+from datetime import datetime
+from typing import Dict
 
-class MarketCondition(Enum):
-    BULLISH = "bullish"
-    BEARISH = "bearish"
-    VOLATILE = "volatile"
-    RANGE_BOUND = "range_bound"
+class MarketGenerator:
+    def __init__(self, symbol: str):
+        self.symbol = symbol
+        self.current_price = 100.0  # Starting price
+        self.volatility = 0.01  # 1% daily volatility
+        self.trend = 0.0  # No trend initially
+        self.last_update = datetime.now()
 
-class MarketScenario(BaseModel):
-    condition: MarketCondition
-    volatility: float
-    trend_strength: float
-    duration: int  # in days
-    news_events: List[Dict]
-    economic_data: List[Dict]
+    def generate_price(self) -> float:
+        """
+        Generate next price based on market conditions
+        """
+        try:
+            # Calculate time since last update
+            time_diff = (datetime.now() - self.last_update).total_seconds() / 3600  # Convert to hours
+            
+            # Generate random noise
+            noise = np.random.normal(0, self.volatility * np.sqrt(time_diff))
+            
+            # Update price with trend and noise
+            self.current_price += self.trend * time_diff + noise
+            
+            # Apply bounds to prevent extreme values
+            self.current_price = max(0.01, min(10000.0, self.current_price))
+            
+            # Update last update time
+            self.last_update = datetime.now()
+            
+            return float(self.current_price)
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error generating price: {str(e)}"
+            )
 
-class SyntheticMarketGenerator:
+    def set_volatility(self, volatility: float):
+        """
+        Set market volatility
+        """
+        try:
+            self.volatility = max(0.0, min(1.0, volatility))  # Clamp between 0 and 1
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error setting volatility: {str(e)}"
+            )
+
+    def set_trend(self, trend: float):
+        """
+        Set market trend
+        """
+        try:
+            self.trend = trend
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error setting trend: {str(e)}"
+            )
+
+class SyntheticMarketLab:
     def __init__(self):
-        self.redis_pool = aioredis.from_url(
-            "redis://localhost:6379",
-            decode_responses=True
-        )
-        self.default_params = {
-            'volatility_range': (0.005, 0.02),  # 0.5% to 2% daily
-            'trend_strength_range': (0.001, 0.005),  # 0.1% to 0.5% daily
-            'news_impact_range': (-0.02, 0.02),  # 2% impact
-            'economic_data_range': (-0.01, 0.01)  # 1% impact
-        }
-        
-    async def generate_market_scenario(self, symbol: str, days: int) -> MarketScenario:
+        self.markets = {}
+        self.data_store = {}
+
+    def create_market(self, symbol: str) -> Dict:
         """
-        Generate a synthetic market scenario
+        Create a new synthetic market
         """
         try:
-            # Get historical data
-            historical_data = await self.get_historical_data(symbol)
+            if symbol in self.markets:
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"Market {symbol} already exists"
+                )
             
-            # Analyze market conditions
-            condition = self.analyze_market_condition(historical_data)
-            
-            # Generate scenario
-            scenario = MarketScenario(
-                condition=condition,
-                volatility=self.generate_volatility(historical_data),
-                trend_strength=self.generate_trend_strength(condition),
-                duration=days,
-                news_events=self.generate_news_events(days),
-                economic_data=self.generate_economic_data(days)
-            )
-            
-            # Store scenario
-            await self.redis_pool.hset(
-                f"market_scenario:{symbol}",
-                mapping=scenario.dict()
-            )
-            
-            return scenario
-            
+            self.markets[symbol] = MarketGenerator(symbol)
+            return {
+                'symbol': symbol,
+                'status': 'created'
+            }
         except Exception as e:
             raise HTTPException(
                 status_code=500,
-                detail=f"Error generating market scenario: {str(e)}"
+                detail=f"Error creating market: {str(e)}"
             )
-    
-    def analyze_market_condition(self, data: pd.DataFrame) -> MarketCondition:
+
+    def get_market_data(self, symbol: str, timeframe: str = '1h', limit: int = 100) -> Dict:
         """
-        Analyze market condition based on historical data
+        Get historical market data
         """
-        volatility = data['close'].pct_change().std()
-        trend = (data['close'].iloc[-1] - data['close'].iloc[0]) / data['close'].iloc[0]
-        
-        if volatility > 0.02:
-            return MarketCondition.VOLATILE
-        elif trend > 0.01:
-            return MarketCondition.BULLISH
-        elif trend < -0.01:
-            return MarketCondition.BEARISH
-        else:
-            return MarketCondition.RANGE_BOUND
-    
-    def generate_volatility(self, data: pd.DataFrame) -> float:
-        """
-        Generate volatility based on historical data
-        """
-        historical_vol = data['close'].pct_change().std()
-        return max(
-            min(historical_vol * 1.5, self.default_params['volatility_range'][1]),
-            self.default_params['volatility_range'][0]
-        )
-    
-    def generate_trend_strength(self, condition: MarketCondition) -> float:
-        """
-        Generate trend strength based on market condition
-        """
-        if condition == MarketCondition.BULLISH:
-            return random.uniform(
-                self.default_params['trend_strength_range'][0],
-                self.default_params['trend_strength_range'][1]
-            )
-        elif condition == MarketCondition.BEARISH:
-            return random.uniform(
-                -self.default_params['trend_strength_range'][1],
-                -self.default_params['trend_strength_range'][0]
-            )
-        else:
-            return 0.0
-    
-    def generate_news_events(self, days: int) -> List[Dict]:
-        """
-        Generate synthetic news events
-        """
-        events = []
-        event_days = random.sample(range(1, days), random.randint(1, 3))
-        
-        for day in event_days:
-            impact = random.uniform(
-                self.default_params['news_impact_range'][0],
-                self.default_params['news_impact_range'][1]
-            )
-            events.append({
-                'day': day,
-                'impact': impact,
-                'type': random.choice(['positive', 'negative']),
-                'description': f"Synthetic news event {day}"
+        try:
+            if symbol not in self.markets:
+                raise HTTPException(
+                    status_code=404,
+                    detail=f"Market {symbol} not found"
+                )
+            
+            market = self.markets[symbol]
+            
+            # Generate historical data
+            timestamps = []
+            prices = []
+            
+            for _ in range(limit):
+                price = market.generate_price()
+                timestamps.append(datetime.now().isoformat())
+                prices.append(price)
+            
+            # Store data
+            if symbol not in self.data_store:
+                self.data_store[symbol] = []
+            
+            self.data_store[symbol].append({
+                'timestamp': timestamps[-1],
+                'price': prices[-1]
             })
-        
-        return events
-    
-    def generate_economic_data(self, days: int) -> List[Dict]:
-        """
-        Generate synthetic economic data
-        """
-        data = []
-        data_days = random.sample(range(1, days), random.randint(2, 4))
-        
-        for day in data_days:
-            impact = random.uniform(
-                self.default_params['economic_data_range'][0],
-                self.default_params['economic_data_range'][1]
-            )
-            data.append({
-                'day': day,
-                'impact': impact,
-                'type': random.choice(['economic', 'political']),
-                'description': f"Synthetic economic data {day}"
-            })
-        
-        return data
-    
-    async def generate_market_data(self, scenario: MarketScenario, days: int) -> pd.DataFrame:
-        """
-        Generate synthetic market data
-        """
-        try:
-            # Initialize data
-            data = []
-            current_price = 100.0  # Base price
             
-            for day in range(days):
-                # Base price movement
-                price_change = scenario.trend_strength
-                
-                # Add volatility
-                price_change += random.gauss(0, scenario.volatility)
-                
-                # Add news impact
-                for event in scenario.news_events:
-                    if event['day'] == day:
-                        price_change += event['impact']
-                
-                # Add economic data impact
-                for event in scenario.economic_data:
-                    if event['day'] == day:
-                        price_change += event['impact']
-                
-                # Update price
-                current_price *= (1 + price_change)
-                
-                # Add to data
-                data.append({
-                    'date': datetime.now() + timedelta(days=day),
-                    'open': current_price * (1 + random.uniform(-0.001, 0.001)),
-                    'high': current_price * (1 + random.uniform(0, 0.002)),
-                    'low': current_price * (1 - random.uniform(0, 0.002)),
-                    'close': current_price,
-                    'volume': random.randint(100000, 1000000)
-                })
-            
-            # Create DataFrame
-            df = pd.DataFrame(data)
-            df.set_index('date', inplace=True)
-            
-            return df
-            
-        except Exception as e:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Error generating market data: {str(e)}"
-            )
-    
-    async def get_historical_data(self, symbol: str) -> pd.DataFrame:
-        """
-        Get historical price data
-        """
-        # Implementation depends on data source
-        return pd.DataFrame()
-    
-    async def store_market_data(self, symbol: str, data: pd.DataFrame) -> None:
-        """
-        Store synthetic market data
-        """
-        try:
-            # Convert to JSON
-            data_json = data.to_json(orient='records')
-            
-            # Store in Redis
-            await self.redis_pool.hset(
-                f"synthetic_data:{symbol}",
-                mapping={
-                    'data': data_json,
-                    'timestamp': datetime.now().isoformat()
-                }
-            )
-            
-        except Exception as e:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Error storing market data: {str(e)}"
-            )
-    
-    async def get_stored_market_data(self, symbol: str) -> Optional[pd.DataFrame]:
-        """
-        Get stored synthetic market data
-        """
-        try:
-            data = await self.redis_pool.hgetall(f"synthetic_data:{symbol}")
-            if data:
-                return pd.read_json(data['data'])
-            return None
-            
+            return {
+                'symbol': symbol,
+                'timeframe': timeframe,
+                'data': [
+                    {
+                        'timestamp': ts,
+                        'price': price
+                    }
+                    for ts, price in zip(timestamps, prices)
+                ]
+            }
         except Exception as e:
             raise HTTPException(
                 status_code=500,
                 detail=f"Error getting market data: {str(e)}"
+            )
+
+    def set_market_conditions(self, symbol: str, volatility: float, trend: float) -> Dict:
+        """
+        Set market conditions (volatility and trend)
+        """
+        try:
+            if symbol not in self.markets:
+                raise HTTPException(
+                    status_code=404,
+                    detail=f"Market {symbol} not found"
+                )
+            
+            market = self.markets[symbol]
+            market.set_volatility(volatility)
+            market.set_trend(trend)
+            
+            return {
+                'symbol': symbol,
+                'volatility': volatility,
+                'trend': trend,
+                'status': 'updated'
+            }
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error setting market conditions: {str(e)}"
+            )
+
+    def get_market_state(self, symbol: str) -> Dict:
+        """
+        Get current market state
+        """
+        try:
+            if symbol not in self.markets:
+                raise HTTPException(
+                    status_code=404,
+                    detail=f"Market {symbol} not found"
+                )
+            
+            market = self.markets[symbol]
+            
+            return {
+                'symbol': symbol,
+                'current_price': market.current_price,
+                'volatility': market.volatility,
+                'trend': market.trend,
+                'last_update': market.last_update.isoformat()
+            }
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error getting market state: {str(e)}"
             )

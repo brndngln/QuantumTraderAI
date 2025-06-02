@@ -1,216 +1,252 @@
+from typing import Dict, List, Optional, Tuple
 import numpy as np
-from typing import Dict, Optional
-from pydantic import BaseModel
-import redis
-from redis import asyncio as aioredis
+import pandas as pd
+from fastapi import HTTPException
+import logging
 from datetime import datetime
-from enum import Enum
 
-class StrategyPerformanceTier(Enum):
-    HIGH = "high"
-    MEDIUM = "medium"
-    LOW = "low"
+logger = logging.getLogger(__name__)
 
-class LeverageConfig(BaseModel):
-    win_rate: float
-    confidence_score: float
-    vault_buffer: float
-    strategy_tier: StrategyPerformanceTier
-    max_leverage: float
-    min_leverage: float
+# Define leverage tiers based on performance and risk
+LEVERAGE_TIERS = {
+    'conservative': (1.0, 2.0),
+    'moderate': (2.0, 3.0),
+    'aggressive': (3.0, 5.0)
+}
+
+# Define buffer thresholds
+BUFFER_THRESHOLDS = {
+    'low': 0.1,  # 10% buffer
+    'medium': 0.2,  # 20% buffer
+    'high': 0.3   # 30% buffer
+}
 
 class LeverageScaler:
-    def __init__(self):
-        self.redis_pool = aioredis.from_url(
-            "redis://localhost:6379",
-            decode_responses=True
-        )
-        self.default_config = {
-            StrategyPerformanceTier.HIGH: LeverageConfig(
-                win_rate=0.7,
-                confidence_score=0.9,
-                vault_buffer=0.2,
-                strategy_tier=StrategyPerformanceTier.HIGH,
-                max_leverage=5.0,
-                min_leverage=2.0
-            ),
-            StrategyPerformanceTier.MEDIUM: LeverageConfig(
-                win_rate=0.5,
-                confidence_score=0.7,
-                vault_buffer=0.3,
-                strategy_tier=StrategyPerformanceTier.MEDIUM,
-                max_leverage=3.0,
-                min_leverage=1.5
-            ),
-            StrategyPerformanceTier.LOW: LeverageConfig(
-                win_rate=0.3,
-                confidence_score=0.5,
-                vault_buffer=0.4,
-                strategy_tier=StrategyPerformanceTier.LOW,
-                max_leverage=2.0,
-                min_leverage=1.0
-            )
+    def __init__(self, config: Dict):
+        self.config = config
+        self.logger = logging.getLogger(__name__)
+        self.metrics = {
+            'performance': [],
+            'risk': [],
+            'leverage': []
         }
-        
-    async def calculate_leverage(self, strategy_id: str, vault_balance: float, trade_size: float) -> float:
+
+    def calculate_leverage(self, volatility: float, performance: float, vault_buffer: float) -> Tuple[float, Dict]:
         """
-        Calculate optimal leverage for trade
+        Calculate optimal leverage based on multiple factors
+        
+        Args:
+            volatility: Current market volatility
+            performance: Strategy performance score
+            vault_buffer: Available vault buffer percentage
+            
+        Returns:
+            Tuple containing:
+            - float: Calculated leverage
+            - Dict: Leverage breakdown and factors
         """
         try:
-            # Get current performance
-            performance = await self.get_strategy_performance(strategy_id)
+            # Base leverage is inverse of volatility
+            base_leverage = 1 / volatility
             
-            # Get current risk metrics
-            risk_metrics = await self.get_risk_metrics(strategy_id)
+            # Adjust based on performance
+            performance_factor = min(1.0, max(0.5, performance))
             
-            # Calculate leverage based on factors
-            leverage = self.calculate_dynamic_leverage(
-                performance.win_rate,
-                risk_metrics.confidence_score,
-                vault_balance,
-                trade_size
-            )
+            # Adjust based on vault buffer
+            buffer_factor = self._calculate_buffer_factor(vault_buffer)
             
-            # Store leverage decision
-            await self.redis_pool.hset(
-                f"leverage_history:{strategy_id}",
-                mapping={
-                    'timestamp': datetime.now().isoformat(),
-                    'leverage': str(leverage),
-                    'win_rate': str(performance.win_rate),
-                    'confidence': str(risk_metrics.confidence_score)
-                }
-            )
+            # Combine factors
+            adjusted_leverage = base_leverage * performance_factor * buffer_factor
             
-            return leverage
+            # Apply tier-based limits
+            leverage_tier = self._determine_leverage_tier(performance)
+            min_leverage, max_leverage = LEVERAGE_TIERS[leverage_tier]
             
-        except Exception as e:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Error calculating leverage: {str(e)}"
-            )
-    
-    def calculate_dynamic_leverage(self, win_rate: float, confidence: float, vault_balance: float, trade_size: float) -> float:
-        """
-        Calculate dynamic leverage based on multiple factors
-        """
-        # Calculate base leverage based on win rate
-        base_leverage = self.calculate_base_leverage(win_rate)
-        
-        # Adjust for confidence
-        confidence_adj = self.calculate_confidence_adjustment(confidence)
-        
-        # Calculate vault buffer
-        vault_buffer = self.calculate_vault_buffer(vault_balance, trade_size)
-        
-        # Combine factors
-        leverage = base_leverage * confidence_adj * vault_buffer
-        
-        # Ensure within bounds
-        config = self.get_leverage_config(win_rate)
-        leverage = max(config.min_leverage, min(config.max_leverage, leverage))
-        
-        return leverage
-    
-    def calculate_base_leverage(self, win_rate: float) -> float:
-        """
-        Calculate base leverage based on win rate
-        """
-        if win_rate >= 0.7:
-            return 4.0
-        elif win_rate >= 0.5:
-            return 3.0
-        else:
-            return 2.0
-    
-    def calculate_confidence_adjustment(self, confidence: float) -> float:
-        """
-        Calculate confidence adjustment factor
-        """
-        return confidence * 1.5  # Max 1.5x multiplier
-    
-    def calculate_vault_buffer(self, vault_balance: float, trade_size: float) -> float:
-        """
-        Calculate vault buffer adjustment
-        """
-        buffer = vault_balance / trade_size
-        return min(1.0, max(0.5, buffer))
-    
-    def get_leverage_config(self, win_rate: float) -> LeverageConfig:
-        """
-        Get appropriate leverage config based on win rate
-        """
-        if win_rate >= 0.7:
-            return self.default_config[StrategyPerformanceTier.HIGH]
-        elif win_rate >= 0.5:
-            return self.default_config[StrategyPerformanceTier.MEDIUM]
-        else:
-            return self.default_config[StrategyPerformanceTier.LOW]
-    
-    async def get_strategy_performance(self, strategy_id: str) -> Dict:
-        """
-        Get strategy performance metrics
-        """
-        try:
-            data = await self.redis_pool.hgetall(f"strategy_performance:{strategy_id}")
-            return {
-                'win_rate': float(data.get('win_rate', '0.5')),
-                'total_trades': int(data.get('total_trades', '0')),
-                'profit_factor': float(data.get('profit_factor', '1.0'))
+            # Apply final bounds
+            leverage = max(min_leverage, min(max_leverage, adjusted_leverage))
+            
+            # Log and return breakdown
+            breakdown = {
+                'base_leverage': base_leverage,
+                'performance_factor': performance_factor,
+                'buffer_factor': buffer_factor,
+                'leverage_tier': leverage_tier,
+                'final_leverage': leverage
             }
             
+            logger.info(f"Leverage calculation: {breakdown}")
+            
+            return float(leverage), breakdown
+            
         except Exception as e:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Error getting strategy performance: {str(e)}"
-            )
-    
-    async def get_risk_metrics(self, strategy_id: str) -> Dict:
+            logger.error(f"Error calculating leverage: {str(e)}")
+            return 1.0, {"error": str(e)}  # Default to 1x leverage if error occurs
+
+    def update_performance_metrics(self, performance_data: List[Dict]) -> Dict:
         """
-        Get risk metrics for strategy
+        Update performance metrics and calculate current performance score
+        
+        Args:
+            performance_data: List of performance metrics
+            
+        Returns:
+            Dict containing:
+            - performance_score: Current performance score
+            - metrics_updated: Boolean flag
+            - trend: Performance trend
         """
         try:
-            data = await self.redis_pool.hgetall(f"risk_metrics:{strategy_id}")
+            # Add new data to metrics
+            self.metrics['performance'].extend(performance_data)
+            
+            # Calculate performance score
+            scores = []
+            for data in self.metrics['performance'][-10:]:  # Last 10 periods
+                score = data.get('returns', 0.0) * data.get('sharpe', 1.0)
+                scores.append(score)
+            
+            # Calculate weighted average
+            weights = np.linspace(0.1, 1.0, len(scores))
+            performance_score = float(np.average(scores, weights=weights))
+            
+            # Calculate trend
+            if len(self.metrics['performance']) > 20:
+                df = pd.DataFrame(self.metrics['performance'][-20:])
+                trend = np.polyfit(range(len(df)), df['returns'], 1)[0]
+            else:
+                trend = 0.0
+            
             return {
-                'confidence_score': float(data.get('confidence_score', '0.5')),
-                'volatility': float(data.get('volatility', '0.0')),
-                'max_drawdown': float(data.get('max_drawdown', '0.0'))
+                'performance_score': performance_score,
+                'metrics_updated': True,
+                'trend': float(trend)
             }
-            
-        except Exception as e:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Error getting risk metrics: {str(e)}"
-            )
-    
-    async def update_performance(self, strategy_id: str, performance: Dict) -> None:
-        """
-        Update strategy performance metrics
-        """
-        try:
-            await self.redis_pool.hset(
-                f"strategy_performance:{strategy_id}",
-                mapping=performance
-            )
-            
         except Exception as e:
             raise HTTPException(
                 status_code=500,
                 detail=f"Error updating performance: {str(e)}"
             )
-    
-    async def update_risk_metrics(self, strategy_id: str, metrics: Dict) -> None:
         """
-        Update risk metrics
+        Update performance metrics and calculate current performance score
         """
         try:
-            await self.redis_pool.hset(
-                f"risk_metrics:{strategy_id}",
-                mapping=metrics
-            )
+            # Add new data to metrics
+            self.metrics['performance'].extend(performance_data)
             
+            # Calculate performance score
+            scores = []
+            for data in self.metrics['performance'][-10:]:  # Last 10 periods
+                score = data.get('returns', 0.0) * data.get('sharpe', 1.0)
+                scores.append(score)
+            
+            # Calculate weighted average
+            weights = np.linspace(0.1, 1.0, len(scores))
+            performance_score = float(np.average(scores, weights=weights))
+            
+            return {
+                'performance_score': performance_score,
+                'metrics_updated': True
+            }
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error updating performance: {str(e)}"
+            )
+
+    def update_risk_metrics(self, risk_data: List[Dict]) -> Dict:
+        """
+        Update risk metrics and calculate current risk score
+        """
+        try:
+            # Add new data to metrics
+            self.metrics['risk'].extend(risk_data)
+            
+            # Calculate risk score
+            scores = []
+            for data in self.metrics['risk'][-10:]:  # Last 10 periods
+                score = data.get('volatility', 0.0) * data.get('drawdown', 1.0)
+                scores.append(score)
+            
+            # Calculate weighted average
+            weights = np.linspace(0.1, 1.0, len(scores))
+            risk_score = float(np.average(scores, weights=weights))
+            
+            return {
+                'risk_score': risk_score,
+                'metrics_updated': True
+            }
         except Exception as e:
             raise HTTPException(
                 status_code=500,
                 detail=f"Error updating risk metrics: {str(e)}"
+            )
+
+    def get_current_metrics(self) -> Dict:
+        """
+        Get current performance and risk metrics
+        """
+        try:
+            # Calculate averages for recent periods
+            metrics = {
+                'performance': {
+                    'avg_returns': float(np.mean([
+                        d.get('returns', 0.0)
+                        for d in self.metrics['performance'][-10:]
+                    ])),
+                    'avg_sharpe': float(np.mean([
+                        d.get('sharpe', 0.0)
+                        for d in self.metrics['performance'][-10:]
+                    ]))
+                },
+                'risk': {
+                    'avg_volatility': float(np.mean([
+                        d.get('volatility', 0.0)
+                        for d in self.metrics['risk'][-10:]
+                    ])),
+                    'avg_drawdown': float(np.mean([
+                        d.get('drawdown', 0.0)
+                        for d in self.metrics['risk'][-10:]
+                    ]))
+                },
+                'leverage': {
+                    'current': float(np.mean([
+                        d.get('leverage', 1.0)
+                        for d in self.metrics['leverage'][-10:]
+                    ]))
+                }
+            }
+            
+            return metrics
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error getting risk metrics: {str(e)}"
+            )
+
+    def optimize_leverage(self, current_leverage: float) -> Dict:
+        """
+        Optimize leverage based on current metrics
+        """
+        try:
+            # Get current metrics
+            metrics = self.get_current_metrics()
+            
+            # Calculate optimal leverage
+            optimal_leverage = self.calculate_leverage(
+                metrics['risk']['avg_volatility'],
+                metrics['performance']['avg_sharpe']
+            )
+            
+            # Calculate adjustment
+            adjustment = optimal_leverage / current_leverage
+            
+            return {
+                'optimal_leverage': optimal_leverage,
+                'adjustment': adjustment,
+                'metrics': metrics
+            }
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error optimizing leverage: {str(e)}"
             )

@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: rate-limiter-monitor
+  labels:
+    app: rate-limiter
+spec:
+  selector:
+    matchLabels:
+      app: rate-limiter
+  endpoints:
+  - port: http
+    interval: 30s
+    path: /metrics

@@ -1,11 +1,13 @@
 
+
 import httpx
 import time
 
 API_ENDPOINTS = {
     "twelvedata": "https://api.twelvedata.com/time_series?symbol=AAPL&interval=1min",
-    "yahoo": "https://query1.finance.yahoo.com/v7/finance/quote?symbols=AAPL"
+    "yahoo": "https://query1.finance.yahoo.com/v7/finance/quote?symbols=AAPL",
 }
+
 
 def measure_latency():
     results = {}

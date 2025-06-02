@@ -1,12 +1,65 @@
 import numpy as np
 import pandas as pd
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 from enum import Enum
 from pydantic import BaseModel
 import redis
 from redis import asyncio as aioredis
 from datetime import datetime
 import json
+import plotly.graph_objects as go
+import plotly.express as px
+from scipy.stats import zscore
+import logging
+
+logger = logging.getLogger(__name__)
+
+# Initialize radar and heatmap generation
+radar_categories = ['ETF Flow', 'News Tone', 'Earnings', 'Social', 'Volume']
+heatmap_colors = px.colors.sequential.Blues
+
+async def generate_radar_plot(sentiment_data: SectorSentiment) -> str:
+    """Generate radar plot for sector sentiment"""
+    fig = go.Figure()
+    
+    fig.add_trace(go.Scatterpolar(
+        r=[sentiment_data.etf_flow, sentiment_data.news_tone,
+           sentiment_data.earnings_sentiment, sentiment_data.volume_anomaly],
+        theta=radar_categories,
+        fill='toself'
+    ))
+    
+    fig.update_layout(
+        polar=dict(
+            radialaxis=dict(
+                visible=True,
+                range=[0, 1]
+            )
+        ),
+        showlegend=False
+    )
+    
+    return fig.to_html(full_html=False)
+
+async def generate_heatmap(sentiment_scores: Dict[Sector, float]) -> str:
+    """Generate heatmap for all sectors"""
+    sectors = list(sentiment_scores.keys())
+    scores = list(sentiment_scores.values())
+    
+    fig = go.Figure(data=go.Heatmap(
+        z=[scores],
+        x=[s.value for s in sectors],
+        y=['Sentiment'],
+        colorscale=heatmap_colors
+    ))
+    
+    fig.update_layout(
+        title='Sector Sentiment Heatmap',
+        xaxis_title='Sector',
+        yaxis_title='Sentiment Score'
+    )
+    
+    return fig.to_html(full_html=False)
 
 class Sector(Enum):
     TECH = "tech"
@@ -86,7 +139,31 @@ class SectorSentimentIndex:
                 detail=f"Error updating sector sentiment: {str(e)}"
             )
     
-    async def get_sector_sentiment(self, sector: Sector) -> Optional[SectorSentiment]:
+    async def get_sector_sentiment(self, sector: Sector) -> Tuple[Optional[SectorSentiment], Optional[str], Optional[str]]:
+        """
+        Get current sentiment for a sector with visualization
+        
+        Returns:
+            Tuple containing:
+            - SectorSentiment: Current sentiment data
+            - str: Radar plot HTML
+            - str: Heatmap HTML
+        """
+        try:
+            data = await self.redis_pool.get(f"sector_sentiment:{sector.value}")
+            if data:
+                sentiment = SectorSentiment.parse_raw(data)
+                radar_plot = await generate_radar_plot(sentiment)
+                heatmap = await generate_heatmap({sector: sentiment.sentiment_score})
+                return sentiment, radar_plot, heatmap
+            return None, None, None
+            
+        except Exception as e:
+            logger.error(f"Error getting sector sentiment: {str(e)}")
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error getting sector sentiment: {str(e)}"
+            )
         """
         Get current sentiment for a sector
         """

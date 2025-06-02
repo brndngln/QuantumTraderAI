@@ -1,128 +1,138 @@
+from typing import Dict
 import numpy as np
-import pandas as pd
-from scipy.signal import find_peaks
-from typing import Dict, List, Optional
-from datetime import datetime, timedelta
-import ccxt
-import yfinance as yf
-from pydantic import BaseModel
 from fastapi import HTTPException
+import pandas as pd
 
-class InstitutionalFlow(BaseModel):
-    symbol: str
-    volume: float
-    direction: str
-    timestamp: datetime
-    confidence: float
-
-class SmartMoneyTracker:
+class InstitutionalTracker:
     def __init__(self):
-        self.exchange = ccxt.binance()
-        self.volume_threshold = 1000000  # $1M threshold for institutional activity
-        self.time_window = timedelta(hours=1)
-        self.dark_pool_threshold = 0.05  # 5% of volume considered dark pool
-        
-    def detect_institutional_activity(self, symbol: str) -> List[InstitutionalFlow]:
+        self.patterns = {
+            'block_trade': self.detect_block_trade,
+            'institutional_flow': self.detect_institutional_flow,
+            'dark_pool': self.detect_dark_pool_activity
+        }
+        self.weights = {
+            'block_trade': 0.4,
+            'institutional_flow': 0.3,
+            'dark_pool': 0.3
+        }
+
+    def detect_block_trade(self, data: pd.DataFrame) -> float:
         """
-        Detect institutional trading activity using volume analysis
+        Detect block trades (large institutional trades)
         """
         try:
-            # Get recent trades
-            trades = self.exchange.fetch_trades(symbol)
+            # Calculate volume thresholds
+            avg_volume = data['Volume'].mean()
+            threshold = avg_volume * 5  # 5x average volume
             
-            # Convert to DataFrame
-            df = pd.DataFrame(trades)
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
-            df['volume_usd'] = df['amount'] * df['price']
+            # Find potential block trades
+            block_trades = data[data['Volume'] > threshold]
             
-            # Detect large volume spikes
-            volume_peaks = find_peaks(df['volume_usd'], height=self.volume_threshold)
+            # Calculate score based on volume and price impact
+            score = 0
+            for _, trade in block_trades.iterrows():
+                price_impact = abs(trade['Close'] - trade['Open']) / trade['Open']
+                score += trade['Volume'] * price_impact
             
-            # Analyze each peak
-            flows = []
-            for peak_idx in volume_peaks[0]:
-                peak_volume = df['volume_usd'].iloc[peak_idx]
-                peak_time = df['timestamp'].iloc[peak_idx]
-                
-                # Check if dark pool activity
-                is_dark_pool = False
-                if peak_volume > self.dark_pool_threshold * df['volume_usd'].sum():
-                    is_dark_pool = True
-                
-                # Determine direction based on price movement
-                price_change = (df['price'].iloc[peak_idx] - 
-                              df['price'].iloc[peak_idx-1]) / 
-                              df['price'].iloc[peak_idx-1]
-                
-                direction = 'buy' if price_change > 0 else 'sell'
-                confidence = abs(price_change) * 100
-                
-                flows.append(InstitutionalFlow(
-                    symbol=symbol,
-                    volume=peak_volume,
-                    direction=direction,
-                    timestamp=peak_time,
-                    confidence=confidence
-                ))
-            
-            return flows
-            
+            return float(score / len(data)) if len(data) > 0 else 0
         except Exception as e:
             raise HTTPException(
                 status_code=500,
-                detail=f"Error detecting institutional activity: {str(e)}"
+                detail=f"Error detecting block trades: {str(e)}"
             )
-    
+
+    def detect_institutional_flow(self, data: pd.DataFrame) -> float:
+        """
+        Detect institutional flow patterns
+        """
+        try:
+            # Calculate volume profile
+            volume_profile = data['Volume'].rolling(window=20).mean()
+            
+            # Calculate price momentum
+            price_momentum = data['Close'].pct_change().rolling(window=20).mean()
+            
+            # Calculate correlation between volume and price
+            correlation = volume_profile.corr(price_momentum)
+            
+            # Calculate score based on correlation strength
+            score = abs(correlation) * 100
+            
+            return float(score)
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error detecting institutional flow: {str(e)}"
+            )
+
+    def detect_dark_pool_activity(self, data: pd.DataFrame) -> float:
+        """
+        Detect dark pool activity patterns
+        """
+        try:
+            # Calculate volume anomalies
+            avg_volume = data['Volume'].mean()
+            std_volume = data['Volume'].std()
+            
+            # Detect large volume spikes
+            spikes = data[data['Volume'] > (avg_volume + 3 * std_volume)]
+            
+            # Calculate price impact of spikes
+            price_impact = spikes['Close'].pct_change().abs().mean()
+            
+            # Calculate score based on frequency and impact
+            score = len(spikes) * price_impact * 100
+            
+            return float(score)
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error detecting dark pool activity: {str(e)}"
+            )
+
     def analyze_institutional_trends(self, symbol: str, timeframe: str = '1h') -> Dict:
         """
         Analyze institutional trading trends over time
         """
         try:
-            # Get historical data
-            df = yf.download(symbol, period='1d', interval=timeframe)
+            # Get data for the specified timeframe
+            data = self.get_data(symbol, timeframe)
             
-            # Calculate volume indicators
-            df['volume_ma'] = df['Volume'].rolling(window=20).mean()
-            df['volume_std'] = df['Volume'].rolling(window=20).std()
+            # Analyze each pattern
+            patterns = {}
+            for name, detector in self.patterns.items():
+                patterns[name] = detector(data)
             
-            # Detect volume anomalies
-            df['volume_zscore'] = (df['Volume'] - df['volume_ma']) / df['volume_std']
-            
-            # Identify institutional patterns
-            patterns = {
-                'accumulation': (df['volume_zscore'] > 2).sum(),
-                'distribution': (df['volume_zscore'] < -2).sum(),
-                'consolidation': ((df['volume_zscore'].abs() < 1).sum() / len(df)) * 100
-            }
+            # Calculate weighted confidence score
+            total = sum(self.weights.values())
+            confidence = sum((patterns[k] * self.weights[k] for k in patterns.keys())) / total
             
             return {
                 'symbol': symbol,
                 'timeframe': timeframe,
-                'patterns': patterns,
-                'last_update': datetime.now().isoformat(),
-                'confidence': self._calculate_confidence(patterns)
+                'confidence': float(np.clip(confidence, 0, 1)),
+                'patterns': patterns
             }
-            
         except Exception as e:
             raise HTTPException(
                 status_code=500,
                 detail=f"Error analyzing institutional trends: {str(e)}"
             )
-    
-    def _calculate_confidence(self, patterns: Dict) -> float:
+
+    def get_data(self, symbol: str, timeframe: str) -> pd.DataFrame:
         """
-        Calculate confidence score based on institutional patterns
+        Get historical data for analysis
         """
-        total = sum(patterns.values())
-        if total == 0:
-            return 0.0
-            
-        # Weighted confidence calculation
-        weights = {
-            'accumulation': 0.4,
-            'distribution': 0.3,
-            'consolidation': 0.3
-        }
-        
-        confidence = sum((patterns[k] * weights[k] for k in patterns.keys())) / total
-        return float(np.clip(confidence, 0, 1))
+        try:
+            # This would typically fetch data from an API
+            # For now, return a mock DataFrame
+            return pd.DataFrame({
+                'Open': np.random.random(100) * 100,
+                'Close': np.random.random(100) * 100,
+                'Volume': np.random.random(100) * 100000
+            })
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Error fetching data: {str(e)}"
+            )
